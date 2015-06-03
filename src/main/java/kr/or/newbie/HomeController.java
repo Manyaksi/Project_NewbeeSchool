@@ -79,4 +79,11 @@ public class HomeController {
 
 		return "project";
 	}
+	
+	@RequestMapping(value = "/project_list", method = RequestMethod.GET)
+	public String project_list(Model model) {
+
+		return "project_list";
+	}
+	
 }
