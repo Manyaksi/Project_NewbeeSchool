@@ -71,7 +71,7 @@
           <li><strong>커뮤니티 활동</strong>을 통한 개발정보공유 </li>
 
 
-          <li><span class="octicon octicon-check"></span> <strong>프로젝트 모집 및 참여</strong></li>
+          <li><strong>프로젝트 모집 및 참여</strong></li>
         
         </ul>
       </div>
