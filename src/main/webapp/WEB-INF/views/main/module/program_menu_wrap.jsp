@@ -207,7 +207,7 @@
 					</div>	
 
 				<div class="space30"></div>
-				<a class="btn-lite" href="index.html#">더보기</a>
+				<a class="btn-lite" href="/project_list">더보기</a>
 			</div>
 		</div>
-	</div>>
+	</div>

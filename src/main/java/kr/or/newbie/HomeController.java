@@ -116,4 +116,11 @@ public class HomeController {
 		//System.out.println(request.getParameter("email"));
 		return null;
 	}
+
+	@RequestMapping(value = "/project_list", method = RequestMethod.GET)
+	public String project_list(Model model) {
+
+		return "project_list";
+	}
 }
+	
