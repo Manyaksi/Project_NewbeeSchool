@@ -11,9 +11,10 @@
 
 <body>
     <jsp:include page="menu/nav.jsp" />
+    <jsp:include page="tutorials/module/tutorials_nav.jsp" />
     
 
-    <div class="container-fluid" style="margin-top:110px;">
+    <div class="container-fluid">
       <div class="row">
         
      <jsp:include page="tutorials/module/tutorials_sidebar.jsp" />   
@@ -27,7 +28,7 @@
 <!-- JAVA SCRIPT 모듈 -->
 
 <jsp:include page="menu/module/nav_uneffect_js.jsp" />
-<script src="resources/js/tutorial_nav.js"></script>
+<script src="resources/js/tutorialnav.js"></script>
 
 
 </body>
