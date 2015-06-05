@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="col-md-12">
        <h2><span class="logo">JAVA</span> 커뮤니티</h2> 
         <p>java커뮤니티 소개글......</p>
@@ -42,63 +43,21 @@
 			</th>
 		</tr>	
 		
-		  
+		  <c:forEach items="${list }" var="article">  
 		  <tr>
-		  <td>5</td>
-		  <td>일반</td>
-			<td>펩시</td>
-			<td><a href="/boardread">상사가 괴롭혀요</a></td>
-			<td>15/06/01</td>
-			<td>1</td>
-			<td>154</td>
+		  <td align="center">${article["ARTICLE_NO"] }</td>
+		    <td align="center">${article["CATEGORY"] }</td>
+			<td align="left">${article["NICKNAME"] }</td>
+			<td align="center"><a href="/boardread">${article["SUBJECT"] }</a></td>
+			<td align="center">${article["WRITE"] }</td>
+			<td align="center">${article["LIKE_COUNT"] }</td>
+			<td align="center">${article["HIT_COUNT"] }</td>
 		  </tr>
-		  
+		  </c:forEach>
 		  
 		 
-		  
-		  <tr>
-		  <td>4</td>
-		  <td>TIP</td>
-			<td>코카콜라</td>
-			<td>JAVA의 모든것을 알려드립니다</td>
-			<td>15/06/01</td>
-			<td>0</td>
-			<td>22</td>
-		  </tr>
-			
-			
-		  <tr>
-		  <td>3</td>
-		  <td>질문</td>
-			<td>사이다</td>
-			<td>여자친구 있어요?</td>
-			<td>15/06/01</td>
-			<td>224</td>
-			<td>1143</td>
-		  </tr>
-		  
-		  
 		
-		  	<tr>
-		  <td>2</td>
-		  <td>질문</td>
-			<td>방그리</td>
-			<td>자바가 뭔가요?</td>
-			<td>15/06/01</td>
-			<td>0</td>
-			<td>20</td>
-		  </tr>
-		  
-		  
-		    <tr>
-		  <td>1</td>
-		  <td>정보/강좌</td>
-			<td>운영자</td>
-			<td>안녕하세요. 자바 게시판입니다.</td>
-			<td>15/06/01</td>
-			<td>10</td>
-			<td>25720</td>
-		  </tr>
+		
 		  
 		  
 		</table>

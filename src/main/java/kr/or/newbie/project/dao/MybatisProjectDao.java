@@ -1,6 +1,7 @@
 package kr.or.newbie.project.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.or.newbie.project.domain.Project;
 
@@ -35,7 +36,41 @@ public class MybatisProjectDao implements ProjectDao {
 		}
 		return projectList;
 	}
+
+	@Override
+	public List<Map<String, Object>> showProject() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
+	/*@Override
+	public Users getUserInfo(int user_no) {
+		
+		Users users = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			users = dao.getUserInfo(user_no);
+		}finally{
+			session.close();
+		}
+		return users;
+	}*/
+	
+	/*@Override
+	public List<Map<String, Object>> showProject() {
+		List<Map<String, Object>> map = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			map = dao.showProject();
+		}finally{
+			session.close();
+		}
+		return map;
+	}
 	
 	@Override
 	public void addProject(Project project) {
@@ -60,7 +95,7 @@ public class MybatisProjectDao implements ProjectDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+	*/
 
 	
 
