@@ -91,13 +91,13 @@ input[type="file"]{
 
 </style>
 
-<div class="col-md-12 content">
+<div class="col-md-10 col-md-offset-2 content">
 
 
   <div class="row">
   
     <!--  case: 로그아웃... -->
-    <div class="col-sm-10 col-sm-offset-2" id="logout">
+    <div class="col-md-12" id="logout">
         <div class="comment-tabs">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="active"><a href="#comments-logout" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">댓글</h4></a></li>
