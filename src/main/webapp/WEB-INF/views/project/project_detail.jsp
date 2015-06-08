@@ -9,7 +9,6 @@
 <p class="green-dark h5 mb0 mobile-show">
 by <b><a class="green-dark" href="/projects/448232439/tall-women-in-clogs/creator_bio">${detailList["NICKNAME"] }</a></b>
 	<p>${detailList["ID"] }</p>
-</p>
 <div class="space80"></div>
 
 </div>
