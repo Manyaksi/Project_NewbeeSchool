@@ -11,16 +11,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="resources/images/favicon.ico.html">
-	<link rel="apple-touch-icon" href="resources/images/apple-touch-icon.png.html">
-	<link rel="apple-touch-icon" sizes="72x72" href="resources/images/apple-touch-icon-72x72.png.html">
-	<link rel="apple-touch-icon" sizes="114x114" href="resources/images/apple-touch-icon-114x114.png.html">
-	<link rel="apple-touch-icon" sizes="144x144" href="resources/images/apple-touch-icon-144x144.png.html">
+	<link rel="shortcut icon" href="/resources/images/favicon.ico.html">
+	<link rel="apple-touch-icon" href="/resources/images/apple-touch-icon.png.html">
+	<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/apple-touch-icon-72x72.png.html">
+	<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/apple-touch-icon-114x114.png.html">
+	<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/apple-touch-icon-144x144.png.html">
 
 
 
 	<!-- icon set -->
-	 <link rel="stylesheet" type="text/css" href="resources/css/entypo/flaticon.css">
+	 <link rel="stylesheet" type="text/css" href="/resources/css/entypo/flaticon.css">
 
 	<!-- 구글웹폰트	-->
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -29,13 +29,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,900,800' rel='stylesheet' type='text/css'>
 
 	<!-- CSS -->
-	<link href="resources/css/bootstrap.css" rel="stylesheet">
-	<link href="resources/css/style.css" rel="stylesheet">
-	<link href="resources/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="resources/js/owl-carousel/owl.carousel.css" rel="stylesheet">
-	<link href="resources/js/owl-carousel/owl.theme.css" rel="stylesheet">
-	<link href="resources/js/rs-plugin/css/settings.css" rel="stylesheet" />
-	<link href="resources/css/animate.css" rel="stylesheet" />
+	<link href="/resources/css/bootstrap.css" rel="stylesheet">
+	<link href="/resources/css/style.css" rel="stylesheet">
+	<link href="/resources/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/resources/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+	<link href="/resources/js/owl-carousel/owl.theme.css" rel="stylesheet">
+	<link href="/resources/js/rs-plugin/css/settings.css" rel="stylesheet" />
+	<link href="/resources/css/animate.css" rel="stylesheet" />
 
 <style>
 

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import kr.or.newbie.project.dao.ProjectDao;
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,9 +37,24 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public Project showProjectdetail() {
+	public Users getUserInfo(int user_no) {
+		return projectDao.getUserInfo(user_no);
+	}
+	
+	@Override
+	public List<Map<String, Object>> showProject() {
+		return projectDao.showProject();
+	}
+	
+	@Override
+	public Map<String, Object> showProjectdetail(int groupNo) {
 		System.out.println("[Debug] : 프로젝트 상세보기");
-		return projectDao.showProjectdetail();
+		return projectDao.showProjectdetail(groupNo);
+	}
+	
+	@Override
+	public List<Map<String, Object>> showEnterProject(int groupNo) {
+		return projectDao.showEnterProject(groupNo);
 	}
 	
 	@Override
@@ -49,8 +65,11 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public void joinProject(Project project) {
-		projectDao.joinProject(project);
+	public void joinProject(int groupNo, int userNo) {
+		Map<String, Integer> params = new HashMap<String, Integer>();
+		params.put("groupNo", groupNo);
+		params.put("userNo", userNo);
+		projectDao.joinProject(params);
 		System.out.println("[Debug] : 프로젝트 참가");
 		
 	}

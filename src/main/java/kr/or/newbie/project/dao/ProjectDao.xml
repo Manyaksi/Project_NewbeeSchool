@@ -9,6 +9,38 @@
 		FROM grouparticle
 	</select>
 	
+	<select id="getUserInfo" resultType="users" >
+		SELECT user_no, program_name, id, nickname, photo, location, password, point, grade
+		FROM users
+	</select> 
+	
+	<select id="showProject" resultType="java.util.Map" >
+		select g.group_no, g.group_location, g.group_subject, g.group_content, g.group_maxcount, u.nickname, count(m.user_no) AS count
+		from users u, grouparticle g, groupmember m
+		where g.user_no = u.user_no and g.group_no = m.group_no
+		group by g.group_no,g.group_location, g.group_subject, g.group_content, g.group_maxcount , u.nickname
+		order by group_no asc
+	</select> 
+	
+	<select id="showProjectdetail" parameterType="Integer" resultType="java.util.Map" >
+		select g.group_no, g.group_location, g.group_subject, g.group_content, to_char(g.startline,'YYYY. MM. DD') as startline, to_char(g.deadline,'YYYY. MM. DD') as deadline, g.group_maxcount, g.group_category, g.program_name, u.nickname, count(m.user_no) AS count
+        from users u, grouparticle g, groupmember m
+        where g.user_no = u.user_no and g.group_no = m.group_no and g.group_no = #{groupNo}
+        group by g.group_no,g.group_location, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount , g.group_category, g.program_name, u.nickname
+        order by group_no asc
+	</select> 
+	
+	<select id="joinProject"  parameterType="java.util.Map">
+		insert into groupmember(group_no, user_no)
+		values(#{groupNo}, #{userNo})
+	</select> 
+	
+	<select id="showEnterProject" parameterType="Integer" resultType="java.util.Map">
+		select U.NICKNAME, U.LOCATION, U.PHOTO, U.USER_NO, U.GRADE, U.POINT, U.PROGRAM_NAME
+		from users u, groupmember m
+		where m.user_no = u.user_no and m.group_no = #{groupNo}
+	</select> 
+	
 
 
 </mapper>
