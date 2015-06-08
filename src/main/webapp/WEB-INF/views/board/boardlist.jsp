@@ -45,10 +45,10 @@
 		
 		  <c:forEach items="${list }" var="article">  
 		  <tr>
-		  <td align="center">${article["ARTICLE_NO"] }</td>
+		    <td align="center">${article["ARTICLE_NO"] }</td>
 		    <td align="center">${article["CATEGORY"] }</td>
 			<td align="left">${article["NICKNAME"] }</td>
-			<td align="center"><a href="/boardread">${article["SUBJECT"] }</a></td>
+			<td align="center"><a href="/board/boardread?article_no=${article['ARTICLE_NO'] }">${article["SUBJECT"] }</a></td>
 			<td align="center">${article["WRITE"] }</td>
 			<td align="center">${article["LIKE_COUNT"] }</td>
 			<td align="center">${article["HIT_COUNT"] }</td>

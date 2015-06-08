@@ -14,7 +14,10 @@ import kr.or.newbie.article.domain.Article;
 public interface ArticleDao {
 
 	//게시글 목록 출력
-	public List<Map<String, Object>> showarticleList();
+	public List<Map<String, Object>> showarticleList(String program_name);
+	
+	//게시글 상세보기
+	public Article detailArticle(int article_no);
 	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);

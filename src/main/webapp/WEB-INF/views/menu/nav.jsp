@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-	<header>
 		<nav class="navbar navbar-default navbar-fixed-top top-nav " role="navigation">
 			<div class="container ">
 				<div class="navbar-header">
@@ -72,4 +71,3 @@
 			</div>
 			<!-- /.container -->
 		</nav>
-	</header>

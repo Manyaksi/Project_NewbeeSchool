@@ -8,7 +8,7 @@
 			<b>제목</b>
 			</td>
 			<td colspan="3" class="col-md-10">
-			상사가 괴롭혀요
+			${article.subject }
 			</td>
 		</tr>
 		
@@ -17,7 +17,7 @@
 			<b>분류</b>
 			</td>
 			<td colspan="3" class="col-md-10">
-			일반
+			${article.category }
 			</tr>
 		
 		  <tr class="col-md-12">
@@ -35,7 +35,7 @@
 			<b>등록일</b>
 			</td>
 			<td colspan="3" class="col-md-10">
-			2015-06-01 11:39
+			${article.write_date }
 			</td>
 		</tr>
         
@@ -44,28 +44,20 @@
 			<b>조회수</b>
 			</td>
 			<td  class="col-md-4">
-			15
+			${article.hit_count }
 			</td>
 			  <td class="col-md-2">
 			<b>추천수</b>
 			</td>
 			<td class="col-md-4">
-			1
+			${article.like_count }
 			</td>
 		</tr>
 			</table>
 		
 		<div class="row">
 			<div class="col-md-12 text-center read-content">
-				평택에 미군기지하고</br>
-삼성전자 들어온다고해서 호재있다고..</br>
-</br>
-요즘에 부모님께서 건물보러 다니고 계시거든요</br>
-</br>
-평택초 바로옆에있는 원룸건물도 보고왔었는데</br>
-거기가 메르스 있는 무서운곳?이었네요ㅠㅠ</br>
-</br>
-앞으로 안갈수도없고 왠지 무섭네요;;</br>
+				${article.content }
 			</div>
 		</div>
 
@@ -88,7 +80,7 @@
 <table class="table ">
 	<tr>
 <td class="col-md-3 text-center">
-	<img src="resources/images/author1.png"></img>
+	<img src="/resources/images/author1.png"></img>
 </td>
 	<td class="col-md-7">
 		<p><b>방그리</b></p>
@@ -102,7 +94,7 @@
 </tr>
 <tr>
 <td class="col-md-3 text-center">
-	<img src="resources/images/author1.png"></img>
+	<img src="/resources/images/author1.png"></img>
 </td>
 	<td class="col-md-7">
 		<p><b>펩시</b></p>

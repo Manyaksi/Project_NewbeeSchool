@@ -1,13 +1,10 @@
 package kr.or.newbie.article.service;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.article.dao.ArticleDao;
 import kr.or.newbie.article.domain.Article;
-import kr.or.newbie.project.dao.ProjectDao;
-import kr.or.newbie.project.domain.Project;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,8 +29,14 @@ public class ArticleServiceImpl implements ArticleService{
 	}
 
 	@Override
-	public List<Map<String, Object>> showarticletList() {
-		return articleDao.showarticleList();
+	public List<Map<String, Object>> showarticletList(String program_name) {
+		return articleDao.showarticleList(program_name);
+	}
+
+	@Override
+	public Article detailArticle(int article_no) {
+		// TODO Auto-generated method stub
+		return articleDao.detailArticle(article_no);
 	}
 	
 	

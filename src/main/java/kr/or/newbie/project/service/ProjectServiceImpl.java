@@ -1,6 +1,8 @@
 package kr.or.newbie.project.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import kr.or.newbie.project.dao.ProjectDao;
 import kr.or.newbie.project.domain.Project;
@@ -32,32 +34,8 @@ public class ProjectServiceImpl implements ProjectService{
 		System.out.println("[Debug] : 전체 프로젝트 목록 출력");
 		return projectDao.showProjectList();
 	}
-
-	@Override
-	public void addProject(Project project) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Project showProjectdetail() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void joinProject(Project project) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitProject(Project project) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	/*@Override
+	@Override
 	public Project showProjectdetail() {
 		System.out.println("[Debug] : 프로젝트 상세보기");
 		return projectDao.showProjectdetail();
@@ -83,7 +61,7 @@ public class ProjectServiceImpl implements ProjectService{
 		System.out.println("[Debug] : 프로젝트 나가기");
 		
 		
-	}*/
+	}
 	
 	
 }

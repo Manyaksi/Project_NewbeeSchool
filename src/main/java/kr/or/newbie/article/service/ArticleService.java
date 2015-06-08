@@ -15,7 +15,9 @@ import kr.or.newbie.project.domain.Project;
 public interface ArticleService {
 	
 	//프로젝트 목록 출력
-	public List<Map<String, Object>> showarticletList();
+	public List<Map<String, Object>> showarticletList(String program_name);
+	
+	public Article detailArticle(int article_no);
 	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
