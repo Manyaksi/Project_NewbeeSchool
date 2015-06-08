@@ -1,9 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 
-
-		
-		
-		
         <div class="col-md-12">
        <h2><span class="logo">개발유치원</span>에 가입하세요!</h2> 
         <p>초보개발자들의 놀이터 개발유치원입니다.</p>
@@ -31,10 +27,13 @@
         
         </div>
         
-        
         <div class="col-md-4 col-md-offset-1">
             
-        <form accept-charset="UTF-8" action="/join" autocomplete="off" class="setup-form js-form-signup-detail" id="signup-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="WJvna9tCD/deLJJ2/YfjdPlsAPyf3vGLwqAW/DORigRhY6aikgs5NbnGytF72kSiA5Jn/to/oU4uQs855FrJ7w=="></div>
+        <form accept-charset="UTF-8" action="/join" autocomplete="off" class="setup-form js-form-signup-detail" id="signup-form" method="post">
+        <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" type="hidden" value="✓">
+        <input name="authenticity_token" type="hidden" value="WJvna9tCD/deLJJ2/YfjdPlsAPyf3vGLwqAW/DORigRhY6aikgs5NbnGytF72kSiA5Jn/to/oU4uQs855FrJ7w==">
+        </div>
 
 
 		<dl class="form errored">
@@ -97,7 +96,7 @@
 			</dt>
 			<dd>
 				<input id="user_password_confirmation"
-					name="user[password_confirmation]" size="30" type="password"
+					name="user[password_confirmation]" size="30" type="password" 
 					class="form-control">
 			</dd>
 		</dl>
@@ -135,5 +134,3 @@
     </div>
         
         </div>
-
-        
