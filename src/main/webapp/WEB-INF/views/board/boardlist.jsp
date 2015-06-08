@@ -1,19 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-        <div class="col-md-12">
-       <h2><span class="logo">JAVA</span> 커뮤니티</h2> 
-        <p>java커뮤니티 소개글......</p>
-        </div>
-        
-        <div class="space50"></div>
-       
-        <div class="col-md-12 margin-bottom-10">
-			<a class="category-boxed" href="">전체</a>
-			<a class="category-boxed" href="">일반</a>
-			<a class="category-boxed" href="">질문</a>
-			<a class="category-boxed" href="">정보/강좌</a>
-			<a class="category-boxed" href="">TIP</a>
-		</div>
-        
+        <div class="col-md-10">
         
         <div class="col-md-12">
             
@@ -141,6 +127,6 @@
 			
 			</div>
 			
-			
+			</div>
             
        

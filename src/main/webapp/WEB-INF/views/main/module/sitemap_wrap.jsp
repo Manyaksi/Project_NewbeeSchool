@@ -2,7 +2,6 @@
 <div class="contact-info">
 		<div class="container">
 			<div class="row ci1">
-				<img src="resources/images/tower.png" class="resources/images-responsive" alt=""/>
 				<p>사이트맵 넣어주세요...</p>
 				<ul class="social">
 					<li><a class="sl-fb" href="index.html#"><i class="fa fa-facebook"></i></a></li>
