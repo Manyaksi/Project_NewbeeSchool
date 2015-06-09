@@ -3,6 +3,7 @@ package kr.or.newbie.project.dao;
 import java.util.List;
 
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.tutorial.devprogram.domain.Devprogram;
 
 
 
@@ -26,5 +27,7 @@ public interface ProjectDao {
 	
 	//프로젝트 탈퇴하기
 	public void exitProject(Project project);
+
+
 	
 }

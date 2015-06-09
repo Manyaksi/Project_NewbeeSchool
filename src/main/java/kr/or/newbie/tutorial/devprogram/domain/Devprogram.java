@@ -4,17 +4,17 @@ public class Devprogram {
 
 	private String program_name;
 	private String install_content;
-	private int install_date;
+	private String install_date;
 	private String com_demand;
 	
 	
 	public Devprogram() {
-		this(null,null,0,null);
+		this(null,null,null,null);
 	}
 
 
 	public Devprogram(String program_name, String install_content,
-			int install_date, String com_demand) {
+			String install_date, String com_demand) {
 		super();
 		this.program_name = program_name;
 		this.install_content = install_content;
@@ -23,6 +23,14 @@ public class Devprogram {
 	}
 
 
+	public Devprogram(String program_name, String install_content) {
+		super();
+		this.program_name = program_name;
+		this.install_content = install_content;
+	}
+
+
+	
 	@Override
 	public String toString() {
 		return "devprogram [program_name=" + program_name
@@ -51,12 +59,12 @@ public class Devprogram {
 	}
 
 
-	public int getInstall_date() {
+	public String getInstall_date() {
 		return install_date;
 	}
 
 
-	public void setInstall_date(int install_date) {
+	public void setInstall_date(String install_date) {
 		this.install_date = install_date;
 	}
 
@@ -68,6 +76,4 @@ public class Devprogram {
 	public void setCom_demand(String com_demand) {
 		this.com_demand = com_demand;
 	}
-	
-	
 }

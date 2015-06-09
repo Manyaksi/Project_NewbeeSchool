@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-12 no-padding matching-info-content">
 					<div class="col-md-6">
-						<img src="resources/images/1.jpg" class="resources/images-responsive s1" alt=""/>
+						<img src="/resources/images/1.jpg" class="/resources/images-responsive s1" alt=""/>
 					</div>
 					<div class="col-md-6">
                        

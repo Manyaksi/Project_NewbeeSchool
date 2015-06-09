@@ -29,6 +29,7 @@
       <property name="mapperLocations">
          <list>
             <value>classpath:kr/or/newbie/project/dao/ProjectDao.xml</value>
+            <value>classpath:kr/or/newbie/tutorial/devprogram/dao/Devprogram.xml</value>
          </list>
       </property>
    </bean>

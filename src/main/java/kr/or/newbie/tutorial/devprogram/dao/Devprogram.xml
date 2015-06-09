@@ -4,12 +4,10 @@
                  
 <mapper namespace="kr.or.newbie.tutorial.devprogram.dao.Devprogramdao">
 
-	<select id="devprogram" resultType="devprogram">
-		select program_name, install_content
+	<select id="showDevprogramdetail" resultType="devprogram" parameterType="String">
+		select program_name, install_content, install_date,com_demand
 		from devprogram
-		where program_name=#{program_name}
-
+		where program_name=#{programName}
 	</select>
-	
 	
 </mapper>

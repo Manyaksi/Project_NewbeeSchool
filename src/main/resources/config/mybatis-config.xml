@@ -6,5 +6,6 @@
 	<!--  MyBatis에서 사용할 사용자 정의 클래스(Bean)에 대한 별칭 등록 -->
 	<typeAliases>
 		<typeAlias type="kr.or.newbie.project.domain.Project" alias="project"/>
+		<typeAlias type="kr.or.newbie.tutorial.devprogram.domain.Devprogram" alias="devprogram"/>
 	</typeAliases>
 </configuration>

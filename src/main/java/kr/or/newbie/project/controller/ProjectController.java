@@ -43,5 +43,4 @@ public class ProjectController {
 		System.out.println("돌아라");
 		return "/project_list";
 	}
-	
 }
