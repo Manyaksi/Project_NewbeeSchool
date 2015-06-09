@@ -15,6 +15,8 @@ public interface ArticleDao {
 
 	//게시글 목록 출력
 	public List<Map<String, Object>> showarticleList(String program_name);
+	//카테고리별 목록 출력
+	public List<Map<String, Object>> showcategoryList(String category, String program_name);
 	
 	//게시글 상세보기
 	public Article detailArticle(int article_no);

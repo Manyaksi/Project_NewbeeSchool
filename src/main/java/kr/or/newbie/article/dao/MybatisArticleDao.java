@@ -44,6 +44,26 @@ public class MybatisArticleDao implements ArticleDao {
 		return boardList;
 
 	}
+	
+	/**
+	 * 카테고리별 게시글 목록
+	 */
+	
+	@Override
+	public List<Map<String, Object>> showcategoryList(String category, String program_name) {
+		List<Map<String, Object>> categoryList = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			categoryList = dao.showcategoryList(category, program_name);
+			
+		}finally{
+			session.close();
+		}
+		
+		return categoryList;
+	}
 
 	/**
 	 *  게시글 상세보기
@@ -86,6 +106,8 @@ public class MybatisArticleDao implements ArticleDao {
 			session.close();
 		}
 	}
+
+
 
 	/*
 	 * @Override public void addProject(Project project) { // TODO

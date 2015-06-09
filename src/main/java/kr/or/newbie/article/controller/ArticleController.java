@@ -46,6 +46,21 @@ public class ArticleController {
 		model.addAttribute("list", list);
 		return "/board";
 	}
+	/**
+	 * 카테고리별 목록 보기
+	 */
+	@RequestMapping("/categorylist")
+	public String categoryList(@RequestParam(value="category", required=false, defaultValue="")String category,
+							   @RequestParam(value="program_name",required=false, defaultValue="")String program_name,Model model) {
+		logger.debug("카테고리"+category);
+		logger.debug("프로그램 이름"+program_name);
+		List<Map<String, Object>> list = articleService.showcategoryList("%"+category+"%",program_name);
+		
+		
+		model.addAttribute("list", list);
+		return "/board";
+	}
+	
 	
 	/**
 	 * 게시글 상세보기
