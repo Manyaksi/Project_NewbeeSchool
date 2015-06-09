@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.ProjectComment;
 import kr.or.newbie.project.domain.Users;
 
 
@@ -19,7 +20,7 @@ public interface ProjectDao {
 	public List<Map<String, Object>> showProject();
 	
 	//프로젝트 참가 인원 출력
-	public List<Map<String, Object>> showEnterProject(int groupNo);
+	public List<Users> showEnterProject(int groupNo);
 	
 	//프로젝트 만든 사람 출력
 	public Users getUserInfo(int user_no);
@@ -35,5 +36,8 @@ public interface ProjectDao {
 	
 	//프로젝트 탈퇴하기
 	public void exitProject(Project project);
+	
+	//프로젝트 댓글남기기
+	public void addProjectComment(ProjectComment projectComment);
 	
 }

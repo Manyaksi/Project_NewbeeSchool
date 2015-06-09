@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<jsp:include page="menu/module/head.jsp" />
 
 
@@ -45,7 +45,7 @@ function initialize()
 {
 var mapProp = {
   center: myCenter,
-  zoom:5,
+  zoom:15,
   mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -60,7 +60,7 @@ marker.setMap(map);
 
 // Zoom to 9 when clicking on marker
 google.maps.event.addListener(marker,'click',function() {
-  map.setZoom(9);
+  map.setZoom(17);
   map.setCenter(marker.getPosition());
   });
 }

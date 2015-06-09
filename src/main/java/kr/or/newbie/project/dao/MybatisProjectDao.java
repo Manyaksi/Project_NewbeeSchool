@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.ProjectComment;
 import kr.or.newbie.project.domain.Users;
 
 import org.apache.ibatis.session.SqlSession;
@@ -100,8 +101,8 @@ public class MybatisProjectDao implements ProjectDao {
 	
 	@Override
 	//프로젝트 참가인원 정보 출력
-	public List<Map<String, Object>> showEnterProject(int groupNo) {
-		List<Map<String, Object>> mapProject = null;
+	public List<Users> showEnterProject(int groupNo) {
+		List<Users> mapProject = null;
 		SqlSession session = null;
 		try{
 			session = sqlSessionFactory.openSession();
@@ -123,6 +124,20 @@ public class MybatisProjectDao implements ProjectDao {
 	public void exitProject(Project project) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	//프로젝트 댓글 입력
+	public void addProjectComment(ProjectComment projectComment) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.addProjectComment(projectComment);
+		}finally{
+			session.close();
+		}
+	
 	}
 	
 	

@@ -6,13 +6,14 @@ import java.util.Map;
 
 import kr.or.newbie.project.dao.ProjectDao;
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.ProjectComment;
 import kr.or.newbie.project.domain.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /** 
- * 학사 관련 비즈니스 메소드 구현 Business Object
+ * 프로젝트 관련 비즈니스 메소드 구현 Business Object
  * @author 김순재
  */
 @Service("projectService")
@@ -53,7 +54,7 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public List<Map<String, Object>> showEnterProject(int groupNo) {
+	public List<Users> showEnterProject(int groupNo) {
 		return projectDao.showEnterProject(groupNo);
 	}
 	
@@ -80,6 +81,12 @@ public class ProjectServiceImpl implements ProjectService{
 		System.out.println("[Debug] : 프로젝트 나가기");
 		
 		
+	}
+	
+	@Override
+	public void addProjectComment(ProjectComment projectComment) {
+		projectDao.addProjectComment(projectComment);
+		System.out.println("[Debug] : 프로젝트 댓글 등록");
 	}
 	
 	

@@ -35,12 +35,15 @@
 		values(#{groupNo}, #{userNo})
 	</select> 
 	
-	<select id="showEnterProject" parameterType="Integer" resultType="java.util.Map">
-		select U.NICKNAME, U.LOCATION, U.PHOTO, U.USER_NO, U.GRADE, U.POINT, U.PROGRAM_NAME
+	<select id="showEnterProject" parameterType="Integer" resultType="users">
+		select U.NICKNAME, U.LOCATION, U.PHOTO, U.USER_NO as userNo, U.GRADE, U.POINT, U.PROGRAM_NAME as programName
 		from users u, groupmember m
 		where m.user_no = u.user_no and m.group_no = #{groupNo}
 	</select> 
 	
-
+	<select id="addProjectComment" parameterType="projectComment">
+		insert into groupcomment(group_no, groupcomm_no, user_no, groupcomm_content, groupcomm_date)
+		values(#{groupNo}, groupcomm_no_seq.NextVal, #{userNo}, #{groupcommContent}, sysdate)
+	</select>
 
 </mapper>

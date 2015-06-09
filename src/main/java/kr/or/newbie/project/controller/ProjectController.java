@@ -8,6 +8,7 @@ import java.util.Map;
 
 import kr.or.newbie.HomeController;
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.ProjectComment;
 import kr.or.newbie.project.domain.Users;
 import kr.or.newbie.project.service.ProjectService;
 
@@ -57,18 +58,13 @@ public class ProjectController {
 	public String detail(@RequestParam(value="groupNo") int groupNo, Model model) {
 		System.out.println(groupNo);
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
-		List<Map<String, Object>> mapList = projectService.showEnterProject(groupNo);
-		for (Map<String, Object> map2 : mapList) {
-			Iterator<String> ddd = map2.keySet().iterator();
-			while (ddd.hasNext()) {
-				String string = (String) ddd.next();
-				System.out.println(string);
-				
-			}
+		List<Users> list = projectService.showEnterProject(groupNo);
+		for (Users users : list) {
+			System.out.println(users.toString());
 		}
 		
 		model.addAttribute("detailList", map);
-		model.addAttribute("userList",mapList);
+		model.addAttribute("userList",list);
 		return "/project";
 	}
 	
@@ -84,6 +80,18 @@ public class ProjectController {
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
 		model.addAttribute("detailList", map);
 		
+		return "/project";
+	}
+	
+	/**
+	 * 프로젝트 댓글등록 요청(project/comment_register)
+	 */
+	@RequestMapping(value="/comment_register", method=RequestMethod.POST)
+	public String register(ProjectComment projectComment, Model model) {
+		System.out.println(projectComment.getUserNo());
+		System.out.println(projectComment.getGroupNo());
+		System.out.println(projectComment.getGroupcommContent());
+		projectService.addProjectComment(projectComment);
 		return "/project";
 	}
 }

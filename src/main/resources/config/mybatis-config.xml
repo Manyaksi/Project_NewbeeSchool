@@ -7,5 +7,6 @@
 	<typeAliases>
 		<typeAlias type="kr.or.newbie.project.domain.Users" alias="users"/>
 		<typeAlias type="kr.or.newbie.project.domain.Project" alias="project"/>
+		<typeAlias type="kr.or.newbie.project.domain.ProjectComment" alias="projectComment"/>
 	</typeAliases>
 </configuration>

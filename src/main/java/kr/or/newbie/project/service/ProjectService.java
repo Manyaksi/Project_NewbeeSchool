@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.ProjectComment;
 import kr.or.newbie.project.domain.Users;
 
 
@@ -29,12 +30,15 @@ public interface ProjectService {
 	public Map<String, Object> showProjectdetail(int groupNo);
 	
 	//프로젝트 참가 인원 출력
-	public List<Map<String, Object>> showEnterProject(int groupNo);
+	public List<Users> showEnterProject(int groupNo);
 	
 	//프로젝트 참가하기
 	public void joinProject(int groupNo, int userNo);
 	
 	//프로젝트 탈퇴하기
 	public void exitProject(Project project);
+	
+	//프로젝트 댓글 등록
+	public void addProjectComment(ProjectComment projectComment);
 	
 }

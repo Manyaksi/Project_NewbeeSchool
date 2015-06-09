@@ -1,8 +1,8 @@
 package kr.or.newbie.project.domain;
 
 public class Users {
-	private int user_no;
-	private String program_name;
+	private int userNo;
+	private String programName;
 	private String id;
 	private String nickname;
 	private String photo;
@@ -16,12 +16,12 @@ public class Users {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(int user_no, String program_name, String id, String nickname,
+	public Users(int userNo, String programName, String id, String nickname,
 			String photo, String location, String password, int point,
 			String grade) {
 		super();
-		this.user_no = user_no;
-		this.program_name = program_name;
+		this.userNo = userNo;
+		this.programName = programName;
 		this.id = id;
 		this.nickname = nickname;
 		this.photo = photo;
@@ -32,19 +32,19 @@ public class Users {
 	}
 
 	public int getUser_no() {
-		return user_no;
+		return userNo;
 	}
 
 	public void setUser_no(int user_no) {
-		this.user_no = user_no;
+		this.userNo = user_no;
 	}
 
 	public String getProgram_name() {
-		return program_name;
+		return programName;
 	}
 
 	public void setProgram_name(String program_name) {
-		this.program_name = program_name;
+		this.programName = program_name;
 	}
 
 	public String getId() {
@@ -105,7 +105,7 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "Users [user_no=" + user_no + ", program_name=" + program_name
+		return "Users [user_no=" + userNo + ", program_name=" + programName
 				+ ", id=" + id + ", nickname=" + nickname + ", photo=" + photo
 				+ ", location=" + location + ", password=" + password
 				+ ", point=" + point + ", grade=" + grade + "]";
