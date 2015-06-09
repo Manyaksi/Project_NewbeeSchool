@@ -19,6 +19,9 @@ public interface ArticleDao {
 	//게시글 상세보기
 	public Article detailArticle(int article_no);
 	
+	//상세보기시 히트 카운트 1 증가
+	public void hitcountArticle(int article_no);
+	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
 	

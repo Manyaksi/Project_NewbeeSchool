@@ -38,7 +38,11 @@ public class ArticleServiceImpl implements ArticleService{
 		// TODO Auto-generated method stub
 		return articleDao.detailArticle(article_no);
 	}
-	
+
+	@Override
+	public void hitcountArticle(int article_no) {
+		articleDao.hitcountArticle(article_no);
+	}
 	
 	
 	

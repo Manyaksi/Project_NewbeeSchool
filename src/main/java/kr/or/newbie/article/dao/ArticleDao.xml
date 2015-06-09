@@ -17,6 +17,12 @@
 	from article
 	where article_no = #{article_no}
 	</select>
+
+	<select id="hitcountArticle" parameterType="Integer">
+	update article
+	set hit_count = hit_count+1
+	where article_no = #{article_no}
+	</select>
 	
 	
 	

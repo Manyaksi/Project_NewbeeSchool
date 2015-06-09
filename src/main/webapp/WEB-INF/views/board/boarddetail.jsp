@@ -58,6 +58,7 @@
 		<div class="row">
 			<div class="col-md-12 text-center read-content">
 				${article.content }
+				
 			</div>
 		</div>
 
@@ -71,7 +72,7 @@
 				
 					
 					<div class="paging-right-comp">
-					<a class="category-boxed btn font-black" href="/board">목록보기</a>
+					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article.program_name }">목록보기</a>
 						<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
 						</div>
 </div>

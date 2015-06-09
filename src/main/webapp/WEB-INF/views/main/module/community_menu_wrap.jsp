@@ -37,7 +37,7 @@
 								<img src="/resources/images/works/2.jpg" alt="" />
 								<div class="overlay1">
 									<a href="/board/boardlist?program_name=Csharp">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-play"></i> <span>C# 커뮤니티</span></div>
 									</a>
 								</div>
 							</div>
