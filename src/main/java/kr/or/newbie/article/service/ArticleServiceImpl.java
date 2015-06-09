@@ -1,11 +1,15 @@
 package kr.or.newbie.article.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import kr.or.newbie.article.controller.ArticleController;
 import kr.or.newbie.article.dao.ArticleDao;
 import kr.or.newbie.article.domain.Article;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +19,8 @@ import org.springframework.stereotype.Service;
  */
 @Service("articleService")
 public class ArticleServiceImpl implements ArticleService{
+	
+	private static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
 	
 	@Autowired
 	private ArticleDao articleDao;
@@ -40,10 +46,14 @@ public class ArticleServiceImpl implements ArticleService{
 	 * 카테고리별 게시글 출력
 	 */
 	@Override
-	public List<Map<String, Object>> showcategoryList(String category,
-			String program_name) {
-		return articleDao.showcategoryList(category, program_name);
+	public List<Map<String, Object>> showcategoryList(String category,String program_name) {
+		logger.debug("마이바티스 서비스 다오");
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		return articleDao.showcategoryList(params);
 	}
+	
 	
 	/**
 	 * 게시글 상세보기

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.article.domain.Article;
-import kr.or.newbie.project.domain.Project;
 
 
 
@@ -19,6 +18,7 @@ public interface ArticleService {
 	
 	//카테고리별 게시글 목록 출력
 	public List<Map<String, Object>> showcategoryList(String category, String program_name);
+	
 	
 	//게시글 상세보기
 	public Article detailArticle(int article_no);

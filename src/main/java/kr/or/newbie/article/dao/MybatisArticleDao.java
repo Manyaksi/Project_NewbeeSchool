@@ -50,13 +50,16 @@ public class MybatisArticleDao implements ArticleDao {
 	 */
 	
 	@Override
-	public List<Map<String, Object>> showcategoryList(String category, String program_name) {
+	public List<Map<String, Object>> showcategoryList(Map<String, String> params) {
 		List<Map<String, Object>> categoryList = null;
 		SqlSession session = null;
 		try{
+			logger.debug("마이바티스 아티클 다오");
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
-			categoryList = dao.showcategoryList(category, program_name);
+			categoryList = dao.showcategoryList(params);
+			
+			
 			
 		}finally{
 			session.close();

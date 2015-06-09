@@ -44,6 +44,7 @@ public class ArticleController {
 		
 		
 		model.addAttribute("list", list);
+		model.addAttribute("programName", program_name);
 		return "/board";
 	}
 	/**
@@ -54,12 +55,15 @@ public class ArticleController {
 							   @RequestParam(value="program_name",required=false, defaultValue="")String program_name,Model model) {
 		logger.debug("카테고리"+category);
 		logger.debug("프로그램 이름"+program_name);
-		List<Map<String, Object>> list = articleService.showcategoryList("%"+category+"%",program_name);
+		
+		List<Map<String, Object>> list = articleService.showcategoryList("%"+category+"%", program_name);
 		
 		
 		model.addAttribute("list", list);
+		model.addAttribute("programName", program_name);
 		return "/board";
 	}
+	
 	
 	
 	/**
