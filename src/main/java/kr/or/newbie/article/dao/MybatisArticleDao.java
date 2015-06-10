@@ -67,6 +67,30 @@ public class MybatisArticleDao implements ArticleDao {
 		
 		return categoryList;
 	}
+	
+	/**
+	 *  조회순별 리스트
+	 */
+	
+	@Override
+	public List<Map<String, Object>> orderbyList(Map<String, String> params) {
+		List<Map<String, Object>> orderbyList = null;
+		SqlSession session = null;
+		try{
+			logger.debug("마이바티스 아티클 다오");
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			orderbyList = dao.orderbyList(params);
+			
+			
+			
+		}finally{
+			session.close();
+		}
+		
+		return orderbyList;
+	}
+
 
 	/**
 	 *  게시글 상세보기
@@ -109,6 +133,27 @@ public class MybatisArticleDao implements ArticleDao {
 			session.close();
 		}
 	}
+	
+	/**
+	 * 좋아요
+	 */
+	@Override
+	public void likecountArticle(int article_no) {
+		SqlSession session = null;
+		
+		try {
+			session = sqlSessionFactory.openSession();
+			
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.likecountArticle(article_no);
+			
+			
+		} finally{
+			session.close();
+		}
+	}
+
+
 
 
 

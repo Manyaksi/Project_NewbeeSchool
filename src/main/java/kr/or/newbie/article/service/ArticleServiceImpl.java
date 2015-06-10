@@ -54,6 +54,22 @@ public class ArticleServiceImpl implements ArticleService{
 		return articleDao.showcategoryList(params);
 	}
 	
+	/**
+	 * 조회수별 게시글 출력
+	 */
+	
+	@Override
+	public List<Map<String, Object>> orderbyList(String category,
+			String program_name, String orderby) {
+		logger.debug("마이바티스 서비스 다오");
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		params.put("orderby", orderby);
+		return articleDao.orderbyList(params);
+	}
+
+	
 	
 	/**
 	 * 게시글 상세보기
@@ -71,6 +87,16 @@ public class ArticleServiceImpl implements ArticleService{
 	public void hitcountArticle(int article_no) {
 		articleDao.hitcountArticle(article_no);
 	}
+	
+	/**
+	 * 좋아요
+	 */
+	@Override
+	public void likecountArticle(int article_no) {
+		articleDao.likecountArticle(article_no);
+	}
+
+
 
 
 

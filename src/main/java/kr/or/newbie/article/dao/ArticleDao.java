@@ -17,6 +17,8 @@ public interface ArticleDao {
 	public List<Map<String, Object>> showarticleList(String program_name);
 	//카테고리별 목록 출력
 	public List<Map<String, Object>> showcategoryList(Map<String, String> params);
+	//조회순 별 리스트 출력
+	public List<Map<String, Object>> orderbyList(Map<String, String> params);
 	
 	
 	//게시글 상세보기
@@ -24,7 +26,8 @@ public interface ArticleDao {
 	
 	//상세보기시 히트 카운트 1 증가
 	public void hitcountArticle(int article_no);
-	
+	//좋아요
+	public void likecountArticle(int article_no);
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
 	

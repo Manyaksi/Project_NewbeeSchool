@@ -50,7 +50,7 @@
 			<b>추천수</b>
 			</td>
 			<td class="col-md-4">
-			${article.like_count }
+			<span id="message">${article.like_count }</span> 
 			</td>
 		</tr>
 			</table>
@@ -67,7 +67,7 @@
 
 		<div clas="row">
 			<div class="paging-left-comp">
-					<a class="category-boxed btn font-black" href="write.html">추천하기</a>
+					<a class="category-boxed btn font-black" id="like">추천하기</a>
 						</div>
 				
 					

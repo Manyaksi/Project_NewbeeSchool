@@ -19,12 +19,17 @@ public interface ArticleService {
 	//카테고리별 게시글 목록 출력
 	public List<Map<String, Object>> showcategoryList(String category, String program_name);
 	
+	//조회수별 게시글 목록 출력
+	public List<Map<String, Object>> orderbyList(String category, String program_name, String orderby);
+	
 	
 	//게시글 상세보기
 	public Article detailArticle(int article_no);
 	
 	//게시글 히트카운트 ㅈ븡가
 	public void hitcountArticle(int article_no);
+	//좋아요!
+	public void likecountArticle(int article_no);
 	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
