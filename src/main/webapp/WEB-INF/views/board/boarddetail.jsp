@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-	<table class="table col-md-12">
+
+<div class="col-md-10 col-md-offset-2">
+	<table class="table">
         
      
        
@@ -65,7 +67,8 @@
 
 		
 
-		<div clas="row">
+		<div class="col-md-12">
+	
 			<div class="paging-left-comp">
 					<a class="category-boxed btn font-black" href="write.html">추천하기</a>
 						</div>
@@ -75,10 +78,12 @@
 					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article.program_name }">목록보기</a>
 						<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
 						</div>
+						
+						
 </div>
         
 		<div class="space80"></div>			
-<table class="table ">
+<table class="table" >
 	<tr>
 <td class="col-md-3 text-center">
 	<img src="/resources/images/author1.png"></img>
@@ -123,5 +128,7 @@
 	<div class="col-md-1 col-md-offset-11">
 		
 		<button type="submit" class="btn btn-default">작성</button>
+	</div>
+	
 	</div>
 	

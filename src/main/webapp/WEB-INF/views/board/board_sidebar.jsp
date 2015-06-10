@@ -19,5 +19,11 @@
 	</div>
 	
 	
+	<div class="sidebar-widget">
+	<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
+	
+	</div>
+	
+	
 
 </div>

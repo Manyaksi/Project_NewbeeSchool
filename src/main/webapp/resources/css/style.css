@@ -3965,7 +3965,13 @@ thup {
 #menu {
 	position: absolute;
 	bottom: 0px;
-	right: 0px;
+	right: 43px;
+}
+
+#write {
+	position: absolute;
+	bottom: 0px;
+	right: 7px;
 }
 
 /* ----------------------------------- 
