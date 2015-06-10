@@ -14,6 +14,8 @@ $(window).scroll(function() {
 		
 		$('#menu').addClass('scroll-menu-func');
 		
+		$('#write').addClass('scroll-write-func');
+		
 		$('.search-btn').addClass('scroll-search-func');
 		
 		$('.board-nav-comp-ul').addClass('scroll-menu-li-func');
@@ -31,6 +33,8 @@ $(window).scroll(function() {
 		$('.col-md-10').removeClass('col-md-offset-2');
 		
 		$('#menu').removeClass('scroll-menu-func');
+		
+		$('#write').removeClass('scroll-write-func');
 		
 		$('.search-btn').removeClass('scroll-search-func');
 		
@@ -99,6 +103,7 @@ $(document).on(
 			$('#menu').addClass('close-menu')
 			$('.navbar-collapse form[role="search"] button').addClass(
 					'board-nav-hideen');
+			$('.placeholder-white').addClass('board-nav-hideen');
 
 		});
 
@@ -110,5 +115,8 @@ $(document).on(
 			$('#menu').removeClass('close-menu')
 			$('.navbar-collapse form[role="search"] button').removeClass(
 					'board-nav-hideen');
+			$('.placeholder-white').removeClass('board-nav-hideen');
+			$('.navbar-collapse form[role="search"] button[type="reset"]').removeClass('board-nav-hideen');
+
 
 		});

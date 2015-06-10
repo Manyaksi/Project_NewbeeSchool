@@ -4,7 +4,7 @@
 <head>
 
 	<jsp:include page="menu/module/head.jsp" />
-	<link href="resources/css/board.css" rel="stylesheet">
+	<link href="/resources/css/board.css" rel="stylesheet">
 
   </head>
 
@@ -17,7 +17,7 @@
 <div class="container" style="margin-top:30px; margin-bottom:150px;">
 <div class="row">
     <jsp:include page="board/board_sidebar.jsp" />
-<jsp:include page="board/boardlist2.jsp" />
+<jsp:include page="board/boardlist.jsp" />
 
 	<div class="space50"></div>
 	</div>
@@ -33,5 +33,6 @@
 
 <jsp:include page="menu/module/nav_uneffect_js.jsp" />
 <script type="text/javascript" src="/resources/js/board.js"></script>
+
 </body>
 </html>
