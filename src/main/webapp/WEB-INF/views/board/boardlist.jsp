@@ -5,10 +5,10 @@
 
 	<div class="board-header">
 		<div id="board-header-tabs">
-			<a class="board-header-tabs-active" href="/board/categorylist?category=${category }&program_name=${programName }"><span class="total-num">420</span>전체</a> 
-			<a class=".." href="/board/categorylist?category=${category }&program_name=${programName }&orderby=hit_count">조회 순</a> 
+			<a class="board-header-tabs-active" href="/board/orderbylist?category=${category }&program_name=${programName }"><span class="total-num">420</span>전체</a> 
+			<a class=".." href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=hit_count">조회 순</a> 
 			<a class=".." href="...">댓글 순</a>
-			<a class=".." href="/board/categorylist?category=${category }&program_name=${programName }&orderby=like_count">추천 순</a>
+			<a class=".." href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=like_count">추천 순</a>
 		</div>
 	</div>
 
