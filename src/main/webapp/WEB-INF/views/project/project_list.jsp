@@ -1,7 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-        <div class="col-md-12">
-       <h2><span class="logo">JAVA</span> 커뮤니티</h2> 
+        <div class="col-md-12 text-center">
+     <h1>프로젝트</h1>
         <p>java커뮤니티 소개글......</p>
+        
+        <div class="text-right">
+        <span class="entypo-plus"></span>
+        </div>
+        
         </div>
         
         <div class="space50"></div>

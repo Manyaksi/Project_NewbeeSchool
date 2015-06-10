@@ -74,7 +74,7 @@
 
 
 						<form class="navbar-form" role="write">
-						<a class="btn btn-default" id="write">
+						<a class="btn btn-default" id="write" href="/board_write">
 								<span class="glyphicon glyphicon-pencil" aria-hidden="true"><span
 									class="sr-only">write</span>
 								</span>

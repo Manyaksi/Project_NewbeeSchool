@@ -19,7 +19,7 @@
 <div class="container" style="margin-top:30px; margin-bottom:150px;">
 <div class="row">
 
-<div id="summernote">Hello Summernote</div>
+		<jsp:include page="board/board_write_contents.jsp" />
 
 
 	<div class="space50"></div>
@@ -45,11 +45,11 @@ $(document).ready(function() {
 	});
 	
 	
-$('.summernote').summernote({
-	  height: 500,                 // set editor height
+$('#summernote').summernote({
+	  height: 300,                 // set editor height
 
-	  minHeight: null,             // set minimum height of editor
-	  maxHeight: null,             // set maximum height of editor
+	  minHeight: 300,             // set minimum height of editor
+	  maxHeight: 500,             // set maximum height of editor
 
 	  focus: true,                 // set focus to editable area after initializing summernote
 	});	

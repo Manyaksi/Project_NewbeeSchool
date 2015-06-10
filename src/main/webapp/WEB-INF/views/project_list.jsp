@@ -5,15 +5,16 @@
 
 	<jsp:include page="menu/module/head.jsp" />
 	
+	
   </head>
 
 
 
 <body>
 		<jsp:include page="menu/nav.jsp" />
+			
 		
-		
-<div class="contatiner" style="margin-top:100px;">
+<div class="contatiner" style="margin-top:0px;">
     <div class="row" style="margin-left:80px;margin-right:80px;margin-bottom:50px;">
 <jsp:include page="project/project_list.jsp" />
 	<div class="space50"></div>

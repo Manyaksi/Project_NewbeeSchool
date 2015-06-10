@@ -99,4 +99,9 @@ public class HomeController {
 		return "minihome";
 	}
 	
+	@RequestMapping(value = "/project_write", method = RequestMethod.GET)
+	public String project_write(Model model) {
+
+		return "project_write";
+	}
 }
