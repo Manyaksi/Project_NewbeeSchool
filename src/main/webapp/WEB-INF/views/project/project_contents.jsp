@@ -299,13 +299,13 @@ border-radius: 2px;
                         <div class="form-group">
                             <label for="email" class="col-sm-2 control-label">댓글내용</label>
                             <div class="col-sm-10">
-                              <textarea class="form-control" name="groupcommContent11" id="addComment" rows="5">으하하</textarea>
+                              <textarea class="form-control" name="groupcommContent" id="addComment" rows="5"></textarea>
+                              <span id="message">0/200</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">                    
                             	<input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
-                            	<input type="hidden" name="groupcommContent" value='으하만알만ㅇ라망나러미넝리ㅏ'>
                             	<input type="hidden" name="userNo" value='10'>
                                 <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> 댓글등록 </button>
                             </div>

@@ -37,7 +37,7 @@
 <script
 src="http://maps.googleapis.com/maps/api/js">
 </script>
-
+<script src="/assets/js/jquery-2.1.3.min.js"></script>
 <script>
 var myCenter=new google.maps.LatLng(37.4757379,126.8840176);
 
@@ -65,7 +65,61 @@ google.maps.event.addListener(marker,'click',function() {
   });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+$(function() {
+	
+	//그냥 처음에 ajax 갔다오기
+	var x = 10;
+	$.ajax({
+		type : "get",
+		url : "/project/",
+		data : "product_num="+ product_num,
+           dataType : "html",//text,xml, json
+           success : function(result) {
+        	   alert(result);
+           }
+		});
+	
+	$("#addComment").keyup(function() {
+		var data = $("#addComment").val();
+
+		if (data.length > 200) {
+			alert("200글자 이하로 입력해주세요 고객님");
+		}
+
+		$("#message").html(data.length + " / 200");
+
+	});
+
+	 $("#addto-cart").hover(function() {
+		
+		var product_num = $("#product_number").val();
+		   $.ajax({
+	            type : "get",
+	            url : "/product/test.mall",
+	            data : "product_num="+ product_num,
+	            dataType : "html",//text,xml, json
+	            success : function(result) {
+	               $("#message").html(result);
+	            }
+			});
+	}); 
+
+});
+
+function validateCheck_review() {
+
+	var reviewcontentForm = $("#reviewcontent");
+	if ((reviewcontentForm.val()).length == 0) {
+		alert("내용을 입력하세요");
+		reviewcontentForm.focus();
+		return false;
+	}
+}
 </script>
 
+
+</script>
+</script>
 </body>
 </html>
