@@ -32,6 +32,7 @@
 	<link href="/resources/css/bootstrap.css" rel="stylesheet">
 	<link href="/resources/css/style.css" rel="stylesheet">
 	<link href="/resources/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/resources/css/flaticon.css" rel="stylesheet">
 	<link href="/resources/js/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/resources/js/owl-carousel/owl.theme.css" rel="stylesheet">
 	<link href="/resources/js/rs-plugin/css/settings.css" rel="stylesheet" />
