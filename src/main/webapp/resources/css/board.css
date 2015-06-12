@@ -27,7 +27,7 @@
 	font-size: 22px;
 }
 
-.navbar-collapse form[role="menu"] button, .navbar-collapse form[role="menu"] a
+.navbar-collapse form[role="menu"] button, .navbar-collapse form[role="menu"] a, .navbar-collapse form[role="write"] a
 	{
 	padding: 8px 12px;
 	border-radius: 0px;
@@ -95,7 +95,7 @@
 	}
 }
 
-.scroll-menu-func{
+.scroll-menu-func,.scroll-write-func {
 	bottom: 20px !important;
 }
 

@@ -27,9 +27,9 @@
 							<input type="hidden" name="program_name" value=${programName }>
 							<input type="text" name="searchValue" id="searchValue"
 								class="placeholder-white form-control pull-right"
-								style="width: 300px; position: absolute; right: 45px; bottom: 5px; color: white; margin-right: 35px, background-color: transparent;"
+								style="width: 300px; position: absolute; right: 100px; bottom: 5px; color: white; margin-right: 35px, background-color: transparent;"
 								placeholder="검색어를 입력해주세요"> <span class="input-group-btn"
-								style="position: absolute; right: 80px; bottom: 0px">
+								style="position: absolute; right: 110px; bottom: 0px">
 								<button type="reset" class="btn btn-default">
 									<span class="glyphicon glyphicon-remove"> <span
 										class="sr-only">Close</span>
@@ -41,14 +41,14 @@
 
 
 
-
 							</span>
 							<button type="submit" class="btn btn-default"
-								style="position: absolute; right: 0px; bottom: 0px">
+								style="position: absolute; right: 40px; bottom: 0px">
 								<span class="glyphicon glyphicon-search"> <span
 									class="sr-only">Search</span>
 								</span>
 							</button>
+							
 						</form>
 						
 						
@@ -76,7 +76,14 @@
 						</form>
 
 
+						<form class="navbar-form" role="write">
+						<a class="btn btn-default" id="write" href="/board_write">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"><span
+									class="sr-only">write</span>
+								</span>
+							</a>
 
+					   </form>
 
 					</div>
 						<!-- /.navbar-collapse -->

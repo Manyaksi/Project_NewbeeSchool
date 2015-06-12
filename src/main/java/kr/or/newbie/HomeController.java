@@ -86,4 +86,22 @@ public class HomeController {
 		return "project_list";
 	}
 	
+	
+	@RequestMapping(value = "/board_write", method = RequestMethod.GET)
+	public String board_write(Model model) {
+
+		return "board_write";
+	}
+	
+	@RequestMapping(value = "/minihome", method = RequestMethod.GET)
+	public String minihome(Model model) {
+
+		return "minihome";
+	}
+	
+	@RequestMapping(value = "/project_write", method = RequestMethod.GET)
+	public String project_write(Model model) {
+
+		return "project_write";
+	}
 }

@@ -1,6 +1,8 @@
 /*------------------------------------------------------------- 
                     GLOBAL STYLES
 ---------------------------------------------------------------*/
+
+
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
@@ -23,6 +25,13 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
 
 body, html {
 	height: 100%;
@@ -3965,7 +3974,13 @@ thup {
 #menu {
 	position: absolute;
 	bottom: 0px;
-	right: 0px;
+	right: 43px;
+}
+
+#write {
+	position: absolute;
+	bottom: 0px;
+	right: 7px;
 }
 
 /* ----------------------------------- 
@@ -4241,4 +4256,9 @@ background-image: none;
 }
 .project-comment-list .comment-post {
   margin-top: 6px;
+}
+
+.readmore_btn{
+	font-size:20px;
+	font-family:seoulNamsan;
 }
