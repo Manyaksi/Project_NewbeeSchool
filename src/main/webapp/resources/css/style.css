@@ -26,12 +26,12 @@
 	font-style: normal;
 }
 
-@import url(http://weloveiconfonts.com/api/?family=zocial);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 
-/* zocial */
-[class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
 }
+
 
 body, html {
 	height: 100%;
@@ -4256,4 +4256,9 @@ background-image: none;
 }
 .project-comment-list .comment-post {
   margin-top: 6px;
+}
+
+.readmore_btn{
+	font-size:20px;
+	font-family:seoulNamsan;
 }

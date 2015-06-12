@@ -37,6 +37,7 @@
 	<link href="/resources/js/owl-carousel/owl.theme.css" rel="stylesheet">
 	<link href="/resources/js/rs-plugin/css/settings.css" rel="stylesheet" />
 	<link href="/resources/css/animate.css" rel="stylesheet" />
+	<link href="/resources/css/flaticon.css" rel="stylesheet" />
 
 <style>
 
