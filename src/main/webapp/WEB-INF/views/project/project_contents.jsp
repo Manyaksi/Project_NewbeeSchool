@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="project-contents">
 	<div class="container">
 		<div class="row">
@@ -6,11 +8,9 @@
 				<div id="googleMap" style="width: 550; height: 500px;"></div>
 				<div class="space50"></div>
 				
-				<ul class="nav nav-tabs">
-					<li role="presentation" class="active"><a href="#summery"
-						aria-controls="summery" role="tab" data-toggle="tab">소개</a></li>
-					<li role="presentation"><a href="#people"
-						aria-controls="people" role="tab" data-toggle="tab">참여자현황</a></li>
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li role="presentation" class="active"><a href="#summery" aria-controls="summery" role="tab" data-toggle="tab">소개</a></li>
+					<li role="presentation"><a href="#people" aria-controls="people" role="tab" data-toggle="tab">참여자현황</a></li>
 				</ul>
 
 				<div class="space30"></div>
@@ -18,18 +18,30 @@
 
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="summery">
-						자바바바바 <br> 공부하실분 모집합니다<br> 초보자 환영<br> 가산 W몰 옆
-						스타벅스에서 할 예정이예요!<br> 매주 토요일 저녁 3시에 공부할 예정입니다<br> 미녀 여성분 환영합니다<br>
-						채팅 프로그램 만들어요~~~~~~~~~^^
+						${detailList["GROUP_CONTENT"] }
 					</div>
-					<div role="tabpanel" class="tab-pane" id="people">...</div>
+					<div role="tabpanel" class="tab-pane" id="people">
+				<c:forEach var="entry" items="${userList }">
+					<ul class="media-list">
+                      <li class="media">
+                        <a class="pull-left" href="#">
+                          <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
+                        </a>
+                        <div class="media-body">
+                          <div class="well ">
+                              <h4 class="media-heading text-uppercase reviews">${entry.nickname }</h4>
+                              <ul class="media-date text-uppercase reviews list-inline">
+                                <li class="dd">22</li>
+                                <li class="mm">09</li>
+                                <li class="aaaa">2014</li>
+                              </ul>
+                          </div>              
+                        </div>
+                      </li>
+                    </ul> 
+                    </c:forEach>
+				</div>
 				
-
-
-
-
-
-
 
 				</div>
 				
@@ -283,15 +295,18 @@ border-radius: 2px;
                     </ul> 
                 </div>
                 <div class="tab-pane" id="add-comment">
-                    <form action="#" method="post" class="form-horizontal" id="commentForm" role="form"> 
+                    <form action="/project/comment_register" method="post" class="form-horizontal" id="commentForm" role="form"> 
                         <div class="form-group">
                             <label for="email" class="col-sm-2 control-label">댓글내용</label>
                             <div class="col-sm-10">
-                              <textarea class="form-control" name="addComment" id="addComment" rows="5"></textarea>
+                              <textarea class="form-control" name="groupcommContent" id="addComment" rows="5"></textarea>
+                              <span id="message">0/200</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">                    
+                            	<input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
+                            	<input type="hidden" name="userNo" value='10'>
                                 <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> 댓글등록 </button>
                             </div>
                         </div>            
