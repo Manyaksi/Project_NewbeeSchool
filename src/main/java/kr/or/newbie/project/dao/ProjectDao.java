@@ -40,4 +40,18 @@ public interface ProjectDao {
 	//프로젝트 댓글남기기
 	public void addProjectComment(ProjectComment projectComment);
 	
+	//프로젝트 댓글 출력
+	public List<Map<String, Object>> showProjectComment(int groupNo);
+	
+	//프로젝트 참여 유저 확인
+	public int confirmEnterUser(Map<String, Integer> params);
+	
+	//프로젝트 만든 주인 확인
+	public int confirmGroupOwner(Map<String, Integer> params);
+	
+	//프로젝트 회원 수
+	public Project confirmGroupCount(int groupNo);
+		
+		
+	
 }

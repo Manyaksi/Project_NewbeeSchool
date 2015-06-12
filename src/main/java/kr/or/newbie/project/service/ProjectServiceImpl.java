@@ -87,7 +87,35 @@ public class ProjectServiceImpl implements ProjectService{
 	public void addProjectComment(ProjectComment projectComment) {
 		projectDao.addProjectComment(projectComment);
 		System.out.println("[Debug] : 프로젝트 댓글 등록");
+		
+	}
+	
+	@Override
+	public List<Map<String, Object>> showProjectComment(int groupNo) {
+		return projectDao.showProjectComment(groupNo);
 	}
 	
 	
+	@Override
+	public int confirmEnterUser(int userNo, int groupNo) {
+		Map<String, Integer> params = new HashMap<String, Integer>();
+		params.put("groupNo", groupNo);
+		params.put("userNo", userNo);
+		
+		return projectDao.confirmEnterUser(params);
+	}
+	
+	@Override
+	public int confirmGroupOwner(int userNo, int groupNo) {
+		Map<String, Integer> params = new HashMap<String, Integer>();
+		params.put("groupNo", groupNo);
+		params.put("userNo", userNo);
+		
+		return projectDao.confirmGroupOwner(params);
+	}
+	
+	@Override
+	public Project confirmGroupCount(int groupNo) {
+		return projectDao.confirmGroupCount(groupNo);
+	}
 }

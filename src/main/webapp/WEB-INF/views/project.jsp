@@ -37,7 +37,6 @@
 <script
 src="http://maps.googleapis.com/maps/api/js">
 </script>
-<script src="/assets/js/jquery-2.1.3.min.js"></script>
 <script>
 var myCenter=new google.maps.LatLng(37.4757379,126.8840176);
 
@@ -66,44 +65,61 @@ google.maps.event.addListener(marker,'click',function() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
+
+$("#addComment").keyup(function() {
+	var data = $("#addComment").val();
+
+	if (data.length > 200) {
+		alert("200글자 이하로 입력해주세요 고객님");
+	}
+
+	$("#message").html(data.length + " / 200");
+
+});
+
+
 $(function() {
-	
+
 	//그냥 처음에 ajax 갔다오기
-	var x = 10;
+	//var userno = '${detailList["USER_NO"]}'; // 쿠키로 바꿔야한다.
+	var userno = 20; // 쿠키로 바꿔야한다.
+	var groupno = '${detailList["GROUP_NO"]}';
+	$('.pbutton').hide();
+	
 	$.ajax({
 		type : "get",
-		url : "/project/project_enter",
-		data : "product_num="+ product_num,
+		url : "/project/enter_user.do",
+		data : "userNo="+ userno + "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(result) {
-        	   alert(result);
+        	   if(result=="owner"){
+        		   
+        		   $('#buttonBreak').show();
+        	   }else if(result=="member"){
+        		   
+        		   $('#buttonExit').show();
+        	   }else if(result=="notting"){
+        		   $('#buttonEnter').show();
+        	   }
            }
 		});
 	
-	$("#addComment").keyup(function() {
-		var data = $("#addComment").val();
-
-		if (data.length > 200) {
-			alert("200글자 이하로 입력해주세요 고객님");
-		}
-
-		$("#message").html(data.length + " / 200");
-
-	});
-
-	 $("#addto-cart").hover(function() {
-		
-		var product_num = $("#product_number").val();
-		   $.ajax({
-	            type : "get",
-	            url : "/product/test.mall",
-	            data : "product_num="+ product_num,
-	            dataType : "html",//text,xml, json
-	            success : function(result) {
-	               $("#message").html(result);
-	            }
-			});
-	}); 
+	
+	$.ajax({
+		type : "get",
+		url : "/project/groupcount.do",
+		data : "&groupNo=" + groupno,
+           dataType : "html",//text,xml, json
+           success : function(outcome) {
+        	   if(outcome == "false"){
+        	  		$("#buttonEnter").attr('disabled', true);
+        	   }else{
+        		   $("#buttonEnter").attr('disabled', false);
+        	   }
+           }
+		});
+ 
+ 
 
 });
 

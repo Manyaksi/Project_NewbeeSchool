@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-<%@ page contentType="text/html; charset=utf-8" %>
-        <div class="col-md-12 text-center">
-     <h1>프로젝트</h1>
-        <p>java커뮤니티 소개글......</p>
-        
-        <span class="entypo-plus"></span>
-        
-        <div class="text-right">
-        <span class="entypo-plus"></span>
-        </div>
-        
-        </div>
-        
-        <div class="space50"></div>
-       
-        
-        <div class="col-md-12">
-<div class="container">
-			<div class="row">
-				
-				
-				<ul id="project_filters" class="clearfix">
-						<li><span class="project_filte rs active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
-						<li><span class="project_filters" data-filter="sort1">Web</span></li>
-						<li><span class="project_filters" data-filter="sort2">Mobile</span></li>
-						<li><span class="project_filters" data-filter="sort3">Design</span></li>
-						<li><span class="project_filters" data-filter="sort4">Photography</span></li>
-						<li><span class="project_filters" data-filter="sort5">Type</span></li>
-					</ul>
-				
-				
-=======
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="col-md-12">
@@ -59,7 +26,6 @@
 			</ul>
 
 			<c:forEach var="project" items="${list }">
->>>>>>> refs/heads/김순재
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
 						<img src="/resources/images/works/1.jpg" alt="...">

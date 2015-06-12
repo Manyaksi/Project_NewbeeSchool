@@ -16,9 +16,6 @@
 <script src="/resources/js/animations.js"></script>
 <script src="/resources/js/jquery.flexslider.js"></script>
 <script src="/resources/js/jquery.parallax.js"></script>
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/heads/김순재
 <!--  <script src="/resources/js/main.js"></script>-->
 

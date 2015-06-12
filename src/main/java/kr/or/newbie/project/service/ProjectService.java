@@ -40,5 +40,16 @@ public interface ProjectService {
 	
 	//프로젝트 댓글 등록
 	public void addProjectComment(ProjectComment projectComment);
+
+	//프로젝트 댓글 출력
+	public List<Map<String, Object>> showProjectComment(int groupNo);
 	
+	//프로젝트 참여 여부 확인하기
+	public int confirmEnterUser(int userNo, int groupNo);
+	
+	//프로젝트 주인 여부 확인하기
+	public int confirmGroupOwner(int userNo, int groupNo);
+
+	//프로젝트 인원 확인하기
+	public Project confirmGroupCount(int groupNo);
 }

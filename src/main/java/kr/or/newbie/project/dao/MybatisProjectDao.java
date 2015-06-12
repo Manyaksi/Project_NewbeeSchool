@@ -140,6 +140,60 @@ public class MybatisProjectDao implements ProjectDao {
 	
 	}
 	
-	
+	@Override
+	//프로젝트 댓글 출력
+	public List<Map<String, Object>> showProjectComment(int groupNo) {
+		List<Map<String, Object>> map = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			map = dao.showProjectComment(groupNo);
+		}finally{
+			session.close();
+		}
+		return map;
+	}
 
+	@Override
+	public int confirmGroupOwner(Map<String, Integer> params) {
+		int count = 0;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			count = dao.confirmGroupOwner(params);
+		}finally{
+			session.close();
+		}
+		return count;
+	}
+	
+	@Override
+	public int confirmEnterUser(Map<String, Integer> params) {
+		int count = 0;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			count = dao.confirmEnterUser(params);
+		}finally{
+			session.close();
+		}
+		return count;
+	}
+	
+	@Override
+	public Project confirmGroupCount(int groupNo) {
+		Project project = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			project = dao.confirmGroupCount(groupNo);
+		}finally{
+			session.close();
+		}
+		return project;
+	}
 }

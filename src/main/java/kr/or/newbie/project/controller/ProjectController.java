@@ -59,12 +59,11 @@ public class ProjectController {
 		System.out.println(groupNo);
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
 		List<Users> list = projectService.showEnterProject(groupNo);
-		for (Users users : list) {
-			System.out.println(users.toString());
-		}
-		
+		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
+
 		model.addAttribute("detailList", map);
 		model.addAttribute("userList",list);
+		model.addAttribute("commentList", mapList);
 		return "/project";
 	}
 	
@@ -78,8 +77,9 @@ public class ProjectController {
 		
 		projectService.joinProject(groupNo, userNo);
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
+		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
 		model.addAttribute("detailList", map);
-		
+		model.addAttribute("commentList", mapList);
 		return "/project";
 	}
 	
@@ -87,11 +87,63 @@ public class ProjectController {
 	 * 프로젝트 댓글등록 요청(project/comment_register)
 	 */
 	@RequestMapping(value="/comment_register", method=RequestMethod.POST)
-	public String register(ProjectComment projectComment, Model model) {
-		System.out.println(projectComment.getUserNo());
-		System.out.println(projectComment.getGroupNo());
-		System.out.println(projectComment.getGroupcommContent());
+	public String registerComment(ProjectComment projectComment, Model model) {
+		
 		projectService.addProjectComment(projectComment);
+		Map<String, Object> map = projectService.showProjectdetail(projectComment.getUserNo());
+		List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getUserNo());
+		model.addAttribute("detailList", map);
+		model.addAttribute("commentList", mapList);
+
+		
 		return "/project";
 	}
+	
+
+	
+	/**
+	 * 프로젝트 만들기 페이지 요청(project/project_register)
+	 */
+	@RequestMapping(value="/comment_register", method=RequestMethod.GET)
+	public String registerProject(Model model) {
+		
+		return "/project_write";
+	}
+	
+	/**
+	 * 프로젝트 참가여부 Boolean(/project/enter_user.do)
+	 */
+	@RequestMapping(value="/enter_user.do", method=RequestMethod.GET)
+	public String enterUserBoolean(int userNo, int groupNo, Model model) {
+		
+		int confirmOwner = projectService.confirmGroupOwner(userNo, groupNo);
+		int confirmUser = projectService.confirmEnterUser(userNo, groupNo);
+		
+		if(confirmOwner > 0){
+			model.addAttribute("result", "owner");
+		}else if(confirmUser > 0){
+			model.addAttribute("result", "member");
+		}else{
+			model.addAttribute("result", "notting");
+		}
+		return "/ajaxResult/enter_user";
+	}
+	
+	
+		/**
+		 * 프로젝트 참가인원 Boolean(/project/groupcount.do)
+		 */
+		@RequestMapping(value="/groupcount.do", method=RequestMethod.GET)
+		public String enterCountBoolean(int groupNo, Model model) {
+			
+			Project project = projectService.confirmGroupCount(groupNo);
+			
+			if(project.getGroupMaxcount() <= project.getGroupCount()){
+				model.addAttribute("outcome", "false");
+			}
+			else{
+				model.addAttribute("outcome", "true");
+			}
+			return "/ajaxResult/enter_user";
+		}
 }
