@@ -47,7 +47,6 @@ public class ArticleServiceImpl implements ArticleService{
 	 */
 	@Override
 	public List<Map<String, Object>> showcategoryList(String category,String program_name) {
-		logger.debug("마이바티스 서비스 다오");
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("category", category);
 		params.put("program_name", program_name);
@@ -59,14 +58,40 @@ public class ArticleServiceImpl implements ArticleService{
 	 */
 	
 	@Override
-	public List<Map<String, Object>> orderbyList(String category,
-			String program_name, String orderby) {
-		logger.debug("마이바티스 서비스 다오");
+	public List<Map<String, Object>> hitcountList(String category,
+			String program_name) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("category", category);
 		params.put("program_name", program_name);
-		params.put("orderby", orderby);
-		return articleDao.orderbyList(params);
+		return articleDao.hitcountList(params);
+	}
+	/**
+	 * 추천순별 게시글 출력
+	 */
+	
+	@Override
+	public List<Map<String, Object>> likecountList(String category,
+			String program_name) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		return articleDao.likecountList(params);
+	}
+	
+	/**
+	 * 게시글 검색
+	 */
+	
+	@Override
+	public List<Map<String, Object>> searchList( String program_name, String category, String searchValue,
+			String searchValue2, String searchValue3) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("searchValue", searchValue);
+		params.put("searchValue2", searchValue2);
+		params.put("searchValue3", searchValue3);
+		params.put("program_name", program_name);
+		params.put("category", category);
+		return articleDao.searchList(params);
 	}
 
 	
@@ -95,6 +120,35 @@ public class ArticleServiceImpl implements ArticleService{
 	public void likecountArticle(int article_no) {
 		articleDao.likecountArticle(article_no);
 	}
+
+	/**
+	 * 댓글 목록
+	 */
+	@Override
+	public List<Map<String, Object>> commentList(int article_no) {
+		
+		return articleDao.commentList(article_no);
+	}
+
+	/**
+	 * 댓글 등록
+	 */
+
+	
+	@Override
+	public void writeComment(int article_no, int user_no, String program_name,
+			String comment_content) {
+		Map<String, String> params = new HashMap<String, String>();
+		String test = String.valueOf(article_no);
+		params.put("article_no", String.valueOf(article_no));
+		params.put("user_no", String.valueOf(user_no));
+		params.put("program_name", program_name);
+		params.put("comment_content", comment_content);
+		
+		articleDao.writeComment(params);
+	}
+
+	
 
 
 

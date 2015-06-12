@@ -33,6 +33,18 @@
 
 <jsp:include page="menu/module/nav_uneffect_js.jsp" />
 <script type="text/javascript" src="/resources/js/board.js"></script>
+<script type="text/javascript">
+
+
+	 $("#searchValue").keydown(function(evt){ 
+	        if( (evt.keyCode) && (evt.keyCode==13) ) {
+	            $("#searchForm").submit();
+	        }
+	    });
+	
+                
+
+</script>
 
 </body>
 </html>

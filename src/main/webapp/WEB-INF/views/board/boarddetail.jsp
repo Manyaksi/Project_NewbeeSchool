@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 	<table class="table col-md-12">
         
      
@@ -58,7 +59,6 @@
 		<div class="row">
 			<div class="col-md-12 text-center read-content">
 				${article.content }
-				
 			</div>
 		</div>
 
@@ -79,49 +79,46 @@
         
 		<div class="space80"></div>			
 <table class="table ">
+
+
+ <c:forEach items="${commentList }" var="comment">  
 	<tr>
 <td class="col-md-3 text-center">
 	<img src="/resources/images/author1.png"></img>
 </td>
+
+
 	<td class="col-md-7">
-		<p><b>방그리</b></p>
-		<span>너 김원영이지?<br>내일보자</span>
+		<p><b> ${comment["NICKNAME"] } </b></p>
+		<span>${comment["COMMENT_CONTENT"] }</span>
 	</td>		
 	<td class="col-md-2 text-right bottom-border">
-		<p>2015-06-01</p>
-		<p>11:59:20</p>
+		<p>${comment["WRITE"] }</p>
 		<p>[댓글쓰기]</p>
 	</td>
 </tr>
-<tr>
-<td class="col-md-3 text-center">
-	<img src="/resources/images/author1.png"></img>
-</td>
-	<td class="col-md-7">
-		<p><b>펩시</b></p>
-		<span>헐 부장님...</span>
-	</td>		
-	<td class="col-md-2  text-right">
-		<p>2015-06-01</p>
-		<p>11:59:20</p>
-		<p>[댓글쓰기]</p>
-	</td>
-</tr>
+
+</c:forEach>
+
 </table>
 
 
 
 
-	
+	<form action="/board/writecomment" method="post">
 	<div class="col-md-12">
-	<textarea class="form-control" rows="6">
+	<textarea class="form-control" rows="6" name="comment_content">
 	(글쓰는공간)
-	
+	${article.article_no }  zz ${article.user_no } zz ${article.program_name }
 	</textarea>
 </div>
 <div class="space10"></div>
 	<div class="col-md-1 col-md-offset-11">
+	<input type="hidden" name="program_name" value="${article.program_name }">
+	<input type="hidden" name="article_no" value="${article.article_no }">
+	<input type="hidden" name="user_no" value="${article.user_no }">
 		
 		<button type="submit" class="btn btn-default">작성</button>
 	</div>
+	</form>
 	

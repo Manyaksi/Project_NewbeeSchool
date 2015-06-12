@@ -21,13 +21,24 @@
         order by article_no asc
 	</select>
 	
-	<!--  **순 별로 리스트 보기 -->
-	<select id="orderbyList" resultType="java.util.Map" parameterType="java.util.Map">
+	<!--  조회순 별로 리스트 보기 -->
+	<select id="hitcountList" resultType="java.util.Map" parameterType="java.util.Map">
 	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice
         from users u JOIN article a
         on a.user_no = u.user_no
         where a.category like #{category} AND a.program_name like #{program_name}
-        order by #{orderby} desc
+        order by hit_count desc
+        
+	</select>
+	
+	<!--  추천순 별로 리스트 보기 -->
+	<select id="likecountList" resultType="java.util.Map" parameterType="java.util.Map">
+	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice
+        from users u JOIN article a
+        on a.user_no = u.user_no
+        where a.category like #{category} AND a.program_name like #{program_name}
+        order by like_count desc
+        
 	</select>
 	
 	<!--  게시글 상세보기 -->
@@ -51,6 +62,31 @@
 	where article_no = #{article_no}
 	</select>
 	
+	<!-- 검색하기 -->
+	<select id="searchList" resultType="java.util.Map" parameterType="java.util.Map">
+	select article_no,nickname, program_name, subject, content, category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, hit_count, like_count, notice
+        from (select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, a.write_date, a.hit_count, a.like_count, a.notice
+        from users u JOIN article a
+        on a.user_no = u.user_no
+        where  a.program_name like #{program_name} AND a.category like #{category})
+        where nickname like #{searchValue} or subject like #{searchValue} or content like #{searchValue} 
+        order by article_no asc
+	</select>
+	
+	<!--  댓글 리스트 -->
+	<select id="commentList" parameterType="Integer" resultType="java.util.Map">
+	select c.comment_no, c.article_no, u.nickname, c.program_name, c.comment_content, TO_CHAR(comment_date,'YY/MM/DD HH24: MI') write, c.step_no, c.order_no
+        from users u JOIN articomment c
+        on c.user_no = u.user_no
+        where c.article_no = #{article_no}
+        order by comment_no asc
+	</select>
+	
+	<!--  댓글 작성 -->
+	<select id="writeComment" parameterType="java.util.Map">
+	insert into articomment(comment_no,article_no, user_no, program_name, comment_content, comment_date, step_no, order_no)
+    values(comment_no_seq.NEXTVAL, #{article_no},  #{user_no}, #{program_name}, #{comment_content}, SYSDATE, 0,0 )
+	</select>
 	
 	
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.article.domain.Article;
+import kr.or.newbie.article.domain.ArticleComment;
 
 
 
@@ -18,8 +19,12 @@ public interface ArticleDao {
 	//카테고리별 목록 출력
 	public List<Map<String, Object>> showcategoryList(Map<String, String> params);
 	//조회순 별 리스트 출력
-	public List<Map<String, Object>> orderbyList(Map<String, String> params);
+	public List<Map<String, Object>> hitcountList(Map<String, String> params);
+	//추천순 별 리스트
+	public List<Map<String, Object>> likecountList(Map<String, String> params);
 	
+	//게시글 검색하기
+	public List<Map<String, Object>> searchList(Map<String, String> params);
 	
 	//게시글 상세보기
 	public Article detailArticle(int article_no);
@@ -28,6 +33,13 @@ public interface ArticleDao {
 	public void hitcountArticle(int article_no);
 	//좋아요
 	public void likecountArticle(int article_no);
+	
+	//댓글 리스트
+	public List<Map<String, Object>> commentList(int article_no);
+	
+	//댓글 등록
+	
+	public void writeComment(Map<String, String> params);
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
 	

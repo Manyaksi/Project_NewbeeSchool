@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.article.domain.Article;
+import kr.or.newbie.article.domain.ArticleComment;
 
 
 
@@ -20,7 +21,13 @@ public interface ArticleService {
 	public List<Map<String, Object>> showcategoryList(String category, String program_name);
 	
 	//조회수별 게시글 목록 출력
-	public List<Map<String, Object>> orderbyList(String category, String program_name, String orderby);
+	public List<Map<String, Object>> hitcountList(String category, String program_name);
+	
+	//추천수별 게시글 목록 출력
+	public List<Map<String, Object>> likecountList(String category, String program_name);
+	
+	//게시글 검색
+	public List<Map<String, Object>> searchList(String program_name, String category ,String searchValue, String searchValue2, String searchValue3);
 	
 	
 	//게시글 상세보기
@@ -30,6 +37,12 @@ public interface ArticleService {
 	public void hitcountArticle(int article_no);
 	//좋아요!
 	public void likecountArticle(int article_no);
+	
+	//댓글 목록
+	public List<Map<String, Object>> commentList(int article_no);
+	
+	//댓글 등록
+	public void writeComment(int article_no, int user_no, String program_name, String comment_content);
 	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);

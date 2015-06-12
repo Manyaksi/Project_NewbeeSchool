@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -61,24 +62,17 @@ public class ArticleController {
 			Model model) {
 
 		List<Map<String, Object>> list = null;
-		logger.debug("카테고리" + category);
-		logger.debug("프로그램 이름" + program_name);
-		logger.debug("오더바이 : " + orderby);
 
+		list = articleService.showcategoryList("%" + category + "%",
+				program_name);
 
-			logger.debug("기본진입");
+		model.addAttribute("list", list);
+		model.addAttribute("category", category);
+		model.addAttribute("programName", program_name);
+		return "/board";
 
-			list = articleService.showcategoryList("%" + category + "%",
-					program_name);
+	}
 
-			model.addAttribute("list", list);
-			model.addAttribute("category", category);
-			model.addAttribute("programName", program_name);
-			return "/board";
-
-		}
-
-	
 	@RequestMapping("/orderbyList")
 	public String orderbyList(
 			@RequestParam(value = "category", required = false, defaultValue = "") String category,
@@ -87,20 +81,50 @@ public class ArticleController {
 			Model model) {
 
 		List<Map<String, Object>> list = null;
-		logger.debug("카테고리" + category);
-		logger.debug("프로그램 이름" + program_name);
-		logger.debug("오더바이 : " + orderby);
-
-			logger.debug("오더바이 진입");
-			list = articleService.orderbyList("%" + category + "%",
-					program_name, orderby);
-			model.addAttribute("list", list);
-			model.addAttribute("category", category);
-			model.addAttribute("programName", program_name);
-			return "/board";
+		
+		if (orderby.equals("hit_count")) {
+			
+			list = articleService.hitcountList("%" + category + "%", program_name);
+		}else if (orderby.equals("like_count")) {
+			list = articleService.likecountList("%" + category + "%", program_name);
 		}
 
+		
+		
+		
+		model.addAttribute("list", list);
+		model.addAttribute("category", category);
+		model.addAttribute("programName", program_name);
+		return "/board";
+	}
 	
+	/**
+	 * 게시글 검색
+	 */
+	@RequestMapping(value="/search", method=RequestMethod.POST)
+	public String searchList(Model model, 
+			@RequestParam(value = "searchValue", required = false, defaultValue = "")String searchValue,
+			@RequestParam(value = "program_name", required = false, defaultValue = "") String program_name,
+			@RequestParam(value = "category", required = false, defaultValue = "") String category){
+		
+
+		List<Map<String, Object>> list = null;
+		
+		logger.debug(searchValue);
+		
+		logger.debug(program_name);
+		logger.debug(category);
+
+		list = articleService.searchList(program_name,"%" + category + "%","%"+searchValue+"%", "%"+searchValue+"%", "%"+searchValue+"%");
+
+		
+		model.addAttribute("category", category);
+		model.addAttribute("programName", program_name);
+		model.addAttribute("list", list);
+		return "/board";
+
+
+	}
 
 	/**
 	 * 게시글 상세보기
@@ -111,7 +135,9 @@ public class ArticleController {
 			@RequestParam(value = "article_no") int article_no, Model model) {
 		articleService.hitcountArticle(article_no);
 		Article article = articleService.detailArticle(article_no);
+		List<Map<String, Object>> commentList = articleService.commentList(article_no);
 
+		model.addAttribute("commentList", commentList);
 		model.addAttribute("article", article);
 
 		return "/board_read";
@@ -134,5 +160,26 @@ public class ArticleController {
 
 		return "/ajaxResult/like";
 	}
+	
+	/**
+	 * 댓글 등록
+	 */
+	
+	@RequestMapping(value ="/writecomment", method=RequestMethod.POST)
+	public String writeComment(@RequestParam(value = "article_no")int article_no,
+	@RequestParam(value = "user_no")int user_no,
+	@RequestParam(value = "program_name")String program_name,
+	@RequestParam(value = "comment_content")String comment_content){
+		
+		logger.debug("등록 진입");
+		logger.debug("파라미터 값들" + article_no +"2."+user_no+"3."+program_name+"4."+comment_content);
+		
+		articleService.writeComment(article_no, user_no, program_name, comment_content);
+		
+		
+		return "redirect:/board/boardread?article_no="+article_no;
+		
+	}
+	
 
 }

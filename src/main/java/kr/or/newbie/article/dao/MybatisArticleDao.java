@@ -5,6 +5,7 @@ import java.util.Map;
 
 import kr.or.newbie.article.controller.ArticleController;
 import kr.or.newbie.article.domain.Article;
+import kr.or.newbie.article.domain.ArticleComment;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -54,7 +55,6 @@ public class MybatisArticleDao implements ArticleDao {
 		List<Map<String, Object>> categoryList = null;
 		SqlSession session = null;
 		try{
-			logger.debug("마이바티스 아티클 다오");
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			categoryList = dao.showcategoryList(params);
@@ -73,14 +73,13 @@ public class MybatisArticleDao implements ArticleDao {
 	 */
 	
 	@Override
-	public List<Map<String, Object>> orderbyList(Map<String, String> params) {
-		List<Map<String, Object>> orderbyList = null;
+	public List<Map<String, Object>> hitcountList(Map<String, String> params) {
+		List<Map<String, Object>> hitcountList = null;
 		SqlSession session = null;
 		try{
-			logger.debug("마이바티스 아티클 다오");
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
-			orderbyList = dao.orderbyList(params);
+			hitcountList = dao.hitcountList(params);
 			
 			
 			
@@ -88,7 +87,51 @@ public class MybatisArticleDao implements ArticleDao {
 			session.close();
 		}
 		
-		return orderbyList;
+		return hitcountList;
+	}
+	
+	/**
+	 *  추천순별 리스트
+	 */
+	
+	@Override
+	public List<Map<String, Object>> likecountList(Map<String, String> params) {
+		List<Map<String, Object>> likecountList = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			likecountList = dao.likecountList(params);
+			
+			
+			
+		}finally{
+			session.close();
+		}
+		
+		return likecountList;
+	}
+	
+	/**
+	 * 게시글 검색
+	 */
+	
+	@Override
+	public List<Map<String, Object>> searchList(Map<String, String> params) {
+		List<Map<String, Object>> searchList = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			searchList = dao.searchList(params);
+			
+			
+			
+		}finally{
+			session.close();
+		}
+		
+		return searchList;
 	}
 
 
@@ -152,6 +195,51 @@ public class MybatisArticleDao implements ArticleDao {
 			session.close();
 		}
 	}
+
+	
+	/**
+	 * 댓글 목록
+	 */
+	@Override
+	public List<Map<String, Object>> commentList(int article_no) {
+		List<Map<String, Object>> commentList = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			commentList = dao.commentList(article_no);
+			
+			
+			
+		}finally{
+			session.close();
+		}
+		
+		return commentList;
+		
+	}
+	
+	/**
+	 * 댓글 등록
+	 */
+
+	@Override
+	public void writeComment(Map<String, String> params) {
+
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.writeComment(params);
+
+		}finally{
+			session.close();
+		}
+
+	}
+	
+
+
 
 
 
