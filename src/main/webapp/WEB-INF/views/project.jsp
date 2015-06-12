@@ -72,7 +72,7 @@ $(function() {
 	var x = 10;
 	$.ajax({
 		type : "get",
-		url : "/project/",
+		url : "/project/project_enter",
 		data : "product_num="+ product_num,
            dataType : "html",//text,xml, json
            success : function(result) {
