@@ -10,6 +10,7 @@ import kr.or.newbie.users.dao.UsersDao;
 import kr.or.newbie.users.domain.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 /** 
@@ -36,6 +37,20 @@ public class UsersServiceImpl implements UsersService{
 		System.out.println("[Debug] : 회원가입 요청");
 		usersDao.joinNewbie(users);
 	}
+
+	@Override
+	public List<Users> selectUserList(Map<String, String> map)
+			throws DataAccessException {
+		return usersDao.selectUserList(map);
+	}
 	
+	@Override
+	public Users confirmEmail(String id) {
+		return usersDao.confirmEmail(id);
+	}
 	
+	@Override
+	public Users confirmNickname(String nickname) {
+		return usersDao.confirmNickname(nickname);
+	}
 }

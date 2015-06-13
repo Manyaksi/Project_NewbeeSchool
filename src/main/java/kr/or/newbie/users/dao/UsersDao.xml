@@ -5,8 +5,15 @@
 <mapper namespace="kr.or.newbie.users.dao.UsersDao">
 
 	<select id="joinNewbie" parameterType="users" >
-		insert into users(user_no, program_name, id, nickname, photo, location, password, point, grade)
-		values(users_no_seq.NextVal, #{progamName}, #{id}, #{nickname}, #{photo}, #{location}, #{password}, #{point}, #{grade})
+		insert into users(user_no, program_name, id, nickname, password)
+		values(user_no_seq.NextVal, #{programName}, #{id}, #{nickname}, #{password})
 	</select>
 	
+	<select id="confirmEmail" parameterType="String" resultType="users">
+		select user_no userNo, program_name programName, id, nickname from users where id = #{id}
+	</select>
+	
+	<select id="confirmNickname" parameterType="String" resultType="users">
+		select user_no userNo, program_name programName, id, nickname from users where nickname = #{nickname}
+	</select>
 </mapper>

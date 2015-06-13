@@ -5,10 +5,14 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import kr.or.newbie.users.dao.MybatisUsersDao;
+import kr.or.newbie.users.domain.Users;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -87,34 +91,15 @@ public class HomeController {
 		return "project";
 	}
 	
-	@RequestMapping(value = "/email_check")
-	public ModelAndView email_check(HttpServletResponse response, String email, String nickname) {
-
-		PrintWriter out = null;
-		try {
-			out = response.getWriter();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		StringBuffer stringBuffer = new StringBuffer();
-		stringBuffer.append("<data>");
-		stringBuffer.append("<event>");
-
-		//디비에서 넘어온 email 값으로 중복 체크후 중복이면 0 아니면 1 넘겨줌.
-		if(true){
-			stringBuffer.append("0");	
-		}else{
-			stringBuffer.append("1");
-		}
-		stringBuffer.append("</event>");
-		stringBuffer.append("</data>");
+	@RequestMapping(value = "/email_check", method = RequestMethod.POST)
+	public String email_check(String email, String nickname, Model model) {
 		System.out.println(email);
 		System.out.println(nickname);
-		out.print(stringBuffer.toString());
-		//System.out.println(request.getParameter("email"));
-		return null;
+		
+		MybatisUsersDao dao = new MybatisUsersDao();
+		
+		model.addAttribute("result", "시발");
+		return "/ajaxResult/result";
 	}
 
 	@RequestMapping(value = "/project_list", method = RequestMethod.GET)

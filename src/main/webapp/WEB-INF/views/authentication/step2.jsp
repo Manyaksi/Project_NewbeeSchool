@@ -1,15 +1,13 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <div class="contatiner" style="margin-top: 80px;  margin-left:120px; margin-right:120px;">
-	
+        	
     <div class="row">
-		
-		
-		
-        
-        
+       
 <div class="space50"></div>
 <div class="col-md-7">
-            <div class="row">
+            		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="profile">
               <div class="col-md-8">
               
             <div id="1" class="survey">
@@ -235,7 +233,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button name="singlebutton" class="btn btn-primary" id="singlebutton">확인</button>
+    <button name="singlebutton" class="tab-pane primary" id="singlebutton">확인</button>
   </div>
 </div>
 

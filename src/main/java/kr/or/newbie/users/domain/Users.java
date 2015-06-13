@@ -43,7 +43,7 @@ public class Users {
 		return programName;
 	}
 
-	public void setProgram_name(String programName) {
+	public void setProgramName(String programName) {
 		this.programName = programName;
 	}
 
@@ -105,7 +105,7 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "Users [user_no=" + userNo + ", program_name=" + programName
+		return "Users [userNo=" + userNo + ", programName=" + programName
 				+ ", id=" + id + ", nickname=" + nickname + ", photo=" + photo
 				+ ", location=" + location + ", password=" + password
 				+ ", point=" + point + ", grade=" + grade + "]";

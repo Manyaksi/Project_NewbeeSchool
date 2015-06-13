@@ -1,5 +1,8 @@
 package kr.or.newbie.users.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import kr.or.newbie.users.domain.Users;
 
 import org.apache.ibatis.session.SqlSession;
@@ -31,6 +34,46 @@ public class MybatisUsersDao implements UsersDao {
 			session.close();
 		}
 	}
+
+	@Override
+	public List<Users> selectUserList(Map<String, String> map) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			return dao.selectUserList(map);
+		}finally{
+			session.close();
+		}
+	}
 	
+	
+	@Override
+	public Users confirmEmail(String id) {
+		Users users = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			users = dao.confirmEmail(id);
+		}finally{
+			session.close();
+		}
+		return users;
+	}
+	
+	@Override
+	public Users confirmNickname(String nickname) {
+		Users users = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			users = dao.confirmNickname(nickname);
+		}finally{
+			session.close();
+		}
+		return users;
+	}
 
 }

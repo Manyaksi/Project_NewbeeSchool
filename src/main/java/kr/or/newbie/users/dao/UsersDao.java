@@ -1,5 +1,8 @@
 package kr.or.newbie.users.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import kr.or.newbie.users.domain.Users;
 
 
@@ -13,5 +16,12 @@ public interface UsersDao {
 	//프로젝트 목록 출력
 	public void joinNewbie(Users users);
 	
+	public List<Users> selectUserList(Map<String, String> map);
+
+	//ajax id
+	public Users confirmEmail(String id);
+
+	//ajax nickname
+	public Users confirmNickname(String nickname);
 	
 }
