@@ -4,14 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kr.or.newbie.article.controller.ArticleController;
-import kr.or.newbie.article.dao.ArticleDao;
-import kr.or.newbie.article.domain.Article;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import kr.or.newbie.article.controller.ArticleController;
+import kr.or.newbie.article.dao.ArticleDao;
+import kr.or.newbie.article.domain.Article;
 
 /** 
  * 학사 관련 비즈니스 메소드 구현 Business Object
@@ -147,14 +148,5 @@ public class ArticleServiceImpl implements ArticleService{
 		
 		articleDao.writeComment(params);
 	}
-
-	
-
-
-
-
-
-	
-	
 	
 }
