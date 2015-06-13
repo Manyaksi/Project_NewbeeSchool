@@ -4,7 +4,7 @@
 <head>
 
 	<jsp:include page="menu/module/head.jsp" />
-	
+	<link href="/resources/css/set2.css" rel="stylesheet" />
 	
   </head>
 

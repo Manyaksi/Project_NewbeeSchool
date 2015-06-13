@@ -308,12 +308,17 @@ header {
 ---------------------------------------------------------------*/
 .intro-regist {
 	/* background:#27ae60 url("../demo/wrappers/2.jpg") no-repeat center fixed; */
-	background-color: gray;
-	/*	background-color: transparent;*/
+	/*background-color: gray;*/
+	background-color: rgba(0, 0, 0, 0.1);
 	background-size: 100% auto;
-	padding: 170px 0 130px;
+	padding: 170px 0 350px;
 	position: relative;
 }
+
+.intro-regist.container {
+	padding-top:100px;
+}
+
 
 .intro-regist  h6 {
 	font-size: 70px;
@@ -599,12 +604,13 @@ header {
 	display: block;
 	padding: 8px 20px;
 	text-decoration: none;
-	color: #fff;
+	color: black;
+font-family: nanum gothic;
+font-weight: 100;
 	cursor: pointer;
 	text-transform: uppercase;
 	border: 2px solid transparent;
-	font-size: 14px;
-	font-weight: 700;
+	font-size: 12px;
 	border-radius: 5px;
 }
 
@@ -612,7 +618,7 @@ header {
 	#project_filters li span.active {
 	border: 2px solid #fff;
 	background: #fff;
-	color: #27ae60;
+	color: #000;
 }
 
 #filters li span:hover, #filters li span.active:hover,
@@ -3126,6 +3132,7 @@ input.simple_input, textarea.simple_input {
 }
 
 input.full, textarea.full {
+	opacity: 0.7;
 	display: block;
 	width: 100%;
 	-webkit-box-sizing: border-box;
@@ -3143,8 +3150,12 @@ input.full, textarea.full {
 	color: #fff;
 	border: 0px;
 	color: white;
+	font-size:18px;
 	font-family: nanum gothic coding;
 	font-weight: 500;
+	letter-spacing:-1px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .margin-icon {
@@ -3616,12 +3627,14 @@ thup {
 }
 
 .project-blurb {
+	font-size: 70% !important;
+	text-overflow:ellipsis;overflow:hidden; white-space:nowrap;
 	
 }
 
 .project-byline {
-	text-align: left;
-	color: darkgray;
+	text-align: center;
+	color: white;
 }
 
 .project-content-header {

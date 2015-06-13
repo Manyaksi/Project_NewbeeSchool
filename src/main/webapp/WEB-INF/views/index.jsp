@@ -5,6 +5,8 @@
 <head>
 <!-- head 모듈 -->
 	<jsp:include page="menu/module/head.jsp" />
+	<link rel="stylesheet" href="/resources/css/videostyle.css">
+	
 </head>
 
 
@@ -63,7 +65,19 @@
 <!-- JAVA SCRIPT 모듈 -->
 
 <jsp:include page="menu/module/nav_effect_js.jsp" />
+<script src="/resources/js/videoscript.js"></script>
+<script>
+  $(document).ready(function() {
 
+     HeaderVideo.init({
+        container: $('.header-video'),
+        header: $('.header-video--media'),
+        videoTrigger: $("#video-trigger"),
+        autoPlayVideo: false
+      });    
+
+  });
+</script>
 
 </body>
 </html>

@@ -13,5 +13,4 @@
 <script src="/resources/js/jquery.scrollTo.js"></script>
 <script src="/resources/js/animations.js"></script>
 <script src="/resources/js/jquery.flexslider.js"></script>
-<script src="/resources/js/jquery.parallax.js"></script>
 <script src="/resources/js/main.js"></script>

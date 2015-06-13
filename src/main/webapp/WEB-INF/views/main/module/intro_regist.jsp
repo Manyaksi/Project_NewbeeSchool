@@ -1,12 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<video autoplay="true" loop="loop" muted="" id="teaser-video" class="teaser-video"><source src="/resources/video/bgvideo1.mp4" type="video/mp4"><source src="video/masthead-teaser.ogv" type="video/ogg"></video>
 <div class="intro-regist">
+
 
 		<div class="row">
 
-<video autoplay loop poster="video.png" id="bgvid">
-<source src="동영상.webm" type="video/webm">
-<source src="동영상.mp4" type="video/mp4">
-</video>
+
+
 
 			<div class="col-md-12">
 
@@ -55,7 +55,7 @@
                         <input name="token" type="hidden" value="22cc9df6d36167aec883d478248fae96.0"></form>
                         
                     
-                      <small>개발유치원에 가입하시면, <a href="/terms">이용약관</a> 과 <a href="/privacy">개인정보보호정책</a> 에 동의하시게 됩니다. </small>
+                      <small style="color:white;">개발유치원에 가입하시면, <a style="color:#428bca;" href="/terms">이용약관</a> 과 <a style="color:#428bca;" href="/privacy">개인정보보호정책</a> 에 동의하시게 됩니다. </small>
         
                         </div>
                         </div>

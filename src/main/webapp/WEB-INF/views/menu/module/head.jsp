@@ -39,25 +39,6 @@
 	<link href="/resources/css/animate.css" rel="stylesheet" />
 	<link href="/resources/css/flaticon.css" rel="stylesheet" />
 
-<style>
-
-
-video#bgvid {
-position: fixed;
-top: 50%;
-left: 50%;
-min-width: 100%;
-min-height: 100%;
-width: auto;
-height: auto;
-z-index: -100;
--webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-background: url(video.png) no-repeat;
-background-size: cover;
-}
-
-</style>
 
 
 
