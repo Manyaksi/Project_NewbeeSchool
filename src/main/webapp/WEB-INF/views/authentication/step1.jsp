@@ -142,8 +142,7 @@
 				<!--  1단계  컨텐츠 끝 -->
 
 				<!--  2단계  컨텐츠-->
-				<div role="tabpanel" class="tab-pane" id="step2"
-					style="margin-top: 50px;">
+				<div role="tabpanel" class="tab-pane" id="step2" style="margin-top: 50px;">
 
 					<!--  왼쪽 화면 col-8짜리 -->
 					<div class="col-md-8">
