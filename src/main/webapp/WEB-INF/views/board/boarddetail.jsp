@@ -59,8 +59,8 @@
 			</table>
 		
 		<div class="row">
-			<div class="col-md-12 text-center read-content">
-				${article["ARTICLE_CONTENT"] }
+			<div class="col-md-12 read-content">
+				${article["CONTENT"] }
 			</div>
 		</div>
 
@@ -113,7 +113,7 @@
 	<form action="/board/writecomment" method="post">
 	<div class="col-md-12">
 	<textarea class="form-control" rows="6" name="comment_content">
-	(글쓰는공간)
+	
 	</textarea>
 </div>
 <div class="space10"></div>

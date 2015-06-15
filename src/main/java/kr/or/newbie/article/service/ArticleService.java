@@ -29,6 +29,9 @@ public interface ArticleService {
 	//추천수별 게시글 목록 출력
 	public List<Map<String, Object>> likecountList(String category, String program_name);
 	
+	//추천수별 게시글 목록 출력
+	public List<Map<String, Object>> commentcountList(String category, String program_name);
+	
 	//게시글 검색
 	public List<Map<String, Object>> searchList(String program_name, String category ,String searchValue, String searchValue2, String searchValue3);
 	
@@ -38,6 +41,10 @@ public interface ArticleService {
 	
 	//게시글 히트카운트 ㅈ븡가
 	public void hitcountArticle(int article_no);
+	
+	//댓글 등록시 증가
+	public void commentcount(int article_no);
+	
 	//좋아요!
 	public void likecountArticle(int article_no);
 	

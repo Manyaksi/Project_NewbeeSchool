@@ -25,6 +25,8 @@ public interface ArticleDao {
 	public List<Map<String, Object>> hitcountList(Map<String, String> params);
 	//추천순 별 리스트
 	public List<Map<String, Object>> likecountList(Map<String, String> params);
+	//댓글수별 리스트
+	public List<Map<String, Object>> commentcountList(Map<String, String> params);
 	
 	//게시글 검색하기
 	public List<Map<String, Object>> searchList(Map<String, String> params);
@@ -34,6 +36,8 @@ public interface ArticleDao {
 	
 	//상세보기시 히트 카운트 1 증가
 	public void hitcountArticle(int article_no);
+	//댓글등록시 카운트 1증가
+	public void commentcount(int article_no);
 	//좋아요
 	public void likecountArticle(int article_no);
 	

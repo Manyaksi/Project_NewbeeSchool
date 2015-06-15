@@ -15,22 +15,21 @@ import org.springframework.stereotype.Repository;
 
 @Repository("ArticleDao")
 public class MybatisArticleDao implements ArticleDao {
-	
-	private static final Logger logger = LoggerFactory.getLogger(ArticleController.class);
-	
-	
+
+	private static final Logger logger = LoggerFactory
+			.getLogger(ArticleController.class);
+
 	@Autowired
 	private SqlSessionFactory sqlSessionFactory;
 
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		this.sqlSessionFactory = sqlSessionFactory;
 	}
-	
-	
+
 	/**
-	 *  게시글 등록
+	 * 게시글 등록
 	 */
-	
+
 	@Override
 	public void writeArticle(Article article) {
 		SqlSession session = null;
@@ -39,14 +38,14 @@ public class MybatisArticleDao implements ArticleDao {
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			dao.writeArticle(article);
 
-		}finally{
+		} finally {
 			session.close();
 		}
 
 	}
-	
+
 	/**
-	 *  게시글 목록
+	 * 게시글 목록
 	 */
 
 	@Override
@@ -63,98 +62,108 @@ public class MybatisArticleDao implements ArticleDao {
 		return boardList;
 
 	}
-	
+
 	/**
 	 * 카테고리별 게시글 목록
 	 */
-	
+
 	@Override
 	public List<Map<String, Object>> showcategoryList(Map<String, String> params) {
 		List<Map<String, Object>> categoryList = null;
 		SqlSession session = null;
-		try{
+		try {
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			categoryList = dao.showcategoryList(params);
-			
-			
-			
-		}finally{
+
+		} finally {
 			session.close();
 		}
-		
+
 		return categoryList;
 	}
-	
+
 	/**
-	 *  조회순별 리스트
+	 * 조회순별 리스트
 	 */
-	
+
 	@Override
 	public List<Map<String, Object>> hitcountList(Map<String, String> params) {
 		List<Map<String, Object>> hitcountList = null;
 		SqlSession session = null;
-		try{
+		try {
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			hitcountList = dao.hitcountList(params);
-			
-			
-			
-		}finally{
+
+		} finally {
 			session.close();
 		}
-		
+
 		return hitcountList;
 	}
-	
+
 	/**
-	 *  추천순별 리스트
+	 * 추천순별 리스트
 	 */
-	
+
 	@Override
 	public List<Map<String, Object>> likecountList(Map<String, String> params) {
 		List<Map<String, Object>> likecountList = null;
 		SqlSession session = null;
-		try{
+		try {
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			likecountList = dao.likecountList(params);
+
+		} finally {
+			session.close();
+		}
+
+		return likecountList;
+	}
+	/**
+	 * 댓글수별 리스트
+	 */
+	
+	@Override
+	public List<Map<String, Object>> commentcountList(Map<String, String> params) {
+		List<Map<String, Object>> commentcountList = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			commentcountList = dao.commentcountList(params);
 			
-			
-			
-		}finally{
+		} finally {
 			session.close();
 		}
 		
-		return likecountList;
+		return commentcountList;
 	}
-	
+
 	/**
 	 * 게시글 검색
 	 */
-	
+
 	@Override
 	public List<Map<String, Object>> searchList(Map<String, String> params) {
 		List<Map<String, Object>> searchList = null;
 		SqlSession session = null;
-		try{
+		try {
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			searchList = dao.searchList(params);
-			
-			
-			
-		}finally{
+
+		} finally {
 			session.close();
 		}
-		
+
 		return searchList;
 	}
 
-
 	/**
-	 *  게시글 상세보기
+	 * 게시글 상세보기
 	 */
 	@Override
 	public Map<String, Object> detailArticle(int article_no) {
@@ -165,8 +174,7 @@ public class MybatisArticleDao implements ArticleDao {
 
 		try {
 			session = sqlSessionFactory.openSession();
-			
-			
+
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			article = dao.detailArticle(article_no);
 		} finally {
@@ -177,44 +185,61 @@ public class MybatisArticleDao implements ArticleDao {
 	}
 
 	/**
-	 * 카운트 증가
+	 * 히트카운트 증가
 	 */
 	@Override
 	public void hitcountArticle(int article_no) {
 		SqlSession session = null;
-		
+
 		try {
 			session = sqlSessionFactory.openSession();
-			
+
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			dao.hitcountArticle(article_no);
-			
-			
-		} finally{
+
+		} finally {
 			session.close();
 		}
 	}
-	
+
+	/**
+	 * 댓글 카운트 증가
+	 */
+
+	@Override
+	public void commentcount(int article_no) {
+		SqlSession session = null;
+
+		try {
+			session = sqlSessionFactory.openSession();
+
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.commentcount(article_no);
+
+		} finally {
+			session.close();
+		}
+
+	}
+
 	/**
 	 * 좋아요
 	 */
 	@Override
 	public void likecountArticle(int article_no) {
 		SqlSession session = null;
-		
+
 		try {
 			session = sqlSessionFactory.openSession();
-			
+
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			dao.likecountArticle(article_no);
-			
-			
-		} finally{
+
+		} finally {
 			session.close();
 		}
 	}
 
-	
 	/**
 	 * 댓글 목록
 	 */
@@ -222,21 +247,19 @@ public class MybatisArticleDao implements ArticleDao {
 	public List<Map<String, Object>> commentList(int article_no) {
 		List<Map<String, Object>> commentList = null;
 		SqlSession session = null;
-		try{
+		try {
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			commentList = dao.commentList(article_no);
-			
-			
-			
-		}finally{
+
+		} finally {
 			session.close();
 		}
-		
+
 		return commentList;
-		
+
 	}
-	
+
 	/**
 	 * 댓글 등록
 	 */
@@ -250,18 +273,11 @@ public class MybatisArticleDao implements ArticleDao {
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			dao.writeComment(params);
 
-		}finally{
+		} finally {
 			session.close();
 		}
 
 	}
-	
-
-
-
-
-
-
 
 	/*
 	 * @Override public void addProject(Project project) { // TODO
@@ -282,6 +298,5 @@ public class MybatisArticleDao implements ArticleDao {
 	 * @Override public Project showProjectdetail() { // TODO Auto-generated
 	 * method stub return null; }
 	 */
-	
-}
 
+}

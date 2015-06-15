@@ -45,7 +45,7 @@
 <div class="form-group">
   <div class="col-md-12 text-right">
     <button id="write_btn" name="write_btn" class="btn btn-primary">작성완료</button>
-    <button id="cancel" name="cancel" class="btn btn-default">취소</button>
+    <a id="cancel" name="cancel" class="btn btn-default" href="/board/boardlist?program_name=${programName }">취소</a>
   </div>
 </div>
 <input type="hidden" name="user_no" value="2">

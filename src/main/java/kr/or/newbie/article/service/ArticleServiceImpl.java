@@ -88,6 +88,18 @@ public class ArticleServiceImpl implements ArticleService{
 		params.put("program_name", program_name);
 		return articleDao.likecountList(params);
 	}
+	/**
+	 * 댓글수별 게시글 출력
+	 */
+	
+	@Override
+	public List<Map<String, Object>> commentcountList(String category,
+			String program_name) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		return articleDao.commentcountList(params);
+	}
 	
 	/**
 	 * 게시글 검색
@@ -125,6 +137,14 @@ public class ArticleServiceImpl implements ArticleService{
 	}
 	
 	/**
+	 * 댓글 카운트 증가
+	 */
+	@Override
+	public void commentcount(int article_no) {
+		articleDao.commentcount(article_no);
+	}
+	
+	/**
 	 * 좋아요
 	 */
 	@Override
@@ -158,5 +178,7 @@ public class ArticleServiceImpl implements ArticleService{
 		
 		articleDao.writeComment(params);
 	}
+
+	
 	
 }

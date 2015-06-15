@@ -38,11 +38,17 @@
 <jsp:include page="menu/module/nav_uneffect_js.jsp" />
 <script type="text/javascript" src="/resources/js/board.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
-<%-- <c:param name="content" value=$('.note-editable').children()></c:param> --%>
 
 <script>
 
 $(document).ready(function() {
+
+	$(".placeholder-white form-control pull-right").keydown(function(evt){ 
+	    if( (evt.keyCode) && (evt.keyCode==13) ) {
+	         $(".navbar-form search-btn").submit();
+	     }
+	 });	
+	
 	  $('#summernote').summernote();
 	  
 	  $("#writearticle").submit(function(){
@@ -53,9 +59,7 @@ $(document).ready(function() {
 		  
 	  	return true;
 	  
-	  })
-	  
-	  
+	  });
 	  
 	});
 	
@@ -70,6 +74,8 @@ $('#summernote').summernote({
 	});	
 	
 	var contents = $('.note-editable').html();
+	
+
 
 </script>
 

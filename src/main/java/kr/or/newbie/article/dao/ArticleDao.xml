@@ -20,16 +20,18 @@
 	</select>
 	<!--  게시글 리스트 -->
 	<select id="showarticleList" resultType="java.util.Map" parameterType="String">
-		select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count, a.like_count, a.notice
+		select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count, a.like_count, a.notice, a.commentcount
         from users u JOIN article a
         on a.user_no = u.user_no
         where a.program_name like #{program_name}
         order by article_no asc
 	</select>
 	
+	
+	
 	<!--  카테고리별 리스트 -->
 	<select id="showcategoryList" resultType="java.util.Map" parameterType="java.util.Map" >
-		select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count, a.like_count, a.notice
+		select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count, a.like_count, a.notice,a.commentcount
         from users u JOIN article a
         on a.user_no = u.user_no
         where a.category like #{category} AND a.program_name like #{program_name}
@@ -38,7 +40,7 @@
 	
 	<!--  조회순 별로 리스트 보기 -->
 	<select id="hitcountList" resultType="java.util.Map" parameterType="java.util.Map">
-	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice
+	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice,a.commentcount
         from users u JOIN article a
         on a.user_no = u.user_no
         where a.category like #{category} AND a.program_name like #{program_name}
@@ -48,11 +50,21 @@
 	
 	<!--  추천순 별로 리스트 보기 -->
 	<select id="likecountList" resultType="java.util.Map" parameterType="java.util.Map">
-	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice
+	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice,a.commentcount
         from users u JOIN article a
         on a.user_no = u.user_no
         where a.category like #{category} AND a.program_name like #{program_name}
         order by like_count desc
+        
+	</select>
+	
+	<!--  댓글수 별로 리스트 보기 -->
+	<select id="commentcountList" resultType="java.util.Map" parameterType="java.util.Map">
+	 	select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count hit_count, a.like_count, a.notice,a.commentcount
+        from users u JOIN article a
+        on a.user_no = u.user_no
+        where a.category like #{category} AND a.program_name like #{program_name}
+        order by commentcount desc
         
 	</select>
 	
@@ -74,6 +86,12 @@
 	where article_no = #{article_no}
 	</select>
 	
+	<!--  댓글 카운트 증가 -->
+	<select id="commentcount" parameterType="Integer">
+	update article
+	set commentcount = commentcount+1
+	where article_no = #{article_no}
+	</select>
 	<!-- 좋아요! -->
 	<select id="likecountArticle" parameterType="Integer">
 	update article
