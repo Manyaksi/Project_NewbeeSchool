@@ -1,14 +1,11 @@
 package kr.or.newbie.users.controller;
 
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import kr.or.newbie.HomeController;
-import kr.or.newbie.project.domain.Project;
-import kr.or.newbie.project.service.ProjectService;
-import kr.or.newbie.users.dao.MybatisUsersDao;
 import kr.or.newbie.users.domain.Users;
 import kr.or.newbie.users.service.UsersService;
 
@@ -93,4 +90,106 @@ public class UsersController {
 		model.addAttribute("resultNickname", result);
 		return "/ajaxResult/result";
 	}
+	
+	/**
+	 *  로그인화면요청(GET)
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		return "/login/result";
+	}
+	
+	/**
+	 * 로그인 요청(POST)
+	 */
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	public String login(Users users,  HttpServletResponse response, Model model){
+		
+		Users loginUsers = usersService.login(users);
+		
+		logger.debug("로그인 진입");
+		
+		
+		if(loginUsers != null){
+			logger.debug("[로그인]요청(GET)이 들어옴 : " + users.getId() + users.getPassword());
+			logger.debug("[로그인] 로그인 성공한 회원 : " + loginUsers.toString());
+			
+			Cookie loginCookie = new Cookie("loginId", loginUsers.getId());
+			loginCookie.setPath("/");
+			response.addCookie(loginCookie);
+			return "redirect:"+"/";
+		}else{
+			logger.debug("로그인 실패");
+			model.addAttribute("loginResult", "등록된 회원이 아닙니다.");
+			return "/";
+		}
+	}
+	
+	
+	/**
+	 *  로그아웃 화면요청(GET)
+	 */
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(Model model, HttpServletRequest request, HttpServletResponse response) {
+		
+		Cookie[] cookies = request.getCookies();
+		
+		logger.debug("로그아웃 진입");
+		
+		if(cookies != null){
+			logger.debug("if문 진입");
+			for (Cookie cookie : cookies) {
+				String id = cookie.getName();
+				if (id.equals("loginId")) {
+					cookie.setMaxAge(0);
+					cookie.setPath("/");
+					response.addCookie(cookie);
+					
+				}
+			}
+		}
+		
+		return "redirect:/";
+	}
+	
+/*	
+	  *//**
+	   * 로그인부분
+	   *//*
+	  @RequestMapping(value = "/login", method = RequestMethod.POST)
+	   public String login(Model model, String userId, String password,
+	         HttpServletResponse response) {
+	         User user = null;
+	         
+	         //유저 확인
+	         user = userService.login(userId, password);
+	         
+	         //확인후 쿠키 저장
+	         response.addCookie(new Cookie("userId", user.getUserId()));
+	         response.addCookie(new Cookie("emailAddr", user.getEmailAddr()));
+	         model.addAttribute("user", user);
+	         
+	         return "redirect:/main";
+	   }
+	  
+	  *//**
+	   * 로그아웃부분
+	   *//*
+	   @RequestMapping(value = "/logout", method = RequestMethod.GET)
+	   public String login(
+	         Model model,
+	         @CookieValue(value = "id", defaultValue = "null") Cookie userId,
+	         @CookieValue(value = "emailAddr", defaultValue = "null") Cookie emailAddr ,
+	         HttpServletResponse response) {
+	         
+	         userId.setMaxAge(0);
+	         userId.setPath("/");
+	         
+	         emailAddr.setMaxAge(0);
+	         emailAddr.setPath("/");
+	         
+	         response.addCookie(userId);
+	         response.addCookie(emailAddr);
+	         return "redirect:/main";
+	   }*/
 }

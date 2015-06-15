@@ -1,14 +1,14 @@
 package kr.or.newbie.users.service;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kr.or.newbie.project.dao.ProjectDao;
-import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.users.controller.UsersController;
 import kr.or.newbie.users.dao.UsersDao;
 import kr.or.newbie.users.domain.Users;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -19,6 +19,9 @@ import org.springframework.stereotype.Service;
  */
 @Service("usersService")
 public class UsersServiceImpl implements UsersService{
+	
+	private static final Logger logger = LoggerFactory.getLogger(UsersController.class);
+
 	
 	@Autowired
 	private UsersDao usersDao;
@@ -52,5 +55,16 @@ public class UsersServiceImpl implements UsersService{
 	@Override
 	public Users confirmNickname(String nickname) {
 		return usersDao.confirmNickname(nickname);
+	}
+
+	@Override
+	public Users confirmUsers(String id, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public Users login(Users users) throws RuntimeException {
+		return usersDao.login(users);
 	}
 }

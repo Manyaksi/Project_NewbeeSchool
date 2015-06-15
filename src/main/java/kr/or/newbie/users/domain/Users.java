@@ -30,6 +30,8 @@ public class Users {
 		this.point = point;
 		this.grade = grade;
 	}
+	
+	
 
 	public int getUserNo() {
 		return userNo;

@@ -3,15 +3,20 @@ package kr.or.newbie.users.dao;
 import java.util.List;
 import java.util.Map;
 
+import kr.or.newbie.users.controller.UsersController;
 import kr.or.newbie.users.domain.Users;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository("usersDao")
 public class MybatisUsersDao implements UsersDao {
+	
+	private static final Logger logger = LoggerFactory.getLogger(UsersController.class); 
 	
 	@Autowired
 	private SqlSessionFactory sqlSessionFactory;
@@ -74,6 +79,25 @@ public class MybatisUsersDao implements UsersDao {
 			session.close();
 		}
 		return users;
+	}
+	
+	/**
+	 * 로그인
+	 */
+	@Override
+	public Users login(Users user) throws RuntimeException{
+		Users loginResult = null;
+		SqlSession session = null;
+		try{
+			logger.debug("[DAO] + 로그인 요청");
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			loginResult = dao.login(user);
+		}finally{
+			session.close();
+		}
+		
+		return loginResult;
 	}
 
 }

@@ -23,5 +23,8 @@ public interface UsersDao {
 
 	//ajax nickname
 	public Users confirmNickname(String nickname);
+
+	// Login
+	public Users login(Users user) throws RuntimeException;
 	
 }
