@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.article.domain.Article;
-import kr.or.newbie.article.domain.ArticleComment;
 
 
 
@@ -13,6 +12,10 @@ import kr.or.newbie.article.domain.ArticleComment;
  * @author 김순재
  */
 public interface ArticleService {
+	
+	
+	//게시글 등록
+	public void writeArticle(Article article);
 	
 	//게시글 목록 출력
 	public List<Map<String, Object>> showarticletList(String program_name);
@@ -31,7 +34,7 @@ public interface ArticleService {
 	
 	
 	//게시글 상세보기
-	public Article detailArticle(int article_no);
+	public Map<String, Object> detailArticle(int article_no);
 	
 	//게시글 히트카운트 ㅈ븡가
 	public void hitcountArticle(int article_no);

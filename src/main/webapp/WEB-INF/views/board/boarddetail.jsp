@@ -11,7 +11,7 @@
 			<b>제목</b>
 			</td>
 			<td colspan="3" class="col-md-10">
-			${article.subject }
+			${article.SUBJECT }
 			</td>
 		</tr>
 		
@@ -20,7 +20,7 @@
 			<b>분류</b>
 			</td>
 			<td colspan="3" class="col-md-10">
-			${article.category }
+			${article.CATEGORY }
 			</tr>
 		
 		  <tr class="col-md-12">
@@ -28,7 +28,7 @@
 			<b>글쓴이</b>
 			</td>
 			<td  colspan="3" class="col-md-10">
-			펩시(포인트:1,201)
+			${article.NICKNAME }(포인트:${article["POINT"] })
 			</td>
 		</tr>
 		
@@ -38,7 +38,7 @@
 			<b>등록일</b>
 			</td>
 			<td colspan="3" class="col-md-10">
-			${article.write_date }
+			${article["WRITE_DATE"] }
 			</td>
 		</tr>
         
@@ -47,20 +47,20 @@
 			<b>조회수</b>
 			</td>
 			<td  class="col-md-4">
-			${article.hit_count }
+			${article["HIT_COUNT"] }
 			</td>
 			  <td class="col-md-2">
 			<b>추천수</b>
 			</td>
 			<td class="col-md-4">
-			<span id="message">${article.like_count }</span> 
+			<span id="message">${article["LIKE_COUNT"] }</span> 
 			</td>
 		</tr>
 			</table>
 		
 		<div class="row">
 			<div class="col-md-12 text-center read-content">
-				${article.content }
+				${article["ARTICLE_CONTENT"] }
 			</div>
 		</div>
 
@@ -75,7 +75,7 @@
 				
 					
 					<div class="paging-right-comp">
-					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article.program_name }">목록보기</a>
+					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article['PROGRAM_NAME'] }">목록보기</a>
 						<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
 						</div>
 						
@@ -114,14 +114,13 @@
 	<div class="col-md-12">
 	<textarea class="form-control" rows="6" name="comment_content">
 	(글쓰는공간)
-	${article.article_no }  zz ${article.user_no } zz ${article.program_name }
 	</textarea>
 </div>
 <div class="space10"></div>
 	<div class="col-md-1 col-md-offset-11">
-	<input type="hidden" name="program_name" value="${article.program_name }">
-	<input type="hidden" name="article_no" value="${article.article_no }">
-	<input type="hidden" name="user_no" value="${article.user_no }">
+	<input type="hidden" name="program_name" value="${article['PROGRAM_NAME'] }">
+	<input type="hidden" name="article_no" value="${article['ARTICLE_NO'] }">
+	<input type="hidden" name="user_no" value="${article['USER_NO'] }">
 		
 		<button type="submit" class="btn btn-default">작성</button>
 	</div>

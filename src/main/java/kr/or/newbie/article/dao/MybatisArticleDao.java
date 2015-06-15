@@ -5,7 +5,6 @@ import java.util.Map;
 
 import kr.or.newbie.article.controller.ArticleController;
 import kr.or.newbie.article.domain.Article;
-import kr.or.newbie.article.domain.ArticleComment;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -25,6 +24,25 @@ public class MybatisArticleDao implements ArticleDao {
 
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		this.sqlSessionFactory = sqlSessionFactory;
+	}
+	
+	
+	/**
+	 *  게시글 등록
+	 */
+	
+	@Override
+	public void writeArticle(Article article) {
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.writeArticle(article);
+
+		}finally{
+			session.close();
+		}
+
 	}
 	
 	/**
@@ -139,10 +157,10 @@ public class MybatisArticleDao implements ArticleDao {
 	 *  게시글 상세보기
 	 */
 	@Override
-	public Article detailArticle(int article_no) {
+	public Map<String, Object> detailArticle(int article_no) {
 		// TODO Auto-generated method stub
 
-		Article article = null;
+		Map<String, Object> article = null;
 		SqlSession session = null;
 
 		try {

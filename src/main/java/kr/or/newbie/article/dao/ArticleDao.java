@@ -14,6 +14,9 @@ import kr.or.newbie.article.domain.ArticleComment;
  */
 public interface ArticleDao {
 
+	
+	//게시글 등록
+	public void writeArticle(Article article);
 	//게시글 목록 출력
 	public List<Map<String, Object>> showarticleList(String program_name);
 	//카테고리별 목록 출력
@@ -27,7 +30,7 @@ public interface ArticleDao {
 	public List<Map<String, Object>> searchList(Map<String, String> params);
 	
 	//게시글 상세보기
-	public Article detailArticle(int article_no);
+	public Map<String, Object> detailArticle(int article_no);
 	
 	//상세보기시 히트 카운트 1 증가
 	public void hitcountArticle(int article_no);
@@ -38,8 +41,9 @@ public interface ArticleDao {
 	public List<Map<String, Object>> commentList(int article_no);
 	
 	//댓글 등록
-	
 	public void writeComment(Map<String, String> params);
+	
+		
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
 	

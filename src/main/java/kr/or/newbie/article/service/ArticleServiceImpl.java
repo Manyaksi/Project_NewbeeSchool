@@ -34,6 +34,16 @@ public class ArticleServiceImpl implements ArticleService{
 	public void setarticleDao(ArticleDao articleDao) {
 		this.articleDao = articleDao;
 	}
+	
+	/**
+	 * 게시글 등록
+	 */
+	@Override
+	public void writeArticle(Article article) {
+		articleDao.writeArticle(article);
+		logger.debug("아티클 등록 완료");
+	};
+	
 
 	/**
 	 * 게시글 목록 출력
@@ -101,7 +111,7 @@ public class ArticleServiceImpl implements ArticleService{
 	 * 게시글 상세보기
 	 */
 	@Override
-	public Article detailArticle(int article_no) {
+	public Map<String, Object> detailArticle(int article_no) {
 		// TODO Auto-generated method stub
 		return articleDao.detailArticle(article_no);
 	}

@@ -1,8 +1,6 @@
 package kr.or.newbie.article.controller;
 
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +8,6 @@ import kr.or.newbie.HomeController;
 import kr.or.newbie.article.domain.Article;
 import kr.or.newbie.article.service.ArticleService;
 
-import org.omg.CORBA.portable.ValueOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +36,35 @@ public class ArticleController {
 	}
 
 
+	/**
+	 * 게시글 등록
+	 */
+	@RequestMapping(value="/writearticle", method=RequestMethod.GET)
+	public String writeComment(Model model, @RequestParam(value="program_name", required=false, defaultValue="")String programName){
+		
+		logger.debug("진입ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
+		
+		model.addAttribute("programName", programName);
+		return "board_write";
+	}
+	
+	/**
+	 * 게시글 등록 포스트
+	 */
+	
+	@RequestMapping(value ="/writearticle", method=RequestMethod.POST)
+	public String writeComment(Article article,
+			@RequestParam(value="content", required=false, defaultValue="")String content,
+			@RequestParam(value="program_name", required=false, defaultValue="")String programName){
+		
+		logger.debug("게시글 등록 진입");
+		logger.debug(content);
+		articleService.writeArticle(article);
+		
+		return "redirect:/board/boardlist?program_name="+programName;
+		
+	}
+	
 	/**
 	 * 게시글 목록보기(/academic/list)
 	 */
@@ -133,12 +159,14 @@ public class ArticleController {
 	@RequestMapping("/boardread")
 	public String detailArticle(@RequestParam(value="article_no")int article_no, Model model){
 		articleService.hitcountArticle(article_no);
-		Article article = articleService.detailArticle(article_no);
+		Map<String, Object> article = articleService.detailArticle(article_no);
 		List<Map<String, Object>> commentList = articleService.commentList(article_no);
 
+		
 		model.addAttribute("commentList", commentList);
 		
 		model.addAttribute("article", article);
+		
 
 		
 		
@@ -153,14 +181,12 @@ public class ArticleController {
 	public String like(@RequestParam(value="article_no")int article_no, Model model){
 		
 		articleService.likecountArticle(article_no);
-		Article article =  articleService.detailArticle(article_no);
-		int result = article.getLike_count();
+		Map<String, Object> article =  articleService.detailArticle(article_no);
 		
+				
 		
-		System.out.println(article_no);
-		model.addAttribute("result", result);
 
-		
+		model.addAttribute("result",  article.get("LIKE_COUNT"));
 		
 		return "/ajaxResult/like";
 	}
@@ -177,6 +203,7 @@ public class ArticleController {
 		
 		logger.debug("등록 진입");
 		logger.debug("파라미터 값들" + article_no +"2."+user_no+"3."+program_name+"4."+comment_content);
+		
 		
 		articleService.writeComment(article_no, user_no, program_name, comment_content);
 		

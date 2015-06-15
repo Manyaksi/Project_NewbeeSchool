@@ -50,7 +50,7 @@
 		   $.ajax({
 	            type : "get",
 	            url : "/board/like",
-	            data : "article_no="+  "${article.article_no}",
+	            data : "article_no="+  "${article['ARTICLE_NO'] }",
 	            dataType : "html",//text,xml, json
 	            success : function(result) {
 	               $("#message").html(result);

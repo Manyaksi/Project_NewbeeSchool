@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +38,25 @@
 <jsp:include page="menu/module/nav_uneffect_js.jsp" />
 <script type="text/javascript" src="/resources/js/board.js"></script>
 <script src="/resources/js/summernote.min.js"></script>
+<%-- <c:param name="content" value=$('.note-editable').children()></c:param> --%>
 
 <script>
 
 $(document).ready(function() {
 	  $('#summernote').summernote();
+	  
+	  $("#writearticle").submit(function(){
+		  
+	  var content = $('.note-editable').html();
+	  
+      $(".content").attr("value",content);
+		  
+	  	return true;
+	  
+	  })
+	  
+	  
+	  
 	});
 	
 	
@@ -53,6 +68,8 @@ $('#summernote').summernote({
 
 	  focus: true,                 // set focus to editable area after initializing summernote
 	});	
+	
+	var contents = $('.note-editable').html();
 
 </script>
 
