@@ -13,10 +13,9 @@
 				</div>
                 
                 <div class="space30"></div>
-                <div class="col-md-12 text-center"> <a class="btn-main white" href="index.html#">가입하기</a></div>
+                <div class="col-md-12 text-center"> <a class="btn-lite1" href="index.html#">가입하기</a></div>
                
 				<div class="col-md-12 no-padding portfolio-main">
-					<div class="space90"></div>
 					<ul id="filters" class="clearfix">
 						<li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
 						<li><span class="filter" data-filter="sort1">Web</span></li>
@@ -119,7 +118,7 @@
 					</div>
 				</div>
 			</div>
-			<a class="btn-lite" href="index.html#">더보기</a>
+			<a class="btn-lite1" href="index.html#">더보기</a>
 		</div>
 		<!-- /.container -->
 	</div>

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<video autoplay="true" loop="loop" muted="" id="teaser-video" class="teaser-video"><source src="/resources/video/bgvideo1.mp4" type="video/mp4"><source src="video/masthead-teaser.ogv" type="video/ogg"></video>
+<video autoplay="true" loop="loop" muted="" id="teaser-video" class="teaser-video"><source src="/resources/video/bgvideo.mp4" type="video/mp4"><source src="video/masthead-teaser.ogv" type="video/ogg"></video>
 <div class="intro-regist">
 
 
@@ -14,14 +14,14 @@
 				<div class="container">
 					<div class="row">
                         <!--환영합니다 -->
-                        <div class="col-md-6 text-center  col-md-offset-1 mobile">
+                        <div class="col-md-6 text-center  col-md-offset-1 mobile welcome">
                         <h1 class="welcome-title jeju-gothic">환영합니다</h1>
                             <h2 class="welcome-message nanum-gothic">당신에게 딱 맞는 프로그래밍 언어를 찾아보고, 개발환경을 개발 툴 메뉴얼을 통해 쉽게 설치 해보세요 . 그리고 </br>현재<b> 1,230</b> 명이 활동중인 커뮤티니에서 함께 활동 해 보세요!
 </h2>
                         
                         </div>
                         <!--메인 회원가입패널 -->
-                        <div class="col-md-4 col-md-offset-1 text-center">
+                        <div class="col-md-4 col-md-offset-1 text-center regist">
                       
 
                         <form action="/join" method="post">

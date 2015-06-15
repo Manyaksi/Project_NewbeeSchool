@@ -10,8 +10,7 @@
 				</div>
 				
 				    <div class="space30"></div>
-                <div class="col-md-12 text-center"> <a class="btn-main white" href="index.html#">가입하기</a></div>
-				<div class="space90"></div>
+                <div class="col-md-12 text-center"> <a class="btn-lite1" href="index.html#">가입하기</a></div>
 				<ul id="project_filters" class="clearfix">
 						<li><span class="project_filters active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
 						<li><span class="project_filters" data-filter="sort1">Web</span></li>

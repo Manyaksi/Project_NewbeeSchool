@@ -10,7 +10,7 @@
 </p>
 				</div>
 				<div class="space30"></div>
-                <div class="col-md-12 text-center"> <a class="btn-main white" href="index.html#">가입하기</a></div>
+                <div class="col-md-12 text-center"> <a class="btn-lite1" href="index.html#">가입하기</a></div>
 				<div class="col-md-12 no-padding community-main">
 					<div class="space90"></div>
 					<ul id="community_filters" class="clearfix">
