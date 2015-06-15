@@ -104,4 +104,9 @@ public class HomeController {
 
 		return "project_write";
 	}
+	@RequestMapping(value = "/member_edit", method = RequestMethod.GET)
+	public String member_edit(Model model) {
+		
+		return "member_edit";
+	}
 }
