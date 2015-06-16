@@ -93,12 +93,12 @@ public class UsersController {
 	
 	/**
 	 *  로그인화면요청(GET)
-	 */
+	 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		return "/login/result";
 	}
-	
+	*/
 	/**
 	 * 로그인 요청(POST)
 	 */
@@ -121,7 +121,7 @@ public class UsersController {
 		}else{
 			logger.debug("로그인 실패");
 			model.addAttribute("loginResult", "등록된 회원이 아닙니다.");
-			return "/";
+			return "redirect:"+"/";
 		}
 	}
 	
