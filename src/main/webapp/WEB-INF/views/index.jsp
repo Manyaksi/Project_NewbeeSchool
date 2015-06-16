@@ -27,12 +27,11 @@
 	<jsp:include page="main/module/matching_info_wrap.jsp" />
       
 
-
 <!-- 설치법 배우기-->
 	<jsp:include page="main/module/learn_menu_wrap.jsp" />
 
 
-<!-- 커뮤니티 소개 설명배너  -->      
+<!-- 커뮤니티 현황   -->      
 	<jsp:include page="main/module/community_intro.jsp" />
 
 
@@ -41,11 +40,11 @@
 
 
 <!-- 프로젝트 소개 설명배너  -->      
-	<jsp:include page="main/module/program_intro_wrap.jsp" />
+	<jsp:include page="main/module/project_intro_wrap.jsp" />
     
 
 <!-- 프로젝트 -->
-<jsp:include page="main/module/program_menu_wrap.jsp" />
+<jsp:include page="main/module/project_menu_wrap.jsp" />
 
 
 <!-- 순위  -->
