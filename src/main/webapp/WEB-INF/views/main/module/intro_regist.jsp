@@ -25,27 +25,6 @@
 						</c:if>
 						
 					<c:if test="${empty cookie.loginId}" var="varname" scope="request">
-						<div class="mainlogin">
-							<form id="loginForm" action="/users/login" method="post" >
-								<p>
-									<input class="login_input" type="text" name="userId" value=""placeholder="User ID">
-								</p>
-								<p>
-									<input class="passwd_input" type="password" name="passwd"value="" placeholder="Password">
-								</p>
-								<div class="submit" style="margin-top: 10px; vertical-align: top;">
-									<img id="loginSubmit" src="/resources/images/web/main/login.png" style="cursor:pointer">
-									<a href="/join1">
-									</a>
-									<div
-										style="height: 29px !important; width: 41px !important; margin: 0px !important; padding: 0px; float: right; padding-top: 7.2px; padding-right: 10.7px;">
-										<a href="/find" style="top: 0px; position: relative;"> 
-										<strong style="margin-left: 0px; margin-bottom: 0px; height: 29px !important;">Forgot?</strong>
-										</a>
-									</div>
-								</div>
-							</form>
-						</div>
 					</c:if>
                         <!--환영합니다 -->
                         <div class="col-md-6 text-center  col-md-offset-1 mobile">
