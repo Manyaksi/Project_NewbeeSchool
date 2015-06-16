@@ -39,6 +39,13 @@ public interface ProjectService {
 	//프로젝트 탈퇴하기
 	public void exitProject(long groupNo, int userNo);
 	
+	//프로젝트 해체하기
+	public void breakProject(long groupNo);
+	public void breakProjectAll(long groupNo);
+	
+	//프로젝트 완료시키기
+	public void passAndFail(long groupNo);
+	
 	//프로젝트 댓글 등록
 	public void addProjectComment(ProjectComment projectComment);
 

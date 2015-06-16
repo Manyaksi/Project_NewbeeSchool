@@ -1,7 +1,7 @@
 package kr.or.newbie.project.domain;
 
 public class ProjectComment {
-	private int groupNo;
+	private long groupNo;
 	private int groupcommNo;
 	private int userNo;
 	private String groupcommContent;
@@ -12,7 +12,7 @@ public class ProjectComment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProjectComment(int groupNo, int groupcommNo, int userNo,
+	public ProjectComment(long groupNo, int groupcommNo, int userNo,
 			String groupcommContent, String groupcommDate) {
 		super();
 		this.groupNo = groupNo;
@@ -22,11 +22,11 @@ public class ProjectComment {
 		this.groupcommDate = groupcommDate;
 	}
 
-	public int getGroupNo() {
+	public long getGroupNo() {
 		return groupNo;
 	}
 
-	public void setGroupNo(int groupNo) {
+	public void setGroupNo(long groupNo) {
 		this.groupNo = groupNo;
 	}
 

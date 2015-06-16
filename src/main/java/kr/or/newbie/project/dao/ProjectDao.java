@@ -37,6 +37,13 @@ public interface ProjectDao {
 	//프로젝트 탈퇴하기
 	public void exitProject(Project project);
 	
+	//프로젝트 해체하기
+	public void breakProject(long groupNo);
+	public void breakProjectAll(long groupNo);
+	
+	//프로젝트 완료시키기
+	public void passAndFail(long groupNo);
+	
 	//프로젝트 댓글남기기
 	public void addProjectComment(ProjectComment projectComment);
 	
@@ -51,7 +58,9 @@ public interface ProjectDao {
 	
 	//프로젝트 회원 수
 	public Project confirmGroupCount(long groupNo);
-		
+	
+	
+
 		
 	
 }

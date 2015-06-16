@@ -103,7 +103,8 @@ public class ProjectController {
 	 */
 	@RequestMapping(value="/comment_register", method=RequestMethod.POST)
 	public String registerComment(ProjectComment projectComment, Model model) {
-		
+		logger.debug("댓글 등록 요청합니다.");
+		logger.debug(projectComment.toString());
 		projectService.addProjectComment(projectComment);
 		Map<String, Object> map = projectService.showProjectdetail(projectComment.getGroupNo());
 		List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getGroupNo());
@@ -190,12 +191,49 @@ public class ProjectController {
 	 * 프로젝트 탈퇴요청 (/project/project_exit)
 	 */
 	@RequestMapping(value="/project_exit", method=RequestMethod.POST)
-	public String enterCountBoolean(int userNo, long groupNo, Model model) {
+	public String exit(int userNo, long groupNo, Model model) {
 		
 		projectService.exitProject(groupNo, userNo);
-
-		return "/ajaxResult/enter_user";
+		Map<String, Object> map = projectService.showProjectdetail(groupNo);
+		
+		List<Users> list = projectService.showEnterProject(groupNo);
+		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
+		
+		model.addAttribute("detailList", map);
+		model.addAttribute("userList",list);
+		model.addAttribute("commentList", mapList);
+		return "/project";
 	}
+	
+	/**
+	 * 프로젝트 해체요청 (/project/project_break)
+	 */
+	@RequestMapping(value="/project_break", method=RequestMethod.POST)
+	public String projectBreak(long groupNo, Model model) {
+		
+		projectService.breakProject(groupNo);
+		projectService.breakProjectAll(groupNo);
+		
+		List<Map<String, Object>> map = projectService.showProject();
+		model.addAttribute("list", map);
+		
+		return "/project_list";
+	}
+	
+	
+	/**
+	 * 프로젝트 완료요청 (/project/project_pass)
+	 */
+	@RequestMapping(value="/project_pass", method=RequestMethod.POST)
+	public String passAndFail(long groupNo, Model model) {
+		
+		projectService.passAndFail(groupNo);
+		List<Map<String, Object>> map = projectService.showProject();
+		model.addAttribute("list", map);
+		
+		return "/project_list";
+	}
+	
 	
 	/**
 	 * 프로젝트 맵요청 (/project/scroll.do)

@@ -84,6 +84,23 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
+	//프로젝트 해체하기 (멤버 해체)
+	public void breakProject(long groupNo) {
+		projectDao.breakProject(groupNo);
+	}
+	
+	@Override
+	//프로젝트 해체하기 (글 해체)
+	public void breakProjectAll(long groupNo) {
+		projectDao.breakProjectAll(groupNo);
+	}
+	
+	@Override
+	public void passAndFail(long groupNo) {
+		projectDao.passAndFail(groupNo);		
+	}
+	
+	@Override
 	public void addProjectComment(ProjectComment projectComment) {
 		projectDao.addProjectComment(projectComment);
 		System.out.println("[Debug] : 프로젝트 댓글 등록");

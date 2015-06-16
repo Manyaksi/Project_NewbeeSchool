@@ -15,10 +15,10 @@
 	</select> 
 	
 	<select id="showProject" resultType="java.util.Map" >
-		select g.group_no, g.group_location, g.group_subject, g.group_content, g.group_maxcount, u.nickname, count(m.user_no) AS count
+		select g.group_no, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.group_maxcount, u.nickname, count(m.user_no) AS count
 		from users u, grouparticle g, groupmember m
 		where g.user_no = u.user_no and g.group_no = m.group_no
-		group by g.group_no,g.group_location, g.group_subject, g.group_content, g.group_maxcount , u.nickname
+		group by g.group_no, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.group_maxcount , u.nickname
 		order by group_no asc
 	</select> 
 	
@@ -107,9 +107,21 @@
 		where group_no = #{groupNo} and user_no = #{userNo}
 	</select>
 	
-	<select id="breakProject" parameterType="project">
+	<select id="breakProject" parameterType="Long">
 		delete from groupmember
 		where group_no = #{groupNo}
+	</select>
+	
+	<select id="breakProjectAll" parameterType="Long">
+		delete from grouparticle
+		where group_no = #{groupNo}
+	</select>
+	
+	<select id="passAndFail" parameterType="Long">
+		update grouparticle
+		set pass_fail = 1
+		where group_no=#{groupNo}
+	
 	</select>
 	
 </mapper>

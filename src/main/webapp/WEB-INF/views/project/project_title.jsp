@@ -5,7 +5,7 @@
 	<div class="container">
 	<div class="row">
       <div class="col-md-7 project-container-title">
-        <h1>자바채팅프로젝트</h1>
+        <h1>${detailList["GROUP_SUBJECT"] }</h1>
         <div class="project-info">
           <span class="project-info-item"><span class="octicon octicon-repo"></span>${detailList["PROGRAM_NAME"] }</span>
           <span class="project-info-item"><span class="octicon octicon-code"></span>${detailList["GROUP_CATEGORY"] }</span>
@@ -46,8 +46,13 @@
         <div class="pbutton" id="buttonBreak">
 	      <form action="/project/project_break" method="post">
 	        <input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
-		    <input type="hidden" name="userNo" value='15'>
 	        <button type="submit" class="btn btn-lg btn-primary">해체하기</button>
+     	  </form>
+        </div>
+        <div class="pbutton" id="buttonPass">
+	      <form action="/project/project_pass" method="post">
+	        <input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
+	        <button type="submit" class="btn btn-lg btn-primary">완료시키기</button>
      	  </form>
         </div>
       </div>

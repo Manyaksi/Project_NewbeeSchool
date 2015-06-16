@@ -96,6 +96,7 @@ $(function() {
         	   if(result=="owner"){
         		  
         		   $('#buttonBreak').show();
+        		   $('#buttonPass').show();
         	   }else if(result=="member"){
         		   
         		   $('#buttonExit').show();
@@ -158,7 +159,7 @@ function element_in_scroll(elem) {
     if (element_in_scroll(".prd_list li:last")) {
      $('div#loadmoreajaxloader').show();
       // 너무 훽~ 로딩되는게 싫어서...
-      setTimeout(fnList, 500);
+      //setTimeout(fnList, 500);
      }
    }
   });

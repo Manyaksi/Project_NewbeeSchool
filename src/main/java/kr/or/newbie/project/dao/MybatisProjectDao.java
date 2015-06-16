@@ -142,6 +142,46 @@ public class MybatisProjectDao implements ProjectDao {
 	}
 	
 	@Override
+	//프로젝트 해체(멤버)
+	public void breakProject(long groupNo) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.breakProject(groupNo);
+		}finally{
+			session.close();
+		}
+	}
+	
+	
+	@Override
+	//프로젝트 해체(글)
+	public void breakProjectAll(long groupNo) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.breakProjectAll(groupNo);
+		}finally{
+			session.close();
+		}
+	}
+	
+	@Override
+	//프로젝트 완료시키기
+	public void passAndFail(long groupNo) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.passAndFail(groupNo);
+		}finally{
+			session.close();
+		}		
+	}
+	
+	@Override
 	//프로젝트 댓글 입력
 	public void addProjectComment(ProjectComment projectComment) {
 		SqlSession session = null;

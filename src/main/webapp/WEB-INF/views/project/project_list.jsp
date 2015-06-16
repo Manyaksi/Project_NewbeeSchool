@@ -49,13 +49,18 @@
 								</div>
 								<p class="text-center">${project["COUNT"] }명 / ${project["GROUP_MAXCOUNT"] }명</p>
 								<div class="text-center">
-								
+								<c:if test='${project["PASS_FAIL"]== "0"}' >
 								<form action="/project/project_detail" method="get">
 									<input type="hidden" name="groupNo" value='${project["GROUP_NO"] }'>
 									<input type="hidden" name="userNo" value='15'>
 									<button class="btn btn-primary" type="submit">참가하기</button>
 									
 								</form>
+								</c:if>
+								<c:if test='${project["PASS_FAIL"]== "1"}'>
+									<button class="btn btn-primary" type="submit" disabled>작업완료</button>
+								</c:if>
+								
 								</div>
 							</div>
 						</div>
