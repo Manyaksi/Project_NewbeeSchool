@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.newbie.article.dao.ArticleDao">
+
+	<select id="showarticleList" resultType="java.util.Map" parameterType="String">
+		select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count, a.like_count, a.notice
+        from users u JOIN article a
+        on a.user_no = u.user_no
+        where a.program_name like #{program_name}
+        order by article_no asc
+	</select>
+	
+	<select id="showcategoryList" resultType="java.util.Map" parameterType="String">
+		select a.article_no,u.nickname, a.program_name, a.subject, a.content, a.category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write, a.hit_count, a.like_count, a.notice
+        from users u JOIN article a
+        on a.user_no = u.user_no
+        where a.category like #{category} AND a.program_name like #{program_name}
+        order by article_no asc
+	</select>
+	
+	<select id="detailArticle" resultType="article" parameterType="Integer">
+	select article_no, user_no, program_name, subject, content, category, TO_CHAR(write_date,'YY/MM/DD HH24: MI') write_date, hit_count, like_count, notice
+	from article
+	where article_no = #{article_no}
+	</select>
+
+	<select id="hitcountArticle" parameterType="Integer">
+	update article
+	set hit_count = hit_count+1
+	where article_no = #{article_no}
+	</select>
+	
+	
+	
+
+
+</mapper>

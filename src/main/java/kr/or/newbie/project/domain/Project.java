@@ -1,123 +1,126 @@
 package kr.or.newbie.project.domain;
 
 public class Project {
-	private int group_no;
-	private int user_no;
-	private String group_location;
-	private char pass_fail;
-	private String group_subject;
-	private String group_content;
-	private int group_count;
-	private int group_maxcount;
+	private long groupNo;
+	private int userNo;
+	private String groupLocation;
+	private String latitude;
+	private String longitude;
+	private char passFail;
+	private String groupSubject;
+	private String groupContent;
+	private int groupCount;
+	private int groupMaxcount;
 	private String startline;
 	private String deadline;
-	private String group_category;
-	private String nickName;
+	private String groupCategory;
+	private String programName;
 	
 	public Project() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Project(int group_no, int user_no, String group_location,
-			char pass_fail, String group_subject, String group_content,
-			int group_count, int group_maxcount, String startline,
-			String deadline, String group_category) {
+	public Project(long groupNo, int userNo, String groupLocation,
+			String latitude, String longitude, char passFail,
+			String groupSubject, String groupContent, int groupCount,
+			int groupMaxcount, String startline, String deadline,
+			String groupCategory, String programName) {
 		super();
-		this.group_no = group_no;
-		this.user_no = user_no;
-		this.group_location = group_location;
-		this.pass_fail = pass_fail;
-		this.group_subject = group_subject;
-		this.group_content = group_content;
-		this.group_count = group_count;
-		this.group_maxcount = group_maxcount;
+		this.groupNo = groupNo;
+		this.userNo = userNo;
+		this.groupLocation = groupLocation;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.passFail = passFail;
+		this.groupSubject = groupSubject;
+		this.groupContent = groupContent;
+		this.groupCount = groupCount;
+		this.groupMaxcount = groupMaxcount;
 		this.startline = startline;
 		this.deadline = deadline;
-		this.group_category = group_category;
-	}
-	
-	public Project(int group_no, int user_no, String group_location,
-			char pass_fail, String group_subject, String group_content,
-			int group_count, int group_maxcount, String startline,
-			String deadline, String group_category, String nickName) {
-		super();
-		this.group_no = group_no;
-		this.user_no = user_no;
-		this.group_location = group_location;
-		this.pass_fail = pass_fail;
-		this.group_subject = group_subject;
-		this.group_content = group_content;
-		this.group_count = group_count;
-		this.group_maxcount = group_maxcount;
-		this.startline = startline;
-		this.deadline = deadline;
-		this.group_category = group_category;
-		this.nickName = nickName;
+		this.groupCategory = groupCategory;
+		this.programName = programName;
 	}
 
-	public int getGroup_no() {
-		return group_no;
+	public long getGroupNo() {
+		return groupNo;
 	}
 
-	public void setGroup_no(int group_no) {
-		this.group_no = group_no;
+	public void setGroupNo(long groupNo) {
+		this.groupNo = groupNo;
 	}
 
-	public int getUser_no() {
-		return user_no;
+	public int getUserNo() {
+		return userNo;
 	}
 
-	public void setUser_no(int user_no) {
-		this.user_no = user_no;
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
 	}
 
-	public String getGroup_location() {
-		return group_location;
+	public String getGroupLocation() {
+		return groupLocation;
 	}
 
-	public void setGroup_location(String group_location) {
-		this.group_location = group_location;
+	public void setGroupLocation(String groupLocation) {
+		this.groupLocation = groupLocation;
 	}
 
-	public char getPass_fail() {
-		return pass_fail;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setPass_fail(char pass_fail) {
-		this.pass_fail = pass_fail;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
-	public String getGroup_subject() {
-		return group_subject;
+	public String getLongitude() {
+		return longitude;
 	}
 
-	public void setGroup_subject(String group_subject) {
-		this.group_subject = group_subject;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
-	public String getGroup_content() {
-		return group_content;
+	public char getPassFail() {
+		return passFail;
 	}
 
-	public void setGroup_content(String group_content) {
-		this.group_content = group_content;
+	public void setPassFail(char passFail) {
+		this.passFail = passFail;
 	}
 
-	public int getGroup_count() {
-		return group_count;
+	public String getGroupSubject() {
+		return groupSubject;
 	}
 
-	public void setGroup_count(int group_count) {
-		this.group_count = group_count;
+	public void setGroupSubject(String groupSubject) {
+		this.groupSubject = groupSubject;
 	}
 
-	public int getGroup_maxcount() {
-		return group_maxcount;
+	public String getGroupContent() {
+		return groupContent;
 	}
 
-	public void setGroup_maxcount(int group_maxcount) {
-		this.group_maxcount = group_maxcount;
+	public void setGroupContent(String groupContent) {
+		this.groupContent = groupContent;
+	}
+
+	public int getGroupCount() {
+		return groupCount;
+	}
+
+	public void setGroupCount(int groupCount) {
+		this.groupCount = groupCount;
+	}
+
+	public int getGroupMaxcount() {
+		return groupMaxcount;
+	}
+
+	public void setGroupMaxcount(int groupMaxcount) {
+		this.groupMaxcount = groupMaxcount;
 	}
 
 	public String getStartline() {
@@ -136,34 +139,34 @@ public class Project {
 		this.deadline = deadline;
 	}
 
-	public String getGroup_category() {
-		return group_category;
+	public String getGroupCategory() {
+		return groupCategory;
 	}
 
-	public void setGroup_category(String group_category) {
-		this.group_category = group_category;
+	public void setGroupCategory(String groupCategory) {
+		this.groupCategory = groupCategory;
 	}
 
-	
-	public String getNickName() {
-		return nickName;
+	public String getProgramName() {
+		return programName;
 	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setProgramName(String programName) {
+		this.programName = programName;
 	}
 
 	@Override
 	public String toString() {
-		return "Project [group_no=" + group_no + ", user_no=" + user_no
-				+ ", group_location=" + group_location + ", pass_fail="
-				+ pass_fail + ", group_subject=" + group_subject
-				+ ", group_content=" + group_content + ", group_count="
-				+ group_count + ", group_maxcount=" + group_maxcount
-				+ ", startline=" + startline + ", deadline=" + deadline
-				+ ", group_category=" + group_category + "]";
+		return "Project [groupNo=" + groupNo + ", userNo=" + userNo
+				+ ", groupLocation=" + groupLocation + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", passFail=" + passFail
+				+ ", groupSubject=" + groupSubject + ", groupContent="
+				+ groupContent + ", groupCount=" + groupCount
+				+ ", groupMaxcount=" + groupMaxcount + ", startline="
+				+ startline + ", deadline=" + deadline + ", groupCategory="
+				+ groupCategory + ", programName=" + programName + "]";
 	}
-
+	
 	
 
 }

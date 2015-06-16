@@ -22,12 +22,22 @@
 		order by group_no asc
 	</select> 
 	
-	<select id="showProjectdetail" parameterType="Integer" resultType="java.util.Map" >
-		select g.group_no, g.group_location, g.group_subject, g.group_content, to_char(g.startline,'YYYY. MM. DD') as startline, to_char(g.deadline,'YYYY. MM. DD') as deadline, g.group_maxcount, g.group_category, g.program_name, u.nickname, count(m.user_no) AS count
+	<select id="showProjectdetail" parameterType="Long" resultType="java.util.Map" >
+		select g.group_no GROUP_NO, g.user_no USER_NO, u.nickname NICKNAME, g.group_location GROUP_LOCATION, g.latitude, g.longitude, g.group_subject GROUP_SUBJECT, g.group_content GROUP_CONTENT, to_char(g.startline,'YYYY. MM. DD') as STARTLINE, to_char(g.deadline,'YYYY. MM. DD') as DEADLINE, g.group_maxcount GROUP_MAXCOUNT, g.group_category GROUP_CATEGORY, g.program_name PROGRAM_NAME, count(m.user_no) AS count
         from users u, grouparticle g, groupmember m
-        where g.user_no = u.user_no and g.group_no = m.group_no and g.group_no = #{groupNo}
-        group by g.group_no,g.group_location, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount , g.group_category, g.program_name, u.nickname
+        where g.user_no = u.user_no and g.group_no = m.group_no and m.group_no = #{groupNo}
+        group by g.group_no, g.user_no, u.nickname, g.group_location, g.latitude, g.longitude, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount , g.group_category, g.program_name
         order by group_no asc
+	</select> 
+	
+	<select id="addProject"  parameterType="project">
+		insert into grouparticle(group_no, user_no, group_location, group_subject, group_content, group_maxcount, startline, deadline, group_category, program_name, latitude, longitude)
+		values(#{groupNo}, #{userNo}, #{groupLocation}, #{groupSubject}, #{groupContent}, #{groupMaxcount}, #{startline}, #{deadline}, #{groupCategory}, #{programName}, #{latitude}, #{longitude})
+	</select> 
+	
+	<select id="addProjectOwner"  parameterType="project">
+		insert into groupmember(group_no, user_no)
+		values(#{groupNo}, #{userNo})
 	</select> 
 	
 	<select id="joinProject"  parameterType="java.util.Map">
@@ -35,7 +45,7 @@
 		values(#{groupNo}, #{userNo})
 	</select> 
 	
-	<select id="showEnterProject" parameterType="Integer" resultType="users">
+	<select id="showEnterProject" parameterType="Long" resultType="users">
 		select U.NICKNAME, U.LOCATION, U.PHOTO, U.USER_NO as userNo, U.GRADE, U.POINT, U.PROGRAM_NAME as programName
 		from users u, groupmember m
 		where m.user_no = u.user_no and m.group_no = #{groupNo}
@@ -45,5 +55,61 @@
 		insert into groupcomment(group_no, groupcomm_no, user_no, groupcomm_content, groupcomm_date)
 		values(#{groupNo}, groupcomm_no_seq.NextVal, #{userNo}, #{groupcommContent}, sysdate)
 	</select>
+	
+	<select id="showProjectComment" parameterType="Long" resultType="java.util.Map">
+		select g.group_no, g.groupcomm_no, g.user_no, u.grade, u.photo, u.nickname, g.groupcomm_content,  to_char(g.groupcomm_date, 'YY.MM.DD. AMHH12:MI:SS','NLS_DATE_LANGUAGE=KOREAN') groupcomm_date
+		from groupcomment g , users u
+		where g.user_no = u.user_no and g.group_no = #{groupNo}
+		order by groupcomm_no desc
+	</select>
+	
+	<select id="showProjectCommentPaging" parameterType="Long" resultType="java.util.Map">
+			select request_page, group_no, groupcomm_no, user_no, grade, photo, nickname, groupcomm_content,  groupcomm_date, groupcomm_date
+			from (SELECT CEIL(rownum / 5) request_page, group_no, groupcomm_no, user_no, grade, photo, nickname, groupcomm_content,  to_char(groupcomm_date, 'YY.MM.DD. AMHH12:MI:SS','NLS_DATE_LANGUAGE=KOREAN') groupcomm_date
+        		  from (select rownum, g.group_no, g.groupcomm_no, g.user_no, u.grade, u.photo, u.nickname, g.groupcomm_content,  g.groupcomm_date
+              	  		from groupcomment g , users u
+              	  		where g.user_no = u.user_no and g.group_no = #{groupNo}
+              			order by groupcomm_no desc))
+			where request_page = #{listStart}
+	</select>
+	
+	<select id="countProjectComment" parameterType="Long" resultType="Integer">
+			select count(groupcomm_no)
+			from groupcomment
+			where group_no=#{groupNo}
+	</select>
+	
+	
+	
 
+	
+	<select id="confirmGroupOwner" parameterType="java.util.Map" resultType="Integer">
+		select count(user_no) count
+		from grouparticle
+		where user_no = #{userNo} and group_no = #{groupNo}
+	</select>
+	
+	<select id="confirmEnterUser" parameterType="java.util.Map" resultType="Integer">
+		select count(user_no) count
+		from groupmember
+		where user_no = #{userNo} and group_no = #{groupNo}
+	</select>
+	
+	<select id="confirmGroupCount" parameterType="Long" resultType="project">
+		select count(M.GROUP_NO) groupCount, g.group_maxcount groupMaxcount
+		from groupmember m, grouparticle g
+		where g.group_no = m.group_no and g.group_no =#{groupNo}
+		group by M.GROUP_NO, g.group_maxcount
+	</select>
+	
+	<select id="exitProject" parameterType="project">
+		delete from groupmember
+		where group_no = #{groupNo} and user_no = #{userNo}
+	</select>
+	
+	<select id="breakProject" parameterType="project">
+		delete from groupmember
+		where group_no = #{groupNo}
+	</select>
+	
 </mapper>

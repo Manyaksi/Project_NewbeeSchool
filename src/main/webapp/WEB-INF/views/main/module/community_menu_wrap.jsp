@@ -24,9 +24,9 @@
 					<div id="comunitylist">
 						<div class="community sort1" data-cat="sort1">
 							<div class="community-wrapper">
-								<img src="resources/images/works/1.jpg" alt="" />
+								<img src="/resources/images/works/1.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board">
+									<a href="/board/boardlist?program_name=java">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>자바커뮤니티</span></div>
 									</a>
 								</div>
@@ -34,19 +34,19 @@
 						</div>
 						<div class="community sort2" data-cat="sort2">
 							<div class="community-wrapper">
-								<img src="resources/images/works/2.jpg" alt="" />
+								<img src="/resources/images/works/2.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+									<a href="/board/boardlist?program_name=Csharp">
+										<div class="overlay-text"><i class="fa fa-play"></i> <span>C# 커뮤니티</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="community sort3" data-cat="sort3">
 							<div class="community-wrapper">
-								<img src="resources/images/works/3.jpg" alt="" />
+								<img src="/resources/images/works/3.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_slider.html">
+									<a href="/board/boardlist?program_name=CPP">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -54,7 +54,7 @@
 						</div>
 						<div class="community sort4" data-cat="sort4">
 							<div class="community-wrapper">
-								<img src="resources/images/works/4.jpg" alt="" />
+								<img src="/resources/images/works/4.jpg" alt="" />
 								<div class="overlay1">
 									<a href="community_single_img.html">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
@@ -64,7 +64,7 @@
 						</div>
 						<div class="community sort1" data-cat="sort1">
 							<div class="community-wrapper">
-								<img src="resources/images/works/6.jpg" alt="" />
+								<img src="/resources/images/works/6.jpg" alt="" />
 								<div class="overlay1">
 									<a href="community_single_video.html">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
@@ -74,7 +74,7 @@
 						</div>
 						<div class="community sort2" data-cat="sort2">
 							<div class="community-wrapper">
-								<img src="resources/images/works/5.jpg" alt="" />
+								<img src="/resources/images/works/5.jpg" alt="" />
 								<div class="overlay1">
 									<a href="community_single_slider.html">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
@@ -84,7 +84,7 @@
 						</div>
 						<div class="community sort3" data-cat="sort3">
 							<div class="community-wrapper">
-								<img src="resources/images/works/7.jpg" alt="" />
+								<img src="/resources/images/works/7.jpg" alt="" />
 								<div class="overlay1">
 									<a href="community_single_img.html">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
@@ -94,7 +94,7 @@
 						</div>
 						<div class="community sort4" data-cat="sort4">
 							<div class="community-wrapper">
-								<img src="resources/images/works/8.jpg" alt="" />
+								<img src="/resources/images/works/8.jpg" alt="" />
 								<div class="overlay1">
 									<a href="community_single_video.html">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
@@ -104,7 +104,7 @@
 						</div>
 						<div class="community sort4" data-cat="sort4">
 							<div class="community-wrapper">
-								<img src="resources/images/works/9.jpg" alt="" />
+								<img src="/resources/images/works/9.jpg" alt="" />
 								<div class="overlay1">
 									<a href="community_single_video.html">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
