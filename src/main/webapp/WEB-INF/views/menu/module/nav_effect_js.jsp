@@ -1,7 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@ page contentType="text/html; charset=utf-8" %>
 <!-- JavaScript Files -->
 <script src="/resources/js/jquery.js"></script>
+<script src="/resources/js/waypoint.js"></script>
+<script src="/resources/js/jquery.counterup.min.js"></script>
 <script src="/resources/js/scrollnav.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/jquery.mixitup.min.js"></script>

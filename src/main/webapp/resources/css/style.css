@@ -751,6 +751,38 @@ font-weight: 100;
 box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 }
 
+.community-intro-wrap{
+	
+		padding: 110px 0;
+	background: #67809F;
+	position: relative;
+	-webkit-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+-moz-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+	
+}
+
+.community-info-content h1{
+		font-size: 35px;
+	color: white;
+	font-family: seoulNamsan;
+	margin: 0 0 50px;
+}
+.community-info-content p{
+			font-size: 25px;
+	color: white;
+	line-height: 20px;
+	font-family: nanum gothic;
+	font-weight: 500px;
+}
+.community-info-content p1{
+			font-size: 45px;
+	color: white;
+	line-height: 20px;
+	font-family: nanum gothic;
+	font-weight: 900px;
+}
+
 .program-intro-wrap{
 	background: url("/resources/images/project_intro4.jpg") no-repeat center center fixed;
 
