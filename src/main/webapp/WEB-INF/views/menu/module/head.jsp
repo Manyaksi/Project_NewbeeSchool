@@ -40,7 +40,8 @@
 </c:if>
 <!-- 로그인되어있을때 -->
 <c:if test="${cookie.loginId != null}" var="varname" scope="request">
-<link href="/resources/css/style_login.css" rel="stylesheet">				
+<link href="/resources/css/style_login.css" rel="stylesheet">	
+			
 </c:if>
 	
 	<link href="/resources/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">

@@ -26,15 +26,24 @@
 <c:if test="${cookie.loginId != null}" var="varname" scope="request">
 <!-- JavaScript Files -->
 <script src="/resources/js/jquery.js"></script>
-<script src="/resources/js/jquery.touchSwipe.js"></script>
-<script src="/resources/js/jquery.horizonScroll.js"></script>
-<script type="text/javascript">
-    // By default, swipe is enabled.
-    $('section').horizon();
-
-    // If you do not want to include another plugin, TouchSwipe, you can set it to false in the default options by passing in the option as false.
-    //$('section').horizon({swipe: false});
-</script>
+  <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    /*
+                    if you want to use one of the easing effects:
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1500,'easeInOutExpo');
+                     */
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1000);
+                    event.preventDefault();
+                });
+            });
+        </script>
 <script src="/resources/js/waypoint.js"></script>
 <script src="/resources/js/jquery.counterup.min.js"></script>
 <script src="/resources/js/static_nav.js"></script>
@@ -49,8 +58,7 @@
 <script src="/resources/js/animations.js"></script>
 <script src="/resources/js/jquery.flexslider.js"></script>
 <script src="/resources/js/main.js"></script>	
-
-
+<script src="/resources/js/horizontal-scroll.js"></script>	
 <script>
 $('nav').width($('section').width());
 $('.learn-menu-wrap').height($('body').height());

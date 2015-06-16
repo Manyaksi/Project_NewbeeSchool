@@ -6,29 +6,37 @@
 <!-- head 모듈 -->
 	<jsp:include page="menu/module/head.jsp" />
 	<link rel="stylesheet" href="/resources/css/videostyle.css">
-	<style>
-html, .body {
-	width:100%;
-	padding:0;
-	margin:0;
-	overflow:hidden;
-}
-section {
-	float:left;
-	display:block;
-	height:100%;
-	padding:0;
-	margin:0;
-}
-
-	</style>
 	
+<style>
+#owl-demo .item img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+</style>
+
 </head>
 
+<div id="owl-demo" class="owl-carousel owl-theme">
+ 
+  <div class="item">
 
+  </div>
+  
+  <div class="item">
+
+  </div>
+  
+  <div class="item">
+
+  </div>
+ 
+</div>
 
   <body id="home">
   <jsp:include page="menu/nav.jsp" />
+
+
   	<div class="body">
 
 <!-- 네비게이션  -->
@@ -42,16 +50,16 @@ section {
 <!-- 나에게 맞는 프로그래밍 언어 찾기  -->      
 	<jsp:include page="main/module/matching_info_wrap.jsp" />
       
-
+<div id="wrap">
 
 <!-- 설치법 배우기-->
-<section data-role="section" id="section-section1">
+<div id="one">
 
 	<jsp:include page="main/module/learn_menu_wrap.jsp" />
 
-</section>
+</div>
 <!-- 커뮤니티 현황   -->      
-<section data-role="section" id="section-section2">
+<div id="two">
 	<jsp:include page="main/module/community_intro.jsp" />
 
 <!-- 커뮤니티 -->
@@ -60,10 +68,10 @@ section {
 	
 	<!-- 순위  -->
 	<jsp:include page="main/module/ranking.jsp" />
-</section>
+</div>
 
 <!-- 프로젝트 소개 설명배너  -->      
-<section data-role="section" id="section-section3">
+<div id="three">
 	<jsp:include page="main/module/project_intro_wrap.jsp" />
     
 
@@ -77,7 +85,8 @@ section {
 
 <!-- 푸터 -->
 	<jsp:include page="menu/footer.jsp" />
-	</section>
+	</div>
+	</div>
 
 </div>
 
@@ -98,6 +107,27 @@ section {
       });    
 
   });
+</script>
+
+<script>
+$(document).ready(function() {
+	 
+	  $("#owl-demo").owlCarousel({
+	 
+	      navigation : true, // Show next and prev buttons
+	      slideSpeed : 300,
+	      paginationSpeed : 400,
+	      singleItem:true
+	 
+	      // "singleItem:true" is a shortcut for:
+	      // items : 1, 
+	      // itemsDesktop : false,
+	      // itemsDesktopSmall : false,
+	      // itemsTablet: false,
+	      // itemsMobile : false
+	 
+	  });
+});
 </script>
 
 </body>
