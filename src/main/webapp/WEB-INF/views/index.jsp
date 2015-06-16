@@ -6,32 +6,9 @@
 <!-- head 모듈 -->
 	<jsp:include page="menu/module/head.jsp" />
 	<link rel="stylesheet" href="/resources/css/videostyle.css">
-	
-<style>
-#owl-demo .item img {
-	display: block;
-	width: 100%;
-	height: auto;
-}
-</style>
-
 </head>
 
-<div id="owl-demo" class="owl-carousel owl-theme">
- 
-  <div class="item">
 
-  </div>
-  
-  <div class="item">
-
-  </div>
-  
-  <div class="item">
-
-  </div>
- 
-</div>
 
   <body id="home">
   <jsp:include page="menu/nav.jsp" />
