@@ -423,7 +423,6 @@ $( ".survey111" ).click(function() {
 	
 	/* 16번 -> 다음으로 이동 */
 	else if (radioCheckval == 'C'){
-		alert(aaaa);
 		/*1번질문 없애기*/ 
 		$('#survey16').removeClass('active');
 		$('#survey16').addClass('hidden');		

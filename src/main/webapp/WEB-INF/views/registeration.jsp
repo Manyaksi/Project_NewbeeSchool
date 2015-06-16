@@ -53,9 +53,9 @@ $("#signup_button").click(function() {
 });
 
 $("#registemail").keyup(function(){
-	var email = $("#registemail");
+	var email = $("#registemail").val();
 	var regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-	if(regex.test(email) === false) {  
+	if(regex.test(email) == false) {  
 
 		$("#email_auth").text("유효한 이메일 형식이 아닙니다.");
 
@@ -72,7 +72,7 @@ function validateCheck_regist() {
 		nameForm.focus();
 		return false;
 	}
-	var idForm = $("#registid");
+	var idForm = $("#registemail");
 	var regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
 	if ((idForm.val()).length == 0) {
 		alert("이메일를 입력하세요");
