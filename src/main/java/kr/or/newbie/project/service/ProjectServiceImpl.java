@@ -48,26 +48,25 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public Map<String, Object> showProjectdetail(int groupNo) {
+	public Map<String, Object> showProjectdetail(long groupNo) {
 		System.out.println("[Debug] : 프로젝트 상세보기");
 		return projectDao.showProjectdetail(groupNo);
 	}
 	
 	@Override
-	public List<Users> showEnterProject(int groupNo) {
+	public List<Users> showEnterProject(long groupNo) {
 		return projectDao.showEnterProject(groupNo);
 	}
 	
 	@Override
 	public void addProject(Project project) {
-		projectDao.addProject(project);
 		System.out.println("[Debug] : 프로젝트 만들기");
-		
+		projectDao.addProject(project);
 	}
-	
+
 	@Override
-	public void joinProject(int groupNo, int userNo) {
-		Map<String, Integer> params = new HashMap<String, Integer>();
+	public void joinProject(long groupNo, int userNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("groupNo", groupNo);
 		params.put("userNo", userNo);
 		projectDao.joinProject(params);
@@ -76,11 +75,12 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public void exitProject(Project project) {
+	public void exitProject(long groupNo, int userNo) {
+		Project project = new Project();
+		project.setGroupNo(groupNo);
+		project.setUserNo(userNo);
 		projectDao.exitProject(project);
 		System.out.println("[Debug] : 프로젝트 나가기");
-		
-		
 	}
 	
 	@Override
@@ -91,14 +91,14 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public List<Map<String, Object>> showProjectComment(int groupNo) {
+	public List<Map<String, Object>> showProjectComment(long groupNo) {
 		return projectDao.showProjectComment(groupNo);
 	}
 	
 	
 	@Override
-	public int confirmEnterUser(int userNo, int groupNo) {
-		Map<String, Integer> params = new HashMap<String, Integer>();
+	public int confirmEnterUser(int userNo, long groupNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("groupNo", groupNo);
 		params.put("userNo", userNo);
 		
@@ -106,8 +106,8 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public int confirmGroupOwner(int userNo, int groupNo) {
-		Map<String, Integer> params = new HashMap<String, Integer>();
+	public int confirmGroupOwner(int userNo, long groupNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("groupNo", groupNo);
 		params.put("userNo", userNo);
 		
@@ -115,7 +115,7 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public Project confirmGroupCount(int groupNo) {
+	public Project confirmGroupCount(long groupNo) {
 		return projectDao.confirmGroupCount(groupNo);
 	}
 }

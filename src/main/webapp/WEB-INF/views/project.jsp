@@ -38,7 +38,7 @@
 src="http://maps.googleapis.com/maps/api/js">
 </script>
 <script>
-var myCenter=new google.maps.LatLng(37.4757379,126.8840176);
+var myCenter=new google.maps.LatLng('${detailList["LATITUDE"]}','${detailList["LONGITUDE"]}');
 
 function initialize()
 {
@@ -81,8 +81,8 @@ $("#addComment").keyup(function() {
 $(function() {
 
 	//그냥 처음에 ajax 갔다오기
-	//var userno = '${detailList["USER_NO"]}'; // 쿠키로 바꿔야한다.
-	var userno = 20; // 쿠키로 바꿔야한다.
+	var userno = '${detailList["USER_NO"]}'; // 쿠키로 바꿔야한다.
+	//var userno = 20; // 쿠키로 바꿔야한다.
 	var groupno = '${detailList["GROUP_NO"]}';
 	$('.pbutton').hide();
 	
@@ -92,8 +92,9 @@ $(function() {
 		data : "userNo="+ userno + "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(result) {
+        	   alert(result);
         	   if(result=="owner"){
-        		   
+        		  
         		   $('#buttonBreak').show();
         	   }else if(result=="member"){
         		   
@@ -111,6 +112,7 @@ $(function() {
 		data : "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(outcome) {
+        	   alert(outcome);
         	   if(outcome == "false"){
         	  		$("#buttonEnter").attr('disabled', true);
         	   }else{
@@ -132,10 +134,69 @@ function validateCheck_review() {
 		return false;
 	}
 }
-</script>
 
 
 </script>
+<script>
+var listpagesize = 5;
+var list_start = 1; //
+var list_total_count;
+var groupno = '${detailList["GROUP_NO"]}';
+ 
+// 스크롤시 화면의 높이를 계산 (제일 밑에까지 스크롤 했는지 체크)
+function element_in_scroll(elem) {
+	var docViewTop = $(window).scrollTop();
+	var docViewBottom = docViewTop + $(window).height();
+	var elemTop = $(elem).offset().top;
+	var elemBottom = elemTop + $(elem).height()  - 100;
+	return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+  
+// 스크롤 이벤트
+  $(document).scroll(function(e) {
+      if($(".prd_list li:last").length > 0){
+    if (element_in_scroll(".prd_list li:last")) {
+     $('div#loadmoreajaxloader').show();
+      // 너무 훽~ 로딩되는게 싫어서...
+      setTimeout(fnList, 500);
+     }
+   }
+  });
+  
+// 리스트에 아이템 추가
+  function fnList(){
+   $.ajax({
+    type : "POST",
+    url : '/project/scroll.do',
+    data : { group_ID : groupno ,start : list_start, pagesize : listpagesize, cnt : list_total_count }
+   }).done(function(msg) {
+    var html = fnMakeListHtml(msg.list);                
+    $(html).appendTo("#list_scroll").trigger('create');
+    
+    list_start = list_start + listpagesize;
+    
+    // 전체 아이템 갯수 설정
+    if(list_total_count == null){
+     list_total_count = parseInt(msg.cnt.total_count); 
+    }
+    // 마지막 목록까지 가져왔을경우 더이상 스크롤안되게    
+    if( list_total_count < list_start){
+     $(document).unbind('scroll');
+    }
+   
+    $('div#loadmoreajaxloader').hide();
+    
+   });
+  }
+ 
+// html 생성
+ function fnMakeListHtml(obj)
+  {
+     var html = 'obj로 html 생성';
+      return html;
+  }
+ 
 </script>
+
 </body>
 </html>

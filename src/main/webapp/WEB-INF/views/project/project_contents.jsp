@@ -164,7 +164,7 @@ border-radius: 2px;
             </ul>            
             <div class="tab-content">
                 <div class="tab-pane active" id="comments-logout">                
-                    <ul class="media-list">
+                    <ul class="prd_list media-list" id="list_scroll">
                     <c:forEach var="commentList" items="${commentList }">
                       <li class="media">
                         <a class="pull-left" href="#">
@@ -204,6 +204,8 @@ border-radius: 2px;
                         </div>            
                     </form>
                 </div>
+                 <div id="loadmoreajaxloader" style="display:none; text-align: center;"><img src="/resources/images/loading.gif"/></div>
+					  </div>
    
             </div>
         </div>

@@ -50,7 +50,7 @@
 								<p class="text-center">${project["COUNT"] }명 / ${project["GROUP_MAXCOUNT"] }명</p>
 								<div class="text-center">
 								
-								<form action="/project/project_detail" method="post">
+								<form action="/project/project_detail" method="get">
 									<input type="hidden" name="groupNo" value='${project["GROUP_NO"] }'>
 									<input type="hidden" name="userNo" value='15'>
 									<button class="btn btn-primary" type="submit">참가하기</button>
@@ -96,7 +96,7 @@
 			</ul>
 
 			<div class="paging-right-comp">
-				<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
+				<a class="category-boxed btn font-black" href="/project/project_write">글쓰기</a>
 			</div>
 		</div>
 

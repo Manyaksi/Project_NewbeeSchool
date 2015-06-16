@@ -1,9 +1,11 @@
 package kr.or.newbie.project.domain;
 
 public class Project {
-	private int groupNo;
+	private long groupNo;
 	private int userNo;
 	private String groupLocation;
+	private String latitude;
+	private String longitude;
 	private char passFail;
 	private String groupSubject;
 	private String groupContent;
@@ -12,21 +14,24 @@ public class Project {
 	private String startline;
 	private String deadline;
 	private String groupCategory;
-	private String nickName;
+	private String programName;
 	
 	public Project() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Project(int groupNo, int userNo, String groupLocation,
-			char passFail, String groupSubject, String groupContent,
-			int groupCount, int groupMaxcount, String startline,
-			String deadline, String groupCategory) {
+	public Project(long groupNo, int userNo, String groupLocation,
+			String latitude, String longitude, char passFail,
+			String groupSubject, String groupContent, int groupCount,
+			int groupMaxcount, String startline, String deadline,
+			String groupCategory, String programName) {
 		super();
 		this.groupNo = groupNo;
 		this.userNo = userNo;
 		this.groupLocation = groupLocation;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		this.passFail = passFail;
 		this.groupSubject = groupSubject;
 		this.groupContent = groupContent;
@@ -35,32 +40,14 @@ public class Project {
 		this.startline = startline;
 		this.deadline = deadline;
 		this.groupCategory = groupCategory;
-	}
-	
-	public Project(int groupNo, int userNo, String groupLocation,
-			char passFail, String groupSubject, String groupContent,
-			int groupCount, int groupMaxcount, String startline,
-			String deadline, String groupCategory, String nickName) {
-		super();
-		this.groupNo = groupNo;
-		this.userNo = userNo;
-		this.groupLocation = groupLocation;
-		this.passFail = passFail;
-		this.groupSubject = groupSubject;
-		this.groupContent = groupContent;
-		this.groupCount = groupCount;
-		this.groupMaxcount = groupMaxcount;
-		this.startline = startline;
-		this.deadline = deadline;
-		this.groupCategory = groupCategory;
-		this.nickName = nickName;
+		this.programName = programName;
 	}
 
-	public int getGroupNo() {
+	public long getGroupNo() {
 		return groupNo;
 	}
 
-	public void setGroupNo(int groupNo) {
+	public void setGroupNo(long groupNo) {
 		this.groupNo = groupNo;
 	}
 
@@ -78,6 +65,22 @@ public class Project {
 
 	public void setGroupLocation(String groupLocation) {
 		this.groupLocation = groupLocation;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public char getPassFail() {
@@ -144,26 +147,26 @@ public class Project {
 		this.groupCategory = groupCategory;
 	}
 
-	
-	public String getNickName() {
-		return nickName;
+	public String getProgramName() {
+		return programName;
 	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setProgramName(String programName) {
+		this.programName = programName;
 	}
 
 	@Override
 	public String toString() {
-		return "Project [group_no=" + groupNo + ", user_no=" + userNo
-				+ ", group_location=" + groupLocation + ", pass_fail="
-				+ passFail + ", group_subject=" + groupSubject
-				+ ", group_content=" + groupContent + ", group_count="
-				+ groupCount + ", group_maxcount=" + groupMaxcount
-				+ ", startline=" + startline + ", deadline=" + deadline
-				+ ", group_category=" + groupCategory + "]";
+		return "Project [groupNo=" + groupNo + ", userNo=" + userNo
+				+ ", groupLocation=" + groupLocation + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", passFail=" + passFail
+				+ ", groupSubject=" + groupSubject + ", groupContent="
+				+ groupContent + ", groupCount=" + groupCount
+				+ ", groupMaxcount=" + groupMaxcount + ", startline="
+				+ startline + ", deadline=" + deadline + ", groupCategory="
+				+ groupCategory + ", programName=" + programName + "]";
 	}
-
+	
 	
 
 }

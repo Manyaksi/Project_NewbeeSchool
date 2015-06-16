@@ -73,7 +73,7 @@ public class MybatisProjectDao implements ProjectDao {
 	
 	@Override
 	//프로젝트 상세보기(정식)
-	public Map<String, Object> showProjectdetail(int groupNo) {
+	public Map<String, Object> showProjectdetail(long groupNo) {
 		Map<String, Object> mapProject = null;
 		SqlSession session = null;
 		try{
@@ -88,7 +88,7 @@ public class MybatisProjectDao implements ProjectDao {
 	
 	@Override
 	//프로젝트 참가하기
-	public void joinProject(Map<String, Integer> params) {
+	public void joinProject(Map<String, Object> params) {
 		SqlSession session = null;
 		try{
 			session = sqlSessionFactory.openSession();
@@ -101,7 +101,7 @@ public class MybatisProjectDao implements ProjectDao {
 	
 	@Override
 	//프로젝트 참가인원 정보 출력
-	public List<Users> showEnterProject(int groupNo) {
+	public List<Users> showEnterProject(long groupNo) {
 		List<Users> mapProject = null;
 		SqlSession session = null;
 		try{
@@ -115,15 +115,30 @@ public class MybatisProjectDao implements ProjectDao {
 	}
 	
 	@Override
+	//프로젝트 등록
 	public void addProject(Project project) {
-		// TODO Auto-generated method stub
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.addProject(project);
+		}finally{
+			session.close();
+		}
 		
 	}
 	
 	@Override
+	//프로젝트 탈퇴
 	public void exitProject(Project project) {
-		// TODO Auto-generated method stub
-		
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.exitProject(project);
+		}finally{
+			session.close();
+		}
 	}
 	
 	@Override
@@ -142,7 +157,7 @@ public class MybatisProjectDao implements ProjectDao {
 	
 	@Override
 	//프로젝트 댓글 출력
-	public List<Map<String, Object>> showProjectComment(int groupNo) {
+	public List<Map<String, Object>> showProjectComment(long groupNo) {
 		List<Map<String, Object>> map = null;
 		SqlSession session = null;
 		try{
@@ -156,7 +171,7 @@ public class MybatisProjectDao implements ProjectDao {
 	}
 
 	@Override
-	public int confirmGroupOwner(Map<String, Integer> params) {
+	public int confirmGroupOwner(Map<String, Object> params) {
 		int count = 0;
 		SqlSession session = null;
 		try{
@@ -170,7 +185,7 @@ public class MybatisProjectDao implements ProjectDao {
 	}
 	
 	@Override
-	public int confirmEnterUser(Map<String, Integer> params) {
+	public int confirmEnterUser(Map<String, Object> params) {
 		int count = 0;
 		SqlSession session = null;
 		try{
@@ -184,7 +199,7 @@ public class MybatisProjectDao implements ProjectDao {
 	}
 	
 	@Override
-	public Project confirmGroupCount(int groupNo) {
+	public Project confirmGroupCount(long groupNo) {
 		Project project = null;
 		SqlSession session = null;
 		try{

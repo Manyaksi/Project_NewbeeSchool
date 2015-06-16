@@ -20,7 +20,7 @@ public interface ProjectDao {
 	public List<Map<String, Object>> showProject();
 	
 	//프로젝트 참가 인원 출력
-	public List<Users> showEnterProject(int groupNo);
+	public List<Users> showEnterProject(long groupNo);
 	
 	//프로젝트 만든 사람 출력
 	public Users getUserInfo(int user_no);
@@ -29,10 +29,10 @@ public interface ProjectDao {
 	public void addProject(Project project);
 	
 	//프로젝트 상세보기
-	public Map<String, Object> showProjectdetail(int groupNo);
+	public Map<String, Object> showProjectdetail(long groupNo);
 	
 	//프로젝트 참가하기
-	public void joinProject(Map<String, Integer> params);
+	public void joinProject(Map<String, Object> params);
 	
 	//프로젝트 탈퇴하기
 	public void exitProject(Project project);
@@ -41,16 +41,16 @@ public interface ProjectDao {
 	public void addProjectComment(ProjectComment projectComment);
 	
 	//프로젝트 댓글 출력
-	public List<Map<String, Object>> showProjectComment(int groupNo);
+	public List<Map<String, Object>> showProjectComment(long groupNo);
 	
 	//프로젝트 참여 유저 확인
-	public int confirmEnterUser(Map<String, Integer> params);
+	public int confirmEnterUser(Map<String, Object> params);
 	
 	//프로젝트 만든 주인 확인
-	public int confirmGroupOwner(Map<String, Integer> params);
+	public int confirmGroupOwner(Map<String, Object> params);
 	
 	//프로젝트 회원 수
-	public Project confirmGroupCount(int groupNo);
+	public Project confirmGroupCount(long groupNo);
 		
 		
 	
