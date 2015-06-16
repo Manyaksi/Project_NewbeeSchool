@@ -18,11 +18,6 @@
 						</c:if>
 						
 				<div class="col-md-12 no-padding community-main">
-				
-				
-				
-				
-						
 					<ul id="community_filters" class="clearfix">
 						<li><span class="community_filter active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
 						<li><span class="community_filter" data-filter="sort1">Web</span></li>
@@ -36,7 +31,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/1.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board">
+									<a href="/board/boardlist?program_name=java">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>자바커뮤니티</span></div>
 									</a>
 								</div>
@@ -46,8 +41,8 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/2.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+									<a href="/board/boardlist?program_name=Csharp">
+										<div class="overlay-text"><i class="fa fa-play"></i> <span>C# 커뮤니티</span></div>
 									</a>
 								</div>
 							</div>
@@ -56,7 +51,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/3.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_slider.html">
+									<a href="/board/boardlist?program_name=CPP">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>

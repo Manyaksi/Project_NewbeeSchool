@@ -210,4 +210,3 @@
 				<a class="btn-lite" href="/project_list">더보기</a>
 			</div>
 		</div>
-	</div>

@@ -1,4 +1,10 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<c:if test="${cookie.loginId != null}" var="varname" scope="request">
+						
+						</c:if>
+						
+							<c:if test="${empty cookie.loginId}" var="varname" scope="request">
 	<div class="matching-info-wrap">
 		<script type="text/javascript">
 		$( ".survey111" ).click(function() {
@@ -600,8 +606,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 no-padding matching-info-content">
+					<div class="col-md-6">
+						<img src="resources/images/main/codemonitor.png" style="width:60%; height:60%;"class="/resources/images-responsive s1" alt=""/>
+					</div>
+					<div class="col-md-6">
+                        <h1 class="tip-title">나에게 맞는</br>프로그래밍 언어 찾기</h1>
+				
+						<p>프로그래밍을 시작해보려는 당신, 무슨 프로그래밍 언어로 시작할지 망설이고 계시나요? 당신에게 딱 맞는 프로그래밍 언어를 찾아 드립니다!</p>
+						
+						<div class="text-center">
+						<a class="btn-main white" href="index.html#">찾아보기</a>
+						</div>
+					</div>
+				</div>
+				
+				
 				<div class="form-horizontal active" id="survey1">
-
 					<!-- 질문 제목 -->
 					<legend>프로그래밍을 배우고 싶은 이유는 무엇인가요?</legend>
 
@@ -628,8 +648,8 @@
 								<label for="radios-3"> <input type="radio" name="programName" id="radios-3" value="4"> 잘 모르겠네요
 								</label>
 							</div>
-						</div>
-					</div>
+=======
+</h4>
 
 					<!-- Button (Double) -->
 					<div class="form-group">
@@ -1547,9 +1567,12 @@
 		
 		
 		</div>
+
 	
 	
 		
 					</div>
 				</div>
 			</div>
+			</div>
+	</c:if>

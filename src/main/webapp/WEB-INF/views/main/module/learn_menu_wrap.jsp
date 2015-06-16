@@ -1,12 +1,16 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="portfolio-wrap" id="learn">
+
+
+<!-- 로그아웃시.. -->
+<c:if test="${empty cookie.loginId}" var="varname" scope="request">
+					   
+<div class="learn-menu-wrap" id="learn">
 
 		<div class="container">
 			<div class="row">
 				<div class="section-title">
 					<h3>설치법 배우기</h3>
-					   <c:if test="${empty cookie.loginId}" var="varname" scope="request">
                     <p>각종 언어별 개발툴 설치법을 익힐 수 있습니다.</p>
                     
                  
@@ -19,10 +23,18 @@
                 
                 <div class="space30"></div>
                 <div class="col-md-12 text-center"> <a class="btn-main white" href="index.html#">가입하기</a></div>
-               </c:if>
+</c:if>
+
+<!-- 로그인시.. -->               
+<c:if test="${cookie.loginId != null}" var="varname" scope="request">
                
-               <c:if test="${cookie.loginId != null}" var="varname" scope="request">
-						</c:if>
+               <div class="learn-menu-wrap" id="learn">
+		<div class="container">
+			<div class="row">
+				<div class="section-title">
+					<h3>설치법 배우기</h3>
+                    <p>각종 언어별 개발툴 설치법을 익힐 수 있습니다.</p>
+</c:if>
 						
 						
 				<div class="col-md-12 no-padding portfolio-main">
@@ -128,7 +140,7 @@
 					</div>
 				</div>
 			</div>
-			<a class="btn-lite" href="index.html#">더보기</a>
 		</div>
 		<!-- /.container -->
+	</div>
 	</div>

@@ -1,8 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<header>
-		<nav class="navbar navbar-default navbar-fixed-top top-nav " role="navigation">
-			<div class="container ">
+		<nav class="navbar navbar-default navbar-fixed-top top-nav fixed-height" role="navigation">
+			<div class="container login_nav">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle navigation</span>
@@ -75,7 +74,7 @@
 					
 									<ul class="nav navbar-nav nanum-gothic-coding">
 									<li><img class="img-circle avatar" src="/resources/images/blog/1.jpg" width="45" height="45" alt=""></li>
-						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p id="login">${cookie.loginId.value} <span class="caret" style="border-top: 4px solid #fff;"></span></p> </a>
+						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p id="login">${cookie.loginId.value} <span class="caret"></span></p> </a>
 			<ul id="login-dp2" class="dropdown-menu login-dp2-top-right">
 				
 				<li><a href="/minihome">미니홈</a></li>
@@ -93,4 +92,3 @@
 			</div>
 			<!-- /.container -->
 		</nav>
-	</header>
