@@ -1,11 +1,16 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="portfolio-wrap" id="learn">
 
 		<div class="container">
 			<div class="row">
 				<div class="section-title">
 					<h3>설치법 배우기</h3>
+					   <c:if test="${empty cookie.loginId}" var="varname" scope="request">
                     <p>각종 언어별 개발툴 설치법을 익힐 수 있습니다.</p>
+                    
+                 
+					
 <p>나에게 맞는 프로그래밍 언어로 시작하려면  
 </p>
                     
@@ -14,9 +19,13 @@
                 
                 <div class="space30"></div>
                 <div class="col-md-12 text-center"> <a class="btn-main white" href="index.html#">가입하기</a></div>
+               </c:if>
                
+               <c:if test="${cookie.loginId != null}" var="varname" scope="request">
+						</c:if>
+						
+						
 				<div class="col-md-12 no-padding portfolio-main">
-					<div class="space90"></div>
 					<ul id="filters" class="clearfix">
 						<li><span class="filter active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
 						<li><span class="filter" data-filter="sort1">Web</span></li>

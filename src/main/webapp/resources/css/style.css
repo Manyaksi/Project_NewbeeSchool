@@ -168,7 +168,6 @@ color: black !important;
 }
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    background: #eee;
     border-radius: 5px;
 }
 
@@ -3329,3 +3328,33 @@ border-top: 1px solid #eee;
 	padding: 5px 5px;
 	font-size: 10px;
 }
+
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	background-color: transparent;
+}
+
+
+#login-dp2{
+min-width: 130px;
+	max-width: 130px;
+/* padding: 14px 14px 0; */
+overflow:hidden;
+border-top-right-radius: 0;
+border-top-left-radius: 0;
+border: 0px;
+-webkit-transition: opacity 0.2s;
+transition: opacity 0.2s;
+border-radius: 2px;
+box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+background-color:rgba(255,255,255,0.8);
+top: 45px;
+right: 20px;
+text-align: left;
+}
+
+
+#login-dp2 > li {
+	padding:4px 0px 4px;
+}
+
