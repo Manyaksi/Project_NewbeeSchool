@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +43,36 @@ public class ArticleServiceImpl implements ArticleService{
 		logger.debug("아티클 등록 완료");
 	};
 	
+	/**
+	 * 게시글 삭제
+	 */
+	@Override
+	public void deleteArticle(int article_no) {
+		articleDao.deleteArticle(article_no);
+		logger.debug("게시글 삭제 완료");
+	}
+
+	/**
+	 * 게시글 관련 댓글 삭제
+	 */
+	@Override
+	public void deleteComment(int article_no) {
+		articleDao.deleteComment(article_no);
+		logger.debug("게시글 관련 댓글 삭제");
+	}
+	
+	/**
+	 * 게시글 수정
+	 */
+	@Override
+	public void modifyArticle(String subject, String content, int article_no) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("subject", subject);
+		params.put("content", content);
+		params.put("article_no", String.valueOf(article_no));
+		articleDao.modifyArticle(params);
+	}
+
 
 	/**
 	 * 게시글 목록 출력

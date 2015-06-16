@@ -60,7 +60,11 @@
 		
 		<div class="row">
 			<div class="col-md-12 read-content">
-				${article["CONTENT"] }
+			<div class="click2edit">
+			 ${article["CONTENT"] }
+			
+			</div>
+				
 			</div>
 		</div>
 
@@ -74,8 +78,22 @@
 						</div>
 				
 					
+					
 					<div class="paging-right-comp">
 					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article['PROGRAM_NAME'] }">목록보기</a>
+					<a class="category-boxed btn font-black" href="/board/modifyarticle?article_no=${article['ARTICLE_NO'] }&program_name=${article['PROGRAM_NAME'] }">수정하기</a>
+					<button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit</button>
+					<form class="form-horizontal" action="/board/modifyarticle" method="post" id="modifyarticle">
+					<button id="save" class="btn btn-primary" onclick="save()" type="submit">Save</button>
+					
+					<input type="hidden" name="article_no" value="${article['ARTICLE_NO'] }">
+					<input type="hidden" name="subject" value="${article['SUBJECT'] }">
+					<input type="hidden" name="program_name" value="${article['PROGRAM_NAME'] }">
+					
+					<input type="hidden" name="content" value="" class="content">
+					
+					</form>
+					<a class="category-boxed btn font-black" href="/board/deletearticle?article_no=${article['ARTICLE_NO'] }&program_name=${article['PROGRAM_NAME'] }">삭제하기</a>
 						<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
 						</div>
 						

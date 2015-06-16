@@ -45,6 +45,64 @@ public class MybatisArticleDao implements ArticleDao {
 	}
 
 	/**
+	 * 게시글 삭제
+	 */
+
+	@Override
+	public void deleteArticle(int article_no) {
+		SqlSession session = null;
+
+		try {
+
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.deleteArticle(article_no);
+
+		} finally {
+			session.close();
+		}
+	}
+
+	/**
+	 * 게시글 관련 댓글 삭제
+	 */
+
+	@Override
+	public void deleteComment(int article_no) {
+		SqlSession session = null;
+
+		try {
+
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.deleteComment(article_no);
+
+		} finally {
+			session.close();
+		}
+	}
+	
+	/**
+	 * 게시글 수정
+	 */
+	
+	@Override
+	public void modifyArticle(Map<String, String> params) {
+		SqlSession session = null;
+		
+		try {
+			
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.modifyArticle(params);
+			
+		}finally{
+			session.close();
+		}
+	}
+
+
+	/**
 	 * 게시글 목록
 	 */
 
@@ -122,10 +180,11 @@ public class MybatisArticleDao implements ArticleDao {
 
 		return likecountList;
 	}
+
 	/**
 	 * 댓글수별 리스트
 	 */
-	
+
 	@Override
 	public List<Map<String, Object>> commentcountList(Map<String, String> params) {
 		List<Map<String, Object>> commentcountList = null;
@@ -134,11 +193,11 @@ public class MybatisArticleDao implements ArticleDao {
 			session = sqlSessionFactory.openSession();
 			ArticleDao dao = session.getMapper(ArticleDao.class);
 			commentcountList = dao.commentcountList(params);
-			
+
 		} finally {
 			session.close();
 		}
-		
+
 		return commentcountList;
 	}
 
@@ -278,6 +337,7 @@ public class MybatisArticleDao implements ArticleDao {
 		}
 
 	}
+
 
 	/*
 	 * @Override public void addProject(Project project) { // TODO

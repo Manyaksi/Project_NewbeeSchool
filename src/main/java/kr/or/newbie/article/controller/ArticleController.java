@@ -45,6 +45,7 @@ public class ArticleController {
 			Model model,
 			@RequestParam(value = "program_name", required = false, defaultValue = "") String programName) {
 
+		
 		logger.debug("진입ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
 
 		model.addAttribute("programName", programName);
@@ -67,6 +68,56 @@ public class ArticleController {
 
 		return "redirect:/board/boardlist?program_name=" + programName;
 
+	}
+
+	/**
+	 * 게시글 삭제, 관련 댓글 삭제
+	 */
+
+	@RequestMapping("/deletearticle")
+	public String deleteArticle(
+			@RequestParam(value = "article_no") int article_no,
+			@RequestParam(value = "program_name") String programName) {
+
+		logger.debug("게시글 삭제 진입");
+		articleService.deleteArticle(article_no);
+		articleService.deleteComment(article_no);
+
+		return "redirect:/board/boardlist?program_name=" + programName;
+	}
+	
+	/**
+	 * 게시글 수정하기
+	 */	
+	@RequestMapping(value = "/modifyarticle", method = RequestMethod.GET)
+	public String modifyarticle(
+			Model model,
+			@RequestParam(value = "article_no", required = false, defaultValue = "") int article_no,
+			@RequestParam(value = "program_name", required = false, defaultValue = "") String programName) {
+
+		Map<String, Object> article = articleService.detailArticle(article_no);
+		logger.debug("진입ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
+		
+		model.addAttribute("programName", programName);
+		model.addAttribute("article", article);
+		
+		return "/board_modify";
+	}
+	
+	@RequestMapping(value = "/modifyarticle", method = RequestMethod.POST)
+	public String modifyarticle(Model model,
+			@RequestParam(value = "article_no") int article_no,
+			@RequestParam(value = "subject") String subject,
+			@RequestParam(value = "content") String content,
+			@RequestParam(value = "program_name") String programName){
+		
+		logger.debug("수정 포스트 진입");
+		
+		articleService.modifyArticle(subject, content, article_no);
+		
+		model.addAttribute("programName", programName);
+		
+		return "redirect:/board/boardlist?program_name=" + programName;
 	}
 
 	/**
@@ -124,7 +175,7 @@ public class ArticleController {
 			Model model) {
 
 		List<Map<String, Object>> list = null;
-        int size =0;
+		int size = 0;
 		if (orderby.equals("hit_count")) {
 
 			list = articleService.hitcountList("%" + category + "%",

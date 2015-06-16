@@ -17,6 +17,15 @@ public interface ArticleService {
 	//게시글 등록
 	public void writeArticle(Article article);
 	
+	//게시글 삭제
+	public void deleteArticle(int article_no);
+	
+	//게시글 관련 댓글 삭제
+	public void deleteComment(int article_no);
+	
+	//게시글 수정
+	public void modifyArticle(String subject, String content, int article_no);
+	
 	//게시글 목록 출력
 	public List<Map<String, Object>> showarticletList(String program_name);
 	
