@@ -3,11 +3,43 @@
                  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
                  
 <mapper namespace="kr.or.newbie.tutorial.devprogram.dao.Devprogramdao">
-
+	
+	<!-- 설치글 보기 -->
 	<select id="showDevprogramdetail" resultType="devprogram" parameterType="String">
 		select program_name, install_content, install_date,com_demand
 		from devprogram
 		where program_name=#{programName}
 	</select>
+	
+	<!-- 설치댓글(후기) 등록 -->
+	<select id="commentAdd" parameterType="java.util.Map">
+		insert into installreview(program_name, review_no, user_no, review_content, review_date)
+		VALUES(${program_name}, review_no_seq.NEXTVAL, ${user_no}, ${review_content}, SYSDATE)
+	</select>
+	
+	<!-- 설치댓글(후기) 보기 -->
+	<select id="commentList" resultType="java.util.Map" parameterType="java.util.Map">
+		select u.user_no, i.program_name, u.nickname, u.photo, d.PROGRAM_OS,i.review_no, i.review_content, i.review_date
+     from users u, installreview i, devprogram d
+     where u.user_no = i.user_no and i.program_name = d.program_name and i.program_name like #{program_name} and D.PROGRAM_OS like #{program_os}
+     order by review_no asc
+	</select>
+	
+	
+	<!-- 댓글 등록 
+	<select id="commentAdd" parameterType="java.util.Map">
+		insert into installreview(program_name, review_no, user_no, review_content, review_date)
+		values(${program_name}, review_no_seq.NEXTVAL, #{user_no}, #{review_content}, SYSDATE);
+	</select>
+	--> 
+
+	<!--  민댓글 리스트  
+	<select id="commentList" parameterType="Integer" resultType="java.util.Map">
+	select c.comment_no, c.article_no, u.nickname, c.program_name, c.comment_content, TO_CHAR(comment_date,'YY/MM/DD HH24: MI') write, c.step_no, c.order_no
+        from users u JOIN articomment c
+        on c.user_no = u.user_no
+        where c.article_no = #{article_no}
+        order by comment_no asc
+       -->
 	
 </mapper>

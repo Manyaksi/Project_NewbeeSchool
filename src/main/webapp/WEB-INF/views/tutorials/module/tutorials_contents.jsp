@@ -30,7 +30,6 @@
            <a href="#" class="btn btn-sm btn-default">다음 강의 <span class="glyphicon glyphicon-arrow-right"></span></a>
            </div>
            </div>
-            
 		</div>
 		
 		

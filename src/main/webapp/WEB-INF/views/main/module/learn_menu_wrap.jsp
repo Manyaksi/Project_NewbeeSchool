@@ -30,7 +30,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/1.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=java">
+									<a href="/tutorial/tutorial?program_name=java&program_os=window">
 										<div class="overlay-text"><i class="fa fa-coffee"></i><span>JAVA</span></div>
 									</a>
 								</div>
@@ -40,7 +40,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/2.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=python">
+									<a href="/tutorial/tutorial?program_name=python&program_os=window">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>Python</span></div>
 									</a>
 								</div>
@@ -50,7 +50,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/3.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=cpp">
+									<a href="/tutorial/tutorial?program_name=cpp&program_os=window">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>C++</span></div>
 									</a>
 								</div>
@@ -60,7 +60,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/4.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=swift">
+									<a href="/tutorial/tutorial?program_name=swift&program_os=window">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>Swift</span></div>
 									</a>
 								</div>
@@ -70,7 +70,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/6.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=c#">
+									<a href="/tutorial/tutorial?program_name=c#&program_os=window">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>C#</span></div>
 									</a>
 								</div>
@@ -80,7 +80,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/5.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=php">
+									<a href="/tutorial/tutorial?program_name=php&program_os=window">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>PHP</span></div>
 									</a>
 								</div>
@@ -90,7 +90,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/7.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=ruby">
+									<a href="/tutorial/tutorial?program_name=ruby&program_os=window">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>Ruby</span></div>
 									</a>
 								</div>
@@ -100,7 +100,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/8.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=javascript">
+									<a href="/tutorial/tutorial?program_name=javascript&program_os=window">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>Java Script</span></div>
 									</a>
 								</div>
@@ -110,7 +110,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/9.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=c">
+									<a href="/tutorial/tutorial?program_name=c&program_os=window">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>C</span></div>
 									</a>
 								</div>
