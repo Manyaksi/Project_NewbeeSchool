@@ -19,7 +19,6 @@
 		url('/resources/fonts/SeoulNamsan/SeoulNamsan.woff2') format('woff2'),
 		url('/resources/fonts/SeoulNamsan/SeoulNamsan.woff') format('woff'),
 		url('/resources/fonts/SeoulNamsan/SeoulNamsan.ttf') format('truetype'),
-		url('/resources/fonts/SeoulNamsan/SeoulNamsan.svg#seoulnamsanregular')
 		format('svg');
 	font-weight: normal;
 	font-style: normal;
@@ -136,9 +135,11 @@ header {
 }
 
 .navbar-default {
+	
 	background: transparent;
 	border: none;
-	padding: 50px 0;
+	style="padding: 10px 0px 7px; 
+	background: white;"
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -206,14 +207,17 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 
 
 .login_nav{
-		position:fixed !important;
 left:0px !important;
 right:0px !important;
+height:53px;
 	
 }
 
 .fixed-height{
-	min-height: 81px !important;
+	min-height: 70px !important;
+	-webkit-box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
+  -moz-box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
+  box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
 }
 .topnav-pages {
 	background: #fff !important;
@@ -410,7 +414,7 @@ right:0px !important;
 	z-index: 1;
 }
 
-.portfolio-wrap h3, .community-wrap h3, .team-wrap h3, .pricing-wrap h3,
+.portfolio-wrap h3, .community-wrap h3, .pricing-wrap h3,
 	.news-wrap h3, .contact-wrap h3 {
 	color: #2C3E50;
 	text-transform: uppercase;
@@ -467,6 +471,7 @@ right:0px !important;
 	/* background:#27ae60 url("../demo/wrappers/2.jpg") no-repeat center fixed; */
 	background-color: #ECF0F1;
 	background-size: 100% auto;
+	min-height: 650px;
 	padding-top: 40px;
 	padding-bottom: 40px;
 	/*position:relative;*/
@@ -652,7 +657,7 @@ right:0px !important;
 
 /*----------------------------------------------------------*/
 #filters, #community_filters, #project_filters {
-	margin: 10px auto 60px;
+	margin: 10px auto 10px;
 	display: table;
 	padding: 0;
 	list-style: none;
@@ -800,7 +805,7 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 
 .community-intro-wrap{
 	
-		padding: 110px 0;
+		padding: 40px 0;
 	background: #67809F;
 	position: relative;
 	-webkit-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
@@ -831,13 +836,16 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 }
 
 .program-intro-wrap{
-	background: url("/resources/images/project_intro4.jpg") no-repeat center center fixed;
-
+	background: #67809F;
+	max-hegiht:235px !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-	padding: 110px 0;
+	padding: 30px 0 10px;
+		-webkit-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+-moz-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 }
 
 .matching-info-content {
@@ -926,7 +934,7 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 	/* background:#27ae60 url("../demo/wrappers/2.jpg") no-repeat center fixed; */
 	background-color: #ECF0F1;
 	background-size: 100% auto;
-	padding: 100px 0;
+	padding: 40px 0;
 	/*position:relative;*/
 	z-index: 1;
 }
@@ -1736,7 +1744,6 @@ footer p a:hover {
 }
 
 .sc1, .sc2, .sc3, .section-title {
-	visibility: hidden;
 }
 
 /*------------------------------------------------------------- 

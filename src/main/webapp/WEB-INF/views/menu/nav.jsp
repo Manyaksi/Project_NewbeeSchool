@@ -1,8 +1,7 @@
 <%@page import="java.net.URLDecoder"%>
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-Cookie[] cookies = request.getCookies();%>
+<%Cookie[] cookies = request.getCookies();%>
 
 		<nav class="navbar navbar-default navbar-fixed-top top-nav fixed-height" role="navigation">
 			<div class="container login_nav">
@@ -18,9 +17,22 @@ Cookie[] cookies = request.getCookies();%>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-left navbar-ex1-collapse">
 					<ul class="nav navbar-nav nanum-gothic-coding">
-						<li><a href="/#learn">배우기</a></li>
-						<li><a href="/#community">커뮤니티</a></li>
-						<li><a href="/#project">프로젝트</a></li>
+					<!-- 로그아웃시.. -->
+
+					<c:if test="${empty cookie.loginId}" var="varname" scope="request">
+					<li><a href="/#learn">배우기</a></li>
+					<li><a href="/#community">커뮤니티</a></li>
+					<li><a href="/#project">프로젝트</a></li>
+					</c:if>
+					
+					<!-- 로그인시.. -->
+
+  					<c:if test="${cookie.loginId != null}" var="varname" scope="request">
+					<li><a id="learn-tab">배우기</a></li>
+					<li><a id="community-tab">커뮤니티</a></li>
+					<li><a id="project-tab">프로젝트</a></li>
+				    </c:if>
+						
 					</ul>
 				</div>
 				<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
@@ -81,8 +93,8 @@ Cookie[] cookies = request.getCookies();%>
 						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p id="login"><span id="navmessage"><%=URLDecoder.decode(cookies[2].getValue(),"utf-8") %></span> <span class="caret"></span></p> </a>
 			<ul id="login-dp2" class="dropdown-menu login-dp2-top-right">
 				
-				<li><a href="/minihome?userNo=${cookie.loginId.value}">미니홈</a></li>
-				<li><a href="/users/modifyuser?userNo=${cookie.loginId.value}">회원정보수정</a></li>
+				<li><a href="/minihome/minihome?userNo=${cookie.loginId.value}">미니홈</a></li>
+				<li><a href="/user/member_edit?userNo=${cookie.loginId.value}">회원정보수정</a></li>
 				
 				<li>
 					<a href="/users/logout">로그아웃</a>

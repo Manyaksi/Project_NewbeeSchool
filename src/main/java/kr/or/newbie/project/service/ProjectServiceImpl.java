@@ -108,6 +108,11 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
+	public void deleteProjectComment(ProjectComment projectComment) {
+		projectDao.deleteProjectComment(projectComment.getGroupcommNo());
+	}
+	
+	@Override
 	public List<Map<String, Object>> showProjectComment(long groupNo) {
 		return projectDao.showProjectComment(groupNo);
 	}

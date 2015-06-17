@@ -20,7 +20,19 @@
 		from users u, grouparticle g, groupmember m
 		where g.user_no = u.user_no and g.group_no = m.group_no
 		group by g.group_no, g.program_name, g.group_category, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount , u.nickname
-		order by group_no asc
+		order by group_no desc
+	</select> 
+	
+	<select id="showProjectMain" resultType="java.util.Map" >
+		select first_page, group_no, program_name, group_category, pass_fail, group_location, group_subject, group_content, startline, deadline, group_maxcount, nickname, count
+        from(select ceil(rownum/10) first_page, group_no, program_name, group_category, pass_fail, group_location, group_subject, group_content, startline, deadline, group_maxcount, nickname, count
+        	 from(select rownum, group_no, program_name, group_category, pass_fail, group_location, group_subject, group_content, to_char(startline,'YYYY. MM. DD') as STARTLINE, to_char(deadline,'YYYY. MM. DD') as DEADLINE, group_maxcount, nickname, count
+        		  from( select g.group_no, g.program_name, g.group_category, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount, u.nickname, count(m.user_no) AS count
+                		from users u, grouparticle g, groupmember m
+                		where g.user_no = u.user_no and g.group_no = m.group_no
+                		group by g.group_no, g.program_name, g.group_category, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount , u.nickname
+                		order by group_no desc)))
+         where first_page = 1
 	</select> 
 	
 	<select id="showProjectdetail" parameterType="Long" resultType="java.util.Map" >
@@ -55,6 +67,11 @@
 	<select id="addProjectComment" parameterType="projectComment">
 		insert into groupcomment(group_no, groupcomm_no, user_no, groupcomm_content, groupcomm_date)
 		values(#{groupNo}, groupcomm_no_seq.NextVal, #{userNo}, #{groupcommContent}, sysdate)
+	</select>
+	
+	<select id="deleteProjectComment" parameterType="Integer">
+		delete from groupcomment 
+		where groupcomm_no = #{groupcommNo}
 	</select>
 	
 	<select id="showProjectComment" parameterType="Long" resultType="java.util.Map">

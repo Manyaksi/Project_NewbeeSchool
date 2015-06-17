@@ -79,7 +79,7 @@
    		<input name="groupLocation" id="location" class="form-control" type="hidden" value="" style="width: 114%;">
       	<input name="latitude" id="latitude" class="form-control" type="hidden" value="" style="width: 114%;">
      	 <input name="longitude" id="longitude" class="form-control" type="hidden" value="" style="width: 114%;">
-     	 <input name="userNo" class="form-control" type="hidden" value="10" style="width: 114%;"><!-- 쿠키 부분 -->
+     	 <input name="userNo" class="form-control" type="hidden" value="${cookie.loginId.value}" style="width: 114%;"><!-- 쿠키 부분 -->
   </div>
 </div>
 

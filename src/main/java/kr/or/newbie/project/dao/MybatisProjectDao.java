@@ -194,6 +194,18 @@ public class MybatisProjectDao implements ProjectDao {
 		}
 	
 	}
+
+	@Override
+	public void deleteProjectComment(int groupcommNo) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			ProjectDao dao = session.getMapper(ProjectDao.class);
+			dao.deleteProjectComment(groupcommNo);
+		}finally{
+			session.close();
+		}
+	}
 	
 	@Override
 	//프로젝트 댓글 출력

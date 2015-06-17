@@ -9,7 +9,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="section-title">
+				<div class="section-title animated bounceIn">
 					<h3>설치법 배우기</h3>
                     <p>각종 언어별 개발툴 설치법을 익힐 수 있습니다.</p>
                     
@@ -49,90 +49,90 @@
 					<div id="portfoliolist">
 						<div class="portfolio sort1" data-cat="sort1">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/1.jpg" alt="" />
+								<img src="/resources/images/works/1.png" alt="" />
 								<div class="overlay1">
 									<a href="/tutorial">
-										<div class="overlay-text"><i class="fa fa-coffee"></i><span>JAVA</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i><span>C++</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort2" data-cat="sort2">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/2.jpg" alt="" />
+								<img src="/resources/images/works/2.png" alt="" />
 								<div class="overlay1">
-									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+									<a href="/tutorial">
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>JAVA</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort3" data-cat="sort3">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/3.jpg" alt="" />
+								<img src="/resources/images/works/3.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_slider.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>Swift</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort4" data-cat="sort4">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/4.jpg" alt="" />
+								<img src="/resources/images/works/4.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_img.html">
-										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>JAVA Script</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort1" data-cat="sort1">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/6.jpg" alt="" />
+								<img src="/resources/images/works/6.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>Python</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort2" data-cat="sort2">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/5.jpg" alt="" />
+								<img src="/resources/images/works/5.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_slider.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>RUBY</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort3" data-cat="sort3">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/7.jpg" alt="" />
+								<img src="/resources/images/works/7.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_img.html">
-										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>PHP</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort4" data-cat="sort4">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/8.jpg" alt="" />
+								<img src="/resources/images/works/8.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>C#</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort4" data-cat="sort4">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/9.jpg" alt="" />
+								<img src="/resources/images/works/9.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>C</span></div>
 									</a>
 								</div>
 							</div>

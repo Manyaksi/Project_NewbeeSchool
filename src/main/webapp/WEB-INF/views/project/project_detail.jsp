@@ -52,7 +52,7 @@ by <b><a class="green-dark" href="/projects/448232439/tall-women-in-clogs/creato
 	<div class="tab-content">
 		<div role="tabpanel" class="tab-pane active" id="tab1">
 			${detailList["GROUP_CONTENT"] }
-		
+		 
 		</div>
 		<div role="tabpanel" class="tab-pane" id="tab2">
 			탭2

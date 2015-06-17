@@ -32,14 +32,14 @@
     	<div class="pbutton" id="buttonEnter">
 	      <form action="/project/project_enter" method="post">
 	        <input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
-		    <input type="hidden" name="userNo" value='15'>
+		    <input type="hidden" name="userNo" value='${cookie.loginId.value}'>
 	        <button type="submit" class="btn btn-lg btn-primary">참가하기</button>
      	  </form>
         </div>
         <div class="pbutton" id="buttonExit">
 	      <form action="/project/project_exit" method="post">
 	        <input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
-		    <input type="hidden" name="userNo" value='15'>
+		    <input type="hidden" name="userNo" value='${cookie.loginId.value}'>
 	        <button type="submit" class="btn btn-lg btn-primary">탈퇴하기</button>
      	  </form>
         </div>
