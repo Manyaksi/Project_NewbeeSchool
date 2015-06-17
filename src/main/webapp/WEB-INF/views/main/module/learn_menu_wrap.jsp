@@ -52,7 +52,7 @@
 								<img src="/resources/images/works/1.png" alt="" />
 								<div class="overlay1">
 									<a href="/tutorial">
-										<div class="overlay-text"><i class="fa fa-coffee"></i><span>C++</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i><span>C++</span></div>
 									</a>
 								</div>
 							</div>
@@ -62,7 +62,7 @@
 								<img src="/resources/images/works/2.png" alt="" />
 								<div class="overlay1">
 									<a href="/tutorial">
-										<div class="overlay-text"><i class="fa fa-coffee"></i> <span>JAVA</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>JAVA</span></div>
 									</a>
 								</div>
 							</div>
@@ -72,7 +72,7 @@
 								<img src="/resources/images/works/3.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_slider.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>Swift</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>Swift</span></div>
 									</a>
 								</div>
 							</div>
@@ -82,7 +82,7 @@
 								<img src="/resources/images/works/4.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_img.html">
-										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>JAVA Script</span></div>
 									</a>
 								</div>
 							</div>
@@ -92,7 +92,7 @@
 								<img src="/resources/images/works/6.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>Python</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>Python</span></div>
 									</a>
 								</div>
 							</div>
@@ -102,7 +102,7 @@
 								<img src="/resources/images/works/5.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_slider.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>RUBY</span></div>
 									</a>
 								</div>
 							</div>
@@ -112,7 +112,7 @@
 								<img src="/resources/images/works/7.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_img.html">
-										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>PHP</span></div>
 									</a>
 								</div>
 							</div>
@@ -122,7 +122,7 @@
 								<img src="/resources/images/works/8.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>C#</span></div>
 									</a>
 								</div>
 							</div>
@@ -132,7 +132,7 @@
 								<img src="/resources/images/works/9.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-book"></i> <span>C</span></div>
 									</a>
 								</div>
 							</div>
