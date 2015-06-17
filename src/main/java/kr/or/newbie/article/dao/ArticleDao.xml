@@ -140,7 +140,7 @@
 		a.category, TO_CHAR(write_date,'YY/MM/DD HH24:
 		MI') write_date,
 		a.hit_count, a.like_count, a.notice,u.nickname,
-		u.point, u.grade
+		u.point, u.grade, u.photo
 		from users u JOIN article a
 		on a.user_no = u.user_no
 		where a.article_no = #{article_no}
@@ -215,6 +215,12 @@
 		comment_content, comment_date, step_no, order_no)
 		values(comment_no_seq.NEXTVAL, #{article_no}, #{user_no},
 		#{program_name}, #{comment_content}, SYSDATE, 0,0 )
+	</select>
+	
+	<!--  댓글 삭제 -->
+	<select id="removeComment" parameterType="Integer">
+		delete articomment
+        where comment_no = #{comment_no}
 	</select>
 
 

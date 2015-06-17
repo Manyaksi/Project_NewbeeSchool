@@ -337,6 +337,25 @@ public class MybatisArticleDao implements ArticleDao {
 		}
 
 	}
+	
+	/**
+	 * 댓글 삭제
+	 */
+	
+	@Override
+	public void removeComment(int comment_no) {
+		
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			dao.removeComment(comment_no);
+			
+		} finally {
+			session.close();
+		}
+		
+	}
 
 
 	/*

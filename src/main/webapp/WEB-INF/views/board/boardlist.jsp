@@ -5,7 +5,7 @@
 
 	<div class="board-header">
 		<div id="board-header-tabs">
-			<a class="total-tab board-header-tabs-active" href="/board/categorylist?category=${category }&program_name=${programName }&orderby=total"><span class="total-num">${size }</span>전체</a> 
+			<a class="total-tab" href="/board/categorylist?category=${category }&program_name=${programName }&orderby=total"><span class="total-num"></span>전체</a> 
 			<a class="hit-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=hit_count">조회 순</a> 
 			<a class="comment-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=commentcount"">댓글 순</a>
 			<a class="like-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=like_count">추천 순</a>

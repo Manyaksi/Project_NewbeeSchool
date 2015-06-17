@@ -63,6 +63,9 @@ public interface ArticleDao {
 	//댓글 등록
 	public void writeComment(Map<String, String> params);
 	
+	//댓글 삭제
+	public void removeComment(int comment_no);
+	
 		
 	/*//프로젝트 등록하기
 	public void addProject(Project project);

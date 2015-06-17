@@ -4,23 +4,112 @@
 
 <mapper namespace="kr.or.newbie.users.dao.UsersDao">
 	<!-- 회원 등록 -->
-	<select id="joinNewbie" parameterType="users" >
-		insert into users(user_no, program_name, id, nickname, password)
-		values(user_no_seq.NextVal, #{programName}, #{id}, #{nickname}, #{password})
+	<select id="joinNewbie" parameterType="users">
+		insert into
+		users(user_no,
+		program_name, id, nickname, password)
+		values(user_no_seq.NextVal,
+		#{programName}, #{id}, #{nickname},
+		#{password})
 	</select>
-	
-	
+
+
 	<select id="confirmEmail" parameterType="String" resultType="users">
-		select user_no userNo, program_name programName, id, nickname from users where id = #{id}
+		select user_no userNo, program_name programName, id, nickname from
+		users where id = #{id}
 	</select>
-	
+
 	<select id="confirmNickname" parameterType="String" resultType="users">
-		select user_no userNo, program_name programName, id, nickname from users where nickname = #{nickname}
+		select user_no userNo, program_name programName, id, nickname from
+		users where nickname = #{nickname}
 	</select>
-	
+
 	<!-- 로그인 처리 -->
 	<select id="login" parameterType="users" resultType="users">
-		select user_no userNo, program_name programName, id, password, nickname, photo, location
+		select
+		user_no userNo, program_name programName, id, password, nickname, photo
+		photo, location
 		from users where id = #{id} and password = #{password}
 	</select>
+
+	<!-- 회원정보 추출 -->
+	<select id="userInfo" parameterType="Integer" resultType="users">
+		select
+		user_no userNo, program_name programName, id, nickname, photo,
+		location,
+		password,
+		point, grade
+		from users
+		where user_no = #{user_no}
+	</select>
+
+
+	<!-- 외원정보 수정들 -->
+	<!-- 닉네임 수정 -->
+	<select id="nicknameEdit" parameterType="java.util.Map">
+		update users
+		set nickname = #{nickname}
+		where user_no = #{userNo}
+	</select>
+	
+	<!-- 이메일 수정 -->
+	<select id="emailEdit" parameterType="java.util.Map">
+		update users
+		set id = #{id}
+		where user_no =	#{userNo}
+	</select>
+	
+	<!-- 패스워드 수정 -->
+	<select id="passwdEdit" parameterType="java.util.Map">
+		update users
+		set password = #{password}
+		where user_no =	#{userNo}
+	</select>
+	
+	<!-- 지역 수정 -->
+	<select id="locationEdit" parameterType="java.util.Map">
+		update users
+		set location = #{location}
+		where user_no =	#{userNo}
+	</select>
+	
+	<!-- 프로그램 수정 -->
+	<select id="programnameEdit" parameterType="java.util.Map">
+		update users
+		set program_name = #{programName}
+		where user_no =	#{userNo}
+	</select>
+	
+	<!-- 사진 수정 -->
+	<select id="registPhoto" parameterType="java.util.Map">
+	update users
+	set photo = #{photo}
+	where user_no = #{userNo}
+	</select>
+	
+	<!--  작성 게시글 수 -->
+	<select id="articleCount" parameterType="Integer" resultType="java.util.Map">
+		select article_no, user_no, program_name, subject, content, category, write_date, hit_count, like_count, notice, commentCount 
+        from article
+        where user_no = #{userNo}
+    </select>
+    
+    <!--  작성 댓글 수 -->
+    <select id="commentCount"  parameterType="Integer" resultType="java.util.Map">
+        select c.comment_no, c.article_no, u.nickname, u.photo,c.program_name,
+        c.comment_content, TO_CHAR(comment_date,'YY/MM/DD HH24: MI') write,
+        c.step_no, c.order_no,u.user_no userNo
+        from users u JOIN articomment c
+        on c.user_no =
+        u.user_no
+        where c.user_no = #{userNo}
+        order by comment_no asc
+    </select>
+    
+    <!--  댓글 삭제 -->
+	<select id="mycommentRemove" parameterType="Integer">
+		delete articomment
+        where comment_no = #{comment_no}
+	</select>
+	
 </mapper>

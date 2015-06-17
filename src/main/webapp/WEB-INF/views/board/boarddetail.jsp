@@ -73,7 +73,7 @@
 
 		<div class="col-md-12">
 	
-			<div class="paging-left-comp">1
+			<div class="paging-left-comp">
 					<a class="category-boxed btn font-black" id="like">추천하기</a>
 						</div>
 				
@@ -107,7 +107,7 @@
  <c:forEach items="${commentList }" var="comment">  
 	<tr>
 <td class="col-md-3 text-center">
-	<img src="/resources/images/author1.png"></img>
+	<img class="media-object img-circle" src="/resources/images/${article['PHOTO'] }" style="width:100px; height:100px;" alt="profile">
 </td>
 
 
@@ -117,7 +117,7 @@
 	</td>		
 	<td class="col-md-2 text-right bottom-border">
 		<p>${comment["WRITE"] }</p>
-		<p>[댓글쓰기]</p>
+		<a class="category-boxed btn font-black" href="/board/removecomment?comment_no=${comment['COMMENT_NO'] }&article_no=${article['ARTICLE_NO'] }">댓글삭제</a>
 	</td>
 </tr>
 

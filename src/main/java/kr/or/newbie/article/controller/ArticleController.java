@@ -287,5 +287,20 @@ public class ArticleController {
 		return "redirect:/board/boardread?article_no=" + article_no;
 
 	}
+	/**
+	 * 댓글 삭제
+	 */
+	
+	@RequestMapping(value = "/removecomment")
+	public String removeComment(
+			@RequestParam(value = "comment_no") int comment_no,
+			@RequestParam(value = "article_no") int article_no) {
+		
+		logger.debug("댓글 삭제 진입");
+		articleService.removeComment(comment_no);
+		
+		return "redirect:/board/boardread?article_no=" + article_no;
+		
+	}
 
 }

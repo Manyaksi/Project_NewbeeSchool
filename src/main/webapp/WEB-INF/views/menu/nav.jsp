@@ -78,11 +78,11 @@ Cookie[] cookies = request.getCookies();%>
 					
 									<ul class="nav navbar-nav nanum-gothic-coding">
 									<li><img class="img-circle avatar" src="/resources/images/blog/1.jpg" width="45" height="45" alt=""></li>
-						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p id="login"><%=URLDecoder.decode(cookies[2].getValue(),"utf-8") %> <span class="caret"></span></p> </a>
+						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p id="login"><span id="navmessage"><%=URLDecoder.decode(cookies[2].getValue(),"utf-8") %></span> <span class="caret"></span></p> </a>
 			<ul id="login-dp2" class="dropdown-menu login-dp2-top-right">
 				
-				<li><a href="/minihome?userNo="+${cookie.loginId.value}>미니홈</a></li>
-				<li><a href="/member_edit?userNo="+${cookie.loginId.value}>회원정보수정</a></li>
+				<li><a href="/minihome?userNo=${cookie.loginId.value}">미니홈</a></li>
+				<li><a href="/users/modifyuser?userNo=${cookie.loginId.value}">회원정보수정</a></li>
 				
 				<li>
 					<a href="/users/logout">로그아웃</a>

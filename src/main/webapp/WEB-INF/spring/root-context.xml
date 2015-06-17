@@ -35,6 +35,8 @@
          </list>
       </property>
    </bean>
+   
+   
 
    <!-- <context:component-scan base-package="kr.or.newbie" />  -->
 </beans>

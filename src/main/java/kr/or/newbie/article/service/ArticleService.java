@@ -63,6 +63,9 @@ public interface ArticleService {
 	//댓글 등록
 	public void writeComment(int article_no, int user_no, String program_name, String comment_content);
 	
+	//댓글 삭제
+	public void removeComment(int comment_no);
+	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);
 	

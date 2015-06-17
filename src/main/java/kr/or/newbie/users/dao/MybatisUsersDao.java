@@ -3,6 +3,7 @@ package kr.or.newbie.users.dao;
 import java.util.List;
 import java.util.Map;
 
+import kr.or.newbie.article.dao.ArticleDao;
 import kr.or.newbie.users.controller.UsersController;
 import kr.or.newbie.users.domain.Users;
 
@@ -98,6 +99,171 @@ public class MybatisUsersDao implements UsersDao {
 		}
 		
 		return loginResult;
+	}
+
+	/**
+	 * 유저 정보
+	 */
+	@Override
+	public Users userInfo(int user_no) {
+		Users user = null;
+		SqlSession session = null;
+		try {
+			
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			user = dao.userInfo(user_no);
+			
+		} finally{
+			session.close();
+		}
+		
+		return user;
+	}
+
+	/**
+	 * 회원정보 수정들
+	 */
+	
+	//닉네임 수정
+	@Override
+	public void nicknameEdit(Map<String, String> params) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.nicknameEdit(params);
+		}finally{
+			session.close();
+		}
+	}
+
+	//이메일 수정
+	@Override
+	public void emailEdit(Map<String, String> params) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.emailEdit(params);
+		}finally{
+			session.close();
+		}
+		
+	}
+
+	//비밀번호 수정
+	@Override
+	public void passwdEdit(Map<String, String> params) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.passwdEdit(params);
+		}finally{
+			session.close();
+		}
+		
+	}
+
+	//지역 수정
+	@Override
+	public void locationEdit(Map<String, String> params) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.locationEdit(params);
+		}finally{
+			session.close();
+		}
+		
+	}
+
+	//프로그램 수정
+	@Override
+	public void programnameEdit(Map<String, String> params) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.programnameEdit(params);
+		}finally{
+			session.close();
+		}
+		
+	}
+	
+	//사진 수정
+	@Override
+	public void registPhoto(Map<String, String> params) {
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.registPhoto(params);
+		}finally{
+			session.close();
+		}
+		
+	}
+
+	/**
+	 * 작성 게시글 수
+	 */
+	@Override
+	public List<Map<String, Object>> articleCount(int user_no) {
+		List<Map<String, Object>> articleCount = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			articleCount = dao.articleCount(user_no);
+
+		} finally {
+			session.close();
+		}
+		
+		return articleCount;
+	}
+	
+
+	/**
+	 * 작성 댓글 수
+	 */
+	@Override
+	public List<Map<String, Object>> commentCount(int user_no) {
+		List<Map<String, Object>> commentCount = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			commentCount = dao.commentCount(user_no);
+
+		} finally {
+			session.close();
+		}
+		
+		return commentCount;
+	}
+	
+	/**
+	 * 댓글 삭제
+	 */
+	
+	@Override
+	public void mycommentRemove(int comment_no) {
+		
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			UsersDao dao = session.getMapper(UsersDao.class);
+			dao.mycommentRemove(comment_no);
+			
+		} finally {
+			session.close();
+		}
+		
 	}
 
 }
