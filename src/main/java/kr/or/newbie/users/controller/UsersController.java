@@ -92,14 +92,6 @@ public class UsersController {
 	}
 	
 	/**
-	 *  로그인화면요청(GET)
-	 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model) {
-		return "/login/result";
-	}
-	*/
-	/**
 	 * 로그인 요청(POST)
 	 */
 	@RequestMapping(value="/login", method = RequestMethod.POST)
@@ -151,45 +143,5 @@ public class UsersController {
 		
 		return "redirect:/";
 	}
-	
-/*	
-	  *//**
-	   * 로그인부분
-	   *//*
-	  @RequestMapping(value = "/login", method = RequestMethod.POST)
-	   public String login(Model model, String userId, String password,
-	         HttpServletResponse response) {
-	         User user = null;
-	         
-	         //유저 확인
-	         user = userService.login(userId, password);
-	         
-	         //확인후 쿠키 저장
-	         response.addCookie(new Cookie("userId", user.getUserId()));
-	         response.addCookie(new Cookie("emailAddr", user.getEmailAddr()));
-	         model.addAttribute("user", user);
-	         
-	         return "redirect:/main";
-	   }
-	  
-	  *//**
-	   * 로그아웃부분
-	   *//*
-	   @RequestMapping(value = "/logout", method = RequestMethod.GET)
-	   public String login(
-	         Model model,
-	         @CookieValue(value = "id", defaultValue = "null") Cookie userId,
-	         @CookieValue(value = "emailAddr", defaultValue = "null") Cookie emailAddr ,
-	         HttpServletResponse response) {
-	         
-	         userId.setMaxAge(0);
-	         userId.setPath("/");
-	         
-	         emailAddr.setMaxAge(0);
-	         emailAddr.setPath("/");
-	         
-	         response.addCookie(userId);
-	         response.addCookie(emailAddr);
-	         return "redirect:/main";
-	   }*/
+
 }
