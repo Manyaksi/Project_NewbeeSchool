@@ -1,6 +1,10 @@
 package kr.or.newbie.users.controller;
 
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Locale;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,7 +38,8 @@ public class UsersController {
 	public void setAcademicService(UsersService usersService) {
 		this.usersService = usersService;
 	}
- 
+	
+
 
 	/**
 	 * 회원가입 요청(/users/join)
@@ -114,14 +119,27 @@ public class UsersController {
 			logger.debug("[로그인]요청(GET)이 들어옴 : " + users.getId() + users.getPassword());
 			logger.debug("[로그인] 로그인 성공한 회원 : " + loginUsers.toString());
 			
-			Cookie loginCookie = new Cookie("loginId", loginUsers.getId());
+			Cookie loginCookie = new Cookie("loginId", String.valueOf(loginUsers.getUserNo()));
+			Cookie loginCookieNickName;
+			try {
+				loginCookieNickName = new Cookie("loginNickName", URLEncoder.encode(loginUsers.getNickname(), "utf-8"));
+			System.out.println(loginUsers.getNickname());
 			loginCookie.setPath("/");
+			loginCookieNickName.setPath("/");
 			response.addCookie(loginCookie);
-			return "redirect:"+"/";
+			response.addCookie(loginCookieNickName);
+			
+			
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "redirect:/";
 		}else{
 			logger.debug("로그인 실패");
 			model.addAttribute("loginResult", "등록된 회원이 아닙니다.");
-			return "/";
+			
+			return "redirect:/";
 		}
 	}
 	
@@ -141,11 +159,16 @@ public class UsersController {
 			for (Cookie cookie : cookies) {
 				String id = cookie.getName();
 				if (id.equals("loginId")) {
+					System.out.println(id);
 					cookie.setMaxAge(0);
 					cookie.setPath("/");
 					response.addCookie(cookie);
 					
-				}
+				}/*else if (id.equals("loginNickName")){
+					cookie.setMaxAge(0);
+					cookie.setPath("/");
+					response.addCookie(cookie);
+				}*/
 			}
 		}
 		

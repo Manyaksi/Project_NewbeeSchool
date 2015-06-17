@@ -5,6 +5,7 @@ $('.sc1').addClass('animated');
 $('.sc2').addClass('animated');
 $('.sc3').addClass('animated');
 $('.section-title').addClass('animated');
+$('.portfolio').addClass('animated');
 $('.s1').addClass('animated');
 $('.s2').addClass('animated');
 $('.info-content').addClass('animated');

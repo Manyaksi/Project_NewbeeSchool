@@ -31,23 +31,22 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(
-				DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate);
-
 		return "index";
 	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public String homepost(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		return "index";
+	}
+
 
 	@RequestMapping(value = "/registeration", method = RequestMethod.GET)
 	public String registeration(Model model) {
@@ -126,6 +125,7 @@ public class HomeController {
 
 		return "project_write";
 	}
+
 	@RequestMapping(value = "/member_edit", method = RequestMethod.GET)
 	public String member_edit(Model model) {
 		

@@ -43,7 +43,7 @@
                                     <div class="post">
                                     <form method="post" action="/minihome/guestbook">
                                         <textarea class="form-control" placeholder="방명록 내용을 입력하세요." rows="4=6" name="guestContent"></textarea>
-                                        <input type="hidden" name="userNo" value="10">
+                                        <input type="hidden" name="userNo" value="${cookie.loginId.value }">
                                         <input type="hidden" name="guestbookOwner" value="${users.userNo }">
                                         <div class="post-options">
                                             <a href="profile.html#"><i class="icon-camera"></i></a>

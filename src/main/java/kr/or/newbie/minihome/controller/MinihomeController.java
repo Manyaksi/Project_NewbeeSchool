@@ -42,8 +42,9 @@ public class MinihomeController {
 	 * minihome 목록 출력 요청(/minihome/minihome)
 	 */
 	@RequestMapping(value="/minihome", method=RequestMethod.GET)
-	public String minihome(@RequestParam(value="user_no") int userNo, Model model) {
+	public String minihome(@RequestParam(value="userNo") int userNo, Model model) {
 		
+		System.out.println(userNo);
 		logger.debug("미니홈 요청");
 		Users users = minihomeService.showMinihome(userNo);
 		List<Map<String, Object>> list = minihomeService.showGuestbook(userNo);
@@ -63,11 +64,11 @@ public class MinihomeController {
 		logger.debug("방명록 등록 요청");
 		
 		minihomeService.addGuestbook(guestbook);
-		Users users = minihomeService.showMinihome(guestbook.getUserNo());
-		List<Map<String, Object>> list = minihomeService.showGuestbook(guestbook.getUserNo());
-		model.addAttribute("users", users);
-		model.addAttribute("list", list);
-		return "/minihome";
+//		Users users = minihomeService.showMinihome(guestbook.getUserNo());
+//		List<Map<String, Object>> list = minihomeService.showGuestbook(guestbook.getUserNo());
+//		model.addAttribute("users", users);
+//		model.addAttribute("list", list);
+		return "redirect:/minihome/minihome?userNo="+guestbook.getGuestbookOwner();
 	}
 	
 }

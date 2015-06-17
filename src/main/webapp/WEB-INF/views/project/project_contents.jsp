@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="project-contents">
 	<div class="container">
 		<div class="row">
@@ -6,11 +8,9 @@
 				<div id="googleMap" style="width: 550; height: 500px;"></div>
 				<div class="space50"></div>
 				
-				<ul class="nav nav-tabs">
-					<li role="presentation" class="active"><a href="#summery"
-						aria-controls="summery" role="tab" data-toggle="tab">소개</a></li>
-					<li role="presentation"><a href="#people"
-						aria-controls="people" role="tab" data-toggle="tab">참여자현황</a></li>
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li role="presentation" class="active"><a href="#summery" aria-controls="summery" role="tab" data-toggle="tab">소개</a></li>
+					<li role="presentation"><a href="#people" aria-controls="people" role="tab" data-toggle="tab">참여자현황</a></li>
 				</ul>
 
 				<div class="space30"></div>
@@ -18,18 +18,28 @@
 
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="summery">
-						자바바바바 <br> 공부하실분 모집합니다<br> 초보자 환영<br> 가산 W몰 옆
-						스타벅스에서 할 예정이예요!<br> 매주 토요일 저녁 3시에 공부할 예정입니다<br> 미녀 여성분 환영합니다<br>
-						채팅 프로그램 만들어요~~~~~~~~~^^
+						${detailList["GROUP_CONTENT"] }
 					</div>
-					<div role="tabpanel" class="tab-pane" id="people">...</div>
+					<div role="tabpanel" class="tab-pane" id="people">
+				<c:forEach var="entry" items="${userList }">
+					<ul class="media-list">
+                      <li class="media">
+                        <a class="pull-left" href="#">
+                          <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
+                        </a>
+                        <div class="media-body">
+                          <div class="well ">
+                              <a href="/minihome/minihome?userNo=${entry.userNo}"><h4 class="media-heading text-uppercase reviews">${entry.nickname }</h4></a>
+                              <ul class="media-date text-uppercase reviews list-inline">
+                                
+                              </ul>
+                          </div>              
+                        </div>
+                      </li>
+                    </ul> 
+                    </c:forEach>
+				</div>
 				
-
-
-
-
-
-
 
 				</div>
 				
@@ -152,151 +162,51 @@ border-radius: 2px;
             </ul>            
             <div class="tab-content">
                 <div class="tab-pane active" id="comments-logout">                
-                    <ul class="media-list">
-                      <li class="media">
-                        <a class="pull-left" href="#">
-                          <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
-                        </a>
-                        <div class="media-body">
-                          <div class="well ">
-                              <h4 class="media-heading text-uppercase reviews">Marco </h4>
-                              <ul class="media-date text-uppercase reviews list-inline">
-                                <li class="dd">22</li>
-                                <li class="mm">09</li>
-                                <li class="aaaa">2014</li>
-                              </ul>
-                              <p class="media-comment">
-                                Great snippet! Thanks for sharing.
-                              </p>
-                              <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> 댓글달기</a>
-                              <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyOne"><span class="glyphicon glyphicon-comment"></span> 2 개의 댓글</a>
-                          </div>              
-                        </div>
-                        <div class="collapse" id="replyOne">
-                            <ul class="media-list">
-                                <li class="media media-replied">
-                                    <a class="pull-left" href="#">
-                                      <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
-                                    </a>
-                                    <div class="media-body">
-                                      <div class="well ">
-                                          <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
-                                          <ul class="media-date text-uppercase reviews list-inline">
-                                            <li class="dd">22</li>
-                                            <li class="mm">09</li>
-                                            <li class="aaaa">2014</li>
-                                          </ul>
-                                          <p class="media-comment">
-                                            Nice job Maria.
-                                          </p>
-                                          <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> 댓글달기</a>
-                                      </div>              
-                                    </div>
-                                </li>
-                                <li class="media media-replied" id="replied">
-                                    <a class="pull-left" href="#">
-                                      <img class="media-object img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
-                                    </a>
-                                    <div class="media-body">
-                                      <div class="well ">
-                                          <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Mary</h4></h4>
-                                          <ul class="media-date text-uppercase reviews list-inline">
-                                            <li class="dd">22</li>
-                                            <li class="mm">09</li>
-                                            <li class="aaaa">2014</li>
-                                          </ul>
-                                          <p class="media-comment">
-                                            Thank you Guys!
-                                          </p>
-                                          <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> 댓글달기</a>
-                                      </div>              
-                                    </div>
-                                </li>
-                            </ul>  
-                        </div>
-                      </li>          
+                    <ul class="prd_list media-list" id="list_scroll">
+                    <c:forEach var="commentList" items="${commentList }">
                       <li class="media">
                         <a class="pull-left" href="#">
                           <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kurafire/128.jpg" alt="profile">
                         </a>
                         <div class="media-body">
                           <div class="well ">
-                              <h4 class="media-heading text-uppercase reviews">Nico</h4>
+                              <h4 class="media-heading text-uppercase reviews">${commentList["NICKNAME"] }</h4>
                               <ul class="media-date text-uppercase reviews list-inline">
-                                <li class="dd">22</li>
-                                <li class="mm">09</li>
-                                <li class="aaaa">2014</li>
+                                <li>${commentList["GROUPCOMM_DATE"] }</li>
+                                
                               </ul>
+                              
                               <p class="media-comment">
-                                I'm looking for that. Thanks!
+                                ${commentList["GROUPCOMM_CONTENT"] } <c:if test='${commentList["USER_NO"] == cookie.loginId.value}'><a href='/project/comment_delete?groupcommNo=${commentList["GROUPCOMM_NO"] }&groupNo=${commentList["GROUP_NO"]}' class="btn black" style="float: right">삭제하기</a></c:if>
                               </p>
-                              <div class="embed-responsive embed-responsive-16by9">
-                                  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/80lNjkcp6gI" allowfullscreen></iframe>
-                              </div>
-                              <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> 댓글달기</a>
+                              
+                              
                           </div>              
                         </div>
                       </li>
-                      <li class="media">
-                        <a class="pull-left" href="#">
-                          <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
-                        </a>
-                        <div class="media-body">
-                          <div class="well ">
-                              <h4 class="media-heading text-uppercase reviews">Kriztine</h4>
-                              <ul class="media-date text-uppercase reviews list-inline">
-                                <li class="dd">22</li>
-                                <li class="mm">09</li>
-                                <li class="aaaa">2014</li>
-                              </ul>
-                              <p class="media-comment">
-                                Yehhhh... Thanks for sharing.
-                              </p>
-                              <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> 댓글달기</a>
-                              <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyTwo"><span class="glyphicon glyphicon-comment"></span> 1 개의 댓글</a>
-                          </div>              
-                        </div>
-                        <div class="collapse" id="replyTwo">
-                            <ul class="media-list">
-                                <li class="media media-replied">
-                                    <a class="pull-left" href="#">
-                                      <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg" alt="profile">
-                                    </a>
-                                    <div class="media-body">
-                                      <div class="well ">
-                                          <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Lizz</h4>
-                                          <ul class="media-date text-uppercase reviews list-inline">
-                                            <li class="dd">22</li>
-                                            <li class="mm">09</li>
-                                            <li class="aaaa">2014</li>
-                                          </ul>
-                                          <p class="media-comment">
-                                            Classy!
-                                          </p>
-                                          <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> 댓글달기</a>
-                                      </div>              
-                                    </div>
-                                </li>
-                            </ul>  
-                        </div>
-                      </li>
-                    </ul> 
+                      </c:forEach>
+                    </ul>
                 </div>
                 <div class="tab-pane" id="add-comment">
-                    <form action="#" method="post" class="form-horizontal" id="commentForm" role="form"> 
+                    <form action="/project/comment_register" method="post" class="form-horizontal" id="commentForm" role="form"> 
                         <div class="form-group">
                             <label for="email" class="col-sm-2 control-label">댓글내용</label>
                             <div class="col-sm-10">
-                              <textarea class="form-control" name="addComment" id="addComment" rows="5"></textarea>
+                              <textarea class="form-control" name="groupcommContent" id="addComment" rows="5"></textarea>
+                              <span id="message">0/200</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">                    
+                            	<input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
+                            	<input type="hidden" name="userNo" value='${cookie.loginId.value}'>
                                 <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> 댓글등록 </button>
                             </div>
                         </div>            
                     </form>
                 </div>
+               <!--   <div id="loadmoreajaxloader" style="display:none; text-align: center;"><img src="/resources/images/loading.gif"/></div>
+					  </div> -->
    
             </div>
         </div>
