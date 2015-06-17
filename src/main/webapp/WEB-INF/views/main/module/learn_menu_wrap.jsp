@@ -69,10 +69,10 @@
 						</div>
 						<div class="portfolio sort3" data-cat="sort3">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/3.jpg" alt="" />
+								<img src="/resources/images/works/3.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_slider.html">
-										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-camera"></i> <span>Swift</span></div>
 									</a>
 								</div>
 							</div>

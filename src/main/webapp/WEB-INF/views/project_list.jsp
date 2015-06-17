@@ -14,8 +14,8 @@
 		<jsp:include page="menu/nav.jsp" />
 			
 		
-<div class="contatiner" style="margin-top:0px; background-color: lightgray">
-    <div class="row" style="margin-left:80px;margin-right:80px;margin-bottom:50px;">
+<div class="contatiner">
+    <div class="row">
 <jsp:include page="project/project_list.jsp" />
 	<div class="space50"></div>
         </div>
