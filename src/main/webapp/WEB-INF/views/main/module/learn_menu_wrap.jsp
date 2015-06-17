@@ -49,20 +49,20 @@
 					<div id="portfoliolist">
 						<div class="portfolio sort1" data-cat="sort1">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/1.jpg" alt="" />
+								<img src="/resources/images/works/1.png" alt="" />
 								<div class="overlay1">
 									<a href="/tutorial">
-										<div class="overlay-text"><i class="fa fa-coffee"></i><span>JAVA</span></div>
+										<div class="overlay-text"><i class="fa fa-coffee"></i><span>C++</span></div>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="portfolio sort2" data-cat="sort2">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/2.jpg" alt="" />
+								<img src="/resources/images/works/2.png" alt="" />
 								<div class="overlay1">
-									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+									<a href="/tutorial">
+										<div class="overlay-text"><i class="fa fa-coffee"></i> <span>JAVA</span></div>
 									</a>
 								</div>
 							</div>
@@ -89,10 +89,10 @@
 						</div>
 						<div class="portfolio sort1" data-cat="sort1">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/6.jpg" alt="" />
+								<img src="/resources/images/works/6.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
-										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
+										<div class="overlay-text"><i class="fa fa-play"></i> <span>Python</span></div>
 									</a>
 								</div>
 							</div>

@@ -138,7 +138,9 @@
 
 
 <c:if test="${cookie.loginId != null}" var="varname" scope="request">
-
+<script>
+$('.navbar-default').addClass('nav-shadow');
+</script>
 
 </c:if>
 
