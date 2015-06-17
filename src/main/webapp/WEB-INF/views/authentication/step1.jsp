@@ -130,7 +130,7 @@
 						<div class="setup-secondary">
 							<div class="setup-info-module">
 								<h2 class="nanum-gothic">
-									<span class="logo">개발유치원</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;에 가입하시면
+									<span class="logo"><q>개발유치원</q></span>에<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가입하시면...
 								</h2>
 								<ul class="features-list">
 									<li><strong>나에게 맞는 개발언어</strong> 찾기</li>
