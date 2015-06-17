@@ -8,6 +8,7 @@
 <!-- head 모듈 -->
 	<jsp:include page="menu/module/head.jsp" />
 	<link rel="stylesheet" href="/resources/css/videostyle.css">
+	<link href="/resources/css/set2.css" rel="stylesheet" />
 	
 <style>
     #owl-demo .item{

@@ -79,7 +79,7 @@
 						</div>
 						<div class="portfolio sort4" data-cat="sort4">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/4.jpg" alt="" />
+								<img src="/resources/images/works/4.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_img.html">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
@@ -99,7 +99,7 @@
 						</div>
 						<div class="portfolio sort2" data-cat="sort2">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/5.jpg" alt="" />
+								<img src="/resources/images/works/5.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_slider.html">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
@@ -109,7 +109,7 @@
 						</div>
 						<div class="portfolio sort3" data-cat="sort3">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/7.jpg" alt="" />
+								<img src="/resources/images/works/7.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_img.html">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
@@ -119,7 +119,7 @@
 						</div>
 						<div class="portfolio sort4" data-cat="sort4">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/8.jpg" alt="" />
+								<img src="/resources/images/works/8.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
@@ -129,7 +129,7 @@
 						</div>
 						<div class="portfolio sort4" data-cat="sort4">
 							<div class="portfolio-wrapper">
-								<img src="/resources/images/works/9.jpg" alt="" />
+								<img src="/resources/images/works/9.png" alt="" />
 								<div class="overlay1">
 									<a href="portfolio_single_video.html">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
