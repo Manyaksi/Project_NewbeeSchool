@@ -70,7 +70,7 @@
 							<div class="portfolio-wrapper">
 								<img src="/resources/images/works/6.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/tutorial/tutorial?program_name=c#&program_os=window">
+									<a href="/tutorial/tutorial?program_name=cs&program_os=window">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>C#</span></div>
 									</a>
 								</div>

@@ -13,10 +13,10 @@ public interface Devprogramdao {
 	public void add(Devprogram devprogram) throws RuntimeException;
 	
 	// 설치법 상세보기
-	public Devprogram showDevprogramdetail(String programName);
+	public Devprogram showDevprogramdetail(Map<String, String> map);
 	
 	// 설치법 목록
-	public List<Map<String, Object>> showDevprogramList();
+	public List<Map<String, Object>> showDevprogramList(Map<String, Object> map);
 	
 	// 댓글 등록
 	public void commentAdd(Map<String, Object> params);
@@ -24,6 +24,8 @@ public interface Devprogramdao {
 	// 댓글 목록
 	public List<Map<String, Object>> commentList(Map<String, String> params);
 	
+	// 댓글 삭제
+	public void commentDelete(int review_no);
 	/*
 	// 댓글 등록
 	public void commentadd(Devcomment devcomment) throws RuntimeException;

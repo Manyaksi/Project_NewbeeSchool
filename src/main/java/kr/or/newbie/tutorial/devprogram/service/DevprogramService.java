@@ -14,16 +14,19 @@ public interface DevprogramService {
 	public void regist(Devprogram devprogram) throws RuntimeException;
 	
 	// 설치글 목록 출력
-	public List<Map<String, Object>> showDevprogramList() throws RuntimeException;
+	public List<Map<String, Object>> showDevprogramList(String programName, String programOs) throws RuntimeException;
 	
 	// 설치글 상세보기
 	public Devprogram showDevprogramdetail(String programName, String programOs) throws RuntimeException;
 
 	// 댓글 등록
-	public void commentAdd(String programName, String reviewContent, int userNo, int reviewNo);
+	public void commentAdd(String programName, String programOs, String reviewContent, int userNo);
 	
 	// 댓글 목록
 	public List<Map<String, Object>> commentList(String programName, String programOs);
+	
+	// 댓글 삭제
+	public void commentDelete(int review_no) throws RuntimeException;
 	
 	/*
 	// 댓글 등록

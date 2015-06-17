@@ -1,5 +1,6 @@
 package kr.or.newbie.tutorial.devprogram.dao;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -45,33 +46,37 @@ public class MybatisDevprogramDao implements Devprogramdao {
 		} finally {
 			session.close();
 		}
-
 	}
 
 	// 설치법 목록
 	@Override
-	public List<Map<String, Object>> showDevprogramList() {
-		List<Map<String, Object>> map = null;
+	public List<Map<String, Object>> showDevprogramList(Map<String, Object> map) {
+		List<Map<String, Object>> map2 = null;
 		SqlSession session = null;
 		try {
 			session = sqlSessionFactory.openSession();
 			Devprogramdao dao = session.getMapper(Devprogramdao.class);
-			map = dao.showDevprogramList();
+			map2 = dao.showDevprogramList(map);
 		} finally {
 			session.close();
 		}
-		return map;
+		return map2;
 	}
 
 	// 상세보기
 	@Override
-	public Devprogram showDevprogramdetail(String programName) {
+	public Devprogram showDevprogramdetail(Map<String, String> map) {
+		Iterator<String> iter = map.keySet().iterator();
+		while (iter.hasNext()) {
+			String string = (String) iter.next();
+			System.out.println(string + ", " + map.get(string));
+		}
 		Devprogram devprogram = null;
 		SqlSession session = null;
 		try {
 			session = sqlSessionFactory.openSession();
 			Devprogramdao dao = session.getMapper(Devprogramdao.class);
-			devprogram = dao.showDevprogramdetail(programName);
+			devprogram = dao.showDevprogramdetail(map);
 		} finally {
 			session.close();
 		}
@@ -104,6 +109,20 @@ public class MybatisDevprogramDao implements Devprogramdao {
 			session.close();
 		}
 		return commentList;
+	}
+
+	// 댓글 삭제 
+	@Override
+	public void commentDelete(int review_no) {
+		
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			Devprogramdao dao = session.getMapper(Devprogramdao.class);
+			dao.commentDelete(review_no);
+		} finally {
+			session.close();
+		}
 	}
 
 	/*

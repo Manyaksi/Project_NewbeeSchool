@@ -48,51 +48,57 @@ public class DevprogramController {
 	}
 	*/
 	
-	/**
-	 *  프로그램 목록요청
-	 */
-	@RequestMapping(value="/tutorial")
-	public String list(Model model){
-		List<Map<String, Object>> map = devprogramService.showDevprogramList();
-		model.addAttribute("list", map);
-		System.out.println("ddd");
-		return "/tutorial";
-	}
 	
 	/**
 	 * 설치글 상세보기
 	 */
 	@RequestMapping(value="/tutorial", method=RequestMethod.GET)
 	public String detail(@RequestParam(value="program_name") String programName, @RequestParam(value="program_os") String programOs,Model model){
-		System.out.println(programName);
-	//	Map<String, Object> map = devprogramService.showDevprogramdetail(programName, programOs);
+		System.out.println(programName + ", " + programOs);
+		//	Map<String, Object> map = devprogramService.showDevprogramdetail(programName, programOs);
 		Devprogram devprogram = devprogramService.showDevprogramdetail(programName, programOs);
+		System.out.println(devprogram.toString());
 		List<Map<String, Object>> devcommap = devprogramService.commentList(programName, programOs);
-		System.out.println(devprogram);
-	//	model.addAttribute("map", map);
+//		List<Map<String, Object>> map = devprogramService.showDevprogramList(programName, programOs);
+//		for (Map<String, Object> map2 : map) {
+//			Iterator<String> iter = map2.keySet().iterator();
+//			while (iter.hasNext()) {
+//				String string = (String) iter.next();
+//				System.out.println(string + " : " + map2.get(string) );
+//			}
+//		}
+//		model.addAttribute("showDevprogramList", map);
+//		model.addAttribute("map", map);
 		model.addAttribute("devprogram", devprogram);
 		model.addAttribute("commentList", devcommap);
 		return "/tutorial";
 	}
 
-	
 	/**
 	 * 댓글 등록
 	 */
-	@RequestMapping(value="/tutorial", method=RequestMethod.POST)
-	public String commentAdd(@RequestParam(value="program_name") String programName,
+	@RequestMapping(value="/addcomment", method=RequestMethod.POST)
+	public String commentAdd(@RequestParam(value="programName") String programName, @RequestParam(value="programOs") String programOs,
 			@RequestParam(value="reviewContent") String reviewContent,
-			@RequestParam(value="userNo") int userNo,
-			@RequestParam(value="reviewNo") int reviewNo){
+			@RequestParam(value="userNo") int userNo){
 		logger.debug("등록진입");
-		logger.debug("파라미터값들" + programName + "2. " + reviewContent + "3. "+ userNo + "4. " + reviewNo);
-		devprogramService.commentAdd(programName, reviewContent, userNo, reviewNo);
-		return "redirect:/tutorial?program_name=&program_os=" + programName;
-//		return "redirect:/loveNTread?boardId=4&articleId="+someBoardReply.getArticleId();
-//		return "redirect:/board/boardread?article_no=" + article_no;
+		logger.debug("파라미터값들" + programName + "2. " + reviewContent + "3. " + userNo + "4. ");
+		devprogramService.commentAdd(programName, programOs, reviewContent, userNo);
+		return "redirect:/tutorial/tutorial?program_name="+programName+"&program_os=" + programOs;
 	}
-	   
-/*
+	  
+	/**
+	 * 댓글 삭제
+	 */
+	@RequestMapping(value="/commentDelete")
+	public String commentDelete(@RequestParam(value="review_no")int review_no, @RequestParam(value="program_name") String program_name, @RequestParam(value="program_os") String program_os){
+		logger.debug("삭제 진입");
+		devprogramService.commentDelete(review_no);
+		return "redirect:/tutorial/tutorial?program_name=" + program_name + "&program_os="+program_os;
+		//"redirect:/tutorial/tutorial?review_no="+review_no
+	}
+	
+	/*
 	//댓글목록 요청
 	@RequestMapping(value="/tutorial")
 	public String commentlist(Model model){
@@ -130,9 +136,6 @@ public class DevprogramController {
 		return "/project";
 	}
 	*/
-	
-	
-	
 }
 
 

@@ -37,16 +37,21 @@ public class DevprogramServiceImpl implements DevprogramService {
 
 	// 설치글 목록
 	@Override
-	public List<Map<String, Object>> showDevprogramList() {
+	public List<Map<String, Object>> showDevprogramList(String programName, String programOs) {
 		System.out.println("[Debug] : 설치글 목록 출력");
-		return devprogramDao.showDevprogramList();
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("programName", programName);
+		map.put("programOs", programOs);
+		return devprogramDao.showDevprogramList(map);
 	}
 
 	// 설치글 상세보기
 	@Override
 	public Devprogram showDevprogramdetail(String programName, String programOs) {
-		Devprogram devprogram = devprogramDao.showDevprogramdetail(programName);
-		return devprogram;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("programName", programName);
+		map.put("programOs", programOs);
+		return devprogramDao.showDevprogramdetail(map);
 	}
 
 	// 댓글 목록
@@ -55,20 +60,28 @@ public class DevprogramServiceImpl implements DevprogramService {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("program_name", programName);
 		params.put("program_os", programOs);
-
 		return devprogramDao.commentList(params);
 	}
 
 	// 댓글 등록
 	@Override
-	public void commentAdd(String programName, String reviewContent, int userNo, int reviewNo) {
-		Map<String, String> params = new HashMap<String, String>();
-		String test = String.valueOf(programName);
+	public void commentAdd(String programName, String programOs, String reviewContent, int userNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("programName", programName);
+		params.put("programOs", programOs);
 		params.put("reviewContent", reviewContent);
 		params.put("userNo", String.valueOf(userNo));
-		params.put("reviewNo", String.valueOf(reviewNo));
+		devprogramDao.commentAdd(params);
 	}
+
+	// 댓글 삭제 
+	@Override
+	public void commentDelete(int review_no) {
+		devprogramDao.commentDelete(review_no);
+		System.out.println("[debug] : 댓글 삭제 완료");
+	}
+
+
 
 
 	/*

@@ -112,13 +112,13 @@ input[type="file"]{
                         <a class="pull-left" href="#">
                           <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
                         </a>
-                        
                         <div class="media-body">
                           <div class="well well-lg">
                               <h4 class="media-heading text-uppercase reviews">${commentList["NICKNAME"]}</h4>
                               <ul class="media-date text-uppercase reviews list-inline">
                                 <li class="dd-mm-aaaa">${commentList["REVIEW_DATE"]}</li>
                               </ul>
+                              <a href='/tutorial/commentDelete?program_name=${commentList["PROGRAM_NAME"]}&program_os=${commentList["PROGRAM_OS"]}&review_no=${commentList["REVIEW_NO"]}' id='commentdelete' type="submit" class="btn black" style="float: right">삭제하기</a>
                               <p class="media-comment">
                                ${commentList["REVIEW_CONTENT"]}
                               </p>
@@ -130,14 +130,16 @@ input[type="file"]{
                 </div>
                 
                 <div class="tab-pane" id="add-comment">
-                    <form action="/tutorial/tutorial?program_name=java }" method="post" class="form-horizontal" id="commentForm" role="form">
+                    <form action="/tutorial/addcomment" method="post" class="form-horizontal" id="commentForm" role="form">
                         <div class="form-group">
                             <label for="email" class="col-sm-2 control-label">댓글내용</label>
                             <div class="col-sm-10">
                               <textarea class="form-control" name="reviewContent" id="commentAdd" rows="5">${commentAdd["REVIEW_CONTENT"]}</textarea>
                             </div>
                         </div>
-                        <input type="text" name="userNo" value="2">
+                        <input type="hidden" name="userNo" value="2">
+                        <input type="hidden" name="programName" value="${devprogram.program_name}">
+                        <input type="hidden" name="programOs" value="${devprogram.program_os}">
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> 댓글등록 </button>
@@ -145,9 +147,7 @@ input[type="file"]{
                         </div>            
                     </form>
                 </div>
-                
             </div>
-            
         </div>
 	</div>
   </div>
@@ -318,7 +318,6 @@ input[type="file"]{
             </div>
         </div>
     </div>
-  
   -->
   </div>
 </div>
