@@ -119,8 +119,9 @@
 						</div>
 					</div>
 				</div>
+				<a class="btn-lite" href="index.html#">더보기</a>
 			</div>
-			<a class="btn-lite" href="index.html#">더보기</a>
+			
 		</div>
 		<!-- /.container -->
 	</div>

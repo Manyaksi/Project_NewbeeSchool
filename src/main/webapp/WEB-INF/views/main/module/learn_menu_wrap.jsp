@@ -9,7 +9,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="section-title">
+				<div class="section-title animated bounceIn">
 					<h3>설치법 배우기</h3>
                     <p>각종 언어별 개발툴 설치법을 익힐 수 있습니다.</p>
                     

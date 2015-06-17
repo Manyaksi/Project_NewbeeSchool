@@ -45,23 +45,7 @@ $('.ci1').addClass('animated');
 				}
 			});
 
-			$('.section-title').each(function(){
-			var imagePos = $(this).offset().top;
-			
-			var topOfWindow = $(window).scrollTop();
-				if (imagePos < topOfWindow+600) {
-					$(this).addClass("bounceIn");
-				}
-			});
 
-			$('.portfolio').each(function(){
-			var imagePos = $(this).offset().top;
-			
-			var topOfWindow = $(window).scrollTop();
-				if (imagePos < topOfWindow+600) {
-					$(this).addClass("flipInX");
-				}
-			});
 
 			$('.s1').each(function(){
 			var imagePos = $(this).offset().top;

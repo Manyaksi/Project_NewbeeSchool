@@ -1,17 +1,27 @@
-
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<div class="team-wrap" id="project">
 
 		<div class="container">
 			<div class="row">
 				<div class="section-title">
 					<h3>프로젝트</h3>
-					<p class="subtext">가입하시고 초보개발자들과 함께 프로젝트에 참여해보세요
-</p>
+					<!-- 로그인시.. -->               
+<c:if test="${cookie.loginId != null}" var="varname" scope="request">
+               </c:if>
+               
+               <!-- 로그아웃시.. --> 
+                <c:if test="${empty cookie.loginId}" var="varname" scope="request">
+               
+					<p class="subtext">가입하시고 초보개발자들과 함께 프로젝트에 참여해보세요</p>
 				</div>
 				
 				    <div class="space30"></div>
                 <div class="col-md-12 text-center"> <a class="btn-lite1" href="index.html#">가입하기</a></div>
+     </c:if>
+					
+					
+					
 				<ul id="project_filters" class="clearfix">
 						<li><span class="project_filters active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
 						<li><span class="project_filters" data-filter="sort1">Web</span></li>
@@ -206,8 +216,6 @@
 
 					</div>	
 
-				<div class="space30"></div>
 				<a class="btn-lite" href="/project_list">더보기</a>
 			</div>
 		</div>
-	</div>

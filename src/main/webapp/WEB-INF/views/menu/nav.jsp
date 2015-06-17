@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 		<nav class="navbar navbar-default navbar-fixed-top top-nav fixed-height" role="navigation">
 			<div class="container login_nav">
 				<div class="navbar-header">
@@ -14,9 +15,22 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-left navbar-ex1-collapse">
 					<ul class="nav navbar-nav nanum-gothic-coding">
-						<li><a href="/#learn">배우기</a></li>
-						<li><a href="/#community">커뮤니티</a></li>
-						<li><a href="/#project">프로젝트</a></li>
+					<!-- 로그아웃시.. -->
+
+					<c:if test="${empty cookie.loginId}" var="varname" scope="request">
+					<li><a href="/#learn">배우기</a></li>
+					<li><a href="/#community">커뮤니티</a></li>
+					<li><a href="/#project">프로젝트</a></li>
+					</c:if>
+					
+					<!-- 로그인시.. -->
+
+  					<c:if test="${cookie.loginId != null}" var="varname" scope="request">
+					<li><a id="learn-tab">배우기</a></li>
+					<li><a id="community-tab">커뮤니티</a></li>
+					<li><a id="project-tab">프로젝트</a></li>
+				    </c:if>
+						
 					</ul>
 				</div>
 				<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">

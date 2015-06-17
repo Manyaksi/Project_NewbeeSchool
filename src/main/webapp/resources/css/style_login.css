@@ -467,6 +467,7 @@ right:0px !important;
 	/* background:#27ae60 url("../demo/wrappers/2.jpg") no-repeat center fixed; */
 	background-color: #ECF0F1;
 	background-size: 100% auto;
+	min-height: 600px;
 	padding-top: 40px;
 	padding-bottom: 40px;
 	/*position:relative;*/
@@ -800,7 +801,7 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 
 .community-intro-wrap{
 	
-		padding: 110px 0;
+		padding: 40px 0;
 	background: #67809F;
 	position: relative;
 	-webkit-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
@@ -831,13 +832,16 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 }
 
 .program-intro-wrap{
-	background: url("/resources/images/project_intro4.jpg") no-repeat center center fixed;
-
+	background: #67809F;
+	max-hegiht:235px !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-	padding: 110px 0;
+	padding: 30px 0 10px;
+		-webkit-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+-moz-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
+box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 }
 
 .matching-info-content {
@@ -1736,7 +1740,6 @@ footer p a:hover {
 }
 
 .sc1, .sc2, .sc3, .section-title {
-	visibility: hidden;
 }
 
 /*------------------------------------------------------------- 
