@@ -41,7 +41,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/2.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=Csharp">
+									<a href="/board/boardlist?program_name=Python">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>C# 커뮤니티</span></div>
 									</a>
 								</div>
@@ -61,7 +61,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/4.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_img.html">
+									<a href="/board/boardlist?program_name=Swift">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -71,7 +71,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/6.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_video.html">
+									<a href="/board/boardlist?program_name=Csharp">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -81,7 +81,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/5.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_slider.html">
+									<a href="/board/boardlist?program_name=PHP">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -91,7 +91,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/7.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_img.html">
+									<a href="/board/boardlist?program_name=Ruby">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -101,7 +101,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/8.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_video.html">
+									<a href="/board/boardlist?program_name=JavaScript">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -111,7 +111,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/9.jpg" alt="" />
 								<div class="overlay1">
-									<a href="community_single_video.html">
+									<a href="/board/boardlist?program_name=C">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>

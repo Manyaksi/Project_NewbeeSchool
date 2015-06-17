@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,25 @@
 <script>
 
 $(document).ready(function() {
+
+	$(".placeholder-white form-control pull-right").keydown(function(evt){ 
+	    if( (evt.keyCode) && (evt.keyCode==13) ) {
+	         $(".navbar-form search-btn").submit();
+	     }
+	 });	
+	
 	  $('#summernote').summernote();
+	  
+	  $("#writearticle").submit(function(){
+		  
+	  var content = $('.note-editable').html();
+	  
+      $(".content").attr("value",content);
+		  
+	  	return true;
+	  
+	  });
+	  
 	});
 	
 	
@@ -54,6 +73,10 @@ $('#summernote').summernote({
 
 	  focus: true,                 // set focus to editable area after initializing summernote
 	});	
+	
+	var contents = $('.note-editable').html();
+	
+
 
 </script>
 

@@ -33,6 +33,35 @@
 
 <jsp:include page="menu/module/nav_uneffect_js.jsp" />
 <script type="text/javascript" src="/resources/js/board.js"></script>
+<script type="text/javascript">
+
+	 
+	 var orderby = window.location.href.substring(window.location.href.lastIndexOf('=') + 1);
+	 
+	 $("#searchValue").keydown(function(evt){ 
+	        if( (evt.keyCode) && (evt.keyCode==13) ) {
+	            $("#searchForm").submit();
+	        }
+	    });
+	 
+	 
+	 if(orderby=='hit_count'){
+		 $('.hit-tab').addClass('board-header-tabs-active');
+		 $('.total-num').html("");
+	 }else if(orderby=='like_count'){
+		 $('.like-tab').addClass('board-header-tabs-active');
+		 $('.total-num').html("");
+	 }else if(orderby=='commentcount'){
+		 $('.comment-tab').addClass('board-header-tabs-active');
+		 $('.total-num').html("");
+	 }else if(orderby=='total'){
+		 $('.total-tab').addClass('board-header-tabs-active');
+		 $('.total-num').html("${size }");
+	 }
+
+                
+
+</script>
 
 </body>
 </html>

@@ -5,10 +5,10 @@
 
 	<div class="board-header">
 		<div id="board-header-tabs">
-			<a class="board-header-tabs-active" href="..."><span class="total-num">420</span>전체</a> 
-			<a class=".." href="...">조회 순 </a> 
-			<a class=".." href="...">댓글 순</a>
-			<a class=".." href="...">추천 순</a>
+			<a class="total-tab board-header-tabs-active" href="/board/categorylist?category=${category }&program_name=${programName }&orderby=total"><span class="total-num">${size }</span>전체</a> 
+			<a class="hit-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=hit_count">조회 순</a> 
+			<a class="comment-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=commentcount"">댓글 순</a>
+			<a class="like-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=like_count">추천 순</a>
 		</div>
 	</div>
 
@@ -27,7 +27,7 @@
 		</div>		
 		<div class="col-md-7">
 			<div class="board-li-title">
-				<a href="/board/boardread?article_no=${article['ARTICLE_NO'] }">${article["SUBJECT"] }</a>
+				<a href="/board/boardread?article_no=${article['ARTICLE_NO'] }&program_name=${programName }">${article["SUBJECT"] }</a>
 			</div>
 	
 		</div>
@@ -47,7 +47,7 @@
 				</div>
 				<div class="board-views">
 					<div class="mini-counts">
-						<span title="0 answers">0</span>
+						<span title="0 answers">${article["COMMENTCOUNT"] }</span>
 					</div>
 					<div>댓글</div>
 				</div>
