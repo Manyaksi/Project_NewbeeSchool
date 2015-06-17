@@ -6,7 +6,10 @@
 						
 							<c:if test="${empty cookie.loginId}" var="varname" scope="request">
 				
-<video autoplay="true" loop="loop" muted="" id="teaser-video" class="teaser-video"><source src="/resources/video/bgvideo.mp4" type="video/mp4"><source src="video/masthead-teaser.ogv" type="video/ogg"></video>
+<video autoplay="true" loop="loop" muted="" id="teaser-video" class="teaser-video">
+<source src="/resources/video/bgvideo.mp4" type="video/mp4">
+<source src="/resources/video/bgvideo.webm" type="video/webm">
+</video>
 <div class="intro-regist">
 
 

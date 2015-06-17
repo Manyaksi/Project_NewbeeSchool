@@ -66,7 +66,13 @@ $(document).ready(function() {
 <script src="/resources/js/jquery.scrollTo.js"></script>
 <script src="/resources/js/jquery.flexslider.js"></script>
 <script src="/resources/js/main.js"></script>	
+<script>
+$("nav").addClass("navbar-fixed-top");
+$("nav").removeClass("margin-bottom-zero");
+$("nav").removeClass("fixed-height");
 
+
+</script>
 </c:if>
 						
 						

@@ -72,7 +72,7 @@
 		<!-- 네비게이션  -->
 		<jsp:include page="menu/nav.jsp" />
 
-
+		<div class="space80"></div>
 
 
 		<div id="owl-demo" class="owl-carousel">

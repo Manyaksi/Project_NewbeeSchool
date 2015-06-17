@@ -136,9 +136,11 @@ header {
 }
 
 .navbar-default {
+	
 	background: transparent;
 	border: none;
-	padding: 50px 0;
+	style="padding: 10px 0px 7px; 
+	background: white;"
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -206,14 +208,17 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 
 
 .login_nav{
-		position:fixed !important;
 left:0px !important;
 right:0px !important;
+height:53px;
 	
 }
 
 .fixed-height{
-	min-height: 81px !important;
+	min-height: 70px !important;
+	-webkit-box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
+  -moz-box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
+  box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
 }
 .topnav-pages {
 	background: #fff !important;
@@ -467,7 +472,7 @@ right:0px !important;
 	/* background:#27ae60 url("../demo/wrappers/2.jpg") no-repeat center fixed; */
 	background-color: #ECF0F1;
 	background-size: 100% auto;
-	min-height: 600px;
+	min-height: 650px;
 	padding-top: 40px;
 	padding-bottom: 40px;
 	/*position:relative;*/
