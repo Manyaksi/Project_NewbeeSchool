@@ -73,7 +73,7 @@
 
 		<div class="col-md-12">
 	
-			<div class="paging-left-comp">
+			<div class="paging-left-comp">1
 					<a class="category-boxed btn font-black" id="like">추천하기</a>
 						</div>
 				
