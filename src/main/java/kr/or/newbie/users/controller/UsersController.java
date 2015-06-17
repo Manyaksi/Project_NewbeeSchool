@@ -150,6 +150,25 @@ public class UsersController {
 			return "redirect:/";
 		}
 	}
+	/**
+	 * introregist 요청
+	 */
+	@RequestMapping(value="/introregist", method = RequestMethod.POST)
+	public String introRegist( Model model,
+			@RequestParam(value="name", required=false, defaultValue="")String name,
+			@RequestParam(value="email", required=false, defaultValue="")String email,
+			@RequestParam(value="password", required=false, defaultValue="")String password){
+		
+		logger.debug("인트로 레지스트 진입"+"닉네임 : " +name +"이메일 : "+email +" 패스워드 :" +password);
+		
+		
+		
+		
+		model.addAttribute("nickname", name);
+		model.addAttribute("email", email);
+		model.addAttribute("password", password);
+		return "/registeration";
+	}
 
 	/**
 	 * 로그아웃 화면요청(GET)

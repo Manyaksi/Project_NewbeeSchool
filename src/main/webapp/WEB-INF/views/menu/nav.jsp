@@ -69,7 +69,7 @@
 								 </form>
 							</div>
 							<div class="bottom text-center">
-								초보개발자시나요? <a href="#"><b>바로가입</b></a>
+								초보개발자시나요? <a href="/registeration">바로가입</a>
 							</div>
 					 </div>
 				</li>

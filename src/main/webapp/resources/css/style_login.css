@@ -415,7 +415,7 @@ height:53px;
 }
 
 .portfolio-wrap h3, .community-wrap h3, .pricing-wrap h3,
-	.news-wrap h3, .contact-wrap h3 {
+	.news-wrap h3, .contact-wrap h3,.team-wrap h3 {
 	color: #2C3E50;
 	text-transform: uppercase;
 	margin: 0 0 15px;
@@ -805,7 +805,7 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 
 .community-intro-wrap{
 	
-		padding: 40px 0;
+		padding: 30px 0 30px;
 	background: #67809F;
 	position: relative;
 	-webkit-box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
@@ -1310,7 +1310,7 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
                     CONTACT INFO STYLES
 ---------------------------------------------------------------*/
 .contact-info {
-	padding: 90px 0 75px;
+	padding: 30px 0 30px;
 	background: #67809F;
 	border-bottom: 1px solid #3c3c3c;
 	position: relative;
@@ -1371,15 +1371,16 @@ box-shadow: 0px 5px 14px 1px rgba(173,180,184,1);
 
 footer {
 	background: #34495E;
-	padding: 50px 0;
+	padding: 10px 0;
 	position: relative;
 }
 
 footer p {
 	text-align: center;
 	color: #ECF0F1;
-	font-size: 16px;
+	font-size: 10px;
 	margin: 0;
+	opacity: 0.7;
 }
 
 footer p a {
@@ -1390,6 +1391,7 @@ footer p a:hover {
 	color: #f8bc3b;
 	text-decoration: underline;
 }
+
 
 /*------------------------------------------------------------- 
                     SUBPAGE STYLES
@@ -4445,4 +4447,48 @@ text-align: left;
 
 #login-dp2 > li {
 	padding:4px 0px 4px;
+}
+.question-title{
+	font-size: 35px;
+color: white;
+font-family: seoulNamsan;
+margin: 0 0 50px;
+}
+
+
+.sitemap-list{
+	padding-left: 0;
+list-style: none;
+color:white;
+font-size:15px;
+line-height: 1.5;
+}
+
+.sitemap-list-title {
+	font-size:25px;
+	color:white;
+	margin-bottom:15px;
+}
+
+
+.question-title{
+	font-size: 35px;
+color: white;
+font-family: seoulNamsan;
+margin: 0 0 50px;
+}
+
+
+.sitemap-list{
+	padding-left: 0;
+list-style: none;
+color:white;
+font-size:10px;
+line-height: 1.4;
+}
+
+.sitemap-list-title {
+	font-size:20px;
+	color:white;
+	margin-bottom:15px;
 }
