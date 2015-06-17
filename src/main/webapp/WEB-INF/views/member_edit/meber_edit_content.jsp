@@ -75,6 +75,17 @@ padding-left: 15px;
 <!--  회원정보수정 컴포넌트 -->
 <div class="row">
 
+<!--  모달들 -->
+<!--  이름수정 모달 -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="nicknameedit">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" style="padding:50px;">
+      <input type="text">
+      <a class="category-boxed btn font-black" id="nickname">확인</a>
+    </div>
+  </div>
+</div>
+
 <!--  프로필 컴포넌트 -->
 <div class="col-md-6 ">
 <div class="member-edit-panel panel-default">
@@ -82,6 +93,7 @@ padding-left: 15px;
     <div class="col-md-12"><h2>프로필</h2></div>
     <div class="col-md-4">
     <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
+    원하는 정보를 입력 하세요
     <div class="text-center">
     <a class="btn btn-default picture-edit" >수정</a>
     </div>	
@@ -90,7 +102,9 @@ padding-left: 15px;
     <div class="row">
     <div class="col-md-3"><p>닉네임</p></div>
     <div class="col-md-7"><b>곽선민</b> </div>
-    <div class="col-md-2"><a class="btn btn-default" >수정</a></div>
+    <div class="col-md-2"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#nicknameedit">수정</button></div>
+    
+  
    </div>
    
    <div class="row">

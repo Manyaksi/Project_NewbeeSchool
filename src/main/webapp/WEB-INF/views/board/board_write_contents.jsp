@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<form class="form-horizontal">
+<form class="form-horizontal" action="/board/writearticle" method="post" id="writearticle">
 <fieldset>
 
 <!-- Form Name -->
@@ -9,12 +9,12 @@
 <div class="form-group">
   <label class="col-md-1 control-label" for="type">분류</label>
   <div class="col-md-2">
-    <select id="type" name="type" class="form-control">
-      <option value="1">일반</option>
-      <option value="2">질문</option>
-      <option value="3">정보</option>
-      <option value="4">강좌</option>
-      <option value="5">TIP</option>
+    <select id="type" name="category" class="form-control">
+      <option value="일반">일반</option>
+      <option value="질문">질문</option>
+      <option value="정보">정보</option>
+      <option value="강좌">강좌</option>
+      <option value="TIP">TIP</option>
     </select>
   </div>
 </div>
@@ -30,10 +30,13 @@
 
 <!-- Textarea -->
 <div class="form-group" >
-  <label class="col-md-1 control-label" for="content">내용</label>
+  <label class="col-md-1 control-label" for="content">내용</label> 
   <div class="col-md-11">                     
 
 <div id="summernote"></div>
+
+<input type="hidden" name="content" value="" class="content">
+
 
   </div>
 </div>
@@ -42,9 +45,10 @@
 <div class="form-group">
   <div class="col-md-12 text-right">
     <button id="write_btn" name="write_btn" class="btn btn-primary">작성완료</button>
-    <button id="cancel" name="cancel" class="btn btn-default">취소</button>
+    <a id="cancel" name="cancel" class="btn btn-default" href="/board/boardlist?program_name=${programName }">취소</a>
   </div>
 </div>
-
+<input type="hidden" name="user_no" value="2">
+<input type="hidden" name="program_name" value="${programName }">
 </fieldset>
 </form>
