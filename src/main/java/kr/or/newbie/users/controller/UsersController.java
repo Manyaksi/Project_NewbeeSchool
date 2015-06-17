@@ -120,8 +120,8 @@ public class UsersController {
 			return "redirect:"+"/";
 		}else{
 			logger.debug("로그인 실패");
-			model.addAttribute("loginResult", "등록된 회원이 아닙니다.");
-			return "redirect:"+"/";
+			model.addAttribute("loginResult", users.getId());
+			return "/registeration";
 		}
 	}
 	

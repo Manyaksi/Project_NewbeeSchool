@@ -41,11 +41,15 @@
                       
 
                         <form action="/join" method="post">
-
+                        
+<%--                         <c:if test="${loginResult == null}" var="varname" scope="request">
+                            <div class="row input_wrapper">
+                                <input class="simple_input full" type="text" name="error" id="error" autocomplete="off" placeholder="회원이 아닙니다." title="Please enter your name" value="" maxlength="32" data-validators="required minLength:1 maxLength:32">
+							</div> --%>
+						
                             <div class="row input_wrapper">
                                 <input class="simple_input full" type="text" name="name" id="name" autocomplete="off" placeholder="닉네임" title="Please enter your name" value="" maxlength="32" data-validators="required minLength:1 maxLength:32">
-
-                                                            </div>
+							</div>
 
                             <div class="row input_wrapper">
                                 <input class="simple_input full" type="email" name="email" id="signup_email" autocomplete="off" placeholder="이메일" title="Please enter a valid email address" value="" maxlength="128" data-validators="required maxLength:128 validate-email">
@@ -56,6 +60,7 @@
                                 <input class="simple_input full" type="password" name="password" id="signup_password" autocomplete="off" placeholder="비밀번호( 6자리 이상)" title="Please enter your password" value="" data-validators="required">
 
                                                             </div>
+                                                           <%--  </c:if> --%>
                            
                             <div class="row">
                                 <a href="/registeration" type="submit" id="join_btn" class="btn btn_blue" value="가입하기">가입하기</a>
@@ -63,7 +68,7 @@
                             </div>
                            
                         <input name="token" type="hidden" value="22cc9df6d36167aec883d478248fae96.0"></form>
-
+							
                         <!--페이스북 가입하기 버튼 -->
                         <form class="row text-center" action="/join" method="post" id="facebook_join" data-xsrf-protection="enabled" data-ds-protection="enabled">
                             <input type="hidden" name="service" value="facebook">

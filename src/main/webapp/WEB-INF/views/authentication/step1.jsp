@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- 컨테이너시작 -->
 <div class="container">
@@ -19,7 +20,7 @@
 	<!-- 탭패널 시작 -->
 	<div role="tabpanel">
 
-		<!--네비게이션 탭	 -->
+		<!--네비게이션 탭-->
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active" id="next1"><a
 				href="#step1" aria-controls="step1" role="tab">1단계 회원정보입력</a></li>
@@ -32,8 +33,7 @@
 
 		<!-- 탭 컨텐츠 -->
 		<div class="tab-content">
-			<form accept-charset="UTF-8" action="/users/join"
-				autocomplete="off" class="setup-form js-form-signup-detail active"
+			<form accept-charset="UTF-8" action="/users/join" autocomplete="off" class="setup-form js-form-signup-detail active"
 				id="signup-form" method="get">
 
 				<!--  1단계  컨텐츠 -->
@@ -62,16 +62,21 @@
 						<dl class="form">
 							<dt class="input-label">
 								<div class="field-with-errors">
-									<label autocapitalize="off"
-										data-autocheck-url="/signup_check/email" for="user_email"
+									<label autocapitalize="off" data-autocheck-url="/signup_check/email" for="user_email"
 										name="user[email]">이메일 주소</label>
 								</div>
 							</dt>
+							
 							<dd>
 								<div class="field-with-errors">
-									
+									<c:if test="${loginResult == null}">
 									<input autocapitalize="off" autofocus="autofocus" id="registemail" name="id"
 										size="30" type="text" value="" class="form-control">
+									</c:if>
+									<c:if test="${loginResult != null}">
+									<input autocapitalize="off" autofocus="autofocus" id="registemail" name="id"
+										size="30" type="text" value="${loginResult }" class="form-control">
+									</c:if>
 								</div>
 								<p id="email_auth" class="note">회신가능한 이메일 주소를 입력해주세요</p>
 								<span id="user_email"></span>
