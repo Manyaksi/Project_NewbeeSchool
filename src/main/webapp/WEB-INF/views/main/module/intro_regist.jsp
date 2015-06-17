@@ -69,12 +69,6 @@
                             </div>
                            
                         <input name="token" type="hidden" value="22cc9df6d36167aec883d478248fae96.0"></form>
-							
-                        <!--페이스북 가입하기 버튼 -->
-                        <form class="row text-center" action="/join" method="post" id="facebook_join" data-xsrf-protection="enabled" data-ds-protection="enabled">
-                            <input type="hidden" name="service" value="facebook">
-                            <button type="submit" class="fb_regist " data-ga-event-click="button|join|hp_join_fb" data-click-tracked="tracked"><i class="fa fa-facebook-square"></i> <b>Facebook</b> 계정으로 가입하기</button>
-                        <input name="token" type="hidden" value="22cc9df6d36167aec883d478248fae96.0"></form>
                         
                     
                       <small style="color:white;">개발유치원에 가입하시면, <a style="color:#428bca;" href="/terms">이용약관</a> 과 <a style="color:#428bca;" href="/privacy">개인정보보호정책</a> 에 동의하시게 됩니다. </small>

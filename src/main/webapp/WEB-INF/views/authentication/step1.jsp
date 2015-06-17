@@ -27,7 +27,7 @@
 			<li role="presentation" id="next2"><a href="#step2"
 				aria-controls="step2" role="tab">2단계 설문조사</a></li>
 			<li role="presentation" id="next3"><a href="#step3"
-				aria-controls="step3" role="tab">3단계 이메일 인증</a></li>
+				aria-controls="step3" role="tab">3단계 회원가입완료</a></li>
 		</ul>
 		<!-- 네비게이션 탭 끝 -->
 
@@ -1167,7 +1167,7 @@
 
 				<!--  3단계  컨텐츠-->
 				<div role="tabpanel" class="tab-pane" id="step3" style="margin-top: 50px;">
-					<span> 이메일 확인 부탁욤</span>
+					
 					<button type="submit">회원가입 완료하기</button>
 				</div>
 				<!--  3단계 컨텐츠 끝 -->
