@@ -40,7 +40,7 @@
                         <div class="col-md-4 col-md-offset-1 text-center regist">
                       
 
-                        <form action="/join" method="post">
+                        <form action="/users/introregist" method="post">
                         
 <%--                         <c:if test="${loginResult == null}" var="varname" scope="request">
                             <div class="row input_wrapper">
@@ -63,7 +63,8 @@
                                                            <%--  </c:if> --%>
                            
                             <div class="row">
-                                <a href="/registeration" type="submit" id="join_btn" class="btn btn_blue" value="가입하기">가입하기</a>
+                                <!-- <a type="submit" id="join_btn" class="btn btn_blue" value="가입하기">가입하기</a> -->
+                                <button type="submit" class="btn btn_blue">가입하기</button>
                                
                             </div>
                            

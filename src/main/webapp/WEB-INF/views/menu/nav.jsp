@@ -74,7 +74,8 @@
 					
 									<ul class="nav navbar-nav nanum-gothic-coding">
 									<li><img class="img-circle avatar" src="/resources/images/blog/1.jpg" width="45" height="45" alt=""></li>
-						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><p id="login">${cookie.loginId.value} <span class="caret"></span></p> </a>
+						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<p id="login">${cookie.loginId.value} <span class="caret"></span></p> </a>
 			<ul id="login-dp2" class="dropdown-menu login-dp2-top-right">
 				
 				<li><a href="/minihome">미니홈</a></li>

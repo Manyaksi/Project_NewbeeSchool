@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 프로젝트관련 요청 처리 세부 컨트롤러
@@ -115,6 +116,25 @@ public class UsersController {
 			model.addAttribute("loginResult", users.getId());
 			return "/registeration";
 		}
+	}
+	/**
+	 * introregist 요청
+	 */
+	@RequestMapping(value="/introregist", method = RequestMethod.POST)
+	public String introRegist( Model model,
+			@RequestParam(value="name", required=false, defaultValue="")String name,
+			@RequestParam(value="email", required=false, defaultValue="")String email,
+			@RequestParam(value="password", required=false, defaultValue="")String password){
+		
+		logger.debug("인트로 레지스트 진입"+"닉네임 : " +name +"이메일 : "+email +" 패스워드 :" +password);
+		
+		
+		
+		
+		model.addAttribute("nickname", name);
+		model.addAttribute("email", email);
+		model.addAttribute("password", password);
+		return "/registeration";
 	}
 	
 	

@@ -1,6 +1,6 @@
 $( ".survey111" ).click(function() {
 	var radioCheckval = $('input:radio[name="programName"]:checked').val();
-	alert(radioCheckval);
+	/*alert(radioCheckval);*/
 	/* 1번 -> 14로 이동 */
 	if (radioCheckval == 1){	
 		/*1번질문 없애기 */
