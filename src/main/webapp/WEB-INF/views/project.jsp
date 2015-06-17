@@ -81,7 +81,7 @@ $("#addComment").keyup(function() {
 $(function() {
 
 	//그냥 처음에 ajax 갔다오기
-	var userno = '${detailList["USER_NO"]}'; // 쿠키로 바꿔야한다.
+	var userno = '${cookie.loginId.value}'; // 쿠키로 바꿔야한다.
 	//var userno = 20; // 쿠키로 바꿔야한다.
 	var groupno = '${detailList["GROUP_NO"]}';
 	$('.pbutton').hide();
@@ -92,7 +92,6 @@ $(function() {
 		data : "userNo="+ userno + "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(result) {
-        	   alert(result);
         	   if(result=="owner"){
         		  
         		   $('#buttonBreak').show();
@@ -113,7 +112,6 @@ $(function() {
 		data : "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(outcome) {
-        	   alert(outcome);
         	   if(outcome == "false"){
         	  		$("#buttonEnter").attr('disabled', true);
         	   }else{

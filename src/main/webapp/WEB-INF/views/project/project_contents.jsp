@@ -29,11 +29,9 @@
                         </a>
                         <div class="media-body">
                           <div class="well ">
-                              <h4 class="media-heading text-uppercase reviews">${entry.nickname }</h4>
+                              <a href="/minihome/minihome?userNo=${entry.userNo}"><h4 class="media-heading text-uppercase reviews">${entry.nickname }</h4></a>
                               <ul class="media-date text-uppercase reviews list-inline">
-                                <li class="dd">22</li>
-                                <li class="mm">09</li>
-                                <li class="aaaa">2014</li>
+                                
                               </ul>
                           </div>              
                         </div>
@@ -177,14 +175,17 @@ border-radius: 2px;
                                 <li>${commentList["GROUPCOMM_DATE"] }</li>
                                 
                               </ul>
+                              
                               <p class="media-comment">
-                                ${commentList["GROUPCOMM_CONTENT"] }
+                                ${commentList["GROUPCOMM_CONTENT"] } <c:if test='${commentList["USER_NO"] == cookie.loginId.value}'><a href='/project/comment_delete?groupcommNo=${commentList["GROUPCOMM_NO"] }&groupNo=${commentList["GROUP_NO"]}' class="btn black" style="float: right">삭제하기</a></c:if>
                               </p>
+                              
+                              
                           </div>              
                         </div>
                       </li>
                       </c:forEach>
-                    </ul> 
+                    </ul>
                 </div>
                 <div class="tab-pane" id="add-comment">
                     <form action="/project/comment_register" method="post" class="form-horizontal" id="commentForm" role="form"> 
@@ -198,14 +199,14 @@ border-radius: 2px;
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">                    
                             	<input type="hidden" name="groupNo" value='${detailList["GROUP_NO"] }'>
-                            	<input type="hidden" name="userNo" value='10'>
+                            	<input type="hidden" name="userNo" value='${cookie.loginId.value}'>
                                 <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> 댓글등록 </button>
                             </div>
                         </div>            
                     </form>
                 </div>
-                 <div id="loadmoreajaxloader" style="display:none; text-align: center;"><img src="/resources/images/loading.gif"/></div>
-					  </div>
+               <!--   <div id="loadmoreajaxloader" style="display:none; text-align: center;"><img src="/resources/images/loading.gif"/></div>
+					  </div> -->
    
             </div>
         </div>

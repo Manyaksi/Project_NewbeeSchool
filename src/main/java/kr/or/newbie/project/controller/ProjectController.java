@@ -95,7 +95,7 @@ public class ProjectController {
 		//model.addAttribute("detailList", map);
 		//model.addAttribute("userList",list);
 		//model.addAttribute("commentList", mapList);
-		return "redirect:/project/project_detail?groupNo="+groupNo+"&userNo="+userNo;
+		return "redirect:/project/project_detail?groupNo="+groupNo;
 	}
 	
 	/**
@@ -112,8 +112,26 @@ public class ProjectController {
 		//model.addAttribute("commentList", mapList);
 
 		
-		return "redirect:/project/project_detail?groupNo="+projectComment.getGroupNo() + "&userNo="+projectComment.getUserNo();
+		return "redirect:/project/project_detail?groupNo="+projectComment.getGroupNo();
 	}
+	
+	/**
+	 * 프로젝트 댓글삭제 요청(project/comment_register)
+	 */
+	@RequestMapping(value="/comment_delete", method=RequestMethod.GET)
+	public String deleteComment(ProjectComment projectComment, Model model) {
+		logger.debug("댓글 삭제 요청합니다.");
+		logger.debug(projectComment.toString());
+		projectService.deleteProjectComment(projectComment);
+		//Map<String, Object> map = projectService.showProjectdetail(projectComment.getGroupNo());
+		//List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getGroupNo());
+		//model.addAttribute("detailList", map);
+		//model.addAttribute("commentList", mapList);
+
+		
+		return "redirect:/project/project_detail?groupNo="+projectComment.getGroupNo();
+	}
+	
 	
 	/**
 	 * 프로젝트 만들기 페이지 요청(project/project_wirte)

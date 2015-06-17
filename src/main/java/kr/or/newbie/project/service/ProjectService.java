@@ -48,6 +48,9 @@ public interface ProjectService {
 	
 	//프로젝트 댓글 등록
 	public void addProjectComment(ProjectComment projectComment);
+	
+	//프로젝트 댓글 삭제
+	public void deleteProjectComment(ProjectComment projectComment);
 
 	//프로젝트 댓글 출력
 	public List<Map<String, Object>> showProjectComment(long groupNo);
@@ -60,5 +63,7 @@ public interface ProjectService {
 
 	//프로젝트 인원 확인하기
 	public Project confirmGroupCount(long groupNo);
+
+	
 
 }

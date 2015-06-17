@@ -47,6 +47,9 @@ public interface ProjectDao {
 	//프로젝트 댓글남기기
 	public void addProjectComment(ProjectComment projectComment);
 	
+	//프로젝트 댓글삭제하기
+	public void deleteProjectComment(int groupcommNo);
+	
 	//프로젝트 댓글 출력
 	public List<Map<String, Object>> showProjectComment(long groupNo);
 	
@@ -58,6 +61,7 @@ public interface ProjectDao {
 	
 	//프로젝트 회원 수
 	public Project confirmGroupCount(long groupNo);
+	
 	
 	
 

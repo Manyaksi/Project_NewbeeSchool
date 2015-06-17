@@ -57,6 +57,11 @@
 		values(#{groupNo}, groupcomm_no_seq.NextVal, #{userNo}, #{groupcommContent}, sysdate)
 	</select>
 	
+	<select id="deleteProjectComment" parameterType="Integer">
+		delete from groupcomment 
+		where groupcomm_no = #{groupcommNo}
+	</select>
+	
 	<select id="showProjectComment" parameterType="Long" resultType="java.util.Map">
 		select g.group_no, g.groupcomm_no, g.user_no, u.grade, u.photo, u.nickname, g.groupcomm_content,  to_char(g.groupcomm_date, 'YY.MM.DD. AMHH12:MI:SS','NLS_DATE_LANGUAGE=KOREAN') groupcomm_date
 		from groupcomment g , users u
