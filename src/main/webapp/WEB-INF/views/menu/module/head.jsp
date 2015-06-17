@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+
 <!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="keywords" content="HTML5 Template" />
@@ -30,33 +34,25 @@
 
 	<!-- CSS -->
 	<link href="/resources/css/bootstrap.css" rel="stylesheet">
-	<link href="/resources/css/style.css" rel="stylesheet">
+	<!-- 로그아웃 되어있을때 -->
+<c:if test="${empty cookie.loginId}" var="varname" scope="request">
+<link href="/resources/css/style.css" rel="stylesheet">
+</c:if>
+<!-- 로그인되어있을때 -->
+<c:if test="${cookie.loginId != null}" var="varname" scope="request">
+<link href="/resources/css/style_login.css" rel="stylesheet">	
+			
+</c:if>
+	
 	<link href="/resources/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
 	<link href="/resources/css/flaticon.css" rel="stylesheet">
 	<link href="/resources/js/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="/resources/js/owl-carousel/owl.theme.css" rel="stylesheet">
 	<link href="/resources/js/rs-plugin/css/settings.css" rel="stylesheet" />
 	<link href="/resources/css/animate.css" rel="stylesheet" />
+	<link href="/resources/css/flaticon.css" rel="stylesheet" />
 
-<style>
-
-
-video#bgvid {
-position: fixed;
-top: 50%;
-left: 50%;
-min-width: 100%;
-min-height: 100%;
-width: auto;
-height: auto;
-z-index: -100;
--webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-background: url(video.png) no-repeat;
-background-size: cover;
-}
-
-</style>
 
 
 

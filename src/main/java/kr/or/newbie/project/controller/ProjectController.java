@@ -92,10 +92,10 @@ public class ProjectController {
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
 		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
 		List<Users> list = projectService.showEnterProject(groupNo);
-		model.addAttribute("detailList", map);
-		model.addAttribute("userList",list);
-		model.addAttribute("commentList", mapList);
-		return "/project";
+		//model.addAttribute("detailList", map);
+		//model.addAttribute("userList",list);
+		//model.addAttribute("commentList", mapList);
+		return "redirect:/project/project_detail?groupNo="+groupNo+"&userNo="+userNo;
 	}
 	
 	/**
@@ -106,13 +106,13 @@ public class ProjectController {
 		logger.debug("댓글 등록 요청합니다.");
 		logger.debug(projectComment.toString());
 		projectService.addProjectComment(projectComment);
-		Map<String, Object> map = projectService.showProjectdetail(projectComment.getGroupNo());
-		List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getGroupNo());
-		model.addAttribute("detailList", map);
-		model.addAttribute("commentList", mapList);
+		//Map<String, Object> map = projectService.showProjectdetail(projectComment.getGroupNo());
+		//List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getGroupNo());
+		//model.addAttribute("detailList", map);
+		//model.addAttribute("commentList", mapList);
 
 		
-		return "/project";
+		return "redirect:/project/project_detail?groupNo="+projectComment.getGroupNo() + "&userNo="+projectComment.getUserNo();
 	}
 	
 	/**
@@ -145,9 +145,9 @@ public class ProjectController {
 		projectService.addProject(project);
 		projectService.joinProject(groupNo, project.getUserNo());
 		
-		List<Map<String, Object>> map = projectService.showProject();
-		model.addAttribute("list", map);
-		return "/project_list";
+		//List<Map<String, Object>> map = projectService.showProject();
+		//model.addAttribute("list", map);
+		return "redirect:/project/project_list";
 	}
 	
 	/**
@@ -202,7 +202,7 @@ public class ProjectController {
 		model.addAttribute("detailList", map);
 		model.addAttribute("userList",list);
 		model.addAttribute("commentList", mapList);
-		return "/project";
+		return "redirect:/project/project_detail?groupNo="+groupNo+"&userNo="+userNo;
 	}
 	
 	/**
@@ -214,10 +214,10 @@ public class ProjectController {
 		projectService.breakProject(groupNo);
 		projectService.breakProjectAll(groupNo);
 		
-		List<Map<String, Object>> map = projectService.showProject();
-		model.addAttribute("list", map);
+		//List<Map<String, Object>> map = projectService.showProject();
+		//model.addAttribute("list", map);
 		
-		return "/project_list";
+		return "redirect:/project/project_list";
 	}
 	
 	
@@ -228,10 +228,10 @@ public class ProjectController {
 	public String passAndFail(long groupNo, Model model) {
 		
 		projectService.passAndFail(groupNo);
-		List<Map<String, Object>> map = projectService.showProject();
-		model.addAttribute("list", map);
+		//List<Map<String, Object>> map = projectService.showProject();
+		//model.addAttribute("list", map);
 		
-		return "/project_list";
+		return "redirect:/project/project_list";
 	}
 	
 	

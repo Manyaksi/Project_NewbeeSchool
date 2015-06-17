@@ -6,6 +6,7 @@
 	<jsp:include page="menu/module/head.jsp" />
 	<link href="/resources/css/board.css" rel="stylesheet">
 	<link href="/resources/css/summernote.css" rel="stylesheet">
+	<link href="/resources/css/set1.css" rel="stylesheet">
 	
 
   </head>

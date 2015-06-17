@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-12 no-padding matching-info-content">
 					<div class="col-md-6">
-						<img src="resources/images/1.jpg" class="/resources/images-responsive s1" alt=""/>
+						<img src="/resources/images/1.jpg" class="/resources/images-responsive s1" alt=""/>
 					</div>
 					<div class="col-md-6">
                         <h1 class="tip-title">나에게 맞는</br>프로그래밍 언어 찾기</h1>

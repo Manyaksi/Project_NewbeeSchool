@@ -24,7 +24,7 @@
 				
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
+						<img src="/resources/images/works/1.jpg" alt="...">
 						<div class="caption">
 								<p class="project-title">자바채팅프로젝트</p>
 								<p class="project-byline">김순재</p>
@@ -55,7 +55,7 @@
 				
 								<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
+						<img src="/resources/images/works/1.jpg" alt="...">
 						<div class="caption">
 								<p class="project-title">자바채팅프로젝트</p>
 								<p class="project-byline">김순재</p>
@@ -85,7 +85,7 @@
 				
 								<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
+						<img src="/resources/images/works/1.jpg" alt="...">
 						<div class="caption">
 								<p class="project-title">자바채팅프로젝트</p>
 								<p class="project-byline">김순재</p>
@@ -115,7 +115,7 @@
 				
 								<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
+						<img src="/resources/images/works/1.jpg" alt="...">
 						<div class="caption">
 								<p class="project-title">자바채팅프로젝트</p>
 								<p class="project-byline">김순재</p>
@@ -145,7 +145,7 @@
 				
 								<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
+						<img src="/resources/images/works/1.jpg" alt="...">
 						<div class="caption">
 								<p class="project-title">자바채팅프로젝트</p>
 								<p class="project-byline">김순재</p>
@@ -175,7 +175,7 @@
 				
 								<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
+						<img src="/resources/images/works/1.jpg" alt="...">
 						<div class="caption">
 								<p class="project-title">자바채팅프로젝트</p>
 								<p class="project-byline">김순재</p>
@@ -210,4 +210,3 @@
 				<a class="btn-lite" href="/project_list">더보기</a>
 			</div>
 		</div>
-	</div>

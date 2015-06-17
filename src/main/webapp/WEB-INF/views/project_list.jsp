@@ -4,7 +4,7 @@
 <head>
 
 	<jsp:include page="menu/module/head.jsp" />
-	
+	<link href="/resources/css/set2.css" rel="stylesheet" />
 	
   </head>
 
@@ -14,7 +14,7 @@
 		<jsp:include page="menu/nav.jsp" />
 			
 		
-<div class="contatiner" style="margin-top:0px;">
+<div class="contatiner" style="margin-top:0px; background-color: lightgray">
     <div class="row" style="margin-left:80px;margin-right:80px;margin-bottom:50px;">
 <jsp:include page="project/project_list.jsp" />
 	<div class="space50"></div>

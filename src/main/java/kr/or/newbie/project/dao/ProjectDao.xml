@@ -7,6 +7,7 @@
 	<select id="showProjectList" resultType="project" >
 		SELECT group_no, user_no, group_location, pass_fail, group_subject, group_content, group_count, group_maxcount, startline, deadline, group_category
 		FROM grouparticle
+		order by group_no desc
 	</select>
 	
 	<select id="getUserInfo" resultType="users" >
@@ -15,10 +16,10 @@
 	</select> 
 	
 	<select id="showProject" resultType="java.util.Map" >
-		select g.group_no, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.group_maxcount, u.nickname, count(m.user_no) AS count
+		select g.group_no, g.program_name, g.group_category, g.pass_fail, g.group_location, g.group_subject, g.group_content,to_char(g.startline,'YYYY. MM. DD') as STARTLINE, to_char(g.deadline,'YYYY. MM. DD') as DEADLINE, g.group_maxcount, u.nickname, count(m.user_no) AS count
 		from users u, grouparticle g, groupmember m
 		where g.user_no = u.user_no and g.group_no = m.group_no
-		group by g.group_no, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.group_maxcount , u.nickname
+		group by g.group_no, g.program_name, g.group_category, g.pass_fail, g.group_location, g.group_subject, g.group_content, g.startline, g.deadline, g.group_maxcount , u.nickname
 		order by group_no asc
 	</select> 
 	

@@ -1,13 +1,13 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="col-md-12">
-	<h2>
-		<span class="logo">JAVA</span> 커뮤니티
-	</h2>
-	<p>java커뮤니티 소개글......</p>
+<div class="space60"></div>
+<div class="col-md-12 text-center">
+	<h1 style="margin: 0 0 5px; font-size: 32px; font-family: seoulNamsan; font-weight: normal;">프로젝트</h1>
+	<p style="margin-bottom: 0px; font-size: 20px; font-weight: 300; color: #555; font-family: seoulNamsan;">초보개발자들과
+		함께 프로젝트에 참여해보세요</p>
 </div>
 
-<div class="space50"></div>
+<div class="space20"></div>
 
 
 <div class="col-md-12">
@@ -15,100 +15,70 @@
 		<div class="row">
 
 
-			<ul id="project_filters" class="clearfix">
+			<ul id="project_filters" class="clearfix"
+				style="margin-bottom: 0px; margin-top: 0px;">
 				<li><span class="project_filte rs active"
-					data-filter="sort1 sort2 sort3 sort4">ALL</span></li>
-				<li><span class="project_filters" data-filter="sort1">JAVA</span></li>
-				<li><span class="project_filters" data-filter="sort2">Mobile</span></li>
-				<li><span class="project_filters" data-filter="sort3">Design</span></li>
-				<li><span class="project_filters" data-filter="sort4">Photography</span></li>
+					data-filter="sort1 sort2 sort3 sort4">All</span></li>
+				<li><span class="project_filters" data-filter="sort1">C</span></li>
+				<li><span class="project_filters" data-filter="sort2">C++</span></li>
+				<li><span class="project_filters" data-filter="sort3">C#</span></li>
+				<li><span class="project_filters" data-filter="sort4">JAVA</span></li>
 				<li><span class="project_filters" data-filter="sort5">Type</span></li>
 			</ul>
 
+			<div class="text-right">
+				<a class="flaticon-plus79 nanum-gothic " href="/project/project_write"
+					style="font-size: 20px; margin-right: 15px;">새 프로젝트 만들기</a>
+			</div>
+
+			<div class="space50"></div>
 			<c:forEach var="project" items="${list }">
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="/resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-							<p class="project-title">${project["GROUP_SUBJECT"] }</p>
-							<p class="project-byline">${project["NICKNAME"] }</p>
-							<p class="project-blurb">${project["group_content"] }</p>
+			<div class="col-sm-6 col-md-4">
 
-							<div class="project-location">
-								<span><i class="fa fa-location-arrow"></i></span> <span
-									class="location-name">${project["GROUP_LOCATION"] }</span>
-							</div>
+				<figure class="effect-ming">
+					<img src="/resources/images/img/17.jpg" alt="img17">
+					<figcaption>
+						<h2>
+							${project["GROUP_SUBJECT"] }
+						</h2>
+						<p class="project-byline">by ${project["NICKNAME"] }   for ${project["PROGRAM_NAME"] } / ${project["GROUP_CATEGORY"] }</p>
+						<%-- <p class="project-blurb">${project["GROUP_CONTENT"] }</p> --%>
+						<p class="project-blurb">${project["STARTLINE"]} ~ ${project["DEADLINE"]}</p>
+						<p class="project-location">
+							<span><i class="fa fa-location-arrow"></i></span> 
+							<span class="location-name">${project["GROUP_LOCATION"] }</span>
+							<p class="project-blurb">[ ${project["COUNT"] } / ${project["GROUP_MAXCOUNT"] } ]</p>
+						</p>
+						<c:if test='${project["PASS_FAIL"]== "0"}'>
+							<form action="/project/project_detail" method="get">
+								<input type="hidden" name="groupNo"
+									value='${project["GROUP_NO"] }'> <input
+									type="hidden" name="userNo" value='15'>
+								<button class="btn white" type="submit">참가하기</button>
 
-							<div class="project-card-footer">
+							</form>
+						</c:if>
+						<c:if test='${project["PASS_FAIL"]== "1"}'>
+							<button class="btn white" type="submit" disabled>작업완료</button>
+						</c:if>
 
-								<div class="progress">
-								<c:set var="count" value='${project["COUNT"]*100/project["GROUP_MAXCOUNT"]}'/>
-									<div class="progress-bar" role="progressbar" aria-valuenow="60"
-										
-										aria-valuemin="0" aria-valuemax="100" style="width: ${count }%;"> ${count }%</div>
-								</div>
-								<p class="text-center">${project["COUNT"] }명 / ${project["GROUP_MAXCOUNT"] }명</p>
-								<div class="text-center">
-								<c:if test='${project["PASS_FAIL"]== "0"}' >
-								<form action="/project/project_detail" method="get">
-									<input type="hidden" name="groupNo" value='${project["GROUP_NO"] }'>
-									<input type="hidden" name="userNo" value='15'>
-									<button class="btn btn-primary" type="submit">참가하기</button>
-									
-								</form>
-								</c:if>
-								<c:if test='${project["PASS_FAIL"]== "1"}'>
-									<button class="btn btn-primary" type="submit" disabled>작업완료</button>
-								</c:if>
-								
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+					</figcaption>
+				</figure>
 
+			</div>
 			</c:forEach>
-
-
-		</div>
-
-		<div class="space30"></div>
-		<a class="btn-lite" href="index.html#">더보기</a>
-	</div>
-
-	<div class="col-md-12">
-
-
-
-		<div class="paging">
-
-			<div class="paging-left-comp">
-				<a class="category-boxedbtn font-black" href="write.html">목록</a>
+				</div>
 			</div>
-
-			<ul class="pagination no-margin font-black">
-				<li class="font-black"><a class="font-black" href="#"
-					aria-label="Previous"> <span aria-hidden="true">이전페이지</span>
-				</a></li>
-				<li><a class="font-black" href="#">1</a></li>
-				<li><a class="font-black" href="#">2</a></li>
-				<li><a class="font-black" href="#">3</a></li>
-				<li><a class="font-black" href="#">4</a></li>
-				<li><a class="font-black" href="#">5</a></li>
-				<li><a class="font-black" href="#" aria-label="Next"> <span
-						aria-hidden="true">다음페이지</span>
-				</a></li>
-			</ul>
-
-			<div class="paging-right-comp">
-				<a class="category-boxed btn font-black" href="/project/project_write">글쓰기</a>
-			</div>
+			<div class="space30"></div>
+		<div class="text-center">
+			<a class="readmore_btn " href="index.html#">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
 		</div>
-
-
-	</div>
-
 </div>
 
 
 
+				
+			
+
+	

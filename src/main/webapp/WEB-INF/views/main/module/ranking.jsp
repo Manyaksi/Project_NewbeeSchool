@@ -123,7 +123,6 @@
 						</table>
 					</div>
 				</div>
-				<a class="btn-lite1" href="blog.html">가입하기</a>
 			</div>
 		</div>
 	</div>
