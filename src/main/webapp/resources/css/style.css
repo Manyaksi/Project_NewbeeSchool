@@ -4391,3 +4391,7 @@ text-align: left;
 #login-dp2 > li {
 	padding:4px 0px 4px;
 }
+
+input[type="password"]{
+	color:black;
+}

@@ -16,7 +16,14 @@
         height: auto;
     }
     </style>
-
+<script>
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+    </script>
 
 </head>
 
