@@ -43,7 +43,7 @@ public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
 
-	public void setAcademicService(ProjectService projectService) {
+	public void setProjectService(ProjectService projectService) {
 		this.projectService = projectService;
 	}
 

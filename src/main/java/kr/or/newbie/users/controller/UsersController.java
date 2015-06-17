@@ -122,7 +122,7 @@ public class UsersController {
 			Cookie loginCookie = new Cookie("loginId", String.valueOf(loginUsers.getUserNo()));
 			Cookie loginCookieNickName;
 			try {
-				loginCookieNickName = new Cookie("loginNickName", URLEncoder.encode(loginUsers.getNickname(), "utf-8"));
+				loginCookieNickName = new Cookie("loginNickName", URLEncoder.encode(loginUsers.getNickname(), "euc-kr"));
 			System.out.println(loginUsers.getNickname());
 			loginCookie.setPath("/");
 			loginCookieNickName.setPath("/");

@@ -32,6 +32,7 @@
             <value>classpath:kr/or/newbie/users/dao/UsersDao.xml</value>
             <value>classpath:kr/or/newbie/article/dao/ArticleDao.xml</value>
             <value>classpath:kr/or/newbie/minihome/dao/MinihomeDao.xml</value>
+            <value>classpath:kr/or/newbie/main/dao/MainDao.xml</value>
          </list>
       </property>
    </bean>
