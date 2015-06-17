@@ -81,9 +81,6 @@ public class DevprogramServiceImpl implements DevprogramService {
 		System.out.println("[debug] : 댓글 삭제 완료");
 	}
 
-
-
-
 	/*
 	 * // 댓글 목록
 	 * 
