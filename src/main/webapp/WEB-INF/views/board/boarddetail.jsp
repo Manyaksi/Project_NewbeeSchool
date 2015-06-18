@@ -80,11 +80,11 @@
 					
 					
 					<div class="paging-right-comp">
-					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article['PROGRAM_NAME'] }&page=1">목록보기</a>
-					<a class="category-boxed btn font-black" id="total-edit" href="/board/modifyarticle?article_no=${article['ARTICLE_NO'] }&program_name=${article['PROGRAM_NAME'] }">수정하기</a>
-					<button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit</button>
+					
+					<div style="position:absolute; right:10px; bottom:5px;">
+					<button  style="position:absolute; right:70px;"  id="edit" class="btn btn-default" onclick="edit()" type="button">Edit</button>
 					<form class="form-horizontal" action="/board/modifyarticle" method="post" id="modifyarticle">
-					<button id="save" class="btn btn-primary" onclick="save()" type="submit">Save</button>
+					<button id="save" class="btn btn-default" onclick="save()" type="submit">Save</button>
 					
 					<input type="hidden" name="article_no" value="${article['ARTICLE_NO'] }">
 					<input type="hidden" name="subject" value="${article['SUBJECT'] }">
@@ -93,6 +93,11 @@
 					<input type="hidden" name="content" value="" class="content">
 					
 					</form>
+					</div>
+					
+					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article['PROGRAM_NAME'] }&page=1">목록보기</a>
+					<a class="category-boxed btn font-black" id="total-edit" >수정하기</a>
+					
 					<a class="category-boxed btn font-black" href="/board/deletearticle?article_no=${article['ARTICLE_NO'] }&program_name=${article['PROGRAM_NAME'] }">삭제하기</a>
 						<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
 						</div>
