@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import kr.or.newbie.main.service.MainService;
+import kr.or.newbie.project.domain.Users;
 import kr.or.newbie.users.dao.MybatisUsersDao;
 
 import org.slf4j.Logger;
@@ -48,10 +49,57 @@ public class HomeController {
 			}
 		}
 		
+		int count = mainService.countGroup();
 		
+		model.addAttribute("count", count);
 		model.addAttribute("list", map);
 		logger.info("Welcome home! The client locale is {}.", locale);
 		return "index";
+	}
+	
+	/**
+	 * 프로젝트 페이징처리 Boolean(/addProject.do)
+	 */
+	@RequestMapping(value="/addProject.do", method=RequestMethod.GET)
+	public String addProject(int pageNo, Model model) {
+		System.out.println(pageNo);
+		
+		List<Map<String, Object>> map = mainService.showProjectAdd(pageNo);
+		
+		for (Map<String, Object> map2 : map) {
+			Iterator<String> iter = map2.keySet().iterator();
+			while (iter.hasNext()) {
+				String string = (String) iter.next();
+				System.out.println(string + " : " + map2.get(string));
+			}
+		}
+		
+		
+		model.addAttribute("list", map);
+		return "/ajaxResult/addproject";
+	}
+	
+	/**
+	 * 각종 프로젝트 페이징처리 Boolean(/showProject.do)
+	 */
+	@RequestMapping(value="/showProject.do", method=RequestMethod.GET)
+	public String showProject(int pageNo, String programName, Model model) {
+		System.out.println(pageNo);
+		System.out.println(programName);
+		
+		List<Map<String, Object>> map = mainService.showProjectProgramAdd(pageNo, programName);
+		
+		for (Map<String, Object> map2 : map) {
+			Iterator<String> iter = map2.keySet().iterator();
+			while (iter.hasNext()) {
+				String string = (String) iter.next();
+				System.out.println(string + " : " + map2.get(string));
+			}
+		}
+		
+		
+		model.addAttribute("list", map);
+		return "/ajaxResult/addproject";
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)

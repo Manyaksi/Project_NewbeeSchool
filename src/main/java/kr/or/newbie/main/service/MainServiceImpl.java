@@ -1,5 +1,6 @@
 package kr.or.newbie.main.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,4 +35,22 @@ public class MainServiceImpl implements MainService{
 		return map;
 	}
 	
+	@Override
+	public List<Map<String, Object>> showProjectAdd(int pageNo) {
+		List<Map<String, Object>> map = mainDao.showProjectAdd(pageNo);
+		return map;
+	}
+	
+	@Override
+	public List<Map<String, Object>> showProjectProgramAdd(int pageNo, String programName) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("pageNo", pageNo);
+		map.put("programName", programName);
+		
+		return mainDao.showProjectProgramAdd(map);
+	}
+	@Override
+	public int countGroup() {
+		return mainDao.countGroup();
+	}
 }

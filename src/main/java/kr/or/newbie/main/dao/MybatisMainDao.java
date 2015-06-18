@@ -34,5 +34,47 @@ public class MybatisMainDao implements MainDao {
 		return map;
 	}
 	
+	@Override
+	public List<Map<String, Object>> showProjectAdd(int pageNo) {
+
+		List<Map<String, Object>> map = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			MainDao dao = session.getMapper(MainDao.class);
+			map = dao.showProjectAdd(pageNo);
+		}finally{
+			session.close();
+		}
+		return map;
+	}
+	
+	@Override
+	public List<Map<String, Object>> showProjectProgramAdd(Map<String, Object> map) {
+		List<Map<String, Object>> mapList = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			MainDao dao = session.getMapper(MainDao.class);
+			mapList = dao.showProjectProgramAdd(map);
+		}finally{
+			session.close();
+		}
+		return mapList;
+	}
+	
+	@Override
+	public int countGroup() {
+		SqlSession session = null;
+		int count= 0;
+		try{
+			session = sqlSessionFactory.openSession();
+			MainDao dao = session.getMapper(MainDao.class);
+			count = dao.countGroup();
+		}finally{
+			session.close();
+		}
+		return count;
+	}
 
 }

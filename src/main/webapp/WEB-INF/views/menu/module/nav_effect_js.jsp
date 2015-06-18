@@ -38,9 +38,11 @@ $(document).ready(function() {
 	      slideSpeed : 400,
 	      paginationSpeed : 500,
 	      singleItem : true,
-		autoHeight : true,
+		autoHeight : true  ,
 	  });
+
 	  
+		  
 	  
 	  $('#learn-tab').click(function(){
 		  $("#owl-demo").trigger('owl.goTo', 0)

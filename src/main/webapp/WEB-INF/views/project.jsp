@@ -112,10 +112,12 @@ $(function() {
 		data : "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(outcome) {
+        	   alert(outcome);
         	   if(outcome == "false"){
-        	  		$("#buttonEnter").attr('disabled', true);
+        		   alert(11);
+        	  		$("button[name=buttonEnterGo]").attr('disabled', 'disabled');
         	   }else{
-        		   $("#buttonEnter").attr('disabled', false);
+        		   $("button[name=buttonEnterGo]").removeAttr("disabled"); 
         	   }
            }
 		});

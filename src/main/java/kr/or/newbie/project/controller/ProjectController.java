@@ -90,8 +90,8 @@ public class ProjectController {
 		
 		projectService.joinProject(groupNo, userNo);
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
-		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
-		List<Users> list = projectService.showEnterProject(groupNo);
+//		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
+//		List<Users> list = projectService.showEnterProject(groupNo);
 		//model.addAttribute("detailList", map);
 		//model.addAttribute("userList",list);
 		//model.addAttribute("commentList", mapList);
@@ -165,7 +165,7 @@ public class ProjectController {
 		
 		//List<Map<String, Object>> map = projectService.showProject();
 		//model.addAttribute("list", map);
-		return "redirect:/project/project_list";
+		return "redirect:/project/project_detail?groupNo="+groupNo;
 	}
 	
 	/**
@@ -251,6 +251,8 @@ public class ProjectController {
 		
 		return "redirect:/project/project_list";
 	}
+	
+	
 	
 	
 	/**

@@ -43,12 +43,12 @@
     <select id="project-end-date" name="programName" class="form-control">
       <option value="JAVA">JAVA</option>
       <option value="C">C</option>
-      <option value="C++">C++</option>
-      <option value="C#">C#</option>
+      <option value="CPP">C++</option>
+      <option value="CSharp">C#</option>
       <option value="Javascript">Javascript</option>
       <option value="Phython">Phython</option>
       <option value="PHP">PHP</option>
-      <option value="Object-C">Object-C</option>
+      <option value="Swift">Swift</option>
       <option value="RUBY">RUBY</option>
     </select>
   </div>

@@ -16,5 +16,11 @@ public interface MainService {
 
 	public List<Map<String, Object>> showProjectMain();
 
+	public List<Map<String, Object>> showProjectAdd(int pageNo);
+
+	public List<Map<String, Object>> showProjectProgramAdd(int pageNo,String programName);
+
+	public int countGroup();
+
 	
 }
