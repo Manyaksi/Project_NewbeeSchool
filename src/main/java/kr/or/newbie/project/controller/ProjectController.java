@@ -64,16 +64,11 @@ public class ProjectController {
 	 */
 	@RequestMapping(value="/project_detail", method=RequestMethod.GET)
 	public String detail(@RequestParam(value="groupNo") long groupNo, Model model) {
-		System.out.println(groupNo);
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
 		
 		List<Users> list = projectService.showEnterProject(groupNo);
 		List<Map<String, Object>> mapList = projectService.showProjectComment(groupNo);
-		Iterator<String> iterator = map.keySet().iterator();
-		while (iterator.hasNext()) {
-			String string = (String) iterator.next();
-			System.out.println(string + " , " +map.get(string));
-		}
+		
 		model.addAttribute("detailList", map);
 		model.addAttribute("userList",list);
 		model.addAttribute("commentList", mapList);
@@ -85,8 +80,6 @@ public class ProjectController {
 	 */
 	@RequestMapping(value="/project_enter", method=RequestMethod.POST)
 	public String enter(@RequestParam(value="groupNo") long groupNo, @RequestParam(value="userNo") int userNo, Model model) {
-		System.out.println(groupNo);
-		System.out.println(userNo);
 		
 		projectService.joinProject(groupNo, userNo);
 		Map<String, Object> map = projectService.showProjectdetail(groupNo);
@@ -103,8 +96,6 @@ public class ProjectController {
 	 */
 	@RequestMapping(value="/comment_register", method=RequestMethod.POST)
 	public String registerComment(ProjectComment projectComment, Model model) {
-		logger.debug("댓글 등록 요청합니다.");
-		logger.debug(projectComment.toString());
 		projectService.addProjectComment(projectComment);
 		//Map<String, Object> map = projectService.showProjectdetail(projectComment.getGroupNo());
 		//List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getGroupNo());
@@ -120,8 +111,6 @@ public class ProjectController {
 	 */
 	@RequestMapping(value="/comment_delete", method=RequestMethod.GET)
 	public String deleteComment(ProjectComment projectComment, Model model) {
-		logger.debug("댓글 삭제 요청합니다.");
-		logger.debug(projectComment.toString());
 		projectService.deleteProjectComment(projectComment);
 		//Map<String, Object> map = projectService.showProjectdetail(projectComment.getGroupNo());
 		//List<Map<String, Object>> mapList = projectService.showProjectComment(projectComment.getGroupNo());
@@ -149,16 +138,13 @@ public class ProjectController {
 	public String registerProject(Project project, Model model) {
 		logger.debug("프로젝트 요청 들어옴");
 		Locale locale = Locale.getDefault();
-		System.out.println(locale);
 		Calendar calendar = Calendar.getInstance(locale);
 		
 		long formattedDate = calendar.getTimeInMillis();
-		System.out.println(formattedDate);
 		
 		long groupNo = formattedDate;
 		project.setGroupNo(groupNo);
 		
-		logger.debug(project.toString());
 		
 		projectService.addProject(project);
 		projectService.joinProject(groupNo, project.getUserNo());

@@ -5,7 +5,7 @@
                     <div class="row">
                         <div class="col-md-3 profile-image">
                             <div class="profile-image-container">
-                                <img src="/resources/images/minihome/avatar4.png" alt="">
+                                <img src="/resources/images/${users.photo }" alt="">
                             </div>
                         </div>
                         <div class="col-md-12 profile-info">
@@ -65,7 +65,7 @@
                                         
                                             <div class="panel-body">
                                                 <div class="timeline-item-header">
-                                                    <img src="/resources/images/minihome/avatar3.png" alt="">
+                                                    <img src='/resources/images/${guestbook["PHOTO"] }' alt="">
                                                     <p>${guestbook["NICKNAME"] } <span>Posted a Status</span></p>
                                                     <small>${guestbook["WRITE_DATE"] }</small>
                                                 </div>
@@ -73,24 +73,8 @@
                                                     <p>${guestbook["GUEST_CONTENT"] }</p>
                                                     <div class="timeline-options">
                                                         <a href="profile.html#"><i class="icon-like"></i> Like (${geustbook["GUEST_LIKE"] })</a>
-                                                        <a href="profile.html#"><i class="icon-bubble"></i> Comment (2)</a>
-                                                        <a href="profile.html#"><i class="icon-share"></i> Share (3)</a>
                                                     </div>
-                                                    <div class="timeline-comment">
-                                                        <div class="timeline-comment-header">
-                                                            <img src="/resources/images/minihome/avatar5.png" alt="">
-                                                            <p>Nick Doe <small>1 hour ago</small></p>
-                                                        </div>
-                                                        <p class="timeline-comment-text">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-                                                    </div>
-                                                    <div class="timeline-comment">
-                                                        <div class="timeline-comment-header">
-                                                            <img src="/resources/images/minihome/avatar2.png" alt="">
-                                                            <p>Sandra Smith <small>3 hours ago</small></p>
-                                                        </div>
-                                                        <p class="timeline-comment-text">Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                                    </div>
-                                                    <textarea class="form-control" placeholder="Replay"></textarea>
+                                                    
                                                 </div>
                                             </div>
                                            
@@ -128,10 +112,10 @@
                             </div>
                             <div class="panel panel-white">
                                 <div class="panel-heading">
-                                    <div class="panel-title">Some Info</div>
+                                    <div class="panel-title">추가 정보</div>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+                                    <p>프로그램 정보를 공유하려면 상단의 커뮤니티, 설치법을 알려면 배우기, 그룹 작업을 원하시면 프로젝트를 누르세요!</p>
                                 </div>
                             </div>
                             <div class="panel panel-white">

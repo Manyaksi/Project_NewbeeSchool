@@ -43,6 +43,7 @@
 	<select id="countGroup" resultType="Integer">
 		select count(group_no)
  		from grouparticle
+ 		where pass_fail = 0
 	</select>
 	
 </mapper>

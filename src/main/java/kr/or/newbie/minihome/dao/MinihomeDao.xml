@@ -15,9 +15,10 @@
 	</select>
 	
 	<select id="showGuestbook" parameterType="Integer" resultType="java.util.Map">
-		select g.guest_owner, g.guest_no, g.user_no, u.nickname, g. guest_like, g.guest_content, to_char(g.write_date, 'YY.MM.DD. AMHH12:MI:SS','NLS_DATE_LANGUAGE=KOREAN') write_date
+		select g.guest_owner, u.photo, g.guest_no, g.user_no, u.nickname, g.guest_like, g.guest_content, to_char(g.write_date, 'YY.MM.DD. AMHH12:MI:SS','NLS_DATE_LANGUAGE=KOREAN') write_date
 		from guestbook g, users u
 		where u.user_no = g.user_no and g.guest_owner  = #{guestbookOwner}
 		order by guest_no desc
 	</select>
+	
 </mapper>

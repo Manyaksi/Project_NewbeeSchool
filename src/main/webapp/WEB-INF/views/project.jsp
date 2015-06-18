@@ -112,9 +112,7 @@ $(function() {
 		data : "&groupNo=" + groupno,
            dataType : "html",//text,xml, json
            success : function(outcome) {
-        	   alert(outcome);
         	   if(outcome == "false"){
-        		   alert(11);
         	  		$("button[name=buttonEnterGo]").attr('disabled', 'disabled');
         	   }else{
         		   $("button[name=buttonEnterGo]").removeAttr("disabled"); 

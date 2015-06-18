@@ -41,19 +41,10 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		List<Map<String, Object>> map = mainService.showProjectMain();
 		
-		for (Map<String, Object> map2 : map) {
-			Iterator<String> iter = map2.keySet().iterator();
-			while (iter.hasNext()) {
-				String string = (String) iter.next();
-				System.out.println(string + " : " + map2.get(string));
-			}
-		}
-		
 		int count = mainService.countGroup();
 		
 		model.addAttribute("count", count);
 		model.addAttribute("list", map);
-		logger.info("Welcome home! The client locale is {}.", locale);
 		return "index";
 	}
 	
@@ -65,14 +56,6 @@ public class HomeController {
 		System.out.println(pageNo);
 		
 		List<Map<String, Object>> map = mainService.showProjectAdd(pageNo);
-		
-		for (Map<String, Object> map2 : map) {
-			Iterator<String> iter = map2.keySet().iterator();
-			while (iter.hasNext()) {
-				String string = (String) iter.next();
-				System.out.println(string + " : " + map2.get(string));
-			}
-		}
 		
 		
 		model.addAttribute("list", map);
@@ -89,13 +72,7 @@ public class HomeController {
 		
 		List<Map<String, Object>> map = mainService.showProjectProgramAdd(pageNo, programName);
 		
-		for (Map<String, Object> map2 : map) {
-			Iterator<String> iter = map2.keySet().iterator();
-			while (iter.hasNext()) {
-				String string = (String) iter.next();
-				System.out.println(string + " : " + map2.get(string));
-			}
-		}
+	
 		
 		
 		model.addAttribute("list", map);

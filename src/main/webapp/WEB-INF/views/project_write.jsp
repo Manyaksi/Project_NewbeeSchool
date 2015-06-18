@@ -175,7 +175,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         self.close();
     }
     function goSubmit() {
-    	alert('submit');
+    	alert('작성되었습니다.');
         $("#writeForm").submit();
     }
 	
