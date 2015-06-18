@@ -31,6 +31,8 @@ public interface ArticleService {
 	
 	//카테고리별 게시글 목록 출력
 	public List<Map<String, Object>> showcategoryList(String category, String program_name);
+	//카테고리 페이징
+	public List<Map<String, Object>> categoryPaging(String category, String program_name, int page);
 	
 	//조회수별 게시글 목록 출력
 	public List<Map<String, Object>> hitcountList(String category, String program_name);
@@ -40,6 +42,11 @@ public interface ArticleService {
 	
 	//추천수별 게시글 목록 출력
 	public List<Map<String, Object>> commentcountList(String category, String program_name);
+	
+	//오더바이 페이징
+	public List<Map<String, Object>> hitcountPaging(String category, String program_name,int page);
+	public List<Map<String, Object>> likecountPaging(String category, String program_name,int page);
+	public List<Map<String, Object>> commentcountPaging(String category, String program_name, int page);
 	
 	//게시글 검색
 	public List<Map<String, Object>> searchList(String program_name, String category ,String searchValue, String searchValue2, String searchValue3);
@@ -65,6 +72,11 @@ public interface ArticleService {
 	
 	//댓글 삭제
 	public void removeComment(int comment_no);
+	
+	
+	
+	//페이징
+	public List<Map<String, Object>> paging(String program_name, int page);
 	
 	/*//프로젝트 등록하기
 	public void addProject(Project project);

@@ -140,6 +140,24 @@ public class MybatisArticleDao implements ArticleDao {
 
 		return categoryList;
 	}
+	/**
+	 * 카테고리별 페이징
+	 */
+	@Override
+	public List<Map<String, Object>> categoryPaging(Map<String, String> params) {
+		List<Map<String, Object>> categoryPaging = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			categoryPaging = dao.categoryPaging(params);
+
+		} finally {
+			session.close();
+		}
+		return categoryPaging;
+	}
+
 
 	/**
 	 * 조회순별 리스트
@@ -199,6 +217,55 @@ public class MybatisArticleDao implements ArticleDao {
 		}
 
 		return commentcountList;
+	}
+	/**
+	 * 오더바이 페이징
+	 */
+	
+	@Override
+	public List<Map<String, Object>> hitcountPaging(Map<String, String> params) {
+		List<Map<String, Object>> hitcountPaging = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			hitcountPaging = dao.hitcountPaging(params);
+
+		} finally {
+			session.close();
+		}
+
+		return hitcountPaging;
+	}
+	@Override
+	public List<Map<String, Object>> likecountPaging(Map<String, String> params) {
+		List<Map<String, Object>> likecountPaging = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			likecountPaging = dao.likecountPaging(params);
+
+		} finally {
+			session.close();
+		}
+
+		return likecountPaging;
+	}
+	@Override
+	public List<Map<String, Object>> commentcountPaging(Map<String, String> params) {
+		List<Map<String, Object>> commentcountPaing = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			commentcountPaing = dao.commentcountPaging(params);
+
+		} finally {
+			session.close();
+		}
+
+		return commentcountPaing;
 	}
 
 	/**
@@ -356,6 +423,26 @@ public class MybatisArticleDao implements ArticleDao {
 		}
 		
 	}
+
+	
+	
+	
+	@Override
+	public List<Map<String, Object>> paging(Map<String, String> params) {
+		List<Map<String, Object>> pagingList = null;
+		SqlSession session = null;
+		try {
+			session = sqlSessionFactory.openSession();
+			ArticleDao dao = session.getMapper(ArticleDao.class);
+			pagingList = dao.paging(params);
+
+		} finally {
+			session.close();
+		}
+
+		return pagingList;
+	}
+
 
 
 	/*

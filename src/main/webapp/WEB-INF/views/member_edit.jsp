@@ -2,11 +2,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script src="/resources/js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.css" />
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 
 <jsp:include page="menu/module/head.jsp" />
 <link href="/resources/css/board.css" rel="stylesheet">
 
 </head>
+<script type="text/javascript">
+//페이징
+$.extend($.fn.dataTable.defaults, {
+	"searching" : false,
+	"ordering" : false
+});
+
+$(function() {
+	$('#paginated').dataTable({
+		"pagingType" : "full_numbers"
+	});
+});
+</script>
 
 
 
@@ -34,36 +51,38 @@
 	<jsp:include page="menu/module/nav_uneffect_js.jsp" />
 	<script type="text/javascript" src="/resources/js/board.js"></script>
 	<script type="text/javascript" src="/resources/js/ajax.js"></script>
+	
 	<script type="text/javascript">
-	
-	//닉네임 수정
-		$("#nickname").click(function() {
-		var nickname = $("#nicknametext").val();
-		alert(nickname);
-		
-			$.ajax({
-				type : "get",
-				url : "/users/edituser",
-				data : "type=nickname&value=" + nickname+"&userNo=${user.userNo }",
-				dataType : "html",//text,xml, json
-				success : function(editResult) {
-					$("#nicknamemessage").html(editResult);
-					$("#navmessage").html(editResult);
-					$("#close1").click();
-					
-				}
-			});
+		//닉네임 수정
+		$("#nickname").click(
+				function() {
+					var nickname = $("#nicknametext").val();
+					alert(nickname);
 
-		});
-	
+					$.ajax({
+						type : "get",
+						url : "/users/edituser",
+						data : "type=nickname&value=" + nickname
+								+ "&userNo=${user.userNo }",
+						dataType : "html",//text,xml, json
+						success : function(editResult) {
+							$("#nicknamemessage").html(editResult);
+							$("#navmessage").html(editResult);
+							$("#close1").click();
+
+						}
+					});
+
+				});
+
 		//이메일 수정
 		$("#email").click(function() {
-		var email = $("#emailtext").val();
-		
+			var email = $("#emailtext").val();
+
 			$.ajax({
 				type : "get",
 				url : "/users/edituser",
-				data : "type=id&value=" + email+"&userNo=${user.userNo }",
+				data : "type=id&value=" + email + "&userNo=${user.userNo }",
 				dataType : "html",//text,xml, json
 				success : function(editResult) {
 					$("#emailmessage").html(editResult);
@@ -72,57 +91,65 @@
 			});
 
 		});
-		
+
 		//비밀번호 수정
-		$("#passwd").click(function() {
-		var passwd = $("#passwdtext").val();
-		
-			$.ajax({
-				type : "get",
-				url : "/users/edituser",
-				data : "type=passwd&value=" + passwd+"&userNo=${user.userNo }",
-				dataType : "html",//text,xml, json
-				success : function(editResult) {
-					$("#passwdmessage").html(editResult);
-					$("#close3").click();
-				}
-			});
+		$("#passwd").click(
+				function() {
+					var passwd = $("#passwdtext").val();
 
-		});
-		
+					$.ajax({
+						type : "get",
+						url : "/users/edituser",
+						data : "type=passwd&value=" + passwd
+								+ "&userNo=${user.userNo }",
+						dataType : "html",//text,xml, json
+						success : function(editResult) {
+							$("#passwdmessage").html(editResult);
+							$("#close3").click();
+						}
+					});
+
+				});
+
 		//지역 수정
-		$("#location").click(function() {
-		var location = $("#locationtext").val();
-		
-			$.ajax({
-				type : "get",
-				url : "/users/edituser",
-				data : "type=location&value=" + location+"&userNo=${user.userNo }",
-				dataType : "html",//text,xml, json
-				success : function(editResult) {
-					$("#locationmessage").html(editResult);
-					$("#close4").click();
-				}
-			});
+		$("#location").click(
+				function() {
+					var location = $("#locationtext").val();
 
-		});
-		
+					$.ajax({
+						type : "get",
+						url : "/users/edituser",
+						data : "type=location&value=" + location
+								+ "&userNo=${user.userNo }",
+						dataType : "html",//text,xml, json
+						success : function(editResult) {
+							$("#locationmessage").html(editResult);
+							$("#close4").click();
+						}
+					});
+
+				});
+
 		//프로그램 수정
-		$("#programname").click(function() {
-		var programname = $("#programtext").val();
-		
-			$.ajax({
-				type : "get",
-				url : "/users/edituser",
-				data : "type=programName&value=" + programname+"&userNo=${user.userNo }",
-				dataType : "html",//text,xml, json
-				success : function(editResult) {
-					$("#programmessage").html(editResult);
-					$("#close5").click();
-				}
-			});
+		$("#programname").click(
+				function() {
+					var programname = $("#programtext").val();
 
-		});
+					$.ajax({
+						type : "get",
+						url : "/users/edituser",
+						data : "type=programName&value=" + programname
+								+ "&userNo=${user.userNo }",
+						dataType : "html",//text,xml, json
+						success : function(editResult) {
+							$("#programmessage").html(editResult);
+							$("#close5").click();
+						}
+					});
+
+				});
+
+		
 	</script>
 
 </body>

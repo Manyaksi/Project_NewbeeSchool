@@ -1,11 +1,11 @@
 package kr.or.newbie.article.controller;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import kr.or.newbie.HomeController;
 import kr.or.newbie.article.domain.Article;
+import kr.or.newbie.article.domain.PagingHelper;
 import kr.or.newbie.article.service.ArticleService;
 
 import org.slf4j.Logger;
@@ -126,14 +126,24 @@ public class ArticleController {
 	@RequestMapping("/boardlist")
 	public String list(
 			@RequestParam(value = "program_name", required = false, defaultValue = "") String program_name,
+			@RequestParam(value = "page", required = false, defaultValue = "") int page,
 			Model model) {
 		List<Map<String, Object>> list = articleService
 				.showarticletList(program_name);
+		
+		List<Map<String, Object>> listpage = articleService
+				.paging(program_name, page);
 
 		int size = list.size();
+		
+		
+		PagingHelper pagingHelper = null;
+		pagingHelper = new PagingHelper(pagingHelper.count_List, pagingHelper.count_Page, list.size(), page);
+		pagingHelper.calculate();
 
 		model.addAttribute("size", size);
-		model.addAttribute("list", list);
+		model.addAttribute("list", listpage);
+		model.addAttribute("paging", pagingHelper.toHtml(program_name, "", ""));
 		model.addAttribute("programName", program_name);
 		return "/board";
 	}
@@ -145,19 +155,30 @@ public class ArticleController {
 	public String categoryList(
 			@RequestParam(value = "category", required = false, defaultValue = "") String category,
 			@RequestParam(value = "program_name", required = false, defaultValue = "") String program_name,
-			@RequestParam(value = "orderby", required = false, defaultValue = "") String orderby,
+			@RequestParam(value = "page", required = false, defaultValue = "") int page,
 			Model model) {
 
+		
+		logger.debug("카테고리별 진입" + category);
 		List<Map<String, Object>> list = null;
 
 		list = articleService.showcategoryList("%" + category + "%",
 				program_name);
+		logger.debug("전체 리스트 출력 완료"+program_name);
+		
+		List<Map<String, Object>> listpage = articleService.categoryPaging(category, program_name, page);
+		
+		logger.debug("리스트 페이지"+program_name);
 
 		int size = list.size();
+		
+		PagingHelper pagingHelper = null;
+		pagingHelper = new PagingHelper(pagingHelper.count_List, pagingHelper.count_Page, list.size(), page);
+		pagingHelper.calculate();
 
 		model.addAttribute("size", size);
-
-		model.addAttribute("list", list);
+		model.addAttribute("paging", pagingHelper.toHtml(program_name, "category", category));
+		model.addAttribute("list", listpage);
 		model.addAttribute("category", category);
 		model.addAttribute("programName", program_name);
 		return "/board";
@@ -172,27 +193,60 @@ public class ArticleController {
 			@RequestParam(value = "category", required = false, defaultValue = "") String category,
 			@RequestParam(value = "program_name", required = false, defaultValue = "") String program_name,
 			@RequestParam(value = "orderby", required = false, defaultValue = "") String orderby,
+			@RequestParam(value = "page", required = false, defaultValue = "") int page,
 			Model model) {
+		
+		PagingHelper pagingHelper = null;
+		
+		
 
 		List<Map<String, Object>> list = null;
+		List<Map<String, Object>> listpage = null;
 		int size = 0;
 		if (orderby.equals("hit_count")) {
 
 			list = articleService.hitcountList("%" + category + "%",
 					program_name);
+			
+			listpage = articleService.hitcountPaging("%" + category + "%", program_name, page);
+			
 			size = list.size();
+			pagingHelper = new PagingHelper(pagingHelper.count_List, pagingHelper.count_Page, list.size(), page);
+			pagingHelper.calculate();
+			
+			model.addAttribute("paging", pagingHelper.toHtml(program_name, "category", category));
+			
+			
 		} else if (orderby.equals("like_count")) {
 			list = articleService.likecountList("%" + category + "%",
 					program_name);
+			listpage = articleService.likecountPaging("%" + category + "%", program_name, page);
+			
 			size = list.size();
+			
+			pagingHelper = new PagingHelper(pagingHelper.count_List, pagingHelper.count_Page, list.size(), page);
+			pagingHelper.calculate();
+			
+			model.addAttribute("paging", pagingHelper.toHtml(program_name, "category", category));
+			
 		} else if (orderby.equals("commentcount")) {
 			list = articleService.commentcountList("%" + category + "%",
 					program_name);
+			
+			listpage = articleService.commentcountPaging("%" + category + "%", program_name, page);
+			
 			size = list.size();
+			pagingHelper = new PagingHelper(pagingHelper.count_List, pagingHelper.count_Page, list.size(), page);
+			pagingHelper.calculate();
+			
+			
+			model.addAttribute("paging", pagingHelper.toHtml(program_name, "category", category));
+			
+			
 		}
 
 		model.addAttribute("size", size);
-		model.addAttribute("list", list);
+		model.addAttribute("list", listpage);
 		model.addAttribute("category", category);
 		model.addAttribute("programName", program_name);
 		return "/board";
@@ -302,5 +356,43 @@ public class ArticleController {
 		return "redirect:/board/boardread?article_no=" + article_no;
 		
 	}
+	
+	
+	
+	/**
+	 * 페이징 테스트
+	 */
+	
+	/**
+	 * 게시글 목록보기(/academic/list)
+	 */
+	@RequestMapping("/paging")
+	public String paging(
+			@RequestParam(value = "program_name", required = false, defaultValue = "") String program_name,
+			@RequestParam(value = "page", required = false, defaultValue = "") int page,
+			Model model) {
+		List<Map<String, Object>> list = articleService
+				.showarticletList(program_name);
+		
+		List<Map<String, Object>> list1 = articleService.paging(program_name, page);
+		
+		System.out.println(list.size());
+		
+		PagingHelper pagingHelper = null;
+		pagingHelper = new PagingHelper(pagingHelper.count_List, pagingHelper.count_Page, list.size(), page);
+		pagingHelper.calculate();
+		
+		
+
+		int size = list.size();
+
+		model.addAttribute("paging", pagingHelper.toHtml(program_name, "", ""));
+		model.addAttribute("size", size);
+		model.addAttribute("list", list1);
+		model.addAttribute("programName", program_name);
+		return "/board";
+	}
+	
+	
 
 }

@@ -107,7 +107,7 @@
  <c:forEach items="${commentList }" var="comment">  
 	<tr>
 <td class="col-md-3 text-center">
-	<img class="media-object img-circle" src="/resources/images/${article['PHOTO'] }" style="width:100px; height:100px;" alt="profile">
+	<img class="media-object img-circle" src="/resources/images/${comment['PHOTO'] }" style="width:100px; height:100px;" alt="profile">
 </td>
 
 
@@ -138,7 +138,7 @@
 	<div class="col-md-1 col-md-offset-11">
 	<input type="hidden" name="program_name" value="${article['PROGRAM_NAME'] }">
 	<input type="hidden" name="article_no" value="${article['ARTICLE_NO'] }">
-	<input type="hidden" name="user_no" value="${article['USER_NO'] }">
+	<input type="hidden" name="user_no" value="${cookie.loginId.value }">
 		
 		<button type="submit" class="btn btn-default">작성</button>
 	</div>
