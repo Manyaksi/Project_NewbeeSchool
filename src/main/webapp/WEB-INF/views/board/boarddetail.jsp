@@ -80,7 +80,7 @@
 					
 					
 					<div class="paging-right-comp">
-					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article['PROGRAM_NAME'] }">목록보기</a>
+					<a class="category-boxed btn font-black" href="/board/boardlist?program_name=${article['PROGRAM_NAME'] }&page=1">목록보기</a>
 					<a class="category-boxed btn font-black" id="total-edit" href="/board/modifyarticle?article_no=${article['ARTICLE_NO'] }&program_name=${article['PROGRAM_NAME'] }">수정하기</a>
 					<button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit</button>
 					<form class="form-horizontal" action="/board/modifyarticle" method="post" id="modifyarticle">
