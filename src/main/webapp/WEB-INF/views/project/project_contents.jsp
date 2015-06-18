@@ -25,7 +25,7 @@
 					<ul class="media-list">
                       <li class="media">
                         <a class="pull-left" href="#">
-                          <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
+                          <img class="media-object img-circle" src="/resources/images/${entry.photo }" alt="profile">
                         </a>
                         <div class="media-body">
                           <div class="well ">
@@ -166,7 +166,7 @@ border-radius: 2px;
                     <c:forEach var="commentList" items="${commentList }">
                       <li class="media">
                         <a class="pull-left" href="#">
-                          <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kurafire/128.jpg" alt="profile">
+                          <img class="media-object img-circle" src='/resources/images/${commentList["PHOTO"] }' alt="profile">
                         </a>
                         <div class="media-body">
                           <div class="well ">

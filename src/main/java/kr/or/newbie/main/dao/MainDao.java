@@ -16,5 +16,10 @@ public interface MainDao {
 	//메인 화면 프로젝트 부분 뿌려주기.
 	public List<Map<String, Object>> showProjectMain();
 
+	public List<Map<String, Object>> showProjectAdd(int pageNo);
+
+	public List<Map<String, Object>> showProjectProgramAdd(Map<String, Object> map);
+
+	public int countGroup();
 	
 }

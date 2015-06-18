@@ -113,9 +113,9 @@ $(function() {
            dataType : "html",//text,xml, json
            success : function(outcome) {
         	   if(outcome == "false"){
-        	  		$("#buttonEnter").attr('disabled', true);
+        	  		$("button[name=buttonEnterGo]").attr('disabled', 'disabled');
         	   }else{
-        		   $("#buttonEnter").attr('disabled', false);
+        		   $("button[name=buttonEnterGo]").removeAttr("disabled"); 
         	   }
            }
 		});
