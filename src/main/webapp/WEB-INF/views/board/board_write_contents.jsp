@@ -48,7 +48,7 @@
     <a id="cancel" name="cancel" class="btn btn-default" href="/board/boardlist?program_name=${programName }">취소</a>
   </div>
 </div>
-<input type="hidden" name="user_no" value="2">
+<input type="hidden" name="user_no" value="${cookie.loginId.value }">
 <input type="hidden" name="program_name" value="${programName }">
 </fieldset>
 </form>

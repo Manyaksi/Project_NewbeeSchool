@@ -20,7 +20,6 @@
 
 
 
-
 						<form class="navbar-form search-btn" role="search" action="/board/search" id="searchForm"
 						method="post">
 							<input type="hidden" name="category" value=${category }>

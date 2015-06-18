@@ -226,9 +226,10 @@ padding-left: 15px;
   <div class="modal-dialog modal-lg">
     <div class="modal-content" style="padding:50px;">
     <!--  댓글 테이블 -->
-		<table class="table ">
+		<table class="table" id="paginated">
+		<thead></thead>
 
-
+<tbody>
  <c:forEach items="${commentList }" var="comment">  
 	<tr>
 <td class="col-md-3 text-center">
@@ -247,6 +248,7 @@ padding-left: 15px;
 </tr>
 
 </c:forEach>
+</tbody>
 
 </table>
  

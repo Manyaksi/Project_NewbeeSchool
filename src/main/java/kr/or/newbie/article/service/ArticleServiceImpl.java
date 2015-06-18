@@ -96,6 +96,18 @@ public class ArticleServiceImpl implements ArticleService {
 		params.put("program_name", program_name);
 		return articleDao.showcategoryList(params);
 	}
+	/**
+	 * 카테고리 페이징
+	 */
+	@Override
+	public List<Map<String, Object>> categoryPaging(String category,
+			String program_name, int page) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		params.put("page", String.valueOf(page));
+		return articleDao.categoryPaging(params);
+	}
 
 	/**
 	 * 조회수별 게시글 출력
@@ -134,6 +146,37 @@ public class ArticleServiceImpl implements ArticleService {
 		params.put("category", category);
 		params.put("program_name", program_name);
 		return articleDao.commentcountList(params);
+	}
+	/**
+	 * 오더바이 페이징
+	 */
+	
+	@Override
+	public List<Map<String, Object>> hitcountPaging(String category,
+			String program_name,int page) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		params.put("page", String.valueOf(page));
+		return articleDao.hitcountPaging(params);
+	}
+	@Override
+	public List<Map<String, Object>> likecountPaging(String category,
+			String program_name,int page) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		params.put("page", String.valueOf(page));
+		return articleDao.likecountPaging(params);
+	}
+	@Override
+	public List<Map<String, Object>> commentcountPaging(String category,
+			String program_name, int page) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("category", category);
+		params.put("program_name", program_name);
+		params.put("page", String.valueOf(page));
+		return articleDao.commentcountPaging(params);
 	}
 
 	/**
@@ -220,5 +263,15 @@ public class ArticleServiceImpl implements ArticleService {
 
 		articleDao.removeComment(comment_no);
 	}
+
+	@Override
+	public List<Map<String, Object>> paging(String program_name, int page) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("program_name", program_name);
+		params.put("page", String.valueOf(page));
+		return articleDao.paging(params);
+	}
+
+	
 
 }

@@ -8,17 +8,17 @@
 		
 		
 
-			<li><a href="/board/categorylist?category=&program_name=${programName }">전체 <i
+			<li><a href="/board/categorylist?category=&program_name=${programName }&page=1">전체 <i
 					class="icon arrow_right"></i></a></li>
-			<li><a href="/board/categorylist?category=일반&program_name=${programName }">일반<i
+			<li><a href="/board/categorylist?category=일반&program_name=${programName }&page=1">일반<i
 					class="icon arrow_right"></i></a></li>
-			<li><a href="/board/categorylist?category=질문&program_name=${programName }">질문<i
+			<li><a href="/board/categorylist?category=질문&program_name=${programName }&page=1">질문<i
 					class="icon arrow_right"></i></a></li>
-			<li><a href="/board/categorylist?category=정보&program_name=${programName }">정보<i
+			<li><a href="/board/categorylist?category=정보&program_name=${programName }&page=1">정보<i
 					class="icon arrow_right"></i></a></li>
-			<li><a href="/board/categorylist?category=일반&program_name=${programName }">강좌<i
+			<li><a href="/board/categorylist?category=일반&program_name=${programName }&page=1">강좌<i
 					class="icon arrow_right"></i></a></li>
-			<li><a href="/board/categorylist?category=TIP&program_name=${programName }">TIP<i
+			<li><a href="/board/categorylist?category=TIP&program_name=${programName }&page=1">TIP<i
 					class="icon arrow_right"></i></a></li>
 					
 		</ul>

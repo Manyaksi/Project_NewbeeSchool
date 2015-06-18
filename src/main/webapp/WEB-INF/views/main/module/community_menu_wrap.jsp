@@ -31,7 +31,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/1.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=java">
+									<a href="/board/boardlist?program_name=java&page=1">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>자바커뮤니티</span></div>
 									</a>
 								</div>
@@ -41,7 +41,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/2.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=Python">
+									<a href="/board/boardlist?program_name=Python&page=1">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>C# 커뮤니티</span></div>
 									</a>
 								</div>
@@ -51,7 +51,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/3.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=CPP">
+									<a href="/board/boardlist?program_name=CPP&page=1">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -61,7 +61,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/4.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=Swift">
+									<a href="/board/boardlist?program_name=Swift&page=1">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -71,7 +71,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/6.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=Csharp">
+									<a href="/board/boardlist?program_name=Csharp&page=1">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -81,7 +81,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/5.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=PHP">
+									<a href="/board/boardlist?program_name=PHP&page=1">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -91,7 +91,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/7.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=Ruby">
+									<a href="/board/boardlist?program_name=Ruby&page=1">
 										<div class="overlay-text"><i class="fa fa-picture-o"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -101,7 +101,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/8.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=JavaScript">
+									<a href="/board/boardlist?program_name=JavaScript&page=1">
 										<div class="overlay-text"><i class="fa fa-play"></i> <span>View Project</span></div>
 									</a>
 								</div>
@@ -111,7 +111,7 @@
 							<div class="community-wrapper">
 								<img src="/resources/images/works/9.jpg" alt="" />
 								<div class="overlay1">
-									<a href="/board/boardlist?program_name=C">
+									<a href="/board/boardlist?program_name=C&page=1">
 										<div class="overlay-text"><i class="fa fa-camera"></i> <span>View Project</span></div>
 									</a>
 								</div>

@@ -32,6 +32,8 @@ public interface ArticleDao {
 	
 	//카테고리별 목록 출력
 	public List<Map<String, Object>> showcategoryList(Map<String, String> params);
+	//카테고리 페이징
+	public List<Map<String, Object>> categoryPaging(Map<String, String> params);
 	
 	//조회순 별 리스트 출력
 	public List<Map<String, Object>> hitcountList(Map<String, String> params);
@@ -42,6 +44,10 @@ public interface ArticleDao {
 	//댓글수별 리스트
 	public List<Map<String, Object>> commentcountList(Map<String, String> params);
 	
+	//오더바이 페이징
+	public List<Map<String, Object>> hitcountPaging(Map<String, String> params);
+	public List<Map<String, Object>> likecountPaging(Map<String, String> params);
+	public List<Map<String, Object>> commentcountPaging(Map<String, String> params);
 	//게시글 검색하기
 	public List<Map<String, Object>> searchList(Map<String, String> params);
 	
@@ -65,6 +71,10 @@ public interface ArticleDao {
 	
 	//댓글 삭제
 	public void removeComment(int comment_no);
+	
+	
+	//페이징
+	public List<Map<String, Object>> paging(Map<String, String> params);
 	
 		
 	/*//프로젝트 등록하기
