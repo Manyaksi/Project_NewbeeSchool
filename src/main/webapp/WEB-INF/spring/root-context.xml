@@ -30,9 +30,15 @@
          <list>
             <value>classpath:kr/or/newbie/project/dao/ProjectDao.xml</value>
             <value>classpath:kr/or/newbie/tutorial/devprogram/dao/Devprogram.xml</value>
+            <value>classpath:kr/or/newbie/users/dao/UsersDao.xml</value>
+            <value>classpath:kr/or/newbie/article/dao/ArticleDao.xml</value>
+            <value>classpath:kr/or/newbie/minihome/dao/MinihomeDao.xml</value>
+            <value>classpath:kr/or/newbie/main/dao/MainDao.xml</value>
          </list>
       </property>
    </bean>
-         
+   
+   
+
    <!-- <context:component-scan base-package="kr.or.newbie" />  -->
 </beans>

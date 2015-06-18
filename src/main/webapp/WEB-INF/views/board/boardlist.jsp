@@ -1,146 +1,74 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-        <div class="col-md-12">
-       <h2><span class="logo">JAVA</span> 커뮤니티</h2> 
-        <p>java커뮤니티 소개글......</p>
-        </div>
-        
-        <div class="space50"></div>
-       
-        <div class="col-md-12 margin-bottom-10">
-			<a class="category-boxed" href="">전체</a>
-			<a class="category-boxed" href="">일반</a>
-			<a class="category-boxed" href="">질문</a>
-			<a class="category-boxed" href="">정보/강좌</a>
-			<a class="category-boxed" href="">TIP</a>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="col-md-10">
+
+
+	<div class="board-header">
+		<div id="board-header-tabs">
+			<a class="total-tab" href="/board/categorylist?category=${category }&program_name=${programName }&orderby=total"><span class="total-num"></span>전체</a> 
+			<a class="hit-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=hit_count">조회 순</a> 
+			<a class="comment-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=commentcount"">댓글 순</a>
+			<a class="like-tab" href="/board/orderbyList?category=${category }&program_name=${programName }&orderby=like_count">추천 순</a>
 		</div>
-        
-        
-        <div class="col-md-12">
-            
-      <table class="table table-hover table-condensed community-board">
-		<tr>
-			<th class="col-md-1 text-center">
-			번호
-			</th>  
-			<th class="col-md-1 text-center">
-			분류
-			</th>
-			<th class="col-md-1 text-center">
-			글쓴이
-			</th> 
-			<td class="col-md-6 text-center">
-			제목
-			</th> 
-			<th class="col-md-1 text-center">
-			등록일
-			</th>
-			<th class="col-md-1 text-center">
-			추천
-			</th>
-			<th class="col-md-1 text-center">
-			조회
-			</th>
-		</tr>	
-		
-		  
-		  <tr>
-		  <td>5</td>
-		  <td>일반</td>
-			<td>펩시</td>
-			<td><a href="/boardread">상사가 괴롭혀요</a></td>
-			<td>15/06/01</td>
-			<td>1</td>
-			<td>154</td>
-		  </tr>
-		  
-		  
-		 
-		  
-		  <tr>
-		  <td>4</td>
-		  <td>TIP</td>
-			<td>코카콜라</td>
-			<td>JAVA의 모든것을 알려드립니다</td>
-			<td>15/06/01</td>
-			<td>0</td>
-			<td>22</td>
-		  </tr>
-			
-			
-		  <tr>
-		  <td>3</td>
-		  <td>질문</td>
-			<td>사이다</td>
-			<td>여자친구 있어요?</td>
-			<td>15/06/01</td>
-			<td>224</td>
-			<td>1143</td>
-		  </tr>
-		  
-		  
-		
-		  	<tr>
-		  <td>2</td>
-		  <td>질문</td>
-			<td>방그리</td>
-			<td>자바가 뭔가요?</td>
-			<td>15/06/01</td>
-			<td>0</td>
-			<td>20</td>
-		  </tr>
-		  
-		  
-		    <tr>
-		  <td>1</td>
-		  <td>정보/강좌</td>
-			<td>운영자</td>
-			<td>안녕하세요. 자바 게시판입니다.</td>
-			<td>15/06/01</td>
-			<td>10</td>
-			<td>25720</td>
-		  </tr>
-		  
-		  
-		</table>
-			
-			<div class="col-md-12">
-	
-				
-				
-				<div class="paging">
-					
-					<div class="paging-left-comp">
-					<a class="category-boxedbtn font-black" href="write.html">목록</a>
-						</div>
-				
-  <ul class="pagination no-margin font-black">
-    <li class="font-black">
-      <a class="font-black" href="#" aria-label="Previous">
-        <span aria-hidden="true">이전페이지</span>
-      </a>
-    </li>
-    <li><a class="font-black" href="#">1</a></li>
-    <li><a class="font-black"  href="#">2</a></li>
-    <li><a class="font-black" href="#">3</a></li>
-    <li><a class="font-black" href="#">4</a></li>
-    <li><a class="font-black" href="#">5</a></li>
-    <li>
-      <a class="font-black" href="#" aria-label="Next">
-        <span aria-hidden="true">다음페이지</span>
-      </a>
-    </li>
-  </ul>
-					
-					<div class="paging-right-comp">
-					<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
-						</div>
-					</div>
-				
-				
+	</div>
+
+
+  <c:forEach items="${list }" var="article">  
+
+
+	<!-- li -->
+	<div class="board-article-li narrow row">
+
+
+		<div class="col-md-1">
+		<div class="board-views text-left">
+					<p class="board-li-type">${article["CATEGORY"] }</p>
 				</div>
-			
+		</div>		
+		<div class="col-md-7">
+			<div class="board-li-title">
+				<a href="/board/boardread?article_no=${article['ARTICLE_NO'] }&program_name=${programName }">${article["SUBJECT"] }</a>
 			</div>
+	
+		</div>
 			
-			
-            
-       
+
+<div class="col-md-4">
+	<div class="time-nickname text-center">
+				<a> <span>${article["WRITE"] }</span></a><br>
+				<a><b>${article["NICKNAME"] }</b></a>
+			</div>
+			<div class="board-article-li-num text-center">
+				<div class="board-views">
+					<div class="mini-counts">
+						<span title="0 votes">${article["LIKE_COUNT"] }</span>
+					</div>
+					<div>추천</div>
+				</div>
+				<div class="board-views">
+					<div class="mini-counts">
+						<span title="0 answers">${article["COMMENTCOUNT"] }</span>
+					</div>
+					<div>댓글</div>
+				</div>
+				<div class="board-views">
+					<div class="mini-counts">
+						<span title="1 view">${article["HIT_COUNT"] }</span>
+					</div>
+					<div>조회수</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</c:forEach>
+	</div>
+
+	
+	
+
+
+
+

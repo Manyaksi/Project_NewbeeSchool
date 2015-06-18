@@ -1,253 +1,103 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-        <div class="col-md-12">
-       <h2><span class="logo">JAVA</span> 커뮤니티</h2> 
-        <p>java커뮤니티 소개글......</p>
-        </div>
-        
-        <div class="space50"></div>
-       
-        
-        <div class="col-md-12">
-<div class="container">
-			<div class="row">
-				
-				
-				<ul id="project_filters" class="clearfix">
-						<li><span class="project_filte rs active" data-filter="sort1 sort2 sort3 sort4">All</span></li>
-						<li><span class="project_filters" data-filter="sort1">Web</span></li>
-						<li><span class="project_filters" data-filter="sort2">Mobile</span></li>
-						<li><span class="project_filters" data-filter="sort3">Design</span></li>
-						<li><span class="project_filters" data-filter="sort4">Photography</span></li>
-						<li><span class="project_filters" data-filter="sort5">Type</span></li>
-					</ul>
-				
-				
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-								<p class="project-title">자바채팅프로젝트</p>
-								<p class="project-byline">김순재</p>
-								<p class="project-blurb">자바 기반으로 채팅프로그램 만들어봐요</p>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div class="space60"></div>
+<div class="col-md-12 text-center">
+	<h1 style="margin: 0 0 5px; font-size: 32px; font-family: seoulNamsan; font-weight: normal;">프로젝트</h1>
+	<p style="margin-bottom: 0px; font-size: 20px; font-weight: 300; color: #555; font-family: seoulNamsan;">초보개발자들과
+		함께 프로젝트에 참여해보세요</p>
+</div>
 
-								<div class="project-location">
-									<span><i class="fa fa-location-arrow"></i></span> <span
-										class="location-name">가산,서울</span>
-								</div>
-
-								<div class="project-card-footer">
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">참여율 60%</div>
-									</div>
-									<p class="text-center">3명 / 5명</p>
-									<div class="text-center">
-
-										<a href="/project" class="btn btn-primary" role="button">참가하기</a>
-									</div>
-								</div>
-						</div>
-					</div>
-				</div>
-				
-				
-								<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-								<p class="project-title">자바채팅프로젝트</p>
-								<p class="project-byline">김순재</p>
-								<p class="project-blurb">자바 기반으로 채팅프로그램 만들어봐요</p>
-
-								<div class="project-location">
-									<span><i class="fa fa-location-arrow"></i></span> <span
-										class="location-name">가산,서울</span>
-								</div>
-
-								<div class="project-card-footer">
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">참여율 60%</div>
-									</div>
-									<p class="text-center">3명 / 5명</p>
-									<div class="text-center">
-
-										<a href="/project" class="btn btn-primary" role="button">참가하기</a>
-									</div>
-								</div>
-						</div>
-					</div>
-				</div>
-				
-								<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-								<p class="project-title">자바채팅프로젝트</p>
-								<p class="project-byline">김순재</p>
-								<p class="project-blurb">자바 기반으로 채팅프로그램 만들어봐요</p>
-
-								<div class="project-location">
-									<span><i class="fa fa-location-arrow"></i></span> <span
-										class="location-name">가산,서울</span>
-								</div>
-
-								<div class="project-card-footer">
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">참여율 60%</div>
-									</div>
-									<p class="text-center">3명 / 5명</p>
-									<div class="text-center">
-
-										<a href="/project" class="btn btn-primary" role="button">참가하기</a>
-									</div>
-								</div>
-						</div>
-					</div>
-				</div>
-				
-								<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-								<p class="project-title">자바채팅프로젝트</p>
-								<p class="project-byline">김순재</p>
-								<p class="project-blurb">자바 기반으로 채팅프로그램 만들어봐요</p>
-
-								<div class="project-location">
-									<span><i class="fa fa-location-arrow"></i></span> <span
-										class="location-name">가산,서울</span>
-								</div>
-
-								<div class="project-card-footer">
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">참여율 60%</div>
-									</div>
-									<p class="text-center">3명 / 5명</p>
-									<div class="text-center">
-
-										<a href="/project" class="btn btn-primary" role="button">참가하기</a>
-									</div>
-								</div>
-						</div>
-					</div>
-				</div>
-				
-								<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-								<p class="project-title">자바채팅프로젝트</p>
-								<p class="project-byline">김순재</p>
-								<p class="project-blurb">자바 기반으로 채팅프로그램 만들어봐요</p>
-
-								<div class="project-location">
-									<span><i class="fa fa-location-arrow"></i></span> <span
-										class="location-name">가산,서울</span>
-								</div>
-
-								<div class="project-card-footer">
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">참여율 60%</div>
-									</div>
-									<p class="text-center">3명 / 5명</p>
-									<div class="text-center">
-
-										<a href="/project" class="btn btn-primary" role="button">참가하기</a>
-									</div>
-								</div>
-						</div>
-					</div>
-				</div>
-				
-								<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<img src="resources/images/works/1.jpg" alt="...">
-						<div class="caption">
-								<p class="project-title">자바채팅프로젝트</p>
-								<p class="project-byline">김순재</p>
-								<p class="project-blurb">자바 기반으로 채팅프로그램 만들어봐요</p>
-
-								<div class="project-location">
-									<span><i class="fa fa-location-arrow"></i></span> <span
-										class="location-name">가산,서울</span>
-								</div>
-
-								<div class="project-card-footer">
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">참여율 60%</div>
-									</div>
-									<p class="text-center">3명 / 5명</p>
-									<div class="text-center">
-
-										<a href="/project" class="btn btn-primary" role="button">참가하기</a>
-									</div>
-								</div>
-						</div>
-					</div>
-				</div>
+<div class="space20"></div>
 
 
-					</div>	
+<div class="col-md-12">
+	<div class="container">
+		<div class="row">
 
-				<div class="space30"></div>
-				<a class="btn-lite" href="index.html#">더보기</a>
+
+			<ul id="project_filters" class="clearfix"
+				style="margin-bottom: 0px; margin-top: 0px;">
+				<li><span class="project_filte rs active"
+					data-filter="sort1 sort2 sort3 sort4">All</span></li>
+				<li><span class="project_filters" data-filter="sort1">C</span></li>
+				<li><span class="project_filters" data-filter="sort2">C++</span></li>
+				<li><span class="project_filters" data-filter="sort3">C#</span></li>
+				<li><span class="project_filters" data-filter="sort4">JAVA</span></li>
+				<li><span class="project_filters" data-filter="sort5">Type</span></li>
+			</ul>
+
+			<div class="text-right">
+				<a class="flaticon-plus79 nanum-gothic " href="/project/project_write"
+					style="font-size: 20px; margin-right: 15px;">새 프로젝트 만들기</a>
 			</div>
+
+			<c:forEach var="project" items="${list }">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="padding-right: 0px;
+padding-left: 0px;">
+<c:if test='${project["PASS_FAIL"]== "0"}'>
+				<figure class="effect-ming">
+					<img src="/resources/images/img/17.jpg" alt="img17">
+						
+						
+					<figcaption>
+						<h2>
+							${project["GROUP_SUBJECT"] }
+						</h2>
+						<p class="project-byline">by ${project["NICKNAME"] }   for ${project["PROGRAM_NAME"] } / ${project["GROUP_CATEGORY"] }</p>
+						<%-- <p class="project-blurb">${project["GROUP_CONTENT"] }</p> --%>
+						<p class="project-blurb">${project["STARTLINE"]} ~ ${project["DEADLINE"]}</p>
+						<p class="project-location">
+							<span><i class="fa fa-location-arrow"></i></span> 
+							<span class="location-name">${project["GROUP_LOCATION"] }</span>
+							<div class="grup-count">현재 ${project["COUNT"] } 명 / 총 ${project["GROUP_MAXCOUNT"] } 명</div>
+					
+							<form action="/project/project_detail" method="get">
+								<input type="hidden" name="groupNo"
+									value='${project["GROUP_NO"] }'> <input
+									type="hidden" name="userNo" value='15'>
+								<button class="btn white join-btn" type="submit">참가하기</button>
+
+							</form>
+						</c:if>
+						
+						<c:if test='${project["PASS_FAIL"]== "1"}'>
+						<figure class="effect-ming" style="opacity:0.6">
+					<img src="/resources/images/img/17.jpg" alt="img17">
+						<figcaption>
+						<h2>
+							${project["GROUP_SUBJECT"] }
+						</h2>
+						<p class="project-byline">by ${project["NICKNAME"] }   for ${project["PROGRAM_NAME"] } / ${project["GROUP_CATEGORY"] }</p>
+						<%-- <p class="project-blurb">${project["GROUP_CONTENT"] }</p> --%>
+						<p class="project-blurb">${project["STARTLINE"]} ~ ${project["DEADLINE"]}</p>
+						<p class="project-location">
+							<span><i class="fa fa-location-arrow"></i></span> 
+							<span class="location-name">${project["GROUP_LOCATION"] }</span>
+							<div class="grup-count">현재 ${project["COUNT"] } 명 / 총 ${project["GROUP_MAXCOUNT"] } 명</div>
+					
+							
+							<button class="btn white join-btn" type="submit" disabled >모집완료</button>
+							
+						</c:if>
+
+					</figcaption>
+				</figure>
+
+			</div>
+			</c:forEach>
+				</div>
+			</div>
+			<div class="space30"></div>
+		<div class="text-center">
+			<a class="readmore_btn " href="index.html#">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+		</div>
+</div>
+
+							
+
+
+				
 			
-			<div class="col-md-12">
+
 	
-				
-				
-				<div class="paging">
-					
-					<div class="paging-left-comp">
-					<a class="category-boxedbtn font-black" href="write.html">목록</a>
-						</div>
-				
-  <ul class="pagination no-margin font-black">
-    <li class="font-black">
-      <a class="font-black" href="#" aria-label="Previous">
-        <span aria-hidden="true">이전페이지</span>
-      </a>
-    </li>
-    <li><a class="font-black" href="#">1</a></li>
-    <li><a class="font-black"  href="#">2</a></li>
-    <li><a class="font-black" href="#">3</a></li>
-    <li><a class="font-black" href="#">4</a></li>
-    <li><a class="font-black" href="#">5</a></li>
-    <li>
-      <a class="font-black" href="#" aria-label="Next">
-        <span aria-hidden="true">다음페이지</span>
-      </a>
-    </li>
-  </ul>
-					
-					<div class="paging-right-comp">
-					<a class="category-boxed btn font-black" href="write.html">글쓰기</a>
-						</div>
-					</div>
-				
-				
-				</div>
-			
-			</div>
-			
-			
-            
-       

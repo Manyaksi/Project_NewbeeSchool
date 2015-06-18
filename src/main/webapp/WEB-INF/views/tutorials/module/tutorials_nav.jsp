@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <div class="navbar tutorial-nav margin-bottom-zero">
 		<ul class="nav navbar-nav nanum-gothic-coding scroll left-margin-50">
-			<li><a style="margin:0px;" href="/#learn">JAVA</a></li>
+			<li><a style="margin:0px;" href="/#learn">${devprogram.program_name}</a></li>
 
 		</ul>
 

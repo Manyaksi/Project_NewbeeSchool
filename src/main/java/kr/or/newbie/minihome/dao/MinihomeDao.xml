@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.newbie.minihome.dao.MinihomeDao">
+	<select id="showMinihome" parameterType="Integer" resultType="minihomeusers" >
+		select user_no userNo, program_name programName, id, nickname, photo, location, point, grade
+		from users
+		where user_no = #{userNo} 
+	</select>
+	
+	<select id="addGuestbook" parameterType="guestbook">
+		insert into guestbook(guest_owner, guest_no, user_no, guest_content)
+		values(#{guestbookOwner}, guest_no_seq.NextVal, #{userNo}, #{guestContent})
+	</select>
+	
+	<select id="showGuestbook" parameterType="Integer" resultType="java.util.Map">
+		select g.guest_owner, g.guest_no, g.user_no, u.nickname, g. guest_like, g.guest_content, to_char(g.write_date, 'YY.MM.DD. AMHH12:MI:SS','NLS_DATE_LANGUAGE=KOREAN') write_date
+		from guestbook g, users u
+		where u.user_no = g.user_no and g.guest_owner  = #{guestbookOwner}
+		order by guest_no desc
+	</select>
+</mapper>

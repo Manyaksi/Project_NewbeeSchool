@@ -6,12 +6,14 @@ import java.util.Map;
 
 import kr.or.newbie.project.dao.ProjectDao;
 import kr.or.newbie.project.domain.Project;
+import kr.or.newbie.project.domain.ProjectComment;
+import kr.or.newbie.project.domain.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /** 
- * 학사 관련 비즈니스 메소드 구현 Business Object
+ * 프로젝트 관련 비즈니스 메소드 구현 Business Object
  * @author 김순재
  */
 @Service("projectService")
@@ -36,32 +38,106 @@ public class ProjectServiceImpl implements ProjectService{
 	}
 	
 	@Override
-	public Project showProjectdetail() {
+	public Users getUserInfo(int user_no) {
+		return projectDao.getUserInfo(user_no);
+	}
+	
+	@Override
+	public List<Map<String, Object>> showProject() {
+		return projectDao.showProject();
+	}
+	
+	@Override
+	public Map<String, Object> showProjectdetail(long groupNo) {
 		System.out.println("[Debug] : 프로젝트 상세보기");
-		return projectDao.showProjectdetail();
+		return projectDao.showProjectdetail(groupNo);
+	}
+	
+	@Override
+	public List<Users> showEnterProject(long groupNo) {
+		return projectDao.showEnterProject(groupNo);
 	}
 	
 	@Override
 	public void addProject(Project project) {
-		projectDao.addProject(project);
 		System.out.println("[Debug] : 프로젝트 만들기");
-		
+		projectDao.addProject(project);
 	}
-	
+
 	@Override
-	public void joinProject(Project project) {
-		projectDao.joinProject(project);
+	public void joinProject(long groupNo, int userNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("groupNo", groupNo);
+		params.put("userNo", userNo);
+		projectDao.joinProject(params);
 		System.out.println("[Debug] : 프로젝트 참가");
 		
 	}
 	
 	@Override
-	public void exitProject(Project project) {
+	public void exitProject(long groupNo, int userNo) {
+		Project project = new Project();
+		project.setGroupNo(groupNo);
+		project.setUserNo(userNo);
 		projectDao.exitProject(project);
 		System.out.println("[Debug] : 프로젝트 나가기");
-		
+	}
+	
+	@Override
+	//프로젝트 해체하기 (멤버 해체)
+	public void breakProject(long groupNo) {
+		projectDao.breakProject(groupNo);
+	}
+	
+	@Override
+	//프로젝트 해체하기 (글 해체)
+	public void breakProjectAll(long groupNo) {
+		projectDao.breakProjectAll(groupNo);
+	}
+	
+	@Override
+	public void passAndFail(long groupNo) {
+		projectDao.passAndFail(groupNo);		
+	}
+	
+	@Override
+	public void addProjectComment(ProjectComment projectComment) {
+		projectDao.addProjectComment(projectComment);
+		System.out.println("[Debug] : 프로젝트 댓글 등록");
 		
 	}
 	
+	@Override
+	public void deleteProjectComment(ProjectComment projectComment) {
+		projectDao.deleteProjectComment(projectComment.getGroupcommNo());
+	}
 	
+	@Override
+	public List<Map<String, Object>> showProjectComment(long groupNo) {
+		return projectDao.showProjectComment(groupNo);
+	}
+	
+	
+	@Override
+	public int confirmEnterUser(int userNo, long groupNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("groupNo", groupNo);
+		params.put("userNo", userNo);
+		
+		return projectDao.confirmEnterUser(params);
+	}
+	
+	@Override
+	public int confirmGroupOwner(int userNo, long groupNo) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("groupNo", groupNo);
+		params.put("userNo", userNo);
+		
+		return projectDao.confirmGroupOwner(params);
+	}
+	
+	@Override
+	public Project confirmGroupCount(long groupNo) {
+		return projectDao.confirmGroupCount(groupNo);
+	}
 }

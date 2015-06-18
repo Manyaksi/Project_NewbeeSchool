@@ -1,0 +1,108 @@
+.navbar-collapse form[role="search"] {
+	float: right;
+	padding: 0px;
+	margin: 0px;
+	z-index: 999;
+	color: white !important;
+}
+
+.navbar-collapse form[role="menu"] {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	z-index: 999;
+	color: white !important;
+}
+
+.navbar-collapse form[role="search"] button, .navbar-collapse form[role="search"] input
+	{
+	padding: 8px 12px;
+	border-radius: 0px;
+	border-width: 0px;
+	color: white !important;
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow: none;
+	outline: none;
+	font-size: 22px;
+}
+
+.navbar-collapse form[role="menu"] button, .navbar-collapse form[role="menu"] a, .navbar-collapse form[role="write"] a
+	{
+	padding: 8px 12px;
+	border-radius: 0px;
+	border-width: 0px;
+	color: white !important;
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow: none;
+	outline: none;
+	font-size: 22px;
+}
+
+.placeholder-white::-webkit-input-placeholder {
+	color: white;
+}
+
+.navbar-collapse form[role="search"] input {
+	padding: 16px 12px;
+	font-size: 22px;
+	font-family: nanum gothic;
+	color: white !important;
+	box-shadow: none;
+}
+
+.navbar-collapse form[role="search"] button[type="reset"] {
+	display: none;
+}
+
+.navbar-collapse form[role="menu"] button[type="reset"] {
+	display: none;
+}
+
+.search-btn{
+	position: absolute; bottom: -7px; right: 35px;
+}
+
+@media ( min-width : 768px) {
+	.navbar-collapse {
+		padding-top: 0px !important;
+		padding-right: 38px !important;
+	}
+	.navbar-collapse form[role="search"] {
+		width: 38px;
+	}
+	.navbar-collapse form[role="search"] button, .navbar-collapse form[role="search"] input
+		{
+		padding: 15px 12px;
+	}
+	.navbar-collapse form[role="search"] input {
+		padding: 25px 12px;
+		font-size: 18pt;
+		opacity: 0;
+		display: none;
+	}
+	.navbar-collapse form[role="search"].active {
+		width: 100%;
+	}
+	.navbar-collapse form[role="search"].active button, .navbar-collapse form[role="search"].active input
+		{
+		display: table-cell;
+		opacity: 1;
+	}
+	.navbar-collapse form[role="search"].active input {
+		width: 100%;
+	}
+}
+
+.scroll-menu-func,.scroll-write-func {
+	bottom: 20px !important;
+}
+
+.scroll-search-func{
+	bottom: 12.5px !important;	
+}
+
+.scroll-menu-li-func{
+	bottom: 8.5px;
+}

@@ -1,11 +1,16 @@
 package kr.or.newbie;
 
-import java.text.DateFormat;
-import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import kr.or.newbie.main.service.MainService;
+import kr.or.newbie.users.dao.MybatisUsersDao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,23 +25,41 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 
+	@Autowired
+	private MainService mainService;
+
+	public void setMainService(MainService mainService) {
+		this.mainService = mainService;
+	}
+
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
+		List<Map<String, Object>> map = mainService.showProjectMain();
+		
+		for (Map<String, Object> map2 : map) {
+			Iterator<String> iter = map2.keySet().iterator();
+			while (iter.hasNext()) {
+				String string = (String) iter.next();
+				System.out.println(string + " : " + map2.get(string));
+			}
+		}
+		
+		
+		model.addAttribute("list", map);
 		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(
-				DateFormat.LONG, DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate);
-
 		return "index";
 	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public String homepost(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		return "index";
+	}
+
 
 	@RequestMapping(value = "/registeration", method = RequestMethod.GET)
 	public String registeration(Model model) {
@@ -76,14 +99,50 @@ public class HomeController {
 	
 	@RequestMapping(value = "/project", method = RequestMethod.GET)
 	public String project(Model model) {
-
+		
 		return "project";
 	}
 	
+	@RequestMapping(value = "/email_check", method = RequestMethod.POST)
+	public String email_check(String email, String nickname, Model model) {
+		System.out.println(email);
+		System.out.println(nickname);
+		
+		MybatisUsersDao dao = new MybatisUsersDao();
+		
+		model.addAttribute("result", "시발");
+		return "/ajaxResult/result";
+	}
+
 	@RequestMapping(value = "/project_list", method = RequestMethod.GET)
 	public String project_list(Model model) {
 
 		return "project_list";
 	}
 	
+	
+	@RequestMapping(value = "/board_write", method = RequestMethod.GET)
+	public String board_write(Model model) {
+
+		return "board_write";
+	}
+	
+	@RequestMapping(value = "/minihome", method = RequestMethod.GET)
+	public String minihome(Model model) {
+
+		return "minihome";
+	}
+	
+	@RequestMapping(value = "/project_write", method = RequestMethod.GET)
+	public String project_write(Model model) {
+
+		return "project_write";
+	}
+
+	@RequestMapping(value = "/member_edit", method = RequestMethod.GET)
+	public String member_edit(Model model) {
+		
+		return "member_edit";
+	}
 }
+

@@ -2329,6 +2329,18 @@ fieldset[disabled] .btn-default.active {
   border-color: #357ebd;
 }
 
+.btn-exit {
+  color: #ffffff;
+  background-color: #ff8080;
+  border-color: #f24d4d;
+}
+
+.btn-break {
+  color: #000000;
+  background-color: #d3d3d3;
+  border-color: #ffffff;
+}
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -5989,6 +6001,10 @@ button.close {
   overflow-y: scroll;
 }
 
+.modal-lg{
+	width:900px !important;
+}
+
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
       -ms-transform: translate(0, -25%);
@@ -7095,3 +7111,6 @@ td.visible-print {
     display: none !important;
   }
 }
+
+
+
