@@ -215,9 +215,7 @@ height:53px;
 
 .fixed-height{
 	min-height: 70px !important;
-	-webkit-box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
-  -moz-box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
-  box-shadow: 0px 6px 0px 0px rgba(189,195,199,1);
+	
 }
 .topnav-pages {
 	background: #fff !important;
