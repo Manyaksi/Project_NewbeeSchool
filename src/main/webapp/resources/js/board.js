@@ -1,3 +1,35 @@
+var url = window.location.href;
+
+if(url == 'http://192.168.0.11/board/boardlist?program_name=CPP&page=1'){
+	$('.board-title').addClass('cpp-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=java&page=1'){
+	$('.board-title').addClass('java-bg');
+	$('h1').css('color','black');
+	$('p').css('color','darkgray');
+	$('button').css('color','darkgray');
+	$('span').css('color','darkgray');
+}else if(url == 'http://192.168.0.11/board/writearticle?program_name=java'){
+	$('.board-title').addClass('java-bg');
+	$('h1').css('color','black');
+	$('p').css('color','darkgray');
+	$('button').css('color','darkgray');
+	$('span').css('color','darkgray');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=Swift&page=1'){
+	$('.board-title').addClass('swift-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=JavaScript&page=1'){
+	$('.board-title').addClass('js-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=Ruby&page=1'){
+	$('.board-title').addClass('ruby-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=Python&page=1'){
+	$('.board-title').addClass('python-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=PHP&page=1'){
+	$('.board-title').addClass('php-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=Csharp&page=1'){
+	$('.board-title').addClass('csharp-bg');
+}else if(url == 'http://192.168.0.11/board/boardlist?program_name=C&page=1'){
+	$('.board-title').addClass('c-bg');
+}
+
 $(window).scroll(function() {
 
 	var value = $(this).scrollTop();

@@ -23,5 +23,7 @@ public interface MinihomeDao {
 	
 	//방명록 불러오기
 	public List<Map<String, Object>> showGuestbook(int userNo);
+
+	public List<Map<String, Object>> showEnterProjectList(int userNo);
 	
 }

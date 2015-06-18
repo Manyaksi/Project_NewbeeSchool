@@ -10,16 +10,13 @@
                         </div>
                         <div class="col-md-12 profile-info">
                             <div class=" profile-info-value">
-                                <h3>1020</h3>
-                                <p>Followers</p>
+                               
                             </div>
                             <div class=" profile-info-value">
-                                <h3>1780</h3>
-                                <p>Friends</p>
+                               
                             </div>
                             <div class=" profile-info-value">
-                                <h3>260</h3>
-                                <p>Photos</p>
+                               
                             </div>
                         </div>
                     </div>
@@ -35,7 +32,7 @@
                                 <li><p><i class="fa fa-envelope m-r-xs"></i><a href="profile.html#">${users.id }</a></p></li>
                             </ul>
                             <hr>
-                            <button class="btn btn-primary btn-block"><i class="fa fa-plus m-r-xs"></i>Follow</button>
+                            
                         </div>
                         <div class="col-md-6 m-t-lg">
                             <div class="panel panel-white">
@@ -72,7 +69,7 @@
                                                 <div class="timeline-item-post">
                                                     <p>${guestbook["GUEST_CONTENT"] }</p>
                                                     <div class="timeline-options">
-                                                        <a href="profile.html#"><i class="icon-like"></i> Like (${geustbook["GUEST_LIKE"] })</a>
+                                                     
                                                     </div>
                                                     
                                                 </div>
@@ -91,22 +88,18 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="team">
+                                    	<c:forEach var="projectlist" items="${projectlist }">
                                         <div class="team-member">
                                            <div class="online on"></div>
-                                            <img src="/resources/images/minihome/avatar1.png" alt="">
+                                           
+                                            <p><a href='/project/project_detail?groupNo=${projectlist["GROUP_NO"] }' class="btn btn-primary btn-block" style="
+    margin-right: 30px;
+    padding-left: 0px;
+    padding-right: 5px;
+"><i class="fa fa-plus m-r-xs"></i>${projectlist["GROUP_SUBJECT"] }</a></p>
                                         </div>
-                                        <div class="team-member">
-                                           <div class="online off"></div>
-                                            <img src="/resources/images/minihome/avatar2.png" alt="">
-                                        </div>
-                                        <div class="team-member">
-                                           <div class="online on"></div>
-                                            <img src="/resources/images/minihome/avatar3.png" alt="">
-                                        </div>
-                                        <div class="team-member">
-                                           <div class="online on"></div>
-                                            <img src="/resources/images/minihome/avatar5.png" alt="">
-                                        </div>
+                                        </c:forEach>
+                                     
                                     </div>
                                 </div>
                             </div>

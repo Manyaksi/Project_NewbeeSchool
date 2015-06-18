@@ -46,4 +46,14 @@
  		where pass_fail = 0
 	</select>
 	
+	<select id="countArticle" resultType="Integer">
+		select count(article_no)
+ 		from article
+	</select>
+	
+	<select id="countArticleComment" resultType="Integer">
+		select count(comment_no)
+     	from articomment
+	</select>
+	
 </mapper>

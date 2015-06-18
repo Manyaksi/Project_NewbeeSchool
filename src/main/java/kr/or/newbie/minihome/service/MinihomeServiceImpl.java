@@ -46,4 +46,8 @@ public class MinihomeServiceImpl implements MinihomeService{
 		return minihomeDao.showGuestbook(userNo);
 	}
 	
+	@Override
+	public List<Map<String, Object>> showEnterProjectList(int userNo) {
+		return minihomeDao.showEnterProjectList(userNo);
+	}
 }

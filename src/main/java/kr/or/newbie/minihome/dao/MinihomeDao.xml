@@ -21,4 +21,11 @@
 		order by guest_no desc
 	</select>
 	
+	<select id="showEnterProjectList" parameterType="Integer" resultType="java.util.Map">
+		select g.group_no, count(M.GROUP_NO) groupCount, g.group_maxcount groupMaxcount, g.group_subject
+        from groupmember m, grouparticle g
+        where g.group_no = m.group_no and m.user_no=#{guestbookOwner}
+        group by g.group_no, M.GROUP_NO, g.group_maxcount,  g.group_subject
+	</select>
+	
 </mapper>

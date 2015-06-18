@@ -106,6 +106,7 @@ padding-left: 0px;">
 			</div>
 			
 			<div class="space30"></div>
+			<c:if test="${cookie.loginId != null}">
 		<div class="text-center">
 			<a class="readmore_btn " id="addproject">
 				<i class="fa fa-angle-down"></i> 더 보기</a>
@@ -129,6 +130,7 @@ padding-left: 0px;">
 				<i class="fa fa-angle-down"></i> 더 보기</a>
 			
 		</div>
+		</c:if>
 		
 </div>
 

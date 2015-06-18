@@ -69,4 +69,17 @@ public class MybatisMinihomeDao implements MinihomeDao {
 		return guestbook;
 	}
 	
+	@Override
+	public List<Map<String, Object>> showEnterProjectList(int userNo) {
+		List<Map<String, Object>> enterProject = null;
+		SqlSession session = null;
+		try{
+			session = sqlSessionFactory.openSession();
+			MinihomeDao dao = session.getMapper(MinihomeDao.class);
+			enterProject = dao.showEnterProjectList(userNo);
+		}finally{
+			session.close();
+		}
+		return enterProject;
+	}
 }

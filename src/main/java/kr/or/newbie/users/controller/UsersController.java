@@ -316,7 +316,7 @@ public class UsersController {
 		//CommonsMultipartFile cmf2 = (CommonsMultipartFile)files.get("ex_course_image");
 		String fileName1 = cmf1.getOriginalFilename();
 		//user.setPhoto(fileName1);
-		String path1 = "C:/Users/garu/git/Project_NewbieSchool/src/main/webapp/resources/images/"+fileName1;
+		String path1 = "R:/workspace/Project_NewbieSchool/src/main/webapp/resources/images/"+fileName1;
 		System.out.println(path1);
 		System.out.println(fileName1);
 		File file1 = new File(path1);

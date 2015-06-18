@@ -66,7 +66,7 @@ public class ArticleController {
 		logger.debug(content);
 		articleService.writeArticle(article);
 
-		return "redirect:/board/boardlist?program_name=" + programName;
+		return "redirect:/board/boardlist?program_name=" + programName+"&page=1";
 
 	}
 
@@ -83,7 +83,7 @@ public class ArticleController {
 		articleService.deleteArticle(article_no);
 		articleService.deleteComment(article_no);
 
-		return "redirect:/board/boardlist?program_name=" + programName;
+		return "redirect:/board/boardlist?program_name=" + programName+"&page=1";
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class ArticleController {
 		
 		model.addAttribute("programName", programName);
 		
-		return "redirect:/board/boardlist?program_name=" + programName;
+		return "redirect:/board/boardlist?program_name=" + programName+"&page=1";
 	}
 
 	/**
@@ -130,6 +130,7 @@ public class ArticleController {
 			Model model) {
 		List<Map<String, Object>> list = articleService
 				.showarticletList(program_name);
+		
 		
 		List<Map<String, Object>> listpage = articleService
 				.paging(program_name, page);

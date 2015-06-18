@@ -18,16 +18,7 @@
 						</c:if>
 						
 				<div class="col-md-12 no-padding community-main">
-					<ul id="community_filters" class="clearfix">
-						<li><span class="community_filter active" data-filter="sort1 sort2 sort3 sort4 sort5 sort6 sort7">All</span></li>
-						<li><span class="community_filter" data-filter="sort1">PC</span></li>
-						<li><span class="community_filter" data-filter="sort2">Linux</span></li>
-						<li><span class="community_filter" data-filter="sort3">OSX</span></li>
-						<li><span class="community_filter" data-filter="sort4">Server</span></li>
-						<li><span class="community_filter" data-filter="sort5">Web</span></li>
-						<li><span class="community_filter" data-filter="sort6">iOS</span></li>
-						<li><span class="community_filter" data-filter="sort7">Android</span></li>
-					</ul>
+					
 					<div id="comunitylist">
 						<div class="community sort1" data-cat="sort1">
 							<div class="community-wrapper">

@@ -47,9 +47,11 @@ public class MinihomeController {
 		logger.debug("미니홈 요청");
 		Users users = minihomeService.showMinihome(userNo);
 		List<Map<String, Object>> list = minihomeService.showGuestbook(userNo);
+		List<Map<String, Object>> projectlist = minihomeService.showEnterProjectList(userNo);
 		
 		model.addAttribute("users", users);
 		model.addAttribute("list", list);
+		model.addAttribute("projectlist", projectlist);
 		System.out.println(users);
 		return "/minihome";
 	}

@@ -55,17 +55,17 @@
 		on a.user_no = u.user_no
 		where a.program_name
 		like #{program_name}
-		order by article_no asc
+		order by article_no desc
 	</select>
 	
 	<select id="paging" resultType="java.util.Map" parameterType="java.util.Map">
-	 select request_page, article_no, subject, content, category, write_date, hit_count, like_count, nickname
-         from ( select ceil(rownum / 5) request_page, article_no, subject,program_name content, category, write_date, hit_count, like_count, nickname
-         from (select rownum, article_no, subject, content,a.program_name, category, write_date, hit_count, like_count, u.nickname
+	 select request_page, article_no, subject, content, category, write_date, hit_count, like_count, nickname, commentcount
+         from ( select ceil(rownum / 5) request_page, article_no, subject,program_name content, category, write_date, hit_count, like_count, nickname,  commentcount
+         from (select rownum, article_no, subject, content,a.program_name, category, write_date, hit_count, like_count, u.nickname,  commentcount
          from article a JOIN users u
          on a.user_no = u.user_no
          where a.program_name like #{program_name}
-         order by article_no asc))
+         order by article_no desc))
          where request_page= #{page}
 	</select>
 
@@ -85,8 +85,7 @@
 		on a.user_no = u.user_no
 		where a.category like
 		#{category} AND a.program_name like #{program_name}
-		order by article_no
-		asc
+		order by article_no desc
 	</select>
 	
 	<!--  카테고리 페이징 -->
@@ -100,7 +99,7 @@
         from users u JOIN article a
         on a.user_no = u.user_no
         where a.category like #{category} AND a.program_name = #{program_name}
-        order by article_no asc))
+        order by article_no desc))
         where request_page= #{page}
 	</select>
 
@@ -265,7 +264,7 @@
 		subject like #{searchValue} or
 		content like #{searchValue}
 		order by
-		article_no asc
+		article_no desc
 	</select>
 
 	<!-- 댓글 리스트 -->
@@ -277,7 +276,7 @@
 		on c.user_no =
 		u.user_no
 		where c.article_no = #{article_no}
-		order by comment_no asc
+		order by comment_no desc
 	</select>
 
 	<!-- 댓글 작성 -->

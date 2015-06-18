@@ -22,5 +22,7 @@ public interface MinihomeService {
 	
 	//방명록 출력
 	public List<Map<String, Object>> showGuestbook(int userNo);
+
+	public List<Map<String, Object>> showEnterProjectList(int userNo);
 	
 }

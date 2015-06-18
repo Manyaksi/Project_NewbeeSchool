@@ -223,72 +223,72 @@ public class PagingHelper {
 
 		// 처음으로 보여주기 여부
 		if (isShowFirst()) {
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=1" + searchQuery
-					+ "'>|처음으로|</a></span>";
+			pageListhtml += "<li ><a href=/board/paging?program_name="+programName+"&page=1" + searchQuery
+					+ "'>처음으로</a></li>";
 		}else{
-			pageListhtml += "<span>|처음으로|</span>";
+			pageListhtml += "<li><a>처음으로</a></li>";
 		}
 
 		// 이전목록 보여주기 여부
 		if (isShowPreviousList()) {
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + startNoOfPreviousList
-					+ searchQuery + "'>|이전목록|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + startNoOfPreviousList
+					+ searchQuery + "'>이전목록</a></li>";
 		}else{
-			pageListhtml += "<span>|이전목록|</span>";
+			pageListhtml += "<li><a>이전목록</a></li>";
 		}
 
 		// 이전 페이지 보여주기 여부
 		if (isShowPreviousPage()) {
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + (requestPage - 1)
-					+ searchQuery + "'>|이전페이지|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + (requestPage - 1)
+					+ searchQuery + "'>이전페이지</a></li>";
 		}else{
-			pageListhtml += "<span>|이전페이지|</span>";
+			pageListhtml += "<li><a>이전페이지</a></li>";
 		} 
 
 		// totlaCount 0일때
 		if (totalPageCount == 0) {
-			pageListhtml += "<span>0</span>";
+			pageListhtml += "<li>0</li>";
 		}
 
-		pageListhtml += "<span>|</span>";
+		pageListhtml += "<li></li>";
 
 		// 페이지 번호 반복
 		for (int i = startNoOfCurrentList; i <= endNoOfCurrentList; i++) {
 			if (i == requestPage) {
-				pageListhtml += "<span class='selected'>" + i + "</span>";
+				pageListhtml += "<li class='selected'><a>" + i + "</a></li>";
 			} else {
-				pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + i + searchQuery
-						+ ">" + i + "</a></span>";
+				pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + i + searchQuery
+						+ ">" + i + "</a></li>";
 			}
-			pageListhtml += "<span>|</span>";
+			pageListhtml += "<li></li>";
 		}
 
 		// 다음 페이지 보여주기 여부
 		if (isShowNextPage()) {
-			pageListhtml += "<div class=btn><span><a href=/board/paging?program_name="+programName+"&page=" + (requestPage + 1)
-					+ searchQuery + "'>|다음페이지|</a></span><div>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + (requestPage + 1)
+					+ searchQuery + "'>다음페이지</a></li>";
 		}else{
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + (requestPage + 1)
-					+ searchQuery + "'>|다음페이지|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + (requestPage + 1)
+					+ searchQuery + "'>다음페이지</a></li>";
 		}
 
 		// 다음 목록 보여주기 여부
 		if (isShowNextList()) {
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + startNoOfNextList
-					+ searchQuery + "'>|다음목록|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + startNoOfNextList
+					+ searchQuery + "'>다음목록</a></li>";
 
 		}else{
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + startNoOfNextList
-					+ searchQuery + "'>|다음목록|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + startNoOfNextList
+					+ searchQuery + "'>다음목록</a></li>";
 		}
 
 		// 끝으로 보여주기 여부
 		if (isShowLast()) {
-			pageListhtml += "<span><a href=/board/paging?program_name="+programName+"&page=" + totalPageCount
-					+ searchQuery + "'>|끝으로|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + totalPageCount
+					+ searchQuery + "'>끝으로</a></li>";
 		}else{
-			pageListhtml += "<span`><a href=/board/paging?program_name="+programName+"&page=" + totalPageCount
-					+ searchQuery + "'>|끝으로|</a></span>";
+			pageListhtml += "<li><a href=/board/paging?program_name="+programName+"&page=" + totalPageCount
+					+ searchQuery + "'>끝으로</a></li>";
 		}
 		return pageListhtml;
 	}
@@ -306,63 +306,63 @@ public class PagingHelper {
 
 		// 처음으로 보여주기 여부
 		if (isShowFirst()) {
-			pageListhtml += "<span><a href='?page=1" + searchQuery
-					+ "'>|처음으로|</a></span>";
+			pageListhtml += "<li><a href='?page=1" + searchQuery
+					+ "'>처음으로</a></li>";
 		}else{
-			pageListhtml += "<span>|처음으로|</span>";
+			pageListhtml += "<li>처음으로</li>";
 		}
 
 		// 이전목록 보여주기 여부
 		if (isShowPreviousList()) {
-			pageListhtml += "<span><a href='?page=" + startNoOfPreviousList
-					+ searchQuery + "'>|이전목록|</a></span>";
+			pageListhtml += "<li><a href='?page=" + startNoOfPreviousList
+					+ searchQuery + "'>이전목록</a></li>";
 		}else{
-			pageListhtml += "<span>|이전목록|</span>";
+			pageListhtml += "<li>이전목록</li>";
 		}
 
 		// 이전 페이지 보여주기 여부
 		if (isShowPreviousPage()) {
-			pageListhtml += "<span><a href='?page=" + (requestPage - 1)
-					+ searchQuery + "'>|이전페이지|</a></span>";
+			pageListhtml += "<li><a href='?page=" + (requestPage - 1)
+					+ searchQuery + "'>이전페이지</a></li>";
 		}else{
-			pageListhtml += "<span>|이전페이지|</span>";
+			pageListhtml += "<li>이전페이지</li>";
 		} 
 
 		// totlaCount 0일때
 		if (totalPageCount == 0) {
-			pageListhtml += "<span>0</span>";
+			pageListhtml += "<li><a>0</a></li>";
 		}
 
-		pageListhtml += "<span>|</span>";
+		pageListhtml += "<li></li>";
 
 		// 페이지 번호 반복
 		for (int i = startNoOfCurrentList; i <= endNoOfCurrentList; i++) {
 			if (i == requestPage) {
-				pageListhtml += "<span class='selected'>" + i + "</span>";
+				pageListhtml += "<li class='selected'><a>" + i +"</a></li>";
 			} else {
-				pageListhtml += "<span><a href='?page=" + i + searchQuery
-						+ "'>" + i + "</a></span>";
+				pageListhtml += "<li><a href='?page=" + i + searchQuery
+						+ "'>" + i + "</a></li>";
 			}
-			pageListhtml += "<span>|</span>";
+			pageListhtml += "<li><a></a></li>";
 		}
 
 		// 다음 페이지 보여주기 여부
 		if (isShowNextPage()) {
-			pageListhtml += "<span><a href='?page=" + (requestPage + 1)
-					+ searchQuery + "'>|다음페이지|</a></span>";
+			pageListhtml += "<li><a href='?page=" + (requestPage + 1)
+					+ searchQuery + "'>다음페이지</a></li>";
 		}
 
 		// 다음 목록 보여주기 여부
 		if (isShowNextList()) {
-			pageListhtml += "<span><a href='?page=" + startNoOfNextList
-					+ searchQuery + "'>|다음목록|</a></span>";
+			pageListhtml += "<li><a href='?page=" + startNoOfNextList
+					+ searchQuery + "'>다음목록</a></li>";
 
 		}
 
 		// 끝으로 보여주기 여부
 		if (isShowLast()) {
-			pageListhtml += "<span><a href='?page=" + totalPageCount
-					+ searchQuery + "'>|끝으로|</a></span>";
+			pageListhtml += "<li><a href='?page=" + totalPageCount
+					+ searchQuery + "'>끝으로</a></li>";
 		}
 		return pageListhtml;
 	}

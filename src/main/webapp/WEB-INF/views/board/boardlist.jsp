@@ -65,10 +65,15 @@
 
 </c:forEach>
 	</div>
-	<div align="center">
+	<div class="text-center">
+	<ul class="pagination">
+	${paging }
+	</ul>
+	</div>
+<%-- 	<div align="center">
 	${paging }
 	</div>
-
+ --%>
 	
 	
 

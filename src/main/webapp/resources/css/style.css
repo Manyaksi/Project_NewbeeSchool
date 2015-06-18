@@ -4430,3 +4430,68 @@ line-height: 1.4;
   background-size: cover;
 	padding: 110px 0;
 }
+
+.java-bg{
+	background-image: url("/resources/images/works/2.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+.cpp-bg{
+	background-image: url("/resources/images/works/1.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #3a3a3a;
+}
+.swift-bg{
+	background-image: url("/resources/images/works/3.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #db5941;
+}
+.js-bg{
+	background-image: url("/resources/images/works/4.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fec400;
+}
+.ruby-bg{
+	background-image: url("/resources/images/works/5.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #7ecffe;
+}
+.python-bg{
+	background-image: url("/resources/images/works/6.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #d1e1ee;
+}
+.php-bg{
+	background-image: url("/resources/images/works/7.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #8892bf;
+}
+.csharp-bg{
+	background-image: url("/resources/images/works/8.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1f1f1f;
+}
+.c-bg{
+	background-image: url("/resources/images/works/9.png");
+	background-size: 400px 300px;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-color: #028ca6;
+}

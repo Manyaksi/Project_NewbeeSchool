@@ -18,12 +18,16 @@
 			<ul id="project_filters" class="clearfix"
 				style="margin-bottom: 0px; margin-top: 0px;">
 				<li><span class="project_filte rs active"
-					data-filter="sort1 sort2 sort3 sort4">All</span></li>
-				<li><span class="project_filters" data-filter="sort1">C</span></li>
-				<li><span class="project_filters" data-filter="sort2">C++</span></li>
-				<li><span class="project_filters" data-filter="sort3">C#</span></li>
-				<li><span class="project_filters" data-filter="sort4">JAVA</span></li>
-				<li><span class="project_filters" data-filter="sort5">Type</span></li>
+					data-filter="sort1 sort2 sort3 sort4" id="allproject">All</span></li>
+				<li><span class="project_filters" data-filter="sort1" id="cproject">C</span></li>
+				<li><span class="project_filters" data-filter="sort2" id="cppproject">C++</span></li>
+				<li><span class="project_filters" data-filter="sort3" id="csharpproject">C#</span></li>
+				<li><span class="project_filters" data-filter="sort4" id="javaproject">JAVA</span></li>
+				<li><span class="project_filters" data-filter="sort5" id="swiftproject">Swift</span></li>
+				<li><span class="project_filters" data-filter="sort6" id="javascriptproject">JAVASCRIPT</span></li>
+				<li><span class="project_filters" data-filter="sort7" id="pythonproject">PYTHON</span></li>
+				<li><span class="project_filters" data-filter="sort8" id="phpproject">PHP</span></li>
+				<li><span class="project_filters" data-filter="sort9" id="rubyproject">RUBY</span></li>
 			</ul>
 
 			<div class="text-right">
@@ -84,10 +88,38 @@ padding-left: 0px;">
 				</figure>
 
 			</div>
+			
 			</c:forEach>
+			<div id="pageresult"></div>
 				</div>
 			</div>
 			<div class="space30"></div>
+			<div class="space30"></div>
+			<c:if test="${cookie.loginId != null}">
+		<div class="text-center">
+			<a class="readmore_btn " id="addproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addcproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addcppproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addcsharpproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addjavaproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addswiftproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addjavascriptproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addpythonproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addphpproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			<a class="readmore_btn " id="addrubyproject">
+				<i class="fa fa-angle-down"></i> 더 보기</a>
+			
+		</div>
+		</c:if>
 		<div class="text-center">
 			<a class="readmore_btn " href="index.html#">
 				<i class="fa fa-angle-down"></i> 더 보기</a>

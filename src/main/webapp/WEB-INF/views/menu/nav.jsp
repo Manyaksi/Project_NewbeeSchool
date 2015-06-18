@@ -94,7 +94,7 @@
 			<ul id="login-dp2" class="dropdown-menu login-dp2-top-right">
 				
 				<li><a href="/minihome/minihome?userNo=${cookie.loginId.value}">미니홈</a></li>
-				<li><a href="/user/member_edit?userNo=${cookie.loginId.value}">회원정보수정</a></li>
+				<li><a href="/users/modifyuser?userNo=${cookie.loginId.value}">회원정보수정</a></li>
 				
 				<li>
 					<a href="/users/logout">로그아웃</a>

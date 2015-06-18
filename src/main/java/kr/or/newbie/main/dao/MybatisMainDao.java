@@ -76,5 +76,33 @@ public class MybatisMainDao implements MainDao {
 		}
 		return count;
 	}
+	
+	@Override
+	public int countArticle() {
+		SqlSession session = null;
+		int count= 0;
+		try{
+			session = sqlSessionFactory.openSession();
+			MainDao dao = session.getMapper(MainDao.class);
+			count = dao.countArticle();
+		}finally{
+			session.close();
+		}
+		return count;
+	}
+	
+	@Override
+	public int countArticleComment() {
+		SqlSession session = null;
+		int count= 0;
+		try{
+			session = sqlSessionFactory.openSession();
+			MainDao dao = session.getMapper(MainDao.class);
+			count = dao.countArticleComment();
+		}finally{
+			session.close();
+		}
+		return count;
+	}
 
 }

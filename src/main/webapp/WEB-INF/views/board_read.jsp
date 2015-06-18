@@ -64,6 +64,16 @@
 <script type="text/javascript" src="/resources/js/board.js"></script>
 
 <script src="/resources/js/summernote.min.js"></script>
+<script>
+$('#edit').hide(); $('#modifyarticle').hide();
+
+$('#total-edit').click(function(){
+	$('#edit').show();
+	$('#modifyarticle').show();
+	
+});
+
+</script>
 
 <script>
 
@@ -78,11 +88,9 @@ $(document).ready(function() {
 	  $('#summernote').summernote();
 	  
 	  $("#modifyarticle").submit(function(){
-		  alert("dddd");
 		  
 	  var content = $('.note-editable').html();
 	  
-	  alert(content);
 	  
       $(".content").attr("value",content);
 		  

@@ -53,4 +53,16 @@ public class MainServiceImpl implements MainService{
 	public int countGroup() {
 		return mainDao.countGroup();
 	}
+	
+	@Override
+	public int countArticle() {
+		// TODO Auto-generated method stub
+		return mainDao.countArticle();
+	}
+	
+	@Override
+	public int countArticleComment() {
+		// TODO Auto-generated method stub
+		return mainDao.countArticleComment();
+	}
 }

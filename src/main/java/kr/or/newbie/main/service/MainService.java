@@ -22,5 +22,9 @@ public interface MainService {
 
 	public int countGroup();
 
+	public int countArticle();
+
+	public int countArticleComment();
+
 	
 }

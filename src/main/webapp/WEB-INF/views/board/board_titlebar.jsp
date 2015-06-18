@@ -1,10 +1,37 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="board-title" id="content" tabindex="-1">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<h1 style="color:white;">${programName } 놀이터</h1>
-				<p style="color:white;" class='board-title-sub'>'자바를 자바라' 초보자바개발자의 놀이터입니다</p>
+			<c:if test="${programName == 'CPP' }">
+				<h1 style="color:white;">C++ 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'java' }">
+				<h1 style="color:white;">JAVA 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'Swift' }">
+				<h1 style="color:white;">Swift 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'JavaScript' }">
+				<h1 style="color:white;">JAVASCRIPT 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'Python' }">
+				<h1 style="color:white;">PYTHON 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'Ruby' }">
+				<h1 style="color:white;">RUBY 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'PHP' }">
+				<h1 style="color:white;">PHP 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'Csharp' }">
+				<h1 style="color:white;">C# 놀이터</h1>
+			</c:if>
+			<c:if test="${programName == 'C' }">
+				<h1 style="color:white;">C 놀이터</h1>
+			</c:if>
+				<p style="color:white;" class='board-title-sub'>'개발자유치원' 초보개발자들의 놀이터입니다</p>
 
 			</div>
 

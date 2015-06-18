@@ -10,8 +10,8 @@
 					</div>
 					<div class="col-md-6">
                       
-						<p style="margin-top: 20px;">지금까지 총 <p1 class="counter">107,200</p1>개의 글이 올라왔고,</p>
-						<p> <p1 class="counter">213</p1> 개의 댓글이 달렸습니다</p>
+						<p style="margin-top: 20px;">지금까지 총 <p1 class="counter">${articlecount }</p1>개의 글이 올라왔고,</p>
+						<p> <p1 class="counter">${commentcount }</p1> 개의 댓글이 달렸습니다</p>
 
 </div>
 					</div>

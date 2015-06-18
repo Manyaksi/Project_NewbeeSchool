@@ -42,7 +42,11 @@ public class HomeController {
 		List<Map<String, Object>> map = mainService.showProjectMain();
 		
 		int count = mainService.countGroup();
+		int articlecount = mainService.countArticle();
+		int commentcount = mainService.countArticleComment();
 		
+		model.addAttribute("articlecount", articlecount);
+		model.addAttribute("commentcount", commentcount);
 		model.addAttribute("count", count);
 		model.addAttribute("list", map);
 		return "index";

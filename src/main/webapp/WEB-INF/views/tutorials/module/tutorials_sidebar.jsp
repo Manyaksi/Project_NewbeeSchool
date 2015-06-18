@@ -8,7 +8,7 @@
 				<li><a id="nopadding" href="/tutorial/tutorial?program_name=${devprogram.program_name}&program_os=window">Windows에서 ${devprogram.program_name} 다운로드하기</a></li>
 				<!-- <li><a id="nopadding" href="/tutorial/tutorial?program_name=java&program_os=osx">OSX 에서 JAVA 다운로드하기</a></li>-->
 			</ul>
-			<c:if test="${devprogram.program_name == 'java' }">
+			<c:if test="${devprogram.program_name == 'java' or 'eclipsedown' }">
 			<div class="space50"></div>
 			<h4>JAVA IDE 다운로드</h4>
 			<ul class="nav nav-pills nav-stacked">

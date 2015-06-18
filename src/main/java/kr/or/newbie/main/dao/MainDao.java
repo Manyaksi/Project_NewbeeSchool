@@ -21,5 +21,9 @@ public interface MainDao {
 	public List<Map<String, Object>> showProjectProgramAdd(Map<String, Object> map);
 
 	public int countGroup();
+
+	public int countArticle();
+
+	public int countArticleComment();
 	
 }
